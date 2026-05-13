@@ -35,8 +35,9 @@ section{position:relative}
 .btn-ghost{font-family:var(--sans);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--carbon);text-decoration:none;font-weight:400;border-bottom:0.5px solid var(--brass);padding-bottom:3px;transition:color 0.2s}
 .btn-ghost:hover{color:var(--brass)}
 .hero-right{position:relative;overflow:hidden;background:var(--dark)}
-.hero-img-placeholder{width:100%;height:100%;background:linear-gradient(160deg,#2a2820 0%,#1a1812 60%,#0e0d0b 100%);display:flex;align-items:center;justify-content:center}
-.hero-img-inner{width:100%;height:100%;background:repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(176,138,74,0.04) 60px,rgba(176,138,74,0.04) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(176,138,74,0.04) 60px,rgba(176,138,74,0.04) 61px)}
+.hero-img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.78) contrast(1.06) saturate(0.95);transform:scale(1.01)}
+.hero-right::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(22,22,22,0.18) 0%,rgba(22,22,22,0.46) 100%),linear-gradient(90deg,rgba(176,138,74,0.12) 0%,rgba(176,138,74,0.04) 55%,rgba(176,138,74,0) 100%);pointer-events:none;z-index:1}
+.hero-right::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 130px rgba(0,0,0,0.35);pointer-events:none;z-index:1}
 .dark-band{background:var(--dark);padding:80px 56px}
 .activities-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-left:0.5px solid rgba(176,138,74,0.15)}
 .activity-item{padding:0 40px 0 32px;border-right:0.5px solid rgba(176,138,74,0.15)}
@@ -104,7 +105,7 @@ footer{background:#0d0d0b;padding:40px 56px;display:flex;align-items:center;just
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-img-placeholder"><div class="hero-img-inner"></div></div>
+    <img src="assets/milano-skyline.svg" alt="" class="hero-img">
   </div>
 </section>
 
