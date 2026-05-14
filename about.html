@@ -204,14 +204,45 @@ nav{
   font-size:14px;
 }
 
-/* PAGE HERO */
+/* PAGE HERO — SFUMATA */
 .page-hero{
   min-height:66vh;
   display:grid;
   grid-template-columns:0.9fr 1.1fr;
   padding-top:76px;
-  border-bottom:0.5px solid rgba(176,138,74,0.16);
-  background:linear-gradient(90deg,#F8F4EC 0%,#F3EFE8 100%);
+  border-bottom:0.5px solid rgba(176,138,74,0.14);
+  background:
+    linear-gradient(90deg,
+      #F8F4EC 0%,
+      #F6F1E8 32%,
+      #F3EFE8 50%,
+      #F4EFE6 68%,
+      #F8F4EC 100%
+    );
+  position:relative;
+  overflow:hidden;
+}
+
+.page-hero::before{
+  content:"";
+  position:absolute;
+  inset:76px 0 0 0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 58% 50%,
+      rgba(201,169,110,0.13) 0%,
+      rgba(201,169,110,0.08) 22%,
+      rgba(201,169,110,0.03) 42%,
+      transparent 66%
+    ),
+    linear-gradient(90deg,
+      rgba(248,244,236,0.00) 0%,
+      rgba(248,244,236,0.24) 38%,
+      rgba(248,244,236,0.46) 48%,
+      rgba(248,244,236,0.28) 58%,
+      rgba(248,244,236,0.00) 100%
+    );
+  z-index:0;
 }
 
 .page-hero-left{
@@ -220,6 +251,13 @@ nav{
   justify-content:center;
   padding:82px 64px 82px 56px;
   position:relative;
+  z-index:2;
+  background:
+    linear-gradient(90deg,
+      rgba(248,244,236,0.98) 0%,
+      rgba(248,244,236,0.90) 62%,
+      rgba(248,244,236,0.20) 100%
+    );
 }
 
 .page-hero-left p{
@@ -239,9 +277,14 @@ nav{
   justify-content:center;
   padding:64px 56px;
   background:
-    radial-gradient(circle at 40% 50%,rgba(201,169,110,0.16),transparent 0%,transparent 35%),
-    linear-gradient(135deg,rgba(255,255,255,0.50) 0%,rgba(243,239,232,0.78) 48%,rgba(232,220,199,0.35) 100%);
-  border-left:0.5px solid rgba(176,138,74,0.12);
+    linear-gradient(90deg,
+      rgba(248,244,236,0.28) 0%,
+      rgba(246,241,232,0.52) 18%,
+      rgba(243,239,232,0.72) 42%,
+      rgba(248,244,236,0.92) 100%
+    );
+  border-left:none;
+  z-index:1;
 }
 
 .page-hero-right::before{
@@ -249,23 +292,43 @@ nav{
   position:absolute;
   inset:0;
   background:
-    radial-gradient(circle at 42% 48%,rgba(176,138,74,0.10),transparent 38%),
-    repeating-linear-gradient(45deg,transparent,transparent 90px,rgba(176,138,74,0.045) 90px,rgba(176,138,74,0.045) 91px),
-    repeating-linear-gradient(-45deg,transparent,transparent 90px,rgba(176,138,74,0.025) 90px,rgba(176,138,74,0.025) 91px);
-  opacity:0.75;
+    radial-gradient(circle at 38% 48%,
+      rgba(176,138,74,0.13) 0%,
+      rgba(176,138,74,0.08) 26%,
+      transparent 54%
+    ),
+    radial-gradient(circle at 68% 50%,
+      rgba(255,255,255,0.48) 0%,
+      rgba(255,255,255,0.18) 34%,
+      transparent 68%
+    ),
+    repeating-linear-gradient(45deg,
+      transparent,
+      transparent 96px,
+      rgba(176,138,74,0.035) 96px,
+      rgba(176,138,74,0.035) 97px
+    ),
+    repeating-linear-gradient(-45deg,
+      transparent,
+      transparent 96px,
+      rgba(176,138,74,0.020) 96px,
+      rgba(176,138,74,0.020) 97px
+    );
+  opacity:0.72;
 }
 
 .page-hero-right::after{
   content:"";
   position:absolute;
-  width:520px;
-  height:520px;
-  border:0.5px solid rgba(176,138,74,0.14);
-  border-radius:50%;
-  left:8%;
-  top:50%;
-  transform:translateY(-50%);
+  inset:0;
   pointer-events:none;
+  background:
+    linear-gradient(90deg,
+      rgba(248,244,236,0.76) 0%,
+      rgba(248,244,236,0.38) 12%,
+      rgba(248,244,236,0.06) 28%,
+      rgba(248,244,236,0.00) 100%
+    );
 }
 
 /* TETRACTIS LIGHT */
@@ -628,17 +691,54 @@ footer{
     grid-template-columns:1fr;
     min-height:auto;
     padding-top:74px;
+    background:
+      linear-gradient(180deg,
+        #F8F4EC 0%,
+        #F6F1E8 46%,
+        #F3EFE8 100%
+      );
+  }
+
+  .page-hero::before{
+    inset:74px 0 0 0;
+    background:
+      radial-gradient(circle at 50% 58%,
+        rgba(201,169,110,0.10) 0%,
+        rgba(201,169,110,0.05) 38%,
+        transparent 70%
+      );
   }
 
   .page-hero-left{
     padding:80px 28px 54px;
+    background:
+      linear-gradient(180deg,
+        rgba(248,244,236,0.98) 0%,
+        rgba(248,244,236,0.90) 78%,
+        rgba(248,244,236,0.20) 100%
+      );
   }
 
   .page-hero-right{
     padding:56px 28px;
     min-height:560px;
     border-left:none;
-    border-top:0.5px solid rgba(176,138,74,0.14);
+    border-top:none;
+    background:
+      linear-gradient(180deg,
+        rgba(248,244,236,0.98) 0%,
+        rgba(246,241,232,0.86) 42%,
+        rgba(243,239,232,0.94) 100%
+      );
+  }
+
+  .page-hero-right::after{
+    background:
+      linear-gradient(180deg,
+        rgba(248,244,236,0.62) 0%,
+        rgba(248,244,236,0.14) 24%,
+        rgba(248,244,236,0.00) 100%
+      );
   }
 
   .tetractis-wrap{
@@ -723,7 +823,7 @@ footer{
 
 <nav>
   <a href="index.html" class="logo-wrap logo-image-wrap">
-    <img src="assets/kts-advisory-logo-web.png?v=6" alt="KTS Advisory" class="site-logo">
+    <img src="assets/kts-advisory-logo-web.png?v=7" alt="KTS Advisory" class="site-logo">
   </a>
 
   <ul class="nav-links">
