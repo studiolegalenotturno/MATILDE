@@ -4,209 +4,829 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KTS Advisory — Contatti</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ivory:#F3EFE8;--carbon:#161616;--brass:#B08A4A;--brass-light:#C9A96E;--greige:#8B847C;--dark:#1B1B1B;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',sans-serif}
+
+:root{
+  --ivory:#F3EFE8;
+  --carbon:#0E1A2B;
+  --navy:#0E1A2B;
+  --navy-soft:#13243A;
+  --navy-deep:#08111F;
+  --brass:#B08A4A;
+  --brass-light:#C9A96E;
+  --greige:#8B847C;
+  --dark:#0E1A2B;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',sans-serif;
+}
+
 html{scroll-behavior:smooth}
-body{background:var(--dark);color:var(--carbon);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:72px;background:rgba(27,27,27,0.96);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(176,138,74,0.12)}
-.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-icon{width:36px;height:36px}
-.logo-text{display:flex;flex-direction:column;line-height:1}
-.logo-kts{font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:0.08em;color:var(--ivory)}
-.logo-adv{font-family:var(--sans);font-size:9px;letter-spacing:0.22em;color:var(--brass);text-transform:uppercase;font-weight:400;margin-top:2px}
-.nav-links{display:flex;gap:40px;list-style:none}
-.nav-links a{font-family:var(--sans);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ivory);text-decoration:none;font-weight:400;opacity:0.5;transition:opacity 0.2s,color 0.2s}
-.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--brass)}
-.nav-lang{font-family:var(--sans);font-size:11px;letter-spacing:0.14em;color:var(--greige);cursor:pointer;border:0.5px solid rgba(139,132,124,0.3);padding:4px 12px}
-.nav-lang:hover{color:var(--brass);border-color:var(--brass)}
-.section-label{font-family:var(--sans);font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--brass-light);margin-bottom:28px;font-weight:400}
-.section-headline{font-family:var(--serif);font-size:clamp(32px,3.5vw,52px);font-weight:300;line-height:1.2;color:var(--ivory)}
-.section-headline em{font-style:italic}
-.brass-line{width:32px;height:1px;background:var(--brass);margin-bottom:32px}
+
+body{
+  background:var(--navy-deep);
+  color:var(--carbon);
+  font-family:var(--sans);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 56px;
+  height:72px;
+  background:rgba(8,17,31,0.94);
+  backdrop-filter:blur(12px);
+  border-bottom:0.5px solid rgba(176,138,74,0.22);
+}
+
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
+
+.logo-icon{
+  width:36px;
+  height:36px;
+}
+
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+
+.logo-kts{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:400;
+  letter-spacing:0.08em;
+  color:var(--ivory);
+}
+
+.logo-adv{
+  font-family:var(--sans);
+  font-size:9px;
+  letter-spacing:0.22em;
+  color:var(--brass);
+  text-transform:uppercase;
+  font-weight:400;
+  margin-top:2px;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  list-style:none;
+}
+
+.nav-links a{
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--ivory);
+  text-decoration:none;
+  font-weight:500;
+  opacity:0.62;
+  transition:opacity 0.2s,color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  opacity:1;
+  color:var(--brass-light);
+}
+
+.language-switch{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  border:0.5px solid rgba(176,138,74,0.45);
+  padding:5px 10px;
+  background:rgba(243,239,232,0.04);
+}
+
+.lang-btn{
+  border:none;
+  background:transparent;
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.14em;
+  color:rgba(243,239,232,0.48);
+  cursor:pointer;
+  font-weight:500;
+  transition:color 0.2s;
+}
+
+.lang-btn.active,
+.lang-btn:hover{
+  color:var(--brass-light);
+}
+
+.lang-separator{
+  font-family:var(--sans);
+  font-size:10px;
+  color:rgba(243,239,232,0.28);
+}
+
+/* SHARED */
+.section-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--brass-light);
+  margin-bottom:28px;
+  font-weight:500;
+}
+
+.section-headline{
+  font-family:var(--serif);
+  font-size:clamp(32px,3.5vw,52px);
+  font-weight:300;
+  line-height:1.2;
+  color:var(--ivory);
+}
+
+.section-headline em{
+  font-style:italic;
+  color:var(--brass-light);
+}
+
+.brass-line{
+  width:32px;
+  height:1px;
+  background:var(--brass);
+  margin-bottom:32px;
+}
 
 /* HERO */
-.page-hero{padding:160px 56px 100px;background:var(--dark);border-bottom:0.5px solid rgba(176,138,74,0.1)}
-.page-hero-inner{max-width:680px}
-.page-hero-inner .section-headline{font-size:clamp(44px,5.5vw,72px);margin-bottom:32px}
-.page-hero-inner p{font-family:var(--sans);font-size:15px;line-height:1.9;color:rgba(243,239,232,0.45);font-weight:300;max-width:480px}
+.page-hero{
+  padding:160px 56px 100px;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(201,169,110,0.13),transparent 34%),
+    linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
 
-/* MAIN CONTENT */
-.contact-main{display:grid;grid-template-columns:1fr 1fr;min-height:70vh}
+.page-hero-inner{
+  max-width:760px;
+}
 
-/* LEFT - DETAILS */
-.contact-left{padding:80px 64px 80px 56px;background:var(--dark);border-right:0.5px solid rgba(176,138,74,0.1)}
-.contact-details{margin-top:48px;display:flex;flex-direction:column;gap:0}
-.contact-row{padding:28px 0;border-bottom:0.5px solid rgba(176,138,74,0.12);display:flex;gap:24px;align-items:flex-start}
-.contact-row:first-child{border-top:0.5px solid rgba(176,138,74,0.12)}
-.contact-key{font-family:var(--sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(243,239,232,0.3);min-width:80px;padding-top:3px;font-weight:400}
-.contact-val{font-family:var(--sans);font-size:14px;color:rgba(243,239,232,0.65);font-weight:300;line-height:1.7}
-.contact-val a{color:var(--brass-light);text-decoration:none;transition:color 0.2s}
-.contact-val a:hover{color:var(--ivory)}
-.contact-note{margin-top:56px;padding:32px;border:0.5px solid rgba(176,138,74,0.15);background:rgba(176,138,74,0.03)}
-.contact-note p{font-family:var(--serif);font-size:16px;font-weight:300;color:rgba(243,239,232,0.5);line-height:1.7;font-style:italic}
+.page-hero-inner .section-headline{
+  font-size:clamp(44px,5.5vw,72px);
+  margin-bottom:32px;
+}
 
-/* RIGHT - FORM */
-.contact-right{padding:80px 56px 80px 64px;background:#161410}
-.form-title{font-family:var(--serif);font-size:clamp(24px,2.5vw,36px);font-weight:300;color:var(--ivory);margin-bottom:48px;line-height:1.3}
-.form-title em{font-style:italic;color:var(--brass-light)}
-.form-group{margin-bottom:28px}
-.form-label{display:block;font-family:var(--sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(243,239,232,0.35);margin-bottom:10px;font-weight:400}
-.form-input,.form-textarea,.form-select{width:100%;background:rgba(243,239,232,0.03);border:0.5px solid rgba(176,138,74,0.2);color:rgba(243,239,232,0.8);font-family:var(--sans);font-size:14px;font-weight:300;padding:14px 16px;outline:none;transition:border-color 0.25s,background 0.25s;-webkit-appearance:none;appearance:none}
-.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:rgba(176,138,74,0.6);background:rgba(243,239,232,0.05)}
-.form-textarea{resize:vertical;min-height:130px}
-.form-select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B08A4A' stroke-width='1' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
-.form-select option{background:#1a1810;color:rgba(243,239,232,0.8)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.btn-submit{font-family:var(--sans);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--dark);background:var(--brass);border:none;padding:18px 40px;cursor:pointer;font-weight:400;transition:background 0.25s;width:100%;margin-top:8px}
-.btn-submit:hover{background:var(--brass-light)}
-.form-disclaimer{font-family:var(--sans);font-size:11px;color:rgba(243,239,232,0.25);line-height:1.7;margin-top:20px;font-weight:300}
+.page-hero-inner p{
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.9;
+  color:rgba(243,239,232,0.58);
+  font-weight:300;
+  max-width:520px;
+}
+
+/* MAIN */
+.contact-main{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:70vh;
+}
+
+/* LEFT */
+.contact-left{
+  padding:80px 64px 80px 56px;
+  background:linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  border-right:0.5px solid rgba(176,138,74,0.18);
+}
+
+.contact-left .section-headline{
+  font-size:clamp(28px,3vw,44px);
+}
+
+.contact-details{
+  margin-top:48px;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+
+.contact-row{
+  padding:28px 0;
+  border-bottom:0.5px solid rgba(176,138,74,0.16);
+  display:flex;
+  gap:24px;
+  align-items:flex-start;
+}
+
+.contact-row:first-child{
+  border-top:0.5px solid rgba(176,138,74,0.16);
+}
+
+.contact-key{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(243,239,232,0.34);
+  min-width:90px;
+  padding-top:3px;
+  font-weight:500;
+}
+
+.contact-val{
+  font-family:var(--sans);
+  font-size:14px;
+  color:rgba(243,239,232,0.68);
+  font-weight:300;
+  line-height:1.7;
+}
+
+.contact-val a{
+  color:var(--brass-light);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.contact-val a:hover{
+  color:var(--ivory);
+}
+
+.contact-note{
+  margin-top:56px;
+  padding:32px;
+  border:0.5px solid rgba(176,138,74,0.20);
+  background:rgba(176,138,74,0.04);
+}
+
+.contact-note p{
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:300;
+  color:rgba(243,239,232,0.58);
+  line-height:1.7;
+  font-style:italic;
+}
+
+/* RIGHT */
+.contact-right{
+  padding:80px 56px 80px 64px;
+  background:#F3EFE8;
+}
+
+.form-title{
+  font-family:var(--serif);
+  font-size:clamp(24px,2.5vw,36px);
+  font-weight:300;
+  color:var(--navy);
+  margin-bottom:48px;
+  line-height:1.3;
+}
+
+.form-title em{
+  font-style:italic;
+  color:var(--brass);
+}
+
+.form-group{
+  margin-bottom:28px;
+}
+
+.form-label{
+  display:block;
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:10px;
+  font-weight:500;
+}
+
+.form-input,
+.form-textarea,
+.form-select{
+  width:100%;
+  background:rgba(255,255,255,0.36);
+  border:0.5px solid rgba(176,138,74,0.30);
+  color:var(--navy);
+  font-family:var(--sans);
+  font-size:14px;
+  font-weight:300;
+  padding:14px 16px;
+  outline:none;
+  transition:border-color 0.25s,background 0.25s;
+  -webkit-appearance:none;
+  appearance:none;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus{
+  border-color:rgba(176,138,74,0.70);
+  background:rgba(255,255,255,0.56);
+}
+
+.form-textarea{
+  resize:vertical;
+  min-height:130px;
+}
+
+.form-select{
+  cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B08A4A' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 16px center;
+}
+
+.form-select option{
+  background:#F3EFE8;
+  color:var(--navy);
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.btn-submit{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--ivory);
+  background:var(--navy);
+  border:none;
+  padding:18px 40px;
+  cursor:pointer;
+  font-weight:500;
+  transition:background 0.25s,color 0.25s;
+  width:100%;
+  margin-top:8px;
+}
+
+.btn-submit:hover{
+  background:var(--brass);
+  color:var(--navy-deep);
+}
+
+.form-disclaimer{
+  font-family:var(--sans);
+  font-size:11px;
+  color:rgba(14,26,43,0.48);
+  line-height:1.7;
+  margin-top:20px;
+  font-weight:300;
+}
 
 /* SUCCESS */
-.success-msg{display:none;text-align:center;padding:40px 0}
-.success-msg svg{margin-bottom:24px}
-.success-msg h3{font-family:var(--serif);font-size:28px;font-weight:300;color:var(--ivory);margin-bottom:12px}
-.success-msg p{font-family:var(--sans);font-size:14px;color:rgba(243,239,232,0.5);font-weight:300}
+.success-msg{
+  display:none;
+  text-align:center;
+  padding:40px 0;
+}
 
-footer{background:#0d0d0b;padding:40px 56px;display:flex;align-items:center;justify-content:space-between;border-top:0.5px solid rgba(176,138,74,0.1)}
-.footer-copy{font-family:var(--sans);font-size:11px;color:rgba(243,239,232,0.2);font-weight:300;letter-spacing:0.08em}
-.footer-tagline{font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(176,138,74,0.4)}
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
-.fade-in.visible{opacity:1;transform:none}
+.success-msg svg{
+  margin-bottom:24px;
+}
+
+.success-msg h3{
+  font-family:var(--serif);
+  font-size:28px;
+  font-weight:300;
+  color:var(--navy);
+  margin-bottom:12px;
+}
+
+.success-msg p{
+  font-family:var(--sans);
+  font-size:14px;
+  color:var(--greige);
+  font-weight:300;
+  line-height:1.7;
+}
+
+/* FOOTER */
+footer{
+  background:#08111F;
+  padding:40px 56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:0.5px solid rgba(176,138,74,0.18);
+}
+
+.footer-copy{
+  font-family:var(--sans);
+  font-size:11px;
+  color:rgba(243,239,232,0.28);
+  font-weight:300;
+  letter-spacing:0.08em;
+}
+
+.footer-tagline{
+  font-family:var(--serif);
+  font-size:13px;
+  font-style:italic;
+  color:rgba(176,138,74,0.62);
+}
+
+/* ANIMATION */
+.fade-in{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 0.7s ease,transform 0.7s ease;
+}
+
+.fade-in.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{
+    padding:0 24px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .page-hero{
+    padding:140px 28px 72px;
+  }
+
+  .contact-main{
+    grid-template-columns:1fr;
+  }
+
+  .contact-left,
+  .contact-right{
+    padding:72px 28px;
+  }
+
+  .contact-row{
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .contact-key{
+    min-width:auto;
+  }
+
+  .form-row{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  footer{
+    padding:32px 28px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+}
+
+@media(max-width:600px){
+  .section-headline{
+    font-size:36px;
+  }
+
+  .language-switch{
+    padding:4px 8px;
+  }
+
+  .lang-btn{
+    font-size:10px;
+  }
+}
 </style>
 </head>
+
 <body>
 
 <nav>
   <a href="index.html" class="logo-wrap">
-    <svg class="logo-icon" viewBox="0 0 36 36" fill="none"><polygon points="18,4 32,30 4,30" fill="none" stroke="#B08A4A" stroke-width="1.5"/><line x1="18" y1="16" x2="18" y2="30" stroke="#B08A4A" stroke-width="1.5"/><rect x="15.5" y="24" width="5" height="5" fill="#B08A4A"/></svg>
-    <div class="logo-text"><span class="logo-kts">KTS</span><span class="logo-adv">Advisory</span></div>
+    <svg class="logo-icon" viewBox="0 0 36 36" fill="none">
+      <polygon points="18,4 32,30 4,30" fill="none" stroke="#B08A4A" stroke-width="1.5"/>
+      <line x1="18" y1="16" x2="18" y2="30" stroke="#B08A4A" stroke-width="1.5"/>
+      <rect x="15.5" y="24" width="5" height="5" fill="#B08A4A"/>
+    </svg>
+    <div class="logo-text">
+      <span class="logo-kts">KTS</span>
+      <span class="logo-adv">Advisory</span>
+    </div>
   </a>
+
   <ul class="nav-links">
-    <li><a href="about.html">Chi siamo</a></li>
-    <li><a href="attivita.html">Attività</a></li>
-    <li><a href="approccio.html">Approccio</a></li>
-    <li><a href="studio.html">Lo Studio</a></li>
-    <li><a href="contatti.html" class="active">Contatti</a></li>
+    <li><a href="about.html" data-i18n="navAbout">Chi siamo</a></li>
+    <li><a href="attivita.html" data-i18n="navActivities">Attività</a></li>
+    <li><a href="approccio.html" data-i18n="navApproach">Approccio</a></li>
+    <li><a href="studio.html" data-i18n="navStudio">Lo Studio</a></li>
+    <li><a href="contatti.html" class="active" data-i18n="navContacts">Contatti</a></li>
   </ul>
-  <span class="nav-lang">IT</span>
+
+  <div class="language-switch">
+    <button class="lang-btn active" data-lang-switch="it">IT</button>
+    <span class="lang-separator">/</span>
+    <button class="lang-btn" data-lang-switch="en">EN</button>
+  </div>
 </nav>
 
 <div class="page-hero">
   <div class="page-hero-inner fade-in">
-    <p class="section-label">Contatti</p>
+    <p class="section-label" data-i18n="heroLabel">Contatti</p>
     <div class="brass-line"></div>
-    <h1 class="section-headline">Valutiamo insieme<br>il vostro prossimo<br><em>passo</em>.</h1>
-    <br>
-    <p>KTS Advisory accetta un numero selezionato di incarichi. Ogni richiesta viene valutata con attenzione. Vi risponderemo entro 48 ore lavorative.</p>
+
+    <h1 class="section-headline" data-i18n="heroTitle">
+      Parliamo della vostra<br><em>prossima operazione</em>.
+    </h1>
+
+    <p data-i18n="heroSubtitle">
+      Per richieste riservate, operazioni complesse o valutazioni preliminari, è possibile contattare KTS Advisory attraverso il modulo o i riferimenti indicati.
+    </p>
   </div>
 </div>
 
 <div class="contact-main">
-  <div class="contact-left fade-in">
-    <p class="section-label">Dove siamo</p>
-    <h2 class="section-headline" style="font-size:clamp(28px,3vw,42px)">Milano.<br><em>Operatività</em><br>internazionale.</h2>
-    <div class="contact-details">
-      <div class="contact-row">
-        <span class="contact-key">Sede</span>
-        <span class="contact-val">Milano, Italia</span>
+
+  <div class="contact-left">
+    <div class="fade-in">
+      <p class="section-label" data-i18n="detailsLabel">Riferimenti</p>
+      <h2 class="section-headline" data-i18n="detailsTitle">
+        Un primo confronto,<br>in modo <em>riservato</em>.
+      </h2>
+
+      <div class="contact-details">
+        <div class="contact-row">
+          <span class="contact-key" data-i18n="emailKey">Email</span>
+          <span class="contact-val">
+            <a href="mailto:info@ktsadvisory.com">info@ktsadvisory.com</a>
+          </span>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-key" data-i18n="locationKey">Sede</span>
+          <span class="contact-val" data-i18n="locationValue">Italia</span>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-key" data-i18n="focusKey">Focus</span>
+          <span class="contact-val" data-i18n="focusValue">Operazioni straordinarie, capital advisory, real estate, operazioni internazionali.</span>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-key" data-i18n="availabilityKey">Disponibilità</span>
+          <span class="contact-val" data-i18n="availabilityValue">Incontri su appuntamento e interlocuzioni riservate.</span>
+        </div>
       </div>
-      <div class="contact-row">
-        <span class="contact-key">Email</span>
-        <span class="contact-val"><a href="mailto:info@ktsadvisory.com">info@ktsadvisory.com</a></span>
+
+      <div class="contact-note">
+        <p data-i18n="noteText">
+          Le informazioni condivise saranno trattate con riservatezza e utilizzate esclusivamente per valutare la natura dell'operazione e l'eventuale avvio di un confronto.
+        </p>
       </div>
-      <div class="contact-row">
-        <span class="contact-key">Operatività</span>
-        <span class="contact-val">Internazionale — multi-giurisdizione</span>
-      </div>
-      <div class="contact-row">
-        <span class="contact-key">Lingue</span>
-        <span class="contact-val">Italiano · English · Français</span>
-      </div>
-      <div class="contact-row">
-        <span class="contact-key">Risposta</span>
-        <span class="contact-val">Entro 48 ore lavorative</span>
-      </div>
-    </div>
-    <div class="contact-note">
-      <p>"KTS Advisory lavora su un numero selezionato di operazioni. Privilegiamo incarichi in cui è richiesto un elevato livello di strutturazione, coordinamento e visione."</p>
     </div>
   </div>
 
-  <div class="contact-right fade-in" style="transition-delay:0.15s">
-    <h2 class="form-title">Raccontateci<br>la vostra <em>operazione</em>.</h2>
+  <div class="contact-right">
+    <div id="form-wrap" class="fade-in">
+      <h2 class="form-title" data-i18n="formTitle">
+        Inviateci una richiesta<br><em>preliminare</em>.
+      </h2>
 
-    <div id="form-wrap">
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Nome</label>
-          <input type="text" class="form-input" id="fname">
+      <form name="contatti" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
+        <input type="hidden" name="form-name" value="contatti">
+        <p style="display:none">
+          <label>Non compilare: <input name="bot-field"></label>
+        </p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="nome" data-i18n="nameLabel">Nome</label>
+            <input class="form-input" type="text" id="nome" name="nome" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="cognome" data-i18n="surnameLabel">Cognome</label>
+            <input class="form-input" type="text" id="cognome" name="cognome">
+          </div>
         </div>
-        <div class="form-group">
-          <label class="form-label">Cognome</label>
-          <input type="text" class="form-input" id="lname">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="email" data-i18n="formEmailLabel">Email</label>
+            <input class="form-input" type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="telefono" data-i18n="phoneLabel">Telefono</label>
+            <input class="form-input" type="tel" id="telefono" name="telefono">
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Azienda / Organizzazione</label>
-        <input type="text" class="form-input" id="company">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-input" id="email">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Area di interesse</label>
-        <select class="form-select" id="area">
-          <option value="" disabled selected></option>
-          <option>Operazioni Straordinarie / M&A</option>
-          <option>Real Estate di Fascia Alta</option>
-          <option>Operazioni Cross-Border</option>
-          <option>Finanza Strutturata</option>
-          <option>Commodities &amp; Asset Strategici</option>
-          <option>Strutturazione Fiscale / ESG</option>
-          <option>Altro</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Descrizione dell'operazione</label>
-        <textarea class="form-textarea" id="message" placeholder="Descriva brevemente il contesto e gli obiettivi dell'operazione..."></textarea>
-      </div>
-      <button class="btn-submit" id="submit-btn">Invia richiesta</button>
-      <p class="form-disclaimer">Le informazioni fornite saranno trattate con la massima riservatezza e utilizzate esclusivamente per valutare la vostra richiesta.</p>
+
+        <div class="form-group">
+          <label class="form-label" for="tipologia" data-i18n="typeLabel">Tipologia di richiesta</label>
+          <select class="form-select" id="tipologia" name="tipologia">
+            <option value="" data-i18n="typeOptionDefault">Seleziona una voce</option>
+            <option value="ma" data-i18n="typeOptionOne">M&A e operazioni straordinarie</option>
+            <option value="strategica" data-i18n="typeOptionTwo">Advisory strategica</option>
+            <option value="capital" data-i18n="typeOptionThree">Capital advisory</option>
+            <option value="real-estate" data-i18n="typeOptionFour">Operazioni immobiliari</option>
+            <option value="internazionale" data-i18n="typeOptionFive">Operazioni internazionali</option>
+            <option value="altro" data-i18n="typeOptionSix">Altro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="messaggio" data-i18n="messageLabel">Messaggio</label>
+          <textarea class="form-textarea" id="messaggio" name="messaggio" required></textarea>
+        </div>
+
+        <button class="btn-submit" type="submit" data-i18n="submitButton">Invia richiesta</button>
+
+        <p class="form-disclaimer" data-i18n="disclaimer">
+          L'invio del modulo non comporta l'instaurazione automatica di un rapporto professionale. La richiesta sarà valutata preliminarmente da KTS Advisory.
+        </p>
+      </form>
     </div>
 
-    <div class="success-msg" id="success-msg">
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="#B08A4A" stroke-width="1"/><polyline points="14,24 21,31 34,17" stroke="#B08A4A" stroke-width="1.5" fill="none"/></svg>
-      <h3>Richiesta inviata.</h3>
-      <p>Vi risponderemo entro 48 ore lavorative.<br>Grazie per averci contattato.</p>
+    <div class="success-msg" id="successMsg">
+      <svg width="42" height="42" viewBox="0 0 42 42" fill="none">
+        <circle cx="21" cy="21" r="20" stroke="#B08A4A" stroke-width="1"/>
+        <path d="M13 21.5L18.5 27L29.5 15.5" stroke="#B08A4A" stroke-width="1.5" fill="none"/>
+      </svg>
+      <h3 data-i18n="successTitle">Richiesta inviata</h3>
+      <p data-i18n="successText">Grazie. Vi ricontatteremo dopo una valutazione preliminare.</p>
     </div>
   </div>
+
 </div>
 
 <footer>
-  <span class="footer-copy">© 2025 KTS Advisory S.r.l. — Milano. Tutti i diritti riservati.</span>
-  <span class="footer-tagline">Struttura. Visione. Risultato.</span>
+  <span class="footer-copy" data-i18n="footerCopy">© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
+  <span class="footer-tagline" data-i18n="footerTagline">Struttura. Visione. Risultato.</span>
 </footer>
 
 <script>
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.08});
-document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+const obs = new IntersectionObserver(
+  entries => entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+  }),
+  {threshold:0.1}
+);
 
-document.getElementById('submit-btn').addEventListener('click',function(){
-  const email=document.getElementById('email').value;
-  const name=document.getElementById('fname').value;
-  if(!name||!email){
-    this.textContent='Compila i campi obbligatori';
-    this.style.background='#5a4040';
-    setTimeout(()=>{this.textContent='Invia richiesta';this.style.background=''},2500);
-    return;
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+const translations = {
+  it: {
+    navAbout: "Chi siamo",
+    navActivities: "Attività",
+    navApproach: "Approccio",
+    navStudio: "Lo Studio",
+    navContacts: "Contatti",
+
+    heroLabel: "Contatti",
+    heroTitle: "Parliamo della vostra<br><em>prossima operazione</em>.",
+    heroSubtitle: "Per richieste riservate, operazioni complesse o valutazioni preliminari, è possibile contattare KTS Advisory attraverso il modulo o i riferimenti indicati.",
+
+    detailsLabel: "Riferimenti",
+    detailsTitle: "Un primo confronto,<br>in modo <em>riservato</em>.",
+    emailKey: "Email",
+    locationKey: "Sede",
+    locationValue: "Italia",
+    focusKey: "Focus",
+    focusValue: "Operazioni straordinarie, capital advisory, real estate, operazioni internazionali.",
+    availabilityKey: "Disponibilità",
+    availabilityValue: "Incontri su appuntamento e interlocuzioni riservate.",
+    noteText: "Le informazioni condivise saranno trattate con riservatezza e utilizzate esclusivamente per valutare la natura dell'operazione e l'eventuale avvio di un confronto.",
+
+    formTitle: "Inviateci una richiesta<br><em>preliminare</em>.",
+    nameLabel: "Nome",
+    surnameLabel: "Cognome",
+    formEmailLabel: "Email",
+    phoneLabel: "Telefono",
+    typeLabel: "Tipologia di richiesta",
+    typeOptionDefault: "Seleziona una voce",
+    typeOptionOne: "M&A e operazioni straordinarie",
+    typeOptionTwo: "Advisory strategica",
+    typeOptionThree: "Capital advisory",
+    typeOptionFour: "Operazioni immobiliari",
+    typeOptionFive: "Operazioni internazionali",
+    typeOptionSix: "Altro",
+    messageLabel: "Messaggio",
+    submitButton: "Invia richiesta",
+    disclaimer: "L'invio del modulo non comporta l'instaurazione automatica di un rapporto professionale. La richiesta sarà valutata preliminarmente da KTS Advisory.",
+
+    successTitle: "Richiesta inviata",
+    successText: "Grazie. Vi ricontatteremo dopo una valutazione preliminare.",
+
+    footerCopy: "© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.",
+    footerTagline: "Struttura. Visione. Risultato."
+  },
+
+  en: {
+    navAbout: "About us",
+    navActivities: "Services",
+    navApproach: "Approach",
+    navStudio: "The Firm",
+    navContacts: "Contacts",
+
+    heroLabel: "Contacts",
+    heroTitle: "Let us discuss your<br><em>next transaction</em>.",
+    heroSubtitle: "For confidential requests, complex transactions or preliminary assessments, you may contact KTS Advisory through the form or the details below.",
+
+    detailsLabel: "Details",
+    detailsTitle: "A first conversation,<br>with <em>discretion</em>.",
+    emailKey: "Email",
+    locationKey: "Base",
+    locationValue: "Italy",
+    focusKey: "Focus",
+    focusValue: "Extraordinary transactions, capital advisory, real estate, international transactions.",
+    availabilityKey: "Availability",
+    availabilityValue: "Meetings by appointment and confidential discussions.",
+    noteText: "The information shared will be treated confidentially and used exclusively to assess the nature of the transaction and the potential start of a discussion.",
+
+    formTitle: "Send us a<br><em>preliminary request</em>.",
+    nameLabel: "Name",
+    surnameLabel: "Surname",
+    formEmailLabel: "Email",
+    phoneLabel: "Phone",
+    typeLabel: "Type of request",
+    typeOptionDefault: "Select an option",
+    typeOptionOne: "M&A and extraordinary transactions",
+    typeOptionTwo: "Strategic advisory",
+    typeOptionThree: "Capital advisory",
+    typeOptionFour: "Real estate transactions",
+    typeOptionFive: "International transactions",
+    typeOptionSix: "Other",
+    messageLabel: "Message",
+    submitButton: "Send request",
+    disclaimer: "Submitting the form does not automatically create a professional relationship. The request will be preliminarily assessed by KTS Advisory.",
+
+    successTitle: "Request sent",
+    successText: "Thank you. We will contact you after a preliminary assessment.",
+
+    footerCopy: "© 2025 KTS Advisory S.r.l. — All rights reserved.",
+    footerTagline: "Structure. Vision. Outcome."
   }
-  document.getElementById('form-wrap').style.display='none';
-  document.getElementById('success-msg').style.display='block';
+};
+
+function setLanguage(lang){
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.getAttribute("data-i18n");
+    if(translations[lang] && translations[lang][key]){
+      element.innerHTML = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll("[data-lang-switch]").forEach(button => {
+    button.classList.toggle("active", button.getAttribute("data-lang-switch") === lang);
+  });
+
+  localStorage.setItem("siteLanguage", lang);
+}
+
+document.querySelectorAll("[data-lang-switch]").forEach(button => {
+  button.addEventListener("click", () => {
+    setLanguage(button.getAttribute("data-lang-switch"));
+  });
 });
+
+const savedLanguage = localStorage.getItem("siteLanguage") || "it";
+setLanguage(savedLanguage);
+
+const form = document.getElementById("contactForm");
+const formWrap = document.getElementById("form-wrap");
+const successMsg = document.getElementById("successMsg");
+
+if(form){
+  form.addEventListener("submit", function(){
+    formWrap.style.display = "none";
+    successMsg.style.display = "block";
+  });
+}
 </script>
+
 </body>
 </html>
