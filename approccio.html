@@ -4,135 +4,699 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KTS Advisory — Approccio</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ivory:#F3EFE8;--carbon:#161616;--brass:#B08A4A;--brass-light:#C9A96E;--greige:#8B847C;--dark:#1B1B1B;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',sans-serif}
+
+:root{
+  --ivory:#F3EFE8;
+  --carbon:#0E1A2B;
+  --navy:#0E1A2B;
+  --navy-soft:#13243A;
+  --navy-deep:#08111F;
+  --brass:#B08A4A;
+  --brass-light:#C9A96E;
+  --greige:#8B847C;
+  --dark:#0E1A2B;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',sans-serif;
+}
+
 html{scroll-behavior:smooth}
-body{background:var(--ivory);color:var(--carbon);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:72px;background:rgba(243,239,232,0.94);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(176,138,74,0.15)}
-.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-icon{width:36px;height:36px}
-.logo-text{display:flex;flex-direction:column;line-height:1}
-.logo-kts{font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:0.08em;color:var(--carbon)}
-.logo-adv{font-family:var(--sans);font-size:9px;letter-spacing:0.22em;color:var(--brass);text-transform:uppercase;font-weight:400;margin-top:2px}
-.nav-links{display:flex;gap:40px;list-style:none}
-.nav-links a{font-family:var(--sans);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--carbon);text-decoration:none;font-weight:400;opacity:0.6;transition:opacity 0.2s,color 0.2s}
-.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--brass)}
-.nav-lang{font-family:var(--sans);font-size:11px;letter-spacing:0.14em;color:var(--greige);cursor:pointer;border:0.5px solid rgba(139,132,124,0.4);padding:4px 12px}
-.section-label{font-family:var(--sans);font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--brass);margin-bottom:28px;font-weight:400}
-.section-headline{font-family:var(--serif);font-size:clamp(32px,3.5vw,52px);font-weight:300;line-height:1.2;color:var(--carbon)}
-.section-headline em{font-style:italic}
-.brass-line{width:32px;height:1px;background:var(--brass);margin-bottom:32px}
-.btn-primary{font-family:var(--sans);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ivory);background:var(--carbon);border:none;padding:15px 32px;cursor:pointer;text-decoration:none;font-weight:400;transition:background 0.25s;display:inline-block}
-.btn-primary:hover{background:var(--dark)}
-.link-arrow{font-family:var(--sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--carbon);text-decoration:none;border-bottom:0.5px solid var(--brass);padding-bottom:3px;display:inline-flex;align-items:center;gap:10px;transition:color 0.2s;font-weight:400}
-.link-arrow:hover{color:var(--brass)}
-.link-arrow::after{content:'→';font-size:14px}
+
+body{
+  background:var(--ivory);
+  color:var(--carbon);
+  font-family:var(--sans);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 56px;
+  height:72px;
+  background:rgba(243,239,232,0.94);
+  backdrop-filter:blur(12px);
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
+
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
+
+.logo-icon{
+  width:36px;
+  height:36px;
+}
+
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+
+.logo-kts{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:400;
+  letter-spacing:0.08em;
+  color:var(--navy);
+}
+
+.logo-adv{
+  font-family:var(--sans);
+  font-size:9px;
+  letter-spacing:0.22em;
+  color:var(--brass);
+  text-transform:uppercase;
+  font-weight:400;
+  margin-top:2px;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  list-style:none;
+}
+
+.nav-links a{
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--navy);
+  text-decoration:none;
+  font-weight:500;
+  opacity:0.68;
+  transition:opacity 0.2s,color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  opacity:1;
+  color:var(--brass);
+}
+
+.language-switch{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  border:0.5px solid rgba(176,138,74,0.45);
+  padding:5px 10px;
+  background:rgba(243,239,232,0.35);
+}
+
+.lang-btn{
+  border:none;
+  background:transparent;
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.14em;
+  color:var(--greige);
+  cursor:pointer;
+  font-weight:500;
+  transition:color 0.2s;
+}
+
+.lang-btn.active,
+.lang-btn:hover{
+  color:var(--brass);
+}
+
+.lang-separator{
+  font-family:var(--sans);
+  font-size:10px;
+  color:rgba(139,132,124,0.45);
+}
+
+/* SHARED */
+.section-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:28px;
+  font-weight:500;
+}
+
+.section-headline{
+  font-family:var(--serif);
+  font-size:clamp(32px,3.5vw,52px);
+  font-weight:300;
+  line-height:1.2;
+  color:var(--navy);
+}
+
+.section-headline em{
+  font-style:italic;
+  color:var(--brass);
+}
+
+.brass-line{
+  width:32px;
+  height:1px;
+  background:var(--brass);
+  margin-bottom:32px;
+}
+
+.btn-primary{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--ivory);
+  background:var(--navy);
+  border:none;
+  padding:15px 32px;
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:500;
+  transition:background 0.25s,color 0.25s;
+  display:inline-block;
+}
+
+.btn-primary:hover{
+  background:var(--brass);
+  color:var(--navy-deep);
+}
+
+.link-arrow{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--navy);
+  text-decoration:none;
+  border-bottom:0.5px solid var(--brass);
+  padding-bottom:3px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  transition:color 0.2s;
+  font-weight:500;
+}
+
+.link-arrow:hover{
+  color:var(--brass);
+}
+
+.link-arrow::after{
+  content:'→';
+  font-size:14px;
+}
 
 /* HERO */
-.page-hero{padding:160px 56px 120px;background:var(--ivory)}
-.hero-inner{max-width:800px}
-.hero-inner .section-headline{font-size:clamp(40px,5vw,68px);margin-bottom:40px}
-.hero-intro{font-family:var(--sans);font-size:16px;line-height:1.9;color:var(--greige);max-width:560px;font-weight:300}
+.page-hero{
+  padding:160px 56px 120px;
+  background:var(--ivory);
+}
 
-/* THREE PRINCIPLES */
-.principles{background:var(--dark);padding:100px 56px}
-.principles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-left:0.5px solid rgba(176,138,74,0.15);margin-top:56px}
-.principle{padding:48px 40px 48px 32px;border-right:0.5px solid rgba(176,138,74,0.15)}
-.principle-num{font-family:var(--serif);font-size:48px;font-weight:300;color:rgba(176,138,74,0.15);line-height:1;margin-bottom:16px}
-.principle-title{font-family:var(--serif);font-size:26px;font-weight:300;color:var(--ivory);margin-bottom:20px;line-height:1.3}
-.principle-title em{font-style:italic;color:var(--brass-light)}
-.principle-desc{font-family:var(--sans);font-size:13px;line-height:1.8;color:rgba(243,239,232,0.45);font-weight:300}
+.hero-inner{
+  max-width:860px;
+}
+
+.hero-inner .section-headline{
+  font-size:clamp(40px,5vw,68px);
+  margin-bottom:40px;
+}
+
+.hero-intro{
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.9;
+  color:var(--greige);
+  max-width:620px;
+  font-weight:300;
+}
+
+/* PRINCIPLES */
+.principles{
+  background:linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  padding:100px 56px;
+  border-top:1px solid rgba(176,138,74,0.22);
+  border-bottom:1px solid rgba(176,138,74,0.18);
+}
+
+.principles .section-label{
+  color:var(--brass-light);
+}
+
+.principles .section-headline{
+  color:var(--ivory);
+}
+
+.principles .section-headline em{
+  color:var(--brass-light);
+}
+
+.principles-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border-left:0.5px solid rgba(176,138,74,0.22);
+  margin-top:56px;
+}
+
+.principle{
+  padding:48px 40px 48px 32px;
+  border-right:0.5px solid rgba(176,138,74,0.22);
+}
+
+.principle-num{
+  font-family:var(--serif);
+  font-size:48px;
+  font-weight:300;
+  color:rgba(176,138,74,0.22);
+  line-height:1;
+  margin-bottom:16px;
+}
+
+.principle-title{
+  font-family:var(--serif);
+  font-size:26px;
+  font-weight:300;
+  color:var(--ivory);
+  margin-bottom:20px;
+  line-height:1.3;
+}
+
+.principle-title em{
+  font-style:italic;
+  color:var(--brass-light);
+}
+
+.principle-desc{
+  font-family:var(--sans);
+  font-size:13px;
+  line-height:1.8;
+  color:rgba(243,239,232,0.58);
+  font-weight:300;
+}
 
 /* PROCESS */
-.process{padding:100px 56px}
-.process-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:72px;align-items:end}
-.process-header p{font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--greige);font-weight:300}
-.process-steps{display:flex;flex-direction:column;gap:0}
-.step{display:grid;grid-template-columns:80px 1fr 1fr;gap:40px;padding:48px 0;border-bottom:0.5px solid rgba(176,138,74,0.15);align-items:start}
-.step:first-child{border-top:0.5px solid rgba(176,138,74,0.15)}
-.step-num{font-family:var(--serif);font-size:44px;font-weight:300;color:rgba(176,138,74,0.25);line-height:1;padding-top:4px}
-.step-title{font-family:var(--serif);font-size:24px;font-weight:300;color:var(--carbon);line-height:1.3;margin-bottom:12px}
-.step-title em{font-style:italic}
-.step-label{font-family:var(--sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brass);font-weight:400}
-.step-desc{font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--greige);font-weight:300}
+.process{
+  padding:100px 56px;
+}
+
+.process-header{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  margin-bottom:72px;
+  align-items:end;
+}
+
+.process-header p{
+  font-family:var(--sans);
+  font-size:14px;
+  line-height:1.9;
+  color:var(--greige);
+  font-weight:300;
+}
+
+.process-steps{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+
+.step{
+  display:grid;
+  grid-template-columns:80px 1fr 1fr;
+  gap:40px;
+  padding:48px 0;
+  border-bottom:0.5px solid rgba(176,138,74,0.22);
+  align-items:start;
+}
+
+.step:first-child{
+  border-top:0.5px solid rgba(176,138,74,0.22);
+}
+
+.step-num{
+  font-family:var(--serif);
+  font-size:44px;
+  font-weight:300;
+  color:rgba(176,138,74,0.38);
+  line-height:1;
+  padding-top:4px;
+}
+
+.step-title{
+  font-family:var(--serif);
+  font-size:24px;
+  font-weight:300;
+  color:var(--navy);
+  line-height:1.3;
+  margin-bottom:12px;
+}
+
+.step-title em{
+  font-style:italic;
+  color:var(--brass);
+}
+
+.step-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--brass);
+  font-weight:500;
+}
+
+.step-desc{
+  font-family:var(--sans);
+  font-size:14px;
+  line-height:1.9;
+  color:var(--greige);
+  font-weight:300;
+}
 
 /* DIFFERENTIATORS */
-.diff-band{background:var(--ivory);padding:80px 56px;border-top:0.5px solid rgba(176,138,74,0.15)}
-.diff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:0.5px solid rgba(176,138,74,0.2);border-left:0.5px solid rgba(176,138,74,0.2);margin-top:48px}
-.diff-item{padding:44px 40px;border-right:0.5px solid rgba(176,138,74,0.2);border-bottom:0.5px solid rgba(176,138,74,0.2)}
-.diff-item:hover{background:rgba(176,138,74,0.03)}
-.diff-label{font-family:var(--sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brass);margin-bottom:16px;font-weight:400}
-.diff-title{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--carbon);margin-bottom:14px;line-height:1.3}
-.diff-desc{font-family:var(--sans);font-size:13px;line-height:1.8;color:var(--greige);font-weight:300}
+.diff-band{
+  background:var(--ivory);
+  padding:80px 56px;
+  border-top:0.5px solid rgba(176,138,74,0.18);
+}
+
+.diff-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:0;
+  border-top:0.5px solid rgba(176,138,74,0.22);
+  border-left:0.5px solid rgba(176,138,74,0.22);
+  margin-top:48px;
+}
+
+.diff-item{
+  padding:44px 40px;
+  border-right:0.5px solid rgba(176,138,74,0.22);
+  border-bottom:0.5px solid rgba(176,138,74,0.22);
+  transition:background 0.25s;
+}
+
+.diff-item:hover{
+  background:rgba(176,138,74,0.04);
+}
+
+.diff-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:16px;
+  font-weight:500;
+}
+
+.diff-title{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:300;
+  color:var(--navy);
+  margin-bottom:14px;
+  line-height:1.3;
+}
+
+.diff-desc{
+  font-family:var(--sans);
+  font-size:13px;
+  line-height:1.8;
+  color:var(--greige);
+  font-weight:300;
+}
 
 /* QUOTE */
-.quote-band{background:var(--dark);padding:100px 56px;text-align:center}
-.quote-text{font-family:var(--serif);font-size:clamp(28px,4vw,54px);font-weight:300;color:var(--ivory);line-height:1.3;max-width:760px;margin:0 auto;font-style:italic}
-.quote-text em{color:var(--brass-light);font-style:normal}
+.quote-band{
+  background:linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  padding:100px 56px;
+  text-align:center;
+  border-top:1px solid rgba(176,138,74,0.18);
+  border-bottom:1px solid rgba(176,138,74,0.18);
+}
 
-/* CTA BAND */
-.cta-band{padding:80px 56px;display:flex;align-items:center;justify-content:space-between;border-top:0.5px solid rgba(176,138,74,0.15)}
-.cta-band-text{font-family:var(--serif);font-size:clamp(22px,2.5vw,36px);font-weight:300;color:var(--carbon)}
-.cta-band-text em{font-style:italic}
+.quote-text{
+  font-family:var(--serif);
+  font-size:clamp(28px,4vw,54px);
+  font-weight:300;
+  color:var(--ivory);
+  line-height:1.3;
+  max-width:820px;
+  margin:0 auto;
+  font-style:italic;
+}
 
-footer{background:#0d0d0b;padding:40px 56px;display:flex;align-items:center;justify-content:space-between;border-top:0.5px solid rgba(176,138,74,0.1)}
-.footer-copy{font-family:var(--sans);font-size:11px;color:rgba(243,239,232,0.2);font-weight:300;letter-spacing:0.08em}
-.footer-tagline{font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(176,138,74,0.4)}
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
-.fade-in.visible{opacity:1;transform:none}
+.quote-text em{
+  color:var(--brass-light);
+  font-style:normal;
+}
+
+/* CTA */
+.cta-band{
+  padding:80px 56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:0.5px solid rgba(176,138,74,0.18);
+  background:var(--ivory);
+}
+
+.cta-band-text{
+  font-family:var(--serif);
+  font-size:clamp(22px,2.5vw,36px);
+  font-weight:300;
+  color:var(--navy);
+}
+
+.cta-band-text em{
+  font-style:italic;
+  color:var(--brass);
+}
+
+/* FOOTER */
+footer{
+  background:#08111F;
+  padding:40px 56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:0.5px solid rgba(176,138,74,0.18);
+}
+
+.footer-copy{
+  font-family:var(--sans);
+  font-size:11px;
+  color:rgba(243,239,232,0.28);
+  font-weight:300;
+  letter-spacing:0.08em;
+}
+
+.footer-tagline{
+  font-family:var(--serif);
+  font-size:13px;
+  font-style:italic;
+  color:rgba(176,138,74,0.62);
+}
+
+/* ANIMATION */
+.fade-in{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 0.7s ease,transform 0.7s ease;
+}
+
+.fade-in.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{
+    padding:0 24px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .page-hero{
+    padding:140px 28px 80px;
+  }
+
+  .principles{
+    padding:80px 28px;
+  }
+
+  .principles-grid{
+    grid-template-columns:1fr;
+    border-left:none;
+  }
+
+  .principle{
+    padding:36px 0;
+    border-right:none;
+    border-bottom:0.5px solid rgba(176,138,74,0.22);
+  }
+
+  .process{
+    padding:80px 28px;
+  }
+
+  .process-header{
+    grid-template-columns:1fr;
+    gap:40px;
+    margin-bottom:56px;
+  }
+
+  .step{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:40px 0;
+  }
+
+  .diff-band{
+    padding:80px 28px;
+  }
+
+  .diff-grid{
+    grid-template-columns:1fr;
+    border-left:none;
+  }
+
+  .diff-item{
+    padding:36px 0;
+    border-right:none;
+  }
+
+  .quote-band{
+    padding:80px 28px;
+  }
+
+  .cta-band{
+    padding:64px 28px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:32px;
+  }
+
+  footer{
+    padding:32px 28px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+}
+
+@media(max-width:600px){
+  .section-headline{
+    font-size:36px;
+  }
+
+  .language-switch{
+    padding:4px 8px;
+  }
+
+  .lang-btn{
+    font-size:10px;
+  }
+}
 </style>
 </head>
+
 <body>
 
 <nav>
   <a href="index.html" class="logo-wrap">
-    <svg class="logo-icon" viewBox="0 0 36 36" fill="none"><polygon points="18,4 32,30 4,30" fill="none" stroke="#B08A4A" stroke-width="1.5"/><line x1="18" y1="16" x2="18" y2="30" stroke="#B08A4A" stroke-width="1.5"/><rect x="15.5" y="24" width="5" height="5" fill="#B08A4A"/></svg>
-    <div class="logo-text"><span class="logo-kts">KTS</span><span class="logo-adv">Advisory</span></div>
+    <svg class="logo-icon" viewBox="0 0 36 36" fill="none">
+      <polygon points="18,4 32,30 4,30" fill="none" stroke="#B08A4A" stroke-width="1.5"/>
+      <line x1="18" y1="16" x2="18" y2="30" stroke="#B08A4A" stroke-width="1.5"/>
+      <rect x="15.5" y="24" width="5" height="5" fill="#B08A4A"/>
+    </svg>
+    <div class="logo-text">
+      <span class="logo-kts">KTS</span>
+      <span class="logo-adv">Advisory</span>
+    </div>
   </a>
+
   <ul class="nav-links">
-    <li><a href="about.html">Chi siamo</a></li>
-    <li><a href="attivita.html">Attività</a></li>
-    <li><a href="approccio.html" class="active">Approccio</a></li>
-    <li><a href="studio.html">Lo Studio</a></li>
-    <li><a href="contatti.html">Contatti</a></li>
+    <li><a href="about.html" data-i18n="navAbout">Chi siamo</a></li>
+    <li><a href="attivita.html" data-i18n="navActivities">Attività</a></li>
+    <li><a href="approccio.html" class="active" data-i18n="navApproach">Approccio</a></li>
+    <li><a href="studio.html" data-i18n="navStudio">Lo Studio</a></li>
+    <li><a href="contatti.html" data-i18n="navContacts">Contatti</a></li>
   </ul>
-  <span class="nav-lang">IT</span>
+
+  <div class="language-switch">
+    <button class="lang-btn active" data-lang-switch="it">IT</button>
+    <span class="lang-separator">/</span>
+    <button class="lang-btn" data-lang-switch="en">EN</button>
+  </div>
 </nav>
 
 <div class="page-hero">
   <div class="hero-inner fade-in">
-    <p class="section-label">Il nostro approccio</p>
+    <p class="section-label" data-i18n="heroLabel">Approccio</p>
     <div class="brass-line"></div>
-    <h1 class="section-headline">
-      Rigore nei processi.<br>
-      <em>Discrezione</em> nelle relazioni.<br>
-      Focalizzazione sul risultato.
+
+    <h1 class="section-headline" data-i18n="heroTitle">
+      Metodo, struttura<br>e <em>riservatezza</em>.
     </h1>
-    <br>
-    <p class="hero-intro">KTS Advisory adotta un approccio selettivo e strutturale alla gestione delle operazioni. Ogni incarico viene analizzato come un sistema complesso, in cui struttura, capitale e governance devono essere coerenti fin dalle fasi iniziali.</p>
+
+    <p class="hero-intro" data-i18n="heroIntro">
+      Ogni operazione complessa richiede una lettura integrata. KTS Advisory costruisce architetture operative, finanziarie e societarie coerenti con gli obiettivi del cliente e con la natura dell'operazione.
+    </p>
   </div>
 </div>
 
 <div class="principles">
-  <p class="section-label fade-in" style="color:var(--brass-light)">Tre principi fondamentali</p>
+  <div class="fade-in">
+    <p class="section-label" data-i18n="principlesLabel">Tre principi</p>
+    <h2 class="section-headline" data-i18n="principlesTitle">
+      La complessità si governa<br>con <em>metodo</em>.
+    </h2>
+  </div>
+
   <div class="principles-grid">
     <div class="principle fade-in">
-      <p class="principle-num">I</p>
-      <h2 class="principle-title">Approccio<br><em>selettivo</em></h2>
-      <p class="principle-desc">Non accettiamo tutti gli incarichi. Lavoriamo su un numero limitato di operazioni per garantire attenzione totale, presenza costante e qualità di esecuzione su ogni mandato.</p>
+      <p class="principle-num">01</p>
+      <h3 class="principle-title" data-i18n="principleOneTitle">Analisi <em>preliminare</em></h3>
+      <p class="principle-desc" data-i18n="principleOneDesc">
+        Prima di ogni decisione, analizziamo obiettivi, vincoli, rischi, controparti e variabili operative per comprendere la reale struttura dell'operazione.
+      </p>
     </div>
+
     <div class="principle fade-in" style="transition-delay:0.1s">
-      <p class="principle-num">II</p>
-      <h2 class="principle-title">Visione<br><em>strutturale</em></h2>
-      <p class="principle-desc">Ogni operazione è un sistema. L'intervento non si limita a un profilo tecnico: integra legale, fiscale e finanziario in un'architettura coerente, costruita intorno all'obiettivo dell'operazione.</p>
+      <p class="principle-num">02</p>
+      <h3 class="principle-title" data-i18n="principleTwoTitle">Architettura <em>dedicata</em></h3>
+      <p class="principle-desc" data-i18n="principleTwoDesc">
+        Non adottiamo modelli standard. Ogni incarico viene progettato attraverso una struttura specifica, coerente con capitale, governance e obiettivi.
+      </p>
     </div>
+
     <div class="principle fade-in" style="transition-delay:0.2s">
-      <p class="principle-num">III</p>
-      <h2 class="principle-title">Esecuzione<br><em>rigorosa</em></h2>
-      <p class="principle-desc">Il rigore non è un metodo, è una postura. Dall'analisi iniziale alla closing, ogni fase dell'operazione è gestita con precisione, riservatezza e orientamento al risultato.</p>
+      <p class="principle-num">03</p>
+      <h3 class="principle-title" data-i18n="principleThreeTitle">Execution <em>coordinata</em></h3>
+      <p class="principle-desc" data-i18n="principleThreeDesc">
+        Coordiniamo le fasi operative con una visione unitaria, mantenendo allineati profili strategici, legali, fiscali, finanziari e relazionali.
+      </p>
     </div>
   </div>
 </div>
@@ -140,92 +704,316 @@ footer{background:#0d0d0b;padding:40px 56px;display:flex;align-items:center;just
 <div class="process">
   <div class="process-header fade-in">
     <div>
-      <p class="section-label">Come lavoriamo</p>
-      <h2 class="section-headline">Il processo<br><em>operativo</em>.</h2>
+      <p class="section-label" data-i18n="processLabel">Processo operativo</p>
+      <h2 class="section-headline" data-i18n="processTitle">
+        Dal quadro iniziale<br>alla <em>chiusura</em>.
+      </h2>
     </div>
-    <p>L'intervento di KTS Advisory segue un percorso strutturato, ma non standardizzato. Ogni fase è adattata alla specificità dell'operazione, con un approccio che privilegia la coerenza tra struttura, governance e obiettivi.</p>
+
+    <p data-i18n="processIntro">
+      L'approccio di KTS Advisory è pensato per accompagnare il cliente in tutte le fasi dell'operazione: dalla comprensione del contesto alla definizione della struttura, fino al coordinamento esecutivo.
+    </p>
   </div>
+
   <div class="process-steps">
     <div class="step fade-in">
-      <span class="step-num">01</span>
+      <p class="step-num">01</p>
       <div>
-        <p class="step-label">Analisi</p>
-        <h3 class="step-title">Comprensione<br><em>dell'operazione</em></h3>
+        <h3 class="step-title" data-i18n="stepOneTitle">Comprensione del <em>contesto</em></h3>
+        <p class="step-label" data-i18n="stepOneLabel">Analisi iniziale</p>
       </div>
-      <p class="step-desc">La prima fase è dedicata alla comprensione profonda del contesto: obiettivi del cliente, struttura esistente, vincoli regolatori e potenziali criticità. Non esistono soluzioni standard: ogni analisi parte da zero.</p>
+      <p class="step-desc" data-i18n="stepOneDesc">
+        Raccogliamo informazioni, definiamo obiettivi, vincoli e criticità, individuando i profili sensibili dell'operazione.
+      </p>
     </div>
-    <div class="step fade-in" style="transition-delay:0.07s">
-      <span class="step-num">02</span>
+
+    <div class="step fade-in">
+      <p class="step-num">02</p>
       <div>
-        <p class="step-label">Architettura</p>
-        <h3 class="step-title">Definizione della<br><em>struttura</em></h3>
+        <h3 class="step-title" data-i18n="stepTwoTitle">Definizione della <em>struttura</em></h3>
+        <p class="step-label" data-i18n="stepTwoLabel">Architettura</p>
       </div>
-      <p class="step-desc">Sulla base dell'analisi, definiamo l'architettura dell'operazione: struttura giuridica, governance, architettura del capitale e profili fiscali. Ogni elemento è progettato per garantire coerenza sistemica.</p>
+      <p class="step-desc" data-i18n="stepTwoDesc">
+        Disegniamo l'architettura societaria, finanziaria e contrattuale più coerente con il risultato atteso.
+      </p>
     </div>
-    <div class="step fade-in" style="transition-delay:0.14s">
-      <span class="step-num">03</span>
+
+    <div class="step fade-in">
+      <p class="step-num">03</p>
       <div>
-        <p class="step-label">Coordinamento</p>
-        <h3 class="step-title">Integrazione<br><em>delle competenze</em></h3>
+        <h3 class="step-title" data-i18n="stepThreeTitle">Coordinamento delle <em>competenze</em></h3>
+        <p class="step-label" data-i18n="stepThreeLabel">Integrazione</p>
       </div>
-      <p class="step-desc">KTS Advisory coordina l'integrazione di profili legali, fiscali e finanziari in modo unitario. Il cliente ha un unico punto di riferimento che mantiene la visione d'insieme sull'intera operazione.</p>
+      <p class="step-desc" data-i18n="stepThreeDesc">
+        Allineiamo consulenti, professionisti, controparti e stakeholder, mantenendo un punto di regia unitario.
+      </p>
     </div>
-    <div class="step fade-in" style="transition-delay:0.21s">
-      <span class="step-num">04</span>
+
+    <div class="step fade-in">
+      <p class="step-num">04</p>
       <div>
-        <p class="step-label">Esecuzione</p>
-        <h3 class="step-title">Accompagnamento<br><em>alla closing</em></h3>
+        <h3 class="step-title" data-i18n="stepFourTitle">Gestione della <em>negoziazione</em></h3>
+        <p class="step-label" data-i18n="stepFourLabel">Relazioni</p>
       </div>
-      <p class="step-desc">Dalla strutturazione iniziale alla finalizzazione dell'operazione, KTS Advisory rimane presente e operativo. La riservatezza, il rigore e l'orientamento al risultato guidano ogni fase dell'esecuzione.</p>
+      <p class="step-desc" data-i18n="stepFourDesc">
+        Supportiamo il cliente nella gestione delle relazioni, delle trattative e delle fasi decisionali più delicate.
+      </p>
+    </div>
+
+    <div class="step fade-in">
+      <p class="step-num">05</p>
+      <div>
+        <h3 class="step-title" data-i18n="stepFiveTitle">Execution e <em>chiusura</em></h3>
+        <p class="step-label" data-i18n="stepFiveLabel">Risultato</p>
+      </div>
+      <p class="step-desc" data-i18n="stepFiveDesc">
+        Accompagniamo l'operazione fino alla sua realizzazione, preservando coerenza, riservatezza e controllo del processo.
+      </p>
     </div>
   </div>
 </div>
 
 <div class="diff-band">
-  <p class="section-label fade-in">Cosa ci distingue</p>
+  <div class="fade-in">
+    <p class="section-label" data-i18n="diffLabel">Elementi distintivi</p>
+    <h2 class="section-headline" data-i18n="diffTitle">
+      Perché il metodo<br>fa la <em>differenza</em>.
+    </h2>
+  </div>
+
   <div class="diff-grid">
     <div class="diff-item fade-in">
-      <p class="diff-label">Indipendenza</p>
-      <h3 class="diff-title">Nessun conflitto di interessi.</h3>
-      <p class="diff-desc">KTS Advisory è una boutique indipendente. Non facciamo parte di grandi strutture con interessi multipli. Il nostro unico obiettivo è il risultato del cliente.</p>
+      <p class="diff-label" data-i18n="diffOneLabel">Visione unitaria</p>
+      <h3 class="diff-title" data-i18n="diffOneTitle">Una sola regia per profili diversi.</h3>
+      <p class="diff-desc" data-i18n="diffOneDesc">
+        Evitiamo letture frammentate dell'operazione, integrando fin dall'inizio profili legali, fiscali, finanziari e strategici.
+      </p>
     </div>
-    <div class="diff-item fade-in" style="transition-delay:0.08s">
-      <p class="diff-label">Integrazione</p>
-      <h3 class="diff-title">Un unico punto di riferimento.</h3>
-      <p class="diff-desc">Legale, fiscale, finanziario: tre profili in un unico approccio. Il cliente non deve coordinare professionisti separati — lo facciamo noi, garantendo coerenza sistemica.</p>
+
+    <div class="diff-item fade-in">
+      <p class="diff-label" data-i18n="diffTwoLabel">Selettività</p>
+      <h3 class="diff-title" data-i18n="diffTwoTitle">Pochi mandati, alta attenzione.</h3>
+      <p class="diff-desc" data-i18n="diffTwoDesc">
+        Lavoriamo su un numero limitato di incarichi, garantendo presenza, continuità e attenzione ai dettagli.
+      </p>
     </div>
-    <div class="diff-item fade-in" style="transition-delay:0.08s">
-      <p class="diff-label">Selettività</p>
-      <h3 class="diff-title">Pochi mandati, massima qualità.</h3>
-      <p class="diff-desc">La selettività non è un limite operativo: è la garanzia che ogni cliente riceva attenzione totale, analisi approfondita e presenza costante durante tutta l'operazione.</p>
+
+    <div class="diff-item fade-in">
+      <p class="diff-label" data-i18n="diffThreeLabel">Riservatezza</p>
+      <h3 class="diff-title" data-i18n="diffThreeTitle">Discrezione come metodo operativo.</h3>
+      <p class="diff-desc" data-i18n="diffThreeDesc">
+        La gestione delle informazioni e delle relazioni avviene con il massimo livello di riservatezza.
+      </p>
     </div>
-    <div class="diff-item fade-in" style="transition-delay:0.16s">
-      <p class="diff-label">Riservatezza</p>
-      <h3 class="diff-title">Discrezione strutturale.</h3>
-      <p class="diff-desc">La riservatezza è un elemento architetturale del nostro approccio. Non è una promessa: è una modalità operativa che si riflette in ogni aspetto della gestione dell'incarico.</p>
+
+    <div class="diff-item fade-in">
+      <p class="diff-label" data-i18n="diffFourLabel">Internazionalità</p>
+      <h3 class="diff-title" data-i18n="diffFourTitle">Contesti complessi e operazioni cross-border.</h3>
+      <p class="diff-desc" data-i18n="diffFourDesc">
+        Operiamo con una prospettiva internazionale, coordinando strutture, controparti e giurisdizioni diverse.
+      </p>
     </div>
   </div>
 </div>
 
 <div class="quote-band">
-  <p class="quote-text fade-in">
-    "L'intervento si concentra sulla<br>definizione dell'architettura<br>dell'operazione — <em>non sulla vendita di servizi.</em>"
+  <p class="quote-text fade-in" data-i18n="quoteText">
+    "La struttura non segue l'operazione.<br><em>La precede.</em>"
   </p>
 </div>
 
 <div class="cta-band fade-in">
-  <p class="cta-band-text">Valutiamo insieme<br>la vostra prossima <em>operazione</em>.</p>
-  <a href="contatti.html" class="btn-primary">Contattaci</a>
+  <p class="cta-band-text" data-i18n="ctaText">
+    Costruiamo insieme<br>la struttura della vostra <em>operazione</em>.
+  </p>
+  <a href="contatti.html" class="btn-primary" data-i18n="ctaButton">Contattaci</a>
 </div>
 
 <footer>
-  <span class="footer-copy">© 2025 KTS Advisory S.r.l. — Milano. Tutti i diritti riservati.</span>
-  <span class="footer-tagline">Struttura. Visione. Risultato.</span>
+  <span class="footer-copy" data-i18n="footerCopy">© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
+  <span class="footer-tagline" data-i18n="footerTagline">Struttura. Visione. Risultato.</span>
 </footer>
 
 <script>
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.08});
-document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+const obs = new IntersectionObserver(
+  entries => entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+  }),
+  {threshold:0.1}
+);
+
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+const translations = {
+  it: {
+    navAbout: "Chi siamo",
+    navActivities: "Attività",
+    navApproach: "Approccio",
+    navStudio: "Lo Studio",
+    navContacts: "Contatti",
+
+    heroLabel: "Approccio",
+    heroTitle: "Metodo, struttura<br>e <em>riservatezza</em>.",
+    heroIntro: "Ogni operazione complessa richiede una lettura integrata. KTS Advisory costruisce architetture operative, finanziarie e societarie coerenti con gli obiettivi del cliente e con la natura dell'operazione.",
+
+    principlesLabel: "Tre principi",
+    principlesTitle: "La complessità si governa<br>con <em>metodo</em>.",
+    principleOneTitle: "Analisi <em>preliminare</em>",
+    principleOneDesc: "Prima di ogni decisione, analizziamo obiettivi, vincoli, rischi, controparti e variabili operative per comprendere la reale struttura dell'operazione.",
+    principleTwoTitle: "Architettura <em>dedicata</em>",
+    principleTwoDesc: "Non adottiamo modelli standard. Ogni incarico viene progettato attraverso una struttura specifica, coerente con capitale, governance e obiettivi.",
+    principleThreeTitle: "Execution <em>coordinata</em>",
+    principleThreeDesc: "Coordiniamo le fasi operative con una visione unitaria, mantenendo allineati profili strategici, legali, fiscali, finanziari e relazionali.",
+
+    processLabel: "Processo operativo",
+    processTitle: "Dal quadro iniziale<br>alla <em>chiusura</em>.",
+    processIntro: "L'approccio di KTS Advisory è pensato per accompagnare il cliente in tutte le fasi dell'operazione: dalla comprensione del contesto alla definizione della struttura, fino al coordinamento esecutivo.",
+
+    stepOneTitle: "Comprensione del <em>contesto</em>",
+    stepOneLabel: "Analisi iniziale",
+    stepOneDesc: "Raccogliamo informazioni, definiamo obiettivi, vincoli e criticità, individuando i profili sensibili dell'operazione.",
+
+    stepTwoTitle: "Definizione della <em>struttura</em>",
+    stepTwoLabel: "Architettura",
+    stepTwoDesc: "Disegniamo l'architettura societaria, finanziaria e contrattuale più coerente con il risultato atteso.",
+
+    stepThreeTitle: "Coordinamento delle <em>competenze</em>",
+    stepThreeLabel: "Integrazione",
+    stepThreeDesc: "Allineiamo consulenti, professionisti, controparti e stakeholder, mantenendo un punto di regia unitario.",
+
+    stepFourTitle: "Gestione della <em>negoziazione</em>",
+    stepFourLabel: "Relazioni",
+    stepFourDesc: "Supportiamo il cliente nella gestione delle relazioni, delle trattative e delle fasi decisionali più delicate.",
+
+    stepFiveTitle: "Execution e <em>chiusura</em>",
+    stepFiveLabel: "Risultato",
+    stepFiveDesc: "Accompagniamo l'operazione fino alla sua realizzazione, preservando coerenza, riservatezza e controllo del processo.",
+
+    diffLabel: "Elementi distintivi",
+    diffTitle: "Perché il metodo<br>fa la <em>differenza</em>.",
+
+    diffOneLabel: "Visione unitaria",
+    diffOneTitle: "Una sola regia per profili diversi.",
+    diffOneDesc: "Evitiamo letture frammentate dell'operazione, integrando fin dall'inizio profili legali, fiscali, finanziari e strategici.",
+
+    diffTwoLabel: "Selettività",
+    diffTwoTitle: "Pochi mandati, alta attenzione.",
+    diffTwoDesc: "Lavoriamo su un numero limitato di incarichi, garantendo presenza, continuità e attenzione ai dettagli.",
+
+    diffThreeLabel: "Riservatezza",
+    diffThreeTitle: "Discrezione come metodo operativo.",
+    diffThreeDesc: "La gestione delle informazioni e delle relazioni avviene con il massimo livello di riservatezza.",
+
+    diffFourLabel: "Internazionalità",
+    diffFourTitle: "Contesti complessi e operazioni cross-border.",
+    diffFourDesc: "Operiamo con una prospettiva internazionale, coordinando strutture, controparti e giurisdizioni diverse.",
+
+    quoteText: "\"La struttura non segue l'operazione.<br><em>La precede.</em>\"",
+
+    ctaText: "Costruiamo insieme<br>la struttura della vostra <em>operazione</em>.",
+    ctaButton: "Contattaci",
+    footerCopy: "© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.",
+    footerTagline: "Struttura. Visione. Risultato."
+  },
+
+  en: {
+    navAbout: "About us",
+    navActivities: "Services",
+    navApproach: "Approach",
+    navStudio: "The Firm",
+    navContacts: "Contacts",
+
+    heroLabel: "Approach",
+    heroTitle: "Method, structure<br>and <em>discretion</em>.",
+    heroIntro: "Every complex transaction requires an integrated reading. KTS Advisory builds operational, financial and corporate architectures aligned with the client’s objectives and the nature of the transaction.",
+
+    principlesLabel: "Three principles",
+    principlesTitle: "Complexity is governed<br>through <em>method</em>.",
+    principleOneTitle: "Preliminary <em>analysis</em>",
+    principleOneDesc: "Before any decision, we analyse objectives, constraints, risks, counterparties and operational variables to understand the real structure of the transaction.",
+    principleTwoTitle: "Dedicated <em>architecture</em>",
+    principleTwoDesc: "We do not adopt standard models. Each mandate is designed through a specific structure, consistent with capital, governance and objectives.",
+    principleThreeTitle: "Coordinated <em>execution</em>",
+    principleThreeDesc: "We coordinate operational phases with a unified vision, keeping strategic, legal, tax, financial and relational profiles aligned.",
+
+    processLabel: "Operating process",
+    processTitle: "From initial picture<br>to <em>closing</em>.",
+    processIntro: "KTS Advisory’s approach is designed to support the client through every phase of the transaction: from understanding the context to defining the structure and coordinating execution.",
+
+    stepOneTitle: "Understanding the <em>context</em>",
+    stepOneLabel: "Initial analysis",
+    stepOneDesc: "We collect information, define objectives, constraints and critical issues, identifying the sensitive profiles of the transaction.",
+
+    stepTwoTitle: "Defining the <em>structure</em>",
+    stepTwoLabel: "Architecture",
+    stepTwoDesc: "We design the corporate, financial and contractual architecture most consistent with the expected outcome.",
+
+    stepThreeTitle: "Coordination of <em>expertise</em>",
+    stepThreeLabel: "Integration",
+    stepThreeDesc: "We align consultants, professionals, counterparties and stakeholders, maintaining a single point of direction.",
+
+    stepFourTitle: "Managing the <em>negotiation</em>",
+    stepFourLabel: "Relationships",
+    stepFourDesc: "We support the client in managing relationships, negotiations and the most delicate decision-making phases.",
+
+    stepFiveTitle: "Execution and <em>closing</em>",
+    stepFiveLabel: "Outcome",
+    stepFiveDesc: "We accompany the transaction through to completion, preserving coherence, discretion and process control.",
+
+    diffLabel: "Distinctive elements",
+    diffTitle: "Why method<br>makes the <em>difference</em>.",
+
+    diffOneLabel: "Unified vision",
+    diffOneTitle: "One direction for different profiles.",
+    diffOneDesc: "We avoid fragmented readings of the transaction, integrating legal, tax, financial and strategic profiles from the outset.",
+
+    diffTwoLabel: "Selectivity",
+    diffTwoTitle: "Few mandates, high attention.",
+    diffTwoDesc: "We work on a limited number of mandates, ensuring presence, continuity and attention to detail.",
+
+    diffThreeLabel: "Discretion",
+    diffThreeTitle: "Discretion as an operating method.",
+    diffThreeDesc: "Information and relationships are managed with the highest level of confidentiality.",
+
+    diffFourLabel: "International scope",
+    diffFourTitle: "Complex contexts and cross-border transactions.",
+    diffFourDesc: "We operate with an international perspective, coordinating structures, counterparties and different jurisdictions.",
+
+    quoteText: "\"Structure does not follow the transaction.<br><em>It precedes it.</em>\"",
+
+    ctaText: "Let us build together<br>the structure of your <em>transaction</em>.",
+    ctaButton: "Contact us",
+    footerCopy: "© 2025 KTS Advisory S.r.l. — All rights reserved.",
+    footerTagline: "Structure. Vision. Outcome."
+  }
+};
+
+function setLanguage(lang){
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.getAttribute("data-i18n");
+    if(translations[lang] && translations[lang][key]){
+      element.innerHTML = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll("[data-lang-switch]").forEach(button => {
+    button.classList.toggle("active", button.getAttribute("data-lang-switch") === lang);
+  });
+
+  localStorage.setItem("siteLanguage", lang);
+}
+
+document.querySelectorAll("[data-lang-switch]").forEach(button => {
+  button.addEventListener("click", () => {
+    setLanguage(button.getAttribute("data-lang-switch"));
+  });
+});
+
+const savedLanguage = localStorage.getItem("siteLanguage") || "it";
+setLanguage(savedLanguage);
 </script>
+
 </body>
 </html>
