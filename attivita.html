@@ -4,244 +4,751 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KTS Advisory — Attività</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ivory:#F3EFE8;--carbon:#161616;--brass:#B08A4A;--brass-light:#C9A96E;--greige:#8B847C;--dark:#1B1B1B;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',sans-serif}
-html{scroll-behavior:smooth}
-body{background:var(--ivory);color:var(--carbon);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:72px;background:rgba(243,239,232,0.94);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(176,138,74,0.15)}
-.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-icon{width:36px;height:36px}
-.logo-text{display:flex;flex-direction:column;line-height:1}
-.logo-kts{font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:0.08em;color:var(--carbon)}
-.logo-adv{font-family:var(--sans);font-size:9px;letter-spacing:0.22em;color:var(--brass);text-transform:uppercase;font-weight:400;margin-top:2px}
-.nav-links{display:flex;gap:40px;list-style:none}
-.nav-links a{font-family:var(--sans);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--carbon);text-decoration:none;font-weight:400;opacity:0.6;transition:opacity 0.2s,color 0.2s}
-.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--brass)}
-.nav-lang{font-family:var(--sans);font-size:11px;letter-spacing:0.14em;color:var(--greige);cursor:pointer;border:0.5px solid rgba(139,132,124,0.4);padding:4px 12px}
-.section-label{font-family:var(--sans);font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--brass);margin-bottom:28px;font-weight:400}
-.section-headline{font-family:var(--serif);font-size:clamp(32px,3.5vw,52px);font-weight:300;line-height:1.2;color:var(--carbon)}
-.section-headline em{font-style:italic}
-.brass-line{width:32px;height:1px;background:var(--brass);margin-bottom:32px}
-.btn-primary{font-family:var(--sans);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ivory);background:var(--carbon);border:none;padding:15px 32px;cursor:pointer;text-decoration:none;font-weight:400;transition:background 0.25s;display:inline-block}
-.btn-primary:hover{background:var(--dark)}
-.link-arrow{font-family:var(--sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--carbon);text-decoration:none;border-bottom:0.5px solid var(--brass);padding-bottom:3px;display:inline-flex;align-items:center;gap:10px;transition:color 0.2s;font-weight:400}
-.link-arrow:hover{color:var(--brass)}
-.link-arrow::after{content:'→';font-size:14px}
 
-/* PAGE HERO */
-.page-hero{padding:160px 56px 100px;background:var(--dark);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
-.page-hero .section-label{color:var(--brass-light)}
-.page-hero .section-headline{color:var(--ivory);font-size:clamp(40px,5vw,64px)}
-.page-hero p{font-family:var(--sans);font-size:14px;line-height:1.9;color:rgba(243,239,232,0.5);font-weight:300}
+:root{
+  --ivory:#F3EFE8;
+  --carbon:#0E1A2B;
+  --navy:#0E1A2B;
+  --navy-soft:#13243A;
+  --navy-deep:#08111F;
+  --brass:#B08A4A;
+  --brass-light:#C9A96E;
+  --greige:#8B847C;
+  --dark:#0E1A2B;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',sans-serif;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--ivory);
+  color:var(--carbon);
+  font-family:var(--sans);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 56px;
+  height:72px;
+  background:rgba(243,239,232,0.94);
+  backdrop-filter:blur(12px);
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
+
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
+
+.logo-icon{
+  width:36px;
+  height:36px;
+}
+
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+
+.logo-kts{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:400;
+  letter-spacing:0.08em;
+  color:var(--navy);
+}
+
+.logo-adv{
+  font-family:var(--sans);
+  font-size:9px;
+  letter-spacing:0.22em;
+  color:var(--brass);
+  text-transform:uppercase;
+  font-weight:400;
+  margin-top:2px;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  list-style:none;
+}
+
+.nav-links a{
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--navy);
+  text-decoration:none;
+  font-weight:500;
+  opacity:0.68;
+  transition:opacity 0.2s,color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  opacity:1;
+  color:var(--brass);
+}
+
+.language-switch{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  border:0.5px solid rgba(176,138,74,0.45);
+  padding:5px 10px;
+  background:rgba(243,239,232,0.35);
+}
+
+.lang-btn{
+  border:none;
+  background:transparent;
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.14em;
+  color:var(--greige);
+  cursor:pointer;
+  font-weight:500;
+  transition:color 0.2s;
+}
+
+.lang-btn.active,
+.lang-btn:hover{
+  color:var(--brass);
+}
+
+.lang-separator{
+  font-family:var(--sans);
+  font-size:10px;
+  color:rgba(139,132,124,0.45);
+}
+
+/* SHARED */
+.section-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:28px;
+  font-weight:500;
+}
+
+.section-headline{
+  font-family:var(--serif);
+  font-size:clamp(32px,3.5vw,52px);
+  font-weight:300;
+  line-height:1.2;
+  color:var(--navy);
+}
+
+.section-headline em{
+  font-style:italic;
+  color:var(--brass);
+}
+
+.brass-line{
+  width:32px;
+  height:1px;
+  background:var(--brass);
+  margin-bottom:32px;
+}
+
+.btn-primary{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--ivory);
+  background:var(--navy);
+  border:none;
+  padding:15px 32px;
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:500;
+  transition:background 0.25s,color 0.25s;
+  display:inline-block;
+}
+
+.btn-primary:hover{
+  background:var(--brass);
+  color:var(--navy-deep);
+}
+
+.link-arrow{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--navy);
+  text-decoration:none;
+  border-bottom:0.5px solid var(--brass);
+  padding-bottom:3px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  transition:color 0.2s;
+  font-weight:500;
+}
+
+.link-arrow:hover{
+  color:var(--brass);
+}
+
+.link-arrow::after{
+  content:'→';
+  font-size:14px;
+}
+
+/* HERO */
+.page-hero{
+  padding:160px 56px 100px;
+  background:linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:end;
+  border-bottom:1px solid rgba(176,138,74,0.22);
+}
+
+.page-hero .section-label{
+  color:var(--brass-light);
+}
+
+.page-hero .section-headline{
+  color:var(--ivory);
+  font-size:clamp(40px,5vw,64px);
+}
+
+.page-hero .section-headline em{
+  color:var(--brass-light);
+}
+
+.page-hero p{
+  font-family:var(--sans);
+  font-size:14px;
+  line-height:1.9;
+  color:rgba(243,239,232,0.58);
+  font-weight:300;
+}
 
 /* ACTIVITIES */
-.activities-full{padding:0}
-.activity-block{display:grid;grid-template-columns:1fr 1fr;min-height:400px;border-bottom:0.5px solid rgba(176,138,74,0.15)}
-.activity-block:nth-child(even) .act-left{order:2}
-.activity-block:nth-child(even) .act-right{order:1}
-.act-left{padding:72px 64px 72px 56px;display:flex;flex-direction:column;justify-content:center;background:var(--ivory)}
-.act-right{background:var(--dark);padding:72px 56px 72px 64px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
-.act-right-bg{position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(176,138,74,0.025) 60px,rgba(176,138,74,0.025) 61px)}
-.act-right-inner{position:relative;z-index:1}
-.act-number{font-family:var(--serif);font-size:72px;font-weight:300;color:rgba(176,138,74,0.12);line-height:1;margin-bottom:-16px}
-.act-name{font-family:var(--serif);font-size:clamp(26px,2.5vw,36px);font-weight:300;line-height:1.25;color:var(--carbon);margin-bottom:20px}
-.act-name em{font-style:italic}
-.act-desc{font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--greige);font-weight:300;margin-bottom:28px}
-.act-tags{display:flex;flex-wrap:wrap;gap:8px}
-.act-tag{font-family:var(--sans);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brass);border:0.5px solid rgba(176,138,74,0.35);padding:5px 12px;font-weight:400}
-.act-right .act-name{color:var(--ivory)}
-.act-right .act-desc{color:rgba(243,239,232,0.5)}
-.act-right .act-tag{color:var(--brass-light);border-color:rgba(176,138,74,0.25)}
-.act-right .act-number{color:rgba(176,138,74,0.06)}
+.activities-full{
+  padding:0;
+}
+
+.activity-block{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:430px;
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
+
+.activity-block:nth-child(even) .act-left{
+  order:2;
+}
+
+.activity-block:nth-child(even) .act-right{
+  order:1;
+}
+
+.act-left{
+  padding:72px 64px 72px 56px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:var(--ivory);
+}
+
+.act-right{
+  background:linear-gradient(135deg,#0E1A2B 0%,#13243A 100%);
+  padding:72px 56px 72px 64px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.act-right-bg{
+  position:absolute;
+  inset:0;
+  background:
+    repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(176,138,74,0.04) 60px,rgba(176,138,74,0.04) 61px),
+    radial-gradient(circle at 70% 25%,rgba(201,169,110,0.13),transparent 36%);
+}
+
+.act-right-inner{
+  position:relative;
+  z-index:1;
+}
+
+.act-number{
+  font-family:var(--serif);
+  font-size:72px;
+  font-weight:300;
+  color:rgba(176,138,74,0.20);
+  line-height:1;
+  margin-bottom:-16px;
+}
+
+.act-name{
+  font-family:var(--serif);
+  font-size:clamp(26px,2.5vw,36px);
+  font-weight:300;
+  line-height:1.25;
+  color:var(--navy);
+  margin-bottom:20px;
+}
+
+.act-name em{
+  font-style:italic;
+  color:var(--brass);
+}
+
+.act-desc{
+  font-family:var(--sans);
+  font-size:14px;
+  line-height:1.9;
+  color:var(--greige);
+  font-weight:300;
+  margin-bottom:28px;
+}
+
+.act-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.act-tag{
+  font-family:var(--sans);
+  font-size:9px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--brass);
+  border:0.5px solid rgba(176,138,74,0.35);
+  padding:5px 12px;
+  font-weight:500;
+}
+
+.act-right .act-name{
+  color:var(--ivory);
+}
+
+.act-right .act-name em{
+  color:var(--brass-light);
+}
+
+.act-right .act-desc{
+  color:rgba(243,239,232,0.58);
+}
+
+.act-right .act-tag{
+  color:var(--brass-light);
+  border-color:rgba(176,138,74,0.35);
+}
+
+.act-right .act-number{
+  color:rgba(176,138,74,0.14);
+}
 
 /* INTEGRATION BAND */
-.integration-band{padding:100px 56px;background:var(--ivory);text-align:center;border-top:0.5px solid rgba(176,138,74,0.15)}
-.integration-band .section-headline{max-width:640px;margin:0 auto 48px;font-size:clamp(26px,3vw,44px)}
-.integration-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-left:0.5px solid rgba(176,138,74,0.2);margin-top:64px}
-.int-pillar{padding:0 40px 0 32px;border-right:0.5px solid rgba(176,138,74,0.2);text-align:left}
-.int-pillar-label{font-family:var(--sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brass);margin-bottom:16px;font-weight:400}
-.int-pillar-text{font-family:var(--serif);font-size:20px;font-weight:300;color:var(--carbon);line-height:1.4}
+.integration-band{
+  padding:100px 56px;
+  background:var(--ivory);
+  text-align:center;
+  border-top:0.5px solid rgba(176,138,74,0.18);
+}
 
-/* CTA BAND */
-.cta-band{padding:80px 56px;display:flex;align-items:center;justify-content:space-between;background:var(--dark)}
-.cta-band-text{font-family:var(--serif);font-size:clamp(22px,2.5vw,36px);font-weight:300;color:var(--ivory)}
-.cta-band-text em{font-style:italic}
+.integration-band .section-headline{
+  max-width:720px;
+  margin:0 auto 48px;
+  font-size:clamp(26px,3vw,44px);
+}
 
-footer{background:#0d0d0b;padding:40px 56px;display:flex;align-items:center;justify-content:space-between;border-top:0.5px solid rgba(176,138,74,0.1)}
-.footer-copy{font-family:var(--sans);font-size:11px;color:rgba(243,239,232,0.2);font-weight:300;letter-spacing:0.08em}
-.footer-tagline{font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(176,138,74,0.4)}
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
-.fade-in.visible{opacity:1;transform:none}
+.integration-band p{
+  max-width:620px;
+  margin:0 auto;
+  font-family:var(--sans);
+  font-size:14px;
+  line-height:1.9;
+  color:var(--greige);
+}
+
+.integration-pillars{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border-left:0.5px solid rgba(176,138,74,0.22);
+  margin-top:64px;
+}
+
+.int-pillar{
+  padding:0 40px 0 32px;
+  border-right:0.5px solid rgba(176,138,74,0.22);
+  text-align:left;
+}
+
+.int-pillar-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:16px;
+  font-weight:500;
+}
+
+.int-pillar-text{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:300;
+  color:var(--navy);
+  line-height:1.4;
+}
+
+/* CTA */
+.cta-band{
+  padding:80px 56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  border-top:1px solid rgba(176,138,74,0.18);
+}
+
+.cta-band-text{
+  font-family:var(--serif);
+  font-size:clamp(22px,2.5vw,36px);
+  font-weight:300;
+  color:var(--ivory);
+}
+
+.cta-band-text em{
+  font-style:italic;
+  color:var(--brass-light);
+}
+
+.cta-band .btn-primary{
+  background:var(--brass);
+  color:var(--navy-deep);
+}
+
+.cta-band .btn-primary:hover{
+  background:var(--brass-light);
+}
+
+/* FOOTER */
+footer{
+  background:#08111F;
+  padding:40px 56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:0.5px solid rgba(176,138,74,0.18);
+}
+
+.footer-copy{
+  font-family:var(--sans);
+  font-size:11px;
+  color:rgba(243,239,232,0.28);
+  font-weight:300;
+  letter-spacing:0.08em;
+}
+
+.footer-tagline{
+  font-family:var(--serif);
+  font-size:13px;
+  font-style:italic;
+  color:rgba(176,138,74,0.62);
+}
+
+/* ANIMATION */
+.fade-in{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 0.7s ease,transform 0.7s ease;
+}
+
+.fade-in.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{
+    padding:0 24px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .page-hero{
+    grid-template-columns:1fr;
+    padding:140px 28px 72px;
+    gap:40px;
+  }
+
+  .activity-block,
+  .activity-block:nth-child(even){
+    grid-template-columns:1fr;
+  }
+
+  .activity-block:nth-child(even) .act-left,
+  .activity-block:nth-child(even) .act-right{
+    order:initial;
+  }
+
+  .act-left,
+  .act-right{
+    padding:64px 28px;
+  }
+
+  .integration-band{
+    padding:80px 28px;
+  }
+
+  .integration-pillars{
+    grid-template-columns:1fr;
+    border-left:none;
+    gap:32px;
+  }
+
+  .int-pillar{
+    padding:0 0 32px;
+    border-right:none;
+    border-bottom:0.5px solid rgba(176,138,74,0.22);
+  }
+
+  .cta-band{
+    padding:64px 28px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:32px;
+  }
+
+  footer{
+    padding:32px 28px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+}
+
+@media(max-width:600px){
+  .section-headline{
+    font-size:36px;
+  }
+
+  .language-switch{
+    padding:4px 8px;
+  }
+
+  .lang-btn{
+    font-size:10px;
+  }
+}
 </style>
 </head>
+
 <body>
 
 <nav>
   <a href="index.html" class="logo-wrap">
-    <svg class="logo-icon" viewBox="0 0 36 36" fill="none"><polygon points="18,4 32,30 4,30" fill="none" stroke="#B08A4A" stroke-width="1.5"/><line x1="18" y1="16" x2="18" y2="30" stroke="#B08A4A" stroke-width="1.5"/><rect x="15.5" y="24" width="5" height="5" fill="#B08A4A"/></svg>
-    <div class="logo-text"><span class="logo-kts">KTS</span><span class="logo-adv">Advisory</span></div>
+    <svg class="logo-icon" viewBox="0 0 36 36" fill="none">
+      <polygon points="18,4 32,30 4,30" fill="none" stroke="#B08A4A" stroke-width="1.5"/>
+      <line x1="18" y1="16" x2="18" y2="30" stroke="#B08A4A" stroke-width="1.5"/>
+      <rect x="15.5" y="24" width="5" height="5" fill="#B08A4A"/>
+    </svg>
+    <div class="logo-text">
+      <span class="logo-kts">KTS</span>
+      <span class="logo-adv">Advisory</span>
+    </div>
   </a>
+
   <ul class="nav-links">
-    <li><a href="about.html">Chi siamo</a></li>
-    <li><a href="attivita.html" class="active">Attività</a></li>
-    <li><a href="approccio.html">Approccio</a></li>
-    <li><a href="studio.html">Lo Studio</a></li>
-    <li><a href="contatti.html">Contatti</a></li>
+    <li><a href="about.html" data-i18n="navAbout">Chi siamo</a></li>
+    <li><a href="attivita.html" class="active" data-i18n="navActivities">Attività</a></li>
+    <li><a href="approccio.html" data-i18n="navApproach">Approccio</a></li>
+    <li><a href="studio.html" data-i18n="navStudio">Lo Studio</a></li>
+    <li><a href="contatti.html" data-i18n="navContacts">Contatti</a></li>
   </ul>
-  <span class="nav-lang">IT</span>
+
+  <div class="language-switch">
+    <button class="lang-btn active" data-lang-switch="it">IT</button>
+    <span class="lang-separator">/</span>
+    <button class="lang-btn" data-lang-switch="en">EN</button>
+  </div>
 </nav>
 
 <div class="page-hero">
   <div class="fade-in">
-    <p class="section-label">Attività</p>
-    <div class="brass-line" style="background:var(--brass)"></div>
-    <h1 class="section-headline">Aree di<br><em>intervento</em>.</h1>
+    <p class="section-label" data-i18n="heroLabel">Attività</p>
+    <div class="brass-line"></div>
+    <h1 class="section-headline" data-i18n="heroTitle">
+      Operazioni complesse.<br>Una <em>struttura</em><br>dedicata.
+    </h1>
   </div>
+
   <div class="fade-in" style="transition-delay:0.15s">
-    <p>KTS Advisory opera nella strutturazione e gestione di operazioni complesse. Ogni area richiede un approccio integrato, in cui competenze legali, fiscali e finanziarie convergono in una strategia unitaria costruita sull'operazione.</p>
+    <p data-i18n="heroSubtitle">
+      KTS Advisory interviene nelle fasi strategiche, strutturali ed esecutive di operazioni ad alto valore, integrando competenze corporate, finanziarie, immobiliari e internazionali.
+    </p>
   </div>
 </div>
 
 <div class="activities-full">
 
-  <!-- 01 -->
   <div class="activity-block">
     <div class="act-left fade-in">
       <p class="act-number">01</p>
-      <h2 class="act-name">Operazioni Straordinarie<br><em>&amp; Special Situations</em></h2>
-      <p class="act-desc">M&amp;A, aggregazioni, dismissioni, ristrutturazioni e gestione di situazioni complesse con impatto strategico significativo. Supportiamo l'intera architettura dell'operazione, dalla strutturazione iniziale alla closing.</p>
+      <h2 class="act-name" data-i18n="activityOneTitle">M&A e <em>operazioni straordinarie</em></h2>
+      <p class="act-desc" data-i18n="activityOneDesc">
+        Supportiamo imprenditori, gruppi societari e investitori nella strutturazione e gestione di operazioni di acquisizione, cessione, aggregazione, riorganizzazione e crescita esterna.
+      </p>
       <div class="act-tags">
-        <span class="act-tag">M&amp;A</span>
-        <span class="act-tag">Fusioni</span>
-        <span class="act-tag">Dismissioni</span>
-        <span class="act-tag">Ristrutturazioni</span>
-        <span class="act-tag">Special Situations</span>
+        <span class="act-tag" data-i18n="activityOneTagOne">Acquisizioni</span>
+        <span class="act-tag" data-i18n="activityOneTagTwo">Cessioni</span>
+        <span class="act-tag" data-i18n="activityOneTagThree">Aggregazioni</span>
+        <span class="act-tag" data-i18n="activityOneTagFour">Ristrutturazioni</span>
       </div>
     </div>
-    <div class="act-right">
+
+    <div class="act-right fade-in" style="transition-delay:0.1s">
       <div class="act-right-bg"></div>
       <div class="act-right-inner">
-        <p class="act-number">01</p>
-        <h2 class="act-name">Struttura,<br>capitale, visione.</h2>
-        <p class="act-desc">In ogni operazione straordinaria, la coerenza tra struttura giuridica, architettura del capitale e governance è determinante per il risultato. Il nostro intervento parte dalla definizione del framework dell'operazione.</p>
+        <h3 class="act-name" data-i18n="activityOneSideTitle">Struttura prima dell'esecuzione.</h3>
+        <p class="act-desc" data-i18n="activityOneSideDesc">
+          Ogni operazione viene analizzata nei suoi profili industriali, finanziari, fiscali e legali, costruendo un percorso coerente con gli obiettivi del cliente.
+        </p>
       </div>
     </div>
   </div>
 
-  <!-- 02 -->
   <div class="activity-block">
     <div class="act-left fade-in">
       <p class="act-number">02</p>
-      <h2 class="act-name">Real Estate<br><em>di Fascia Alta</em></h2>
-      <p class="act-desc">Sviluppo immobiliare e operazioni di investimento nel segmento premium e ultra-premium. Strutturazione giuridica e finanziaria integrata per operazioni di sviluppo, acquisizione e valorizzazione di asset immobiliari complessi.</p>
+      <h2 class="act-name" data-i18n="activityTwoTitle">Advisory <em>strategica</em></h2>
+      <p class="act-desc" data-i18n="activityTwoDesc">
+        Affianchiamo il management e gli azionisti nella definizione di strategie di crescita, riposizionamento, sviluppo societario e pianificazione di operazioni trasformative.
+      </p>
       <div class="act-tags">
-        <span class="act-tag">Sviluppo immobiliare</span>
-        <span class="act-tag">Acquisizioni</span>
-        <span class="act-tag">Asset premium</span>
-        <span class="act-tag">Strutturazione</span>
+        <span class="act-tag" data-i18n="activityTwoTagOne">Strategia</span>
+        <span class="act-tag" data-i18n="activityTwoTagTwo">Governance</span>
+        <span class="act-tag" data-i18n="activityTwoTagThree">Crescita</span>
+        <span class="act-tag" data-i18n="activityTwoTagFour">Execution</span>
       </div>
     </div>
-    <div class="act-right">
+
+    <div class="act-right fade-in" style="transition-delay:0.1s">
       <div class="act-right-bg"></div>
       <div class="act-right-inner">
-        <p class="act-number">02</p>
-        <h2 class="act-name">Architettura<br>del patrimonio.</h2>
-        <p class="act-desc">Le operazioni immobiliari di fascia alta richiedono una visione che integra aspetti urbanistici, finanziari, fiscali e di governance. Operiamo come partner strutturale, non come semplice advisor.</p>
+        <h3 class="act-name" data-i18n="activityTwoSideTitle">Decisioni strategiche, architettura concreta.</h3>
+        <p class="act-desc" data-i18n="activityTwoSideDesc">
+          Traduciamo obiettivi imprenditoriali in strutture operative, finanziarie e societarie sostenibili, evitando approcci standardizzati.
+        </p>
       </div>
     </div>
   </div>
 
-  <!-- 03 -->
   <div class="activity-block">
     <div class="act-left fade-in">
       <p class="act-number">03</p>
-      <h2 class="act-name">Operazioni<br><em>Cross-Border</em></h2>
-      <p class="act-desc">Strutture internazionali, operazioni in più giurisdizioni e advisory per investitori e aziende con ambizioni globali. Coordinamento di profili legali, fiscali e regolatori in contesti multi-paese.</p>
+      <h2 class="act-name" data-i18n="activityThreeTitle">Capital <em>advisory</em></h2>
+      <p class="act-desc" data-i18n="activityThreeDesc">
+        Supportiamo la ricerca, la selezione e la strutturazione di capitali a supporto di progetti imprenditoriali, operazioni straordinarie, sviluppo immobiliare e iniziative internazionali.
+      </p>
       <div class="act-tags">
-        <span class="act-tag">Multi-giurisdizione</span>
-        <span class="act-tag">Strutture internazionali</span>
-        <span class="act-tag">Cross-border M&amp;A</span>
-        <span class="act-tag">Investitori globali</span>
+        <span class="act-tag" data-i18n="activityThreeTagOne">Capitali</span>
+        <span class="act-tag" data-i18n="activityThreeTagTwo">Investitori</span>
+        <span class="act-tag" data-i18n="activityThreeTagThree">Finanza strutturata</span>
+        <span class="act-tag" data-i18n="activityThreeTagFour">Partnership</span>
       </div>
     </div>
-    <div class="act-right">
+
+    <div class="act-right fade-in" style="transition-delay:0.1s">
       <div class="act-right-bg"></div>
       <div class="act-right-inner">
-        <p class="act-number">03</p>
-        <h2 class="act-name">Visione<br>internazionale.</h2>
-        <p class="act-desc">La complessità cross-border richiede un coordinamento rigoroso tra professionisti e strutture in più paesi. KTS Advisory gestisce questa complessità come sistema unitario, garantendo coerenza e continuità.</p>
+        <h3 class="act-name" data-i18n="activityThreeSideTitle">Capitale coerente con l'operazione.</h3>
+        <p class="act-desc" data-i18n="activityThreeSideDesc">
+          Non ci limitiamo a cercare risorse finanziarie: contribuiamo a definire il capitale più adatto alla natura, ai tempi e agli obiettivi del progetto.
+        </p>
       </div>
     </div>
   </div>
 
-  <!-- 04 -->
   <div class="activity-block">
     <div class="act-left fade-in">
       <p class="act-number">04</p>
-      <h2 class="act-name">Finanza Strutturata<br><em>&amp; Architettura del Capitale</em></h2>
-      <p class="act-desc">Definizione dell'architettura finanziaria, accesso al capitale istituzionale e strutturazione di strumenti complessi. Dall'equity structuring al debt advisory, con visione integrata su governance e fiscalità.</p>
+      <h2 class="act-name" data-i18n="activityFourTitle">Operazioni <em>immobiliari</em></h2>
+      <p class="act-desc" data-i18n="activityFourDesc">
+        Interveniamo in operazioni real estate complesse, supportando la definizione della struttura societaria, finanziaria e contrattuale di acquisizioni, valorizzazioni e sviluppi immobiliari.
+      </p>
       <div class="act-tags">
-        <span class="act-tag">Equity structuring</span>
-        <span class="act-tag">Debt advisory</span>
-        <span class="act-tag">Capital markets</span>
-        <span class="act-tag">Governance</span>
+        <span class="act-tag" data-i18n="activityFourTagOne">Real Estate</span>
+        <span class="act-tag" data-i18n="activityFourTagTwo">Sviluppo</span>
+        <span class="act-tag" data-i18n="activityFourTagThree">Valorizzazione</span>
+        <span class="act-tag" data-i18n="activityFourTagFour">Asset strategici</span>
       </div>
     </div>
-    <div class="act-right">
+
+    <div class="act-right fade-in" style="transition-delay:0.1s">
       <div class="act-right-bg"></div>
       <div class="act-right-inner">
-        <p class="act-number">04</p>
-        <h2 class="act-name">Capitale<br>e struttura.</h2>
-        <p class="act-desc">L'architettura del capitale non è solo una questione finanziaria: è una scelta strategica che determina la governance, la flessibilità e il potenziale dell'operazione nel lungo periodo.</p>
+        <h3 class="act-name" data-i18n="activityFourSideTitle">Dal bene alla struttura.</h3>
+        <p class="act-desc" data-i18n="activityFourSideDesc">
+          Ogni asset immobiliare viene letto come parte di un'operazione più ampia, in cui valore, capitale, governance e tempi devono essere allineati.
+        </p>
       </div>
     </div>
   </div>
 
-  <!-- 05 -->
   <div class="activity-block">
     <div class="act-left fade-in">
       <p class="act-number">05</p>
-      <h2 class="act-name">Commodities<br><em>&amp; Asset Strategici</em></h2>
-      <p class="act-desc">Advisory su asset strategici e operazioni nel settore delle commodities con approccio selettivo e internazionale. Strutturazione di operazioni di trading, stoccaggio, logistica e valorizzazione di risorse strategiche.</p>
+      <h2 class="act-name" data-i18n="activityFiveTitle">Operazioni <em>internazionali</em> e commodities</h2>
+      <p class="act-desc" data-i18n="activityFiveDesc">
+        Supportiamo operazioni internazionali che richiedono coordinamento tra giurisdizioni, controparti, capitale e struttura, incluse iniziative nel settore delle commodities e degli asset strategici.
+      </p>
       <div class="act-tags">
-        <span class="act-tag">Commodities</span>
-        <span class="act-tag">Asset strategici</span>
-        <span class="act-tag">Trading structures</span>
-        <span class="act-tag">Risorse strategiche</span>
+        <span class="act-tag" data-i18n="activityFiveTagOne">Cross-border</span>
+        <span class="act-tag" data-i18n="activityFiveTagTwo">Commodities</span>
+        <span class="act-tag" data-i18n="activityFiveTagThree">Asset strategici</span>
+        <span class="act-tag" data-i18n="activityFiveTagFour">Coordinamento</span>
       </div>
     </div>
-    <div class="act-right">
-      <div class="act-right-bg"></div>
-      <div class="act-right-inner">
-        <p class="act-number">05</p>
-        <h2 class="act-name">Complessità<br>come vantaggio.</h2>
-        <p class="act-desc">Le operazioni su commodities e asset strategici operano in contesti regolatori e geopolitici complessi. KTS Advisory trasforma questa complessità in vantaggio strutturale per i propri clienti.</p>
-      </div>
-    </div>
-  </div>
 
-  <!-- 06 -->
-  <div class="activity-block">
-    <div class="act-left fade-in">
-      <p class="act-number">06</p>
-      <h2 class="act-name">Strutturazione Fiscale,<br><em>ESG &amp; Asset Alternativi</em></h2>
-      <p class="act-desc">Ottimizzazione fiscale, compliance ESG e accesso a classi di asset alternative per investitori istituzionali e family office. Strutturazione di veicoli di investimento e architetture patrimoniali efficienti.</p>
-      <div class="act-tags">
-        <span class="act-tag">Tax structuring</span>
-        <span class="act-tag">ESG compliance</span>
-        <span class="act-tag">Asset alternativi</span>
-        <span class="act-tag">Family office</span>
-      </div>
-    </div>
-    <div class="act-right">
+    <div class="act-right fade-in" style="transition-delay:0.1s">
       <div class="act-right-bg"></div>
       <div class="act-right-inner">
-        <p class="act-number">06</p>
-        <h2 class="act-name">Patrimonio<br>e futuro.</h2>
-        <p class="act-desc">La pianificazione fiscale e patrimoniale di lungo periodo richiede visione strategica, non solo ottimizzazione tecnica. Costruiamo strutture che resistono nel tempo e si adattano all'evoluzione del contesto normativo.</p>
+        <h3 class="act-name" data-i18n="activityFiveSideTitle">Una regia unica per contesti complessi.</h3>
+        <p class="act-desc" data-i18n="activityFiveSideDesc">
+          Le operazioni internazionali richiedono chiarezza, coordinamento e capacità di lettura dei rischi. KTS Advisory agisce come punto di sintesi tra struttura e execution.
+        </p>
       </div>
     </div>
   </div>
@@ -249,37 +756,226 @@ footer{background:#0d0d0b;padding:40px 56px;display:flex;align-items:center;just
 </div>
 
 <div class="integration-band">
-  <p class="section-label fade-in">Approccio integrato</p>
-  <h2 class="section-headline fade-in">Competenze legali, fiscali<br>e finanziarie. <em>Un unico punto</em><br>di riferimento.</h2>
-  <div class="integration-pillars fade-in" style="transition-delay:0.2s">
+  <p class="section-label fade-in" data-i18n="integrationLabel">Metodo integrato</p>
+  <h2 class="section-headline fade-in" data-i18n="integrationTitle">
+    Un'unica architettura per profili <em>legali</em>, fiscali e finanziari.
+  </h2>
+  <p class="fade-in" data-i18n="integrationText">
+    La complessità non viene gestita per compartimenti separati. Ogni operazione viene costruita attraverso una lettura unitaria delle variabili strategiche, societarie, finanziarie e contrattuali.
+  </p>
+
+  <div class="integration-pillars fade-in" style="transition-delay:0.15s">
     <div class="int-pillar">
-      <p class="int-pillar-label">Legale</p>
-      <p class="int-pillar-text">Strutturazione giuridica delle operazioni, governance societaria, contrattualistica complessa e gestione dei profili regolatori.</p>
+      <p class="int-pillar-label" data-i18n="pillarOneLabel">Analisi</p>
+      <p class="int-pillar-text" data-i18n="pillarOneText">Lettura preliminare degli obiettivi, delle criticità e dei vincoli operativi.</p>
     </div>
+
     <div class="int-pillar">
-      <p class="int-pillar-label">Fiscale</p>
-      <p class="int-pillar-text">Ottimizzazione fiscale, pianificazione patrimoniale, strutture internazionali e compliance in contesti multi-giurisdizionali.</p>
+      <p class="int-pillar-label" data-i18n="pillarTwoLabel">Struttura</p>
+      <p class="int-pillar-text" data-i18n="pillarTwoText">Definizione dell'architettura societaria, finanziaria e contrattuale.</p>
     </div>
+
     <div class="int-pillar">
-      <p class="int-pillar-label">Finanziario</p>
-      <p class="int-pillar-text">Architettura del capitale, accesso a fonti di finanziamento istituzionale, valutazione e strutturazione di strumenti complessi.</p>
+      <p class="int-pillar-label" data-i18n="pillarThreeLabel">Execution</p>
+      <p class="int-pillar-text" data-i18n="pillarThreeText">Coordinamento delle fasi operative fino alla chiusura dell'operazione.</p>
     </div>
   </div>
 </div>
 
 <div class="cta-band fade-in">
-  <p class="cta-band-text">Discutiamo<br>la vostra prossima <em>operazione</em>.</p>
-  <a href="contatti.html" class="btn-primary" style="color:var(--dark);background:var(--brass)">Contattaci</a>
+  <p class="cta-band-text" data-i18n="ctaText">
+    Ogni operazione richiede<br>una <em>struttura</em> dedicata.
+  </p>
+  <a href="contatti.html" class="btn-primary" data-i18n="ctaButton">Contattaci</a>
 </div>
 
 <footer>
-  <span class="footer-copy">© 2025 KTS Advisory S.r.l. — Milano. Tutti i diritti riservati.</span>
-  <span class="footer-tagline">Struttura. Visione. Risultato.</span>
+  <span class="footer-copy" data-i18n="footerCopy">© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
+  <span class="footer-tagline" data-i18n="footerTagline">Struttura. Visione. Risultato.</span>
 </footer>
 
 <script>
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.08});
-document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+const obs = new IntersectionObserver(
+  entries => entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+  }),
+  {threshold:0.1}
+);
+
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+const translations = {
+  it: {
+    navAbout: "Chi siamo",
+    navActivities: "Attività",
+    navApproach: "Approccio",
+    navStudio: "Lo Studio",
+    navContacts: "Contatti",
+
+    heroLabel: "Attività",
+    heroTitle: "Operazioni complesse.<br>Una <em>struttura</em><br>dedicata.",
+    heroSubtitle: "KTS Advisory interviene nelle fasi strategiche, strutturali ed esecutive di operazioni ad alto valore, integrando competenze corporate, finanziarie, immobiliari e internazionali.",
+
+    activityOneTitle: "M&A e <em>operazioni straordinarie</em>",
+    activityOneDesc: "Supportiamo imprenditori, gruppi societari e investitori nella strutturazione e gestione di operazioni di acquisizione, cessione, aggregazione, riorganizzazione e crescita esterna.",
+    activityOneTagOne: "Acquisizioni",
+    activityOneTagTwo: "Cessioni",
+    activityOneTagThree: "Aggregazioni",
+    activityOneTagFour: "Ristrutturazioni",
+    activityOneSideTitle: "Struttura prima dell'esecuzione.",
+    activityOneSideDesc: "Ogni operazione viene analizzata nei suoi profili industriali, finanziari, fiscali e legali, costruendo un percorso coerente con gli obiettivi del cliente.",
+
+    activityTwoTitle: "Advisory <em>strategica</em>",
+    activityTwoDesc: "Affianchiamo il management e gli azionisti nella definizione di strategie di crescita, riposizionamento, sviluppo societario e pianificazione di operazioni trasformative.",
+    activityTwoTagOne: "Strategia",
+    activityTwoTagTwo: "Governance",
+    activityTwoTagThree: "Crescita",
+    activityTwoTagFour: "Execution",
+    activityTwoSideTitle: "Decisioni strategiche, architettura concreta.",
+    activityTwoSideDesc: "Traduciamo obiettivi imprenditoriali in strutture operative, finanziarie e societarie sostenibili, evitando approcci standardizzati.",
+
+    activityThreeTitle: "Capital <em>advisory</em>",
+    activityThreeDesc: "Supportiamo la ricerca, la selezione e la strutturazione di capitali a supporto di progetti imprenditoriali, operazioni straordinarie, sviluppo immobiliare e iniziative internazionali.",
+    activityThreeTagOne: "Capitali",
+    activityThreeTagTwo: "Investitori",
+    activityThreeTagThree: "Finanza strutturata",
+    activityThreeTagFour: "Partnership",
+    activityThreeSideTitle: "Capitale coerente con l'operazione.",
+    activityThreeSideDesc: "Non ci limitiamo a cercare risorse finanziarie: contribuiamo a definire il capitale più adatto alla natura, ai tempi e agli obiettivi del progetto.",
+
+    activityFourTitle: "Operazioni <em>immobiliari</em>",
+    activityFourDesc: "Interveniamo in operazioni real estate complesse, supportando la definizione della struttura societaria, finanziaria e contrattuale di acquisizioni, valorizzazioni e sviluppi immobiliari.",
+    activityFourTagOne: "Real Estate",
+    activityFourTagTwo: "Sviluppo",
+    activityFourTagThree: "Valorizzazione",
+    activityFourTagFour: "Asset strategici",
+    activityFourSideTitle: "Dal bene alla struttura.",
+    activityFourSideDesc: "Ogni asset immobiliare viene letto come parte di un'operazione più ampia, in cui valore, capitale, governance e tempi devono essere allineati.",
+
+    activityFiveTitle: "Operazioni <em>internazionali</em> e commodities",
+    activityFiveDesc: "Supportiamo operazioni internazionali che richiedono coordinamento tra giurisdizioni, controparti, capitale e struttura, incluse iniziative nel settore delle commodities e degli asset strategici.",
+    activityFiveTagOne: "Cross-border",
+    activityFiveTagTwo: "Commodities",
+    activityFiveTagThree: "Asset strategici",
+    activityFiveTagFour: "Coordinamento",
+    activityFiveSideTitle: "Una regia unica per contesti complessi.",
+    activityFiveSideDesc: "Le operazioni internazionali richiedono chiarezza, coordinamento e capacità di lettura dei rischi. KTS Advisory agisce come punto di sintesi tra struttura e execution.",
+
+    integrationLabel: "Metodo integrato",
+    integrationTitle: "Un'unica architettura per profili <em>legali</em>, fiscali e finanziari.",
+    integrationText: "La complessità non viene gestita per compartimenti separati. Ogni operazione viene costruita attraverso una lettura unitaria delle variabili strategiche, societarie, finanziarie e contrattuali.",
+    pillarOneLabel: "Analisi",
+    pillarOneText: "Lettura preliminare degli obiettivi, delle criticità e dei vincoli operativi.",
+    pillarTwoLabel: "Struttura",
+    pillarTwoText: "Definizione dell'architettura societaria, finanziaria e contrattuale.",
+    pillarThreeLabel: "Execution",
+    pillarThreeText: "Coordinamento delle fasi operative fino alla chiusura dell'operazione.",
+
+    ctaText: "Ogni operazione richiede<br>una <em>struttura</em> dedicata.",
+    ctaButton: "Contattaci",
+    footerCopy: "© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.",
+    footerTagline: "Struttura. Visione. Risultato."
+  },
+
+  en: {
+    navAbout: "About us",
+    navActivities: "Services",
+    navApproach: "Approach",
+    navStudio: "The Firm",
+    navContacts: "Contacts",
+
+    heroLabel: "Services",
+    heroTitle: "Complex transactions.<br>A dedicated<br><em>structure</em>.",
+    heroSubtitle: "KTS Advisory operates across the strategic, structural and execution phases of high-value transactions, integrating corporate, financial, real estate and international expertise.",
+
+    activityOneTitle: "M&A and <em>extraordinary transactions</em>",
+    activityOneDesc: "We support entrepreneurs, corporate groups and investors in structuring and managing acquisitions, disposals, aggregations, reorganisations and external growth transactions.",
+    activityOneTagOne: "Acquisitions",
+    activityOneTagTwo: "Disposals",
+    activityOneTagThree: "Aggregations",
+    activityOneTagFour: "Restructuring",
+    activityOneSideTitle: "Structure before execution.",
+    activityOneSideDesc: "Each transaction is analysed across its industrial, financial, tax and legal dimensions, building a path consistent with the client’s objectives.",
+
+    activityTwoTitle: "Strategic <em>advisory</em>",
+    activityTwoDesc: "We work alongside management and shareholders in defining growth strategies, repositioning, corporate development and transformative transactions.",
+    activityTwoTagOne: "Strategy",
+    activityTwoTagTwo: "Governance",
+    activityTwoTagThree: "Growth",
+    activityTwoTagFour: "Execution",
+    activityTwoSideTitle: "Strategic decisions, concrete architecture.",
+    activityTwoSideDesc: "We translate entrepreneurial objectives into sustainable operational, financial and corporate structures, avoiding standardised approaches.",
+
+    activityThreeTitle: "Capital <em>advisory</em>",
+    activityThreeDesc: "We support the search, selection and structuring of capital for entrepreneurial projects, extraordinary transactions, real estate development and international initiatives.",
+    activityThreeTagOne: "Capital",
+    activityThreeTagTwo: "Investors",
+    activityThreeTagThree: "Structured finance",
+    activityThreeTagFour: "Partnerships",
+    activityThreeSideTitle: "Capital aligned with the transaction.",
+    activityThreeSideDesc: "We do not simply search for financial resources: we help define the most suitable capital for the nature, timing and objectives of the project.",
+
+    activityFourTitle: "Real estate <em>transactions</em>",
+    activityFourDesc: "We support complex real estate transactions, assisting in the definition of the corporate, financial and contractual structure of acquisitions, value enhancement and development projects.",
+    activityFourTagOne: "Real Estate",
+    activityFourTagTwo: "Development",
+    activityFourTagThree: "Value enhancement",
+    activityFourTagFour: "Strategic assets",
+    activityFourSideTitle: "From asset to structure.",
+    activityFourSideDesc: "Each real estate asset is read as part of a broader transaction, where value, capital, governance and timing must be aligned.",
+
+    activityFiveTitle: "International transactions and <em>commodities</em>",
+    activityFiveDesc: "We support international transactions requiring coordination across jurisdictions, counterparties, capital and structure, including initiatives in commodities and strategic assets.",
+    activityFiveTagOne: "Cross-border",
+    activityFiveTagTwo: "Commodities",
+    activityFiveTagThree: "Strategic assets",
+    activityFiveTagFour: "Coordination",
+    activityFiveSideTitle: "A single direction for complex contexts.",
+    activityFiveSideDesc: "International transactions require clarity, coordination and the ability to read risks. KTS Advisory acts as a point of synthesis between structure and execution.",
+
+    integrationLabel: "Integrated method",
+    integrationTitle: "A single architecture for <em>legal</em>, tax and financial profiles.",
+    integrationText: "Complexity is not managed in separate compartments. Each transaction is built through a unified reading of strategic, corporate, financial and contractual variables.",
+    pillarOneLabel: "Analysis",
+    pillarOneText: "Preliminary reading of objectives, critical issues and operational constraints.",
+    pillarTwoLabel: "Structure",
+    pillarTwoText: "Definition of the corporate, financial and contractual architecture.",
+    pillarThreeLabel: "Execution",
+    pillarThreeText: "Coordination of operational phases through to transaction closing.",
+
+    ctaText: "Every transaction requires<br>a dedicated <em>structure</em>.",
+    ctaButton: "Contact us",
+    footerCopy: "© 2025 KTS Advisory S.r.l. — All rights reserved.",
+    footerTagline: "Structure. Vision. Outcome."
+  }
+};
+
+function setLanguage(lang){
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.getAttribute("data-i18n");
+    if(translations[lang] && translations[lang][key]){
+      element.innerHTML = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll("[data-lang-switch]").forEach(button => {
+    button.classList.toggle("active", button.getAttribute("data-lang-switch") === lang);
+  });
+
+  localStorage.setItem("siteLanguage", lang);
+}
+
+document.querySelectorAll("[data-lang-switch]").forEach(button => {
+  button.addEventListener("click", () => {
+    setLanguage(button.getAttribute("data-lang-switch"));
+  });
+});
+
+const savedLanguage = localStorage.getItem("siteLanguage") || "it";
+setLanguage(savedLanguage);
 </script>
+
 </body>
 </html>
