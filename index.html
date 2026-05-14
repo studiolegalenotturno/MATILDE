@@ -141,7 +141,7 @@ section{position:relative}
 .hero-bg{
   position:absolute;
   inset:0;
-  background-image:url("assets/napoli-vesuvio-hero.jpg?v=2");
+  background-image:url("assets/napoli-vesuvio-hero.jpg?v=4");
   background-size:cover;
   background-position:center center;
   transform:scale(1.02);
@@ -273,63 +273,64 @@ section{position:relative}
   color:var(--brass);
 }
 
-/* ACTIVITIES BAND */
-.dark-band{
-  background:linear-gradient(135deg,#0E1A2B 0%,#13243A 100%);
-  padding:84px 56px;
-  border-top:1px solid rgba(176,138,74,0.38);
-  border-bottom:1px solid rgba(176,138,74,0.18);
+/* ACTIVITY SECTION — FORCED V4 */
+.kts-activity-band-v4{
+  background:linear-gradient(135deg,#0E1A2B 0%,#13243A 100%) !important;
+  padding:88px 56px !important;
+  border-top:1px solid rgba(176,138,74,0.38) !important;
+  border-bottom:1px solid rgba(176,138,74,0.18) !important;
 }
 
-.activities-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:0;
-  border-left:0.5px solid rgba(176,138,74,0.22);
+.kts-activity-grid-v4{
+  display:grid !important;
+  grid-template-columns:repeat(4,1fr) !important;
+  gap:0 !important;
+  border-left:0.5px solid rgba(176,138,74,0.24) !important;
 }
 
-.activity-item{
-  padding:0 38px 0 32px;
-  border-right:0.5px solid rgba(176,138,74,0.22);
+.kts-activity-card-v4{
+  padding:0 40px 0 32px !important;
+  border-right:0.5px solid rgba(176,138,74,0.24) !important;
+  text-align:left !important;
 }
 
-.activity-icon{
-  width:46px;
-  height:46px;
-  margin-bottom:28px;
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
+.kts-activity-icon-v4{
+  width:46px !important;
+  height:46px !important;
+  margin-bottom:30px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
 }
 
-.activity-icon img{
-  max-width:46px;
-  max-height:46px;
-  width:auto;
-  height:auto;
-  display:block;
-  object-fit:contain;
-  filter:drop-shadow(0 7px 16px rgba(201,169,110,0.12));
-  opacity:0.95;
+.kts-activity-icon-v4 img{
+  max-width:46px !important;
+  max-height:46px !important;
+  width:auto !important;
+  height:auto !important;
+  display:block !important;
+  object-fit:contain !important;
+  opacity:0.95 !important;
+  filter:drop-shadow(0 7px 16px rgba(201,169,110,0.12)) !important;
 }
 
-.activity-title{
-  font-family:var(--serif);
-  font-size:22px;
-  letter-spacing:0.065em;
-  text-transform:uppercase;
-  color:var(--ivory);
-  line-height:1.18;
-  margin-bottom:18px;
-  font-weight:300;
+.kts-activity-title-v4{
+  font-family:var(--serif) !important;
+  font-size:22px !important;
+  letter-spacing:0.065em !important;
+  text-transform:uppercase !important;
+  color:#F3EFE8 !important;
+  line-height:1.18 !important;
+  margin-bottom:18px !important;
+  font-weight:300 !important;
 }
 
-.activity-desc{
-  font-family:var(--sans);
-  font-size:15px;
-  line-height:1.72;
-  color:rgba(243,239,232,0.68);
-  font-weight:300;
+.kts-activity-desc-v4{
+  font-family:var(--sans) !important;
+  font-size:15px !important;
+  line-height:1.72 !important;
+  color:rgba(243,239,232,0.68) !important;
+  font-weight:300 !important;
 }
 
 /* APPROACH */
@@ -700,38 +701,38 @@ footer{
     gap:24px;
   }
 
-  .dark-band{
-    padding:64px 28px;
+  .kts-activity-band-v4{
+    padding:64px 28px !important;
   }
 
-  .activities-grid{
-    grid-template-columns:1fr;
-    border-left:none;
+  .kts-activity-grid-v4{
+    grid-template-columns:1fr !important;
+    border-left:none !important;
   }
 
-  .activity-item{
-    padding:34px 0;
-    border-right:none;
-    border-bottom:0.5px solid rgba(176,138,74,0.18);
+  .kts-activity-card-v4{
+    padding:34px 0 !important;
+    border-right:none !important;
+    border-bottom:0.5px solid rgba(176,138,74,0.18) !important;
   }
 
-  .activity-icon{
-    width:46px;
-    height:46px;
+  .kts-activity-icon-v4{
+    width:46px !important;
+    height:46px !important;
   }
 
-  .activity-icon img{
-    max-width:46px;
-    max-height:46px;
+  .kts-activity-icon-v4 img{
+    max-width:46px !important;
+    max-height:46px !important;
   }
 
-  .activity-title{
-    font-size:22px;
+  .kts-activity-title-v4{
+    font-size:22px !important;
   }
 
-  .activity-desc{
-    font-size:15px;
-    max-width:420px;
+  .kts-activity-desc-v4{
+    font-size:15px !important;
+    max-width:420px !important;
   }
 
   .approach-preview{
@@ -817,7 +818,7 @@ footer{
 
 <nav>
   <a href="index.html" class="logo-wrap logo-image-wrap">
-    <img src="assets/kts-advisory-logo-web.png?v=2" alt="KTS Advisory" class="site-logo">
+    <img src="assets/kts-advisory-logo-web.png?v=4" alt="KTS Advisory" class="site-logo">
   </a>
 
   <ul class="nav-links">
@@ -858,39 +859,39 @@ footer{
   </div>
 </section>
 
-<div class="dark-band">
-  <div class="activities-grid">
+<div class="kts-activity-band-v4">
+  <div class="kts-activity-grid-v4">
 
-    <div class="activity-item fade-in">
-      <div class="activity-icon">
-        <img src="assets/kts-icon-triangolo.png?v=2" alt="">
+    <div class="kts-activity-card-v4 fade-in">
+      <div class="kts-activity-icon-v4">
+        <img src="assets/kts-icon-triangolo.png?v=4" alt="">
       </div>
-      <p class="activity-title" data-i18n="activityOneTitle">M&A<br>e Operazioni<br>Straordinarie</p>
-      <p class="activity-desc" data-i18n="activityOneDesc">Supportiamo operazioni di aggregazione, dismissione e ristrutturazione.</p>
+      <p class="kts-activity-title-v4" data-i18n="activityOneTitle">M&A<br>e Operazioni<br>Straordinarie</p>
+      <p class="kts-activity-desc-v4" data-i18n="activityOneDesc">Supportiamo operazioni di aggregazione, dismissione e ristrutturazione.</p>
     </div>
 
-    <div class="activity-item fade-in" style="transition-delay:0.1s">
-      <div class="activity-icon">
-        <img src="assets/kts-icon-spirale-aurea.png?v=2" alt="">
+    <div class="kts-activity-card-v4 fade-in" style="transition-delay:0.1s">
+      <div class="kts-activity-icon-v4">
+        <img src="assets/kts-icon-spirale-aurea.png?v=4" alt="">
       </div>
-      <p class="activity-title" data-i18n="activityTwoTitle">Advisory<br>Strategica</p>
-      <p class="activity-desc" data-i18n="activityTwoDesc">Affianchiamo il management nelle decisioni che definiscono la traiettoria dell'azienda.</p>
+      <p class="kts-activity-title-v4" data-i18n="activityTwoTitle">Advisory<br>Strategica</p>
+      <p class="kts-activity-desc-v4" data-i18n="activityTwoDesc">Affianchiamo il management nelle decisioni che definiscono la traiettoria dell'azienda.</p>
     </div>
 
-    <div class="activity-item fade-in" style="transition-delay:0.2s">
-      <div class="activity-icon">
-        <img src="assets/kts-icon-ouroboros.png?v=2" alt="">
+    <div class="kts-activity-card-v4 fade-in" style="transition-delay:0.2s">
+      <div class="kts-activity-icon-v4">
+        <img src="assets/kts-icon-ouroboros.png?v=4" alt="">
       </div>
-      <p class="activity-title" data-i18n="activityThreeTitle">Capital<br>Advisory</p>
-      <p class="activity-desc" data-i18n="activityThreeDesc">Colleghiamo progetti imprenditoriali e capitale istituzionale.</p>
+      <p class="kts-activity-title-v4" data-i18n="activityThreeTitle">Capital<br>Advisory</p>
+      <p class="kts-activity-desc-v4" data-i18n="activityThreeDesc">Colleghiamo progetti imprenditoriali e capitale istituzionale.</p>
     </div>
 
-    <div class="activity-item fade-in" style="transition-delay:0.3s">
-      <div class="activity-icon">
-        <img src="assets/kts-icon-colonna.png?v=2" alt="">
+    <div class="kts-activity-card-v4 fade-in" style="transition-delay:0.3s">
+      <div class="kts-activity-icon-v4">
+        <img src="assets/kts-icon-colonna.png?v=4" alt="">
       </div>
-      <p class="activity-title" data-i18n="activityFourTitle">Operazioni<br>Immobiliari</p>
-      <p class="activity-desc" data-i18n="activityFourDesc">Strutturiamo e accompagniamo operazioni immobiliari complesse.</p>
+      <p class="kts-activity-title-v4" data-i18n="activityFourTitle">Operazioni<br>Immobiliari</p>
+      <p class="kts-activity-desc-v4" data-i18n="activityFourDesc">Strutturiamo e accompagniamo operazioni immobiliari complesse.</p>
     </div>
 
   </div>
