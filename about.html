@@ -49,7 +49,7 @@ nav{
   justify-content:space-between;
   padding:0 56px;
   height:76px;
-  background:rgba(243,239,232,0.88);
+  background:rgba(243,239,232,0.90);
   backdrop-filter:blur(14px);
   border-bottom:0.5px solid rgba(176,138,74,0.18);
 }
@@ -204,19 +204,30 @@ nav{
   font-size:14px;
 }
 
-/* PAGE HERO — SFUMATA */
+/* PAGE HERO — SFONDO UNICO SFUMATO */
 .page-hero{
   min-height:66vh;
   display:grid;
-  grid-template-columns:0.9fr 1.1fr;
+  grid-template-columns:0.92fr 1.08fr;
   padding-top:76px;
   border-bottom:0.5px solid rgba(176,138,74,0.14);
   background:
+    radial-gradient(circle at 62% 50%,
+      rgba(201,169,110,0.13) 0%,
+      rgba(201,169,110,0.08) 22%,
+      rgba(201,169,110,0.035) 44%,
+      transparent 68%
+    ),
+    radial-gradient(circle at 82% 48%,
+      rgba(255,255,255,0.72) 0%,
+      rgba(255,255,255,0.26) 36%,
+      transparent 70%
+    ),
     linear-gradient(90deg,
       #F8F4EC 0%,
-      #F6F1E8 32%,
-      #F3EFE8 50%,
-      #F4EFE6 68%,
+      #F8F4EC 30%,
+      #F5F0E7 48%,
+      #F3EFE8 64%,
       #F8F4EC 100%
     );
   position:relative;
@@ -228,21 +239,44 @@ nav{
   position:absolute;
   inset:76px 0 0 0;
   pointer-events:none;
+  z-index:0;
   background:
-    radial-gradient(circle at 58% 50%,
-      rgba(201,169,110,0.13) 0%,
-      rgba(201,169,110,0.08) 22%,
-      rgba(201,169,110,0.03) 42%,
-      transparent 66%
+    repeating-linear-gradient(45deg,
+      transparent,
+      transparent 104px,
+      rgba(176,138,74,0.032) 104px,
+      rgba(176,138,74,0.032) 105px
+    ),
+    repeating-linear-gradient(-45deg,
+      transparent,
+      transparent 104px,
+      rgba(176,138,74,0.018) 104px,
+      rgba(176,138,74,0.018) 105px
     ),
     linear-gradient(90deg,
       rgba(248,244,236,0.00) 0%,
-      rgba(248,244,236,0.24) 38%,
-      rgba(248,244,236,0.46) 48%,
-      rgba(248,244,236,0.28) 58%,
+      rgba(248,244,236,0.18) 38%,
+      rgba(248,244,236,0.34) 48%,
+      rgba(248,244,236,0.18) 58%,
       rgba(248,244,236,0.00) 100%
     );
+  opacity:0.75;
+}
+
+.page-hero::after{
+  content:"";
+  position:absolute;
+  inset:76px 0 0 0;
   z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,
+      rgba(248,244,236,0.96) 0%,
+      rgba(248,244,236,0.70) 38%,
+      rgba(248,244,236,0.18) 51%,
+      rgba(248,244,236,0.00) 66%,
+      rgba(248,244,236,0.00) 100%
+    );
 }
 
 .page-hero-left{
@@ -252,12 +286,7 @@ nav{
   padding:82px 64px 82px 56px;
   position:relative;
   z-index:2;
-  background:
-    linear-gradient(90deg,
-      rgba(248,244,236,0.98) 0%,
-      rgba(248,244,236,0.90) 62%,
-      rgba(248,244,236,0.20) 100%
-    );
+  background:transparent;
 }
 
 .page-hero-left p{
@@ -276,67 +305,17 @@ nav{
   align-items:center;
   justify-content:center;
   padding:64px 56px;
-  background:
-    linear-gradient(90deg,
-      rgba(248,244,236,0.28) 0%,
-      rgba(246,241,232,0.52) 18%,
-      rgba(243,239,232,0.72) 42%,
-      rgba(248,244,236,0.92) 100%
-    );
+  background:transparent;
   border-left:none;
   z-index:1;
 }
 
-.page-hero-right::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 38% 48%,
-      rgba(176,138,74,0.13) 0%,
-      rgba(176,138,74,0.08) 26%,
-      transparent 54%
-    ),
-    radial-gradient(circle at 68% 50%,
-      rgba(255,255,255,0.48) 0%,
-      rgba(255,255,255,0.18) 34%,
-      transparent 68%
-    ),
-    repeating-linear-gradient(45deg,
-      transparent,
-      transparent 96px,
-      rgba(176,138,74,0.035) 96px,
-      rgba(176,138,74,0.035) 97px
-    ),
-    repeating-linear-gradient(-45deg,
-      transparent,
-      transparent 96px,
-      rgba(176,138,74,0.020) 96px,
-      rgba(176,138,74,0.020) 97px
-    );
-  opacity:0.72;
-}
-
-.page-hero-right::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:
-    linear-gradient(90deg,
-      rgba(248,244,236,0.76) 0%,
-      rgba(248,244,236,0.38) 12%,
-      rgba(248,244,236,0.06) 28%,
-      rgba(248,244,236,0.00) 100%
-    );
-}
-
-/* TETRACTIS LIGHT */
+/* TETRACTIS */
 .tetractis-wrap{
   position:relative;
-  z-index:2;
+  z-index:3;
   width:100%;
-  max-width:840px;
+  max-width:860px;
   display:grid;
   grid-template-columns:1fr 0.92fr;
   gap:56px;
@@ -347,42 +326,51 @@ nav{
   display:flex;
   align-items:center;
   justify-content:center;
-  min-height:390px;
+  min-height:410px;
   position:relative;
 }
 
 .tetractis-visual::before{
   content:"";
   position:absolute;
-  width:420px;
-  height:420px;
+  width:440px;
+  height:440px;
   border:0.5px solid rgba(176,138,74,0.10);
+  border-radius:50%;
+}
+
+.tetractis-visual::after{
+  content:"";
+  position:absolute;
+  width:310px;
+  height:310px;
+  border:0.5px solid rgba(176,138,74,0.08);
   border-radius:50%;
 }
 
 .tetractis-svg{
   position:relative;
   z-index:2;
-  width:min(360px,100%);
+  width:min(370px,100%);
   height:auto;
   overflow:visible;
 }
 
 .tetractis-line{
-  stroke:rgba(176,138,74,0.72);
-  stroke-width:1.05;
+  stroke:rgba(176,138,74,0.74);
+  stroke-width:1.1;
   fill:none;
 }
 
 .tetractis-inner-line{
-  stroke:rgba(176,138,74,0.38);
-  stroke-width:0.8;
+  stroke:rgba(176,138,74,0.42);
+  stroke-width:0.85;
   fill:none;
 }
 
 .tetractis-dot{
   fill:var(--brass-light);
-  stroke:rgba(176,138,74,0.42);
+  stroke:rgba(176,138,74,0.48);
   stroke-width:0.7;
   filter:drop-shadow(0 4px 8px rgba(176,138,74,0.20));
 }
@@ -426,11 +414,6 @@ nav{
   color:var(--navy);
   font-weight:300;
   margin-bottom:8px;
-}
-
-.tetractis-item-title em{
-  font-style:italic;
-  color:var(--brass);
 }
 
 .tetractis-item-text{
@@ -656,16 +639,21 @@ footer{
   }
 
   .tetractis-visual{
-    min-height:270px;
+    min-height:310px;
   }
 
   .tetractis-svg{
-    width:min(270px,100%);
+    width:min(300px,100%);
   }
 
   .tetractis-visual::before{
-    width:330px;
-    height:330px;
+    width:360px;
+    height:360px;
+  }
+
+  .tetractis-visual::after{
+    width:260px;
+    height:260px;
   }
 }
 
@@ -692,53 +680,35 @@ footer{
     min-height:auto;
     padding-top:74px;
     background:
+      radial-gradient(circle at 50% 64%,
+        rgba(201,169,110,0.10) 0%,
+        rgba(201,169,110,0.04) 40%,
+        transparent 72%
+      ),
       linear-gradient(180deg,
         #F8F4EC 0%,
-        #F6F1E8 46%,
+        #F7F2E9 46%,
         #F3EFE8 100%
       );
   }
 
   .page-hero::before{
     inset:74px 0 0 0;
-    background:
-      radial-gradient(circle at 50% 58%,
-        rgba(201,169,110,0.10) 0%,
-        rgba(201,169,110,0.05) 38%,
-        transparent 70%
-      );
+  }
+
+  .page-hero::after{
+    display:none;
   }
 
   .page-hero-left{
-    padding:80px 28px 54px;
-    background:
-      linear-gradient(180deg,
-        rgba(248,244,236,0.98) 0%,
-        rgba(248,244,236,0.90) 78%,
-        rgba(248,244,236,0.20) 100%
-      );
+    padding:80px 28px 40px;
   }
 
   .page-hero-right{
-    padding:56px 28px;
+    padding:34px 28px 62px;
     min-height:560px;
     border-left:none;
     border-top:none;
-    background:
-      linear-gradient(180deg,
-        rgba(248,244,236,0.98) 0%,
-        rgba(246,241,232,0.86) 42%,
-        rgba(243,239,232,0.94) 100%
-      );
-  }
-
-  .page-hero-right::after{
-    background:
-      linear-gradient(180deg,
-        rgba(248,244,236,0.62) 0%,
-        rgba(248,244,236,0.14) 24%,
-        rgba(248,244,236,0.00) 100%
-      );
   }
 
   .tetractis-wrap{
@@ -804,12 +774,17 @@ footer{
   }
 
   .tetractis-svg{
-    width:230px;
+    width:260px;
   }
 
   .tetractis-visual::before{
-    width:280px;
-    height:280px;
+    width:300px;
+    height:300px;
+  }
+
+  .tetractis-visual::after{
+    width:220px;
+    height:220px;
   }
 
   .tetractis-item-title{
@@ -823,7 +798,7 @@ footer{
 
 <nav>
   <a href="index.html" class="logo-wrap logo-image-wrap">
-    <img src="assets/kts-advisory-logo-web.png?v=7" alt="KTS Advisory" class="site-logo">
+    <img src="assets/kts-advisory-logo-web.png?v=8" alt="KTS Advisory" class="site-logo">
   </a>
 
   <ul class="nav-links">
@@ -860,23 +835,41 @@ footer{
 
       <div class="tetractis-visual">
         <svg class="tetractis-svg" viewBox="0 0 420 360" aria-hidden="true">
-          <path class="tetractis-line" d="M210 26 L48 306 L372 306 Z"/>
-          <path class="tetractis-inner-line" d="M170 96 H250"/>
-          <path class="tetractis-inner-line" d="M130 166 H290"/>
-          <path class="tetractis-inner-line" d="M90 236 H330"/>
-          <path class="tetractis-inner-line" d="M210 26 L90 236"/>
-          <path class="tetractis-inner-line" d="M210 26 L330 236"/>
+          <!-- Triangolo esterno -->
+          <path class="tetractis-line" d="M210 42 L60 302 L360 302 Z"/>
 
-          <circle class="tetractis-dot" cx="210" cy="26" r="8"/>
-          <circle class="tetractis-dot" cx="170" cy="96" r="8"/>
-          <circle class="tetractis-dot" cx="250" cy="96" r="8"/>
-          <circle class="tetractis-dot" cx="130" cy="166" r="8"/>
-          <circle class="tetractis-dot" cx="210" cy="166" r="8"/>
-          <circle class="tetractis-dot" cx="290" cy="166" r="8"/>
-          <circle class="tetractis-dot" cx="90" cy="236" r="8"/>
-          <circle class="tetractis-dot" cx="170" cy="236" r="8"/>
-          <circle class="tetractis-dot" cx="250" cy="236" r="8"/>
-          <circle class="tetractis-dot" cx="330" cy="236" r="8"/>
+          <!-- Linee orizzontali delle quattro file -->
+          <path class="tetractis-inner-line" d="M170 112 H250"/>
+          <path class="tetractis-inner-line" d="M130 202 H290"/>
+          <path class="tetractis-inner-line" d="M90 292 H330"/>
+
+          <!-- Linee diagonali interne leggere -->
+          <path class="tetractis-inner-line" d="M210 42 L90 292"/>
+          <path class="tetractis-inner-line" d="M210 42 L330 292"/>
+          <path class="tetractis-inner-line" d="M170 112 L130 202"/>
+          <path class="tetractis-inner-line" d="M250 112 L290 202"/>
+          <path class="tetractis-inner-line" d="M130 202 L90 292"/>
+          <path class="tetractis-inner-line" d="M210 202 L210 292"/>
+          <path class="tetractis-inner-line" d="M290 202 L330 292"/>
+
+          <!-- Tetractis completa: 1 + 2 + 3 + 4 = 10 punti -->
+          <!-- Riga 1 -->
+          <circle class="tetractis-dot" cx="210" cy="42" r="8"/>
+
+          <!-- Riga 2 -->
+          <circle class="tetractis-dot" cx="170" cy="112" r="8"/>
+          <circle class="tetractis-dot" cx="250" cy="112" r="8"/>
+
+          <!-- Riga 3 -->
+          <circle class="tetractis-dot" cx="130" cy="202" r="8"/>
+          <circle class="tetractis-dot" cx="210" cy="202" r="8"/>
+          <circle class="tetractis-dot" cx="290" cy="202" r="8"/>
+
+          <!-- Riga 4 -->
+          <circle class="tetractis-dot" cx="90" cy="292" r="8"/>
+          <circle class="tetractis-dot" cx="170" cy="292" r="8"/>
+          <circle class="tetractis-dot" cx="250" cy="292" r="8"/>
+          <circle class="tetractis-dot" cx="330" cy="292" r="8"/>
         </svg>
       </div>
 
