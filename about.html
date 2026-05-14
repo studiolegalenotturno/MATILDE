@@ -211,7 +211,61 @@ nav{
   grid-template-columns:0.9fr 1.1fr;
   padding-top:76px;
   border-bottom:0.5px solid rgba(176,138,74,0.16);
-  background:linear-gradient(90deg,#F8F4EC 0%,#F3EFE8 100%);
+  background:
+    radial-gradient(circle at 62% 50%,
+      rgba(201,169,110,0.14) 0%,
+      rgba(201,169,110,0.08) 24%,
+      rgba(201,169,110,0.035) 46%,
+      transparent 70%
+    ),
+    linear-gradient(90deg,
+      #F8F4EC 0%,
+      #F8F4EC 30%,
+      #F6F1E8 46%,
+      #F3EFE8 64%,
+      #F8F4EC 100%
+    );
+  position:relative;
+  overflow:hidden;
+}
+
+.page-hero::before{
+  content:"";
+  position:absolute;
+  inset:76px 0 0 0;
+  pointer-events:none;
+  z-index:0;
+  background:
+    repeating-linear-gradient(45deg,
+      transparent,
+      transparent 96px,
+      rgba(176,138,74,0.032) 96px,
+      rgba(176,138,74,0.032) 97px
+    ),
+    repeating-linear-gradient(-45deg,
+      transparent,
+      transparent 96px,
+      rgba(176,138,74,0.018) 96px,
+      rgba(176,138,74,0.018) 97px
+    );
+  opacity:0.72;
+}
+
+.page-hero::after{
+  content:"";
+  position:absolute;
+  inset:76px 0 0 0;
+  pointer-events:none;
+  z-index:1;
+  background:
+    linear-gradient(90deg,
+      rgba(248,244,236,0.98) 0%,
+      rgba(248,244,236,0.88) 30%,
+      rgba(248,244,236,0.52) 44%,
+      rgba(248,244,236,0.18) 56%,
+      rgba(248,244,236,0.00) 72%,
+      rgba(248,244,236,0.00) 100%
+    );
 }
 
 .page-hero-left{
@@ -220,6 +274,8 @@ nav{
   justify-content:center;
   padding:82px 64px 82px 56px;
   position:relative;
+  z-index:3;
+  background:transparent;
 }
 
 .page-hero-left p{
@@ -238,10 +294,9 @@ nav{
   align-items:center;
   justify-content:center;
   padding:64px 56px;
-  background:
-    radial-gradient(circle at 40% 50%,rgba(201,169,110,0.16),transparent 0%,transparent 35%),
-    linear-gradient(135deg,rgba(255,255,255,0.50) 0%,rgba(243,239,232,0.78) 48%,rgba(232,220,199,0.35) 100%);
-  border-left:0.5px solid rgba(176,138,74,0.12);
+  background:transparent;
+  border-left:none;
+  z-index:2;
 }
 
 .page-hero-right::before{
@@ -249,10 +304,17 @@ nav{
   position:absolute;
   inset:0;
   background:
-    radial-gradient(circle at 42% 48%,rgba(176,138,74,0.10),transparent 38%),
-    repeating-linear-gradient(45deg,transparent,transparent 90px,rgba(176,138,74,0.045) 90px,rgba(176,138,74,0.045) 91px),
-    repeating-linear-gradient(-45deg,transparent,transparent 90px,rgba(176,138,74,0.025) 90px,rgba(176,138,74,0.025) 91px);
-  opacity:0.75;
+    radial-gradient(circle at 38% 50%,
+      rgba(176,138,74,0.11) 0%,
+      rgba(176,138,74,0.065) 28%,
+      transparent 56%
+    ),
+    radial-gradient(circle at 72% 50%,
+      rgba(255,255,255,0.56) 0%,
+      rgba(255,255,255,0.18) 38%,
+      transparent 72%
+    );
+  opacity:0.76;
 }
 
 .page-hero-right::after{
@@ -260,9 +322,9 @@ nav{
   position:absolute;
   width:520px;
   height:520px;
-  border:0.5px solid rgba(176,138,74,0.14);
+  border:0.5px solid rgba(176,138,74,0.13);
   border-radius:50%;
-  left:8%;
+  left:4%;
   top:50%;
   transform:translateY(-50%);
   pointer-events:none;
@@ -593,16 +655,16 @@ footer{
   }
 
   .tetractis-visual{
-    min-height:270px;
+    min-height:300px;
   }
 
   .tetractis-svg{
-    width:min(270px,100%);
+    width:min(300px,100%);
   }
 
   .tetractis-visual::before{
-    width:330px;
-    height:330px;
+    width:350px;
+    height:350px;
   }
 }
 
@@ -630,15 +692,24 @@ footer{
     padding-top:74px;
   }
 
+  .page-hero::before{
+    inset:74px 0 0 0;
+  }
+
+  .page-hero::after{
+    display:none;
+  }
+
   .page-hero-left{
     padding:80px 28px 54px;
   }
 
   .page-hero-right{
-    padding:56px 28px;
+    padding:42px 28px 64px;
     min-height:560px;
     border-left:none;
-    border-top:0.5px solid rgba(176,138,74,0.14);
+    border-top:none;
+    background:transparent;
   }
 
   .tetractis-wrap{
@@ -704,12 +775,12 @@ footer{
   }
 
   .tetractis-svg{
-    width:230px;
+    width:260px;
   }
 
   .tetractis-visual::before{
-    width:280px;
-    height:280px;
+    width:300px;
+    height:300px;
   }
 
   .tetractis-item-title{
@@ -723,7 +794,7 @@ footer{
 
 <nav>
   <a href="index.html" class="logo-wrap logo-image-wrap">
-    <img src="assets/kts-advisory-logo-web.png?v=6" alt="KTS Advisory" class="site-logo">
+    <img src="assets/kts-advisory-logo-web.png?v=9" alt="KTS Advisory" class="site-logo">
   </a>
 
   <ul class="nav-links">
@@ -759,24 +830,34 @@ footer{
     <div class="tetractis-wrap">
 
       <div class="tetractis-visual">
-        <svg class="tetractis-svg" viewBox="0 0 420 360" aria-hidden="true">
-          <path class="tetractis-line" d="M210 26 L48 306 L372 306 Z"/>
-          <path class="tetractis-inner-line" d="M170 96 H250"/>
-          <path class="tetractis-inner-line" d="M130 166 H290"/>
-          <path class="tetractis-inner-line" d="M90 236 H330"/>
-          <path class="tetractis-inner-line" d="M210 26 L90 236"/>
-          <path class="tetractis-inner-line" d="M210 26 L330 236"/>
+        <svg class="tetractis-svg" viewBox="0 0 420 390" aria-hidden="true">
+          <path class="tetractis-line" d="M210 40 L56 330 L364 330 Z"/>
 
-          <circle class="tetractis-dot" cx="210" cy="26" r="8"/>
-          <circle class="tetractis-dot" cx="170" cy="96" r="8"/>
-          <circle class="tetractis-dot" cx="250" cy="96" r="8"/>
-          <circle class="tetractis-dot" cx="130" cy="166" r="8"/>
-          <circle class="tetractis-dot" cx="210" cy="166" r="8"/>
-          <circle class="tetractis-dot" cx="290" cy="166" r="8"/>
-          <circle class="tetractis-dot" cx="90" cy="236" r="8"/>
-          <circle class="tetractis-dot" cx="170" cy="236" r="8"/>
-          <circle class="tetractis-dot" cx="250" cy="236" r="8"/>
-          <circle class="tetractis-dot" cx="330" cy="236" r="8"/>
+          <path class="tetractis-inner-line" d="M170 124 H250"/>
+          <path class="tetractis-inner-line" d="M130 218 H290"/>
+          <path class="tetractis-inner-line" d="M90 312 H330"/>
+
+          <path class="tetractis-inner-line" d="M210 40 L90 312"/>
+          <path class="tetractis-inner-line" d="M210 40 L330 312"/>
+          <path class="tetractis-inner-line" d="M170 124 L130 218"/>
+          <path class="tetractis-inner-line" d="M250 124 L290 218"/>
+          <path class="tetractis-inner-line" d="M130 218 L90 312"/>
+          <path class="tetractis-inner-line" d="M210 218 L210 312"/>
+          <path class="tetractis-inner-line" d="M290 218 L330 312"/>
+
+          <circle class="tetractis-dot" cx="210" cy="40" r="8"/>
+
+          <circle class="tetractis-dot" cx="170" cy="124" r="8"/>
+          <circle class="tetractis-dot" cx="250" cy="124" r="8"/>
+
+          <circle class="tetractis-dot" cx="130" cy="218" r="8"/>
+          <circle class="tetractis-dot" cx="210" cy="218" r="8"/>
+          <circle class="tetractis-dot" cx="290" cy="218" r="8"/>
+
+          <circle class="tetractis-dot" cx="90" cy="312" r="8"/>
+          <circle class="tetractis-dot" cx="170" cy="312" r="8"/>
+          <circle class="tetractis-dot" cx="250" cy="312" r="8"/>
+          <circle class="tetractis-dot" cx="330" cy="312" r="8"/>
         </svg>
       </div>
 
