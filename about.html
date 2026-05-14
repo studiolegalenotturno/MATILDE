@@ -212,17 +212,17 @@ nav{
   padding-top:76px;
   border-bottom:0.5px solid rgba(176,138,74,0.16);
   background:
-    radial-gradient(circle at 62% 50%,
-      rgba(201,169,110,0.14) 0%,
-      rgba(201,169,110,0.08) 24%,
-      rgba(201,169,110,0.035) 46%,
+    radial-gradient(circle at 60% 50%,
+      rgba(201,169,110,0.13) 0%,
+      rgba(201,169,110,0.07) 24%,
+      rgba(201,169,110,0.03) 46%,
       transparent 70%
     ),
     linear-gradient(90deg,
       #F8F4EC 0%,
-      #F8F4EC 30%,
-      #F6F1E8 46%,
-      #F3EFE8 64%,
+      #F8F4EC 32%,
+      #F6F1E8 48%,
+      #F3EFE8 66%,
       #F8F4EC 100%
     );
   position:relative;
@@ -238,17 +238,17 @@ nav{
   background:
     repeating-linear-gradient(45deg,
       transparent,
-      transparent 96px,
-      rgba(176,138,74,0.032) 96px,
-      rgba(176,138,74,0.032) 97px
+      transparent 100px,
+      rgba(176,138,74,0.028) 100px,
+      rgba(176,138,74,0.028) 101px
     ),
     repeating-linear-gradient(-45deg,
       transparent,
-      transparent 96px,
-      rgba(176,138,74,0.018) 96px,
-      rgba(176,138,74,0.018) 97px
+      transparent 100px,
+      rgba(176,138,74,0.016) 100px,
+      rgba(176,138,74,0.016) 101px
     );
-  opacity:0.72;
+  opacity:0.70;
 }
 
 .page-hero::after{
@@ -260,10 +260,10 @@ nav{
   background:
     linear-gradient(90deg,
       rgba(248,244,236,0.98) 0%,
-      rgba(248,244,236,0.88) 30%,
-      rgba(248,244,236,0.52) 44%,
-      rgba(248,244,236,0.18) 56%,
-      rgba(248,244,236,0.00) 72%,
+      rgba(248,244,236,0.88) 31%,
+      rgba(248,244,236,0.55) 44%,
+      rgba(248,244,236,0.22) 56%,
+      rgba(248,244,236,0.06) 68%,
       rgba(248,244,236,0.00) 100%
     );
 }
@@ -305,11 +305,11 @@ nav{
   inset:0;
   background:
     radial-gradient(circle at 38% 50%,
-      rgba(176,138,74,0.11) 0%,
-      rgba(176,138,74,0.065) 28%,
+      rgba(176,138,74,0.10) 0%,
+      rgba(176,138,74,0.06) 28%,
       transparent 56%
     ),
-    radial-gradient(circle at 72% 50%,
+    radial-gradient(circle at 74% 50%,
       rgba(255,255,255,0.56) 0%,
       rgba(255,255,255,0.18) 38%,
       transparent 72%
@@ -333,7 +333,7 @@ nav{
 /* TETRACTIS LIGHT */
 .tetractis-wrap{
   position:relative;
-  z-index:2;
+  z-index:3;
   width:100%;
   max-width:840px;
   display:grid;
@@ -374,7 +374,7 @@ nav{
 }
 
 .tetractis-inner-line{
-  stroke:rgba(176,138,74,0.38);
+  stroke:rgba(176,138,74,0.34);
   stroke-width:0.8;
   fill:none;
 }
@@ -794,7 +794,7 @@ footer{
 
 <nav>
   <a href="index.html" class="logo-wrap logo-image-wrap">
-    <img src="assets/kts-advisory-logo-web.png?v=9" alt="KTS Advisory" class="site-logo">
+    <img src="assets/kts-advisory-logo-web.png?v=10" alt="KTS Advisory" class="site-logo">
   </a>
 
   <ul class="nav-links">
@@ -831,33 +831,41 @@ footer{
 
       <div class="tetractis-visual">
         <svg class="tetractis-svg" viewBox="0 0 420 390" aria-hidden="true">
-          <path class="tetractis-line" d="M210 40 L56 330 L364 330 Z"/>
+          <!-- Tetractis regolare: disposizione 1 · 2 · 3 · 4 -->
 
-          <path class="tetractis-inner-line" d="M170 124 H250"/>
-          <path class="tetractis-inner-line" d="M130 218 H290"/>
-          <path class="tetractis-inner-line" d="M90 312 H330"/>
+          <!-- Triangolo esterno -->
+          <path class="tetractis-line" d="M210 50 L78 300 L342 300 Z"/>
 
-          <path class="tetractis-inner-line" d="M210 40 L90 312"/>
-          <path class="tetractis-inner-line" d="M210 40 L330 312"/>
-          <path class="tetractis-inner-line" d="M170 124 L130 218"/>
-          <path class="tetractis-inner-line" d="M250 124 L290 218"/>
-          <path class="tetractis-inner-line" d="M130 218 L90 312"/>
-          <path class="tetractis-inner-line" d="M210 218 L210 312"/>
-          <path class="tetractis-inner-line" d="M290 218 L330 312"/>
+          <!-- Linee leggere interne -->
+          <path class="tetractis-inner-line" d="M174 112 H246"/>
+          <path class="tetractis-inner-line" d="M138 175 H282"/>
+          <path class="tetractis-inner-line" d="M102 238 H318"/>
 
-          <circle class="tetractis-dot" cx="210" cy="40" r="8"/>
+          <path class="tetractis-inner-line" d="M210 50 L102 238"/>
+          <path class="tetractis-inner-line" d="M210 50 L318 238"/>
+          <path class="tetractis-inner-line" d="M174 112 L138 175"/>
+          <path class="tetractis-inner-line" d="M246 112 L282 175"/>
+          <path class="tetractis-inner-line" d="M138 175 L102 238"/>
+          <path class="tetractis-inner-line" d="M210 175 L210 238"/>
+          <path class="tetractis-inner-line" d="M282 175 L318 238"/>
 
-          <circle class="tetractis-dot" cx="170" cy="124" r="8"/>
-          <circle class="tetractis-dot" cx="250" cy="124" r="8"/>
+          <!-- Riga 1 -->
+          <circle class="tetractis-dot" cx="210" cy="50" r="8"/>
 
-          <circle class="tetractis-dot" cx="130" cy="218" r="8"/>
-          <circle class="tetractis-dot" cx="210" cy="218" r="8"/>
-          <circle class="tetractis-dot" cx="290" cy="218" r="8"/>
+          <!-- Riga 2 -->
+          <circle class="tetractis-dot" cx="174" cy="112" r="8"/>
+          <circle class="tetractis-dot" cx="246" cy="112" r="8"/>
 
-          <circle class="tetractis-dot" cx="90" cy="312" r="8"/>
-          <circle class="tetractis-dot" cx="170" cy="312" r="8"/>
-          <circle class="tetractis-dot" cx="250" cy="312" r="8"/>
-          <circle class="tetractis-dot" cx="330" cy="312" r="8"/>
+          <!-- Riga 3 -->
+          <circle class="tetractis-dot" cx="138" cy="175" r="8"/>
+          <circle class="tetractis-dot" cx="210" cy="175" r="8"/>
+          <circle class="tetractis-dot" cx="282" cy="175" r="8"/>
+
+          <!-- Riga 4 -->
+          <circle class="tetractis-dot" cx="102" cy="238" r="8"/>
+          <circle class="tetractis-dot" cx="174" cy="238" r="8"/>
+          <circle class="tetractis-dot" cx="246" cy="238" r="8"/>
+          <circle class="tetractis-dot" cx="318" cy="238" r="8"/>
         </svg>
       </div>
 
