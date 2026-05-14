@@ -4,38 +4,240 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KTS Advisory — Home</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ivory:#F3EFE8;--carbon:#161616;--brass:#B08A4A;--brass-light:#C9A96E;--greige:#8B847C;--dark:#1B1B1B;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',sans-serif}
+
+:root{
+  --ivory:#F3EFE8;
+  --carbon:#0E1A2B;
+  --navy:#0E1A2B;
+  --navy-soft:#13243A;
+  --navy-deep:#08111F;
+  --brass:#B08A4A;
+  --brass-light:#C9A96E;
+  --greige:#8B847C;
+  --dark:#0E1A2B;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',sans-serif;
+}
+
 html{scroll-behavior:smooth}
-body{background:var(--ivory);color:var(--carbon);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:72px;background:rgba(243,239,232,0.94);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(176,138,74,0.15)}
-.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-icon{width:36px;height:36px}
-.logo-text{display:flex;flex-direction:column;line-height:1}
-.logo-kts{font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:0.08em;color:var(--carbon)}
-.logo-adv{font-family:var(--sans);font-size:9px;letter-spacing:0.22em;color:var(--brass);text-transform:uppercase;font-weight:400;margin-top:2px}
-.nav-links{display:flex;gap:40px;list-style:none}
-.nav-links a{font-family:var(--sans);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--carbon);text-decoration:none;font-weight:400;opacity:0.6;transition:opacity 0.2s,color 0.2s}
-.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--brass)}
-.nav-lang{font-family:var(--sans);font-size:11px;letter-spacing:0.14em;color:var(--greige);cursor:pointer;border:0.5px solid rgba(139,132,124,0.4);padding:4px 12px;transition:color 0.2s,border-color 0.2s}
-.nav-lang:hover{color:var(--brass);border-color:var(--brass)}
+
+body{
+  background:var(--ivory);
+  color:var(--carbon);
+  font-family:var(--sans);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 56px;
+  height:72px;
+  background:rgba(243,239,232,0.94);
+  backdrop-filter:blur(12px);
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
+
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
+
+.logo-icon{
+  width:36px;
+  height:36px;
+}
+
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+
+.logo-kts{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:400;
+  letter-spacing:0.08em;
+  color:var(--navy);
+}
+
+.logo-adv{
+  font-family:var(--sans);
+  font-size:9px;
+  letter-spacing:0.22em;
+  color:var(--brass);
+  text-transform:uppercase;
+  font-weight:400;
+  margin-top:2px;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  list-style:none;
+}
+
+.nav-links a{
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--navy);
+  text-decoration:none;
+  font-weight:500;
+  opacity:0.68;
+  transition:opacity 0.2s,color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  opacity:1;
+  color:var(--brass);
+}
+
+.language-switch{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  border:0.5px solid rgba(176,138,74,0.45);
+  padding:5px 10px;
+  background:rgba(243,239,232,0.35);
+}
+
+.lang-btn{
+  border:none;
+  background:transparent;
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.14em;
+  color:var(--greige);
+  cursor:pointer;
+  font-weight:500;
+  transition:color 0.2s;
+}
+
+.lang-btn.active,
+.lang-btn:hover{
+  color:var(--brass);
+}
+
+.lang-separator{
+  font-family:var(--sans);
+  font-size:10px;
+  color:rgba(139,132,124,0.45);
+}
+
 section{position:relative}
 
 /* HERO */
-#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:72px}
-.hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 64px 80px 56px}
-.hero-eyebrow{font-family:var(--sans);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--brass);margin-bottom:32px}
-.hero-headline{font-family:var(--serif);font-size:clamp(44px,5vw,68px);font-weight:300;line-height:1.12;letter-spacing:-0.01em;color:var(--carbon);margin-bottom:32px}
-.hero-headline em{font-style:italic;color:var(--brass)}
-.hero-sub{font-family:var(--sans);font-size:14px;line-height:1.8;color:var(--greige);max-width:360px;margin-bottom:52px;font-weight:300}
-.hero-ctas{display:flex;align-items:center;gap:36px}
-.btn-primary{font-family:var(--sans);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ivory);background:var(--carbon);border:none;padding:15px 32px;cursor:pointer;text-decoration:none;font-weight:400;transition:background 0.25s;display:inline-block}
-.btn-primary:hover{background:var(--dark)}
-.btn-ghost{font-family:var(--sans);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--carbon);text-decoration:none;font-weight:400;border-bottom:0.5px solid var(--brass);padding-bottom:3px;transition:color 0.2s}
-.btn-ghost:hover{color:var(--brass)}
+#hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  padding-top:72px;
+}
+
+.hero-left{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:80px 64px 80px 56px;
+}
+
+.hero-eyebrow{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:32px;
+  font-weight:500;
+}
+
+.hero-headline{
+  font-family:var(--serif);
+  font-size:clamp(44px,5vw,68px);
+  font-weight:300;
+  line-height:1.12;
+  letter-spacing:-0.01em;
+  color:var(--navy);
+  margin-bottom:32px;
+}
+
+.hero-headline em{
+  font-style:italic;
+  color:var(--brass);
+}
+
+.hero-sub{
+  font-family:var(--sans);
+  font-size:14px;
+  line-height:1.8;
+  color:var(--greige);
+  max-width:380px;
+  margin-bottom:52px;
+  font-weight:300;
+}
+
+.hero-ctas{
+  display:flex;
+  align-items:center;
+  gap:36px;
+}
+
+.btn-primary{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--ivory);
+  background:var(--navy);
+  border:none;
+  padding:15px 32px;
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:500;
+  transition:background 0.25s,color 0.25s;
+  display:inline-block;
+}
+
+.btn-primary:hover{
+  background:var(--brass);
+  color:var(--navy-deep);
+}
+
+.btn-ghost{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--navy);
+  text-decoration:none;
+  font-weight:500;
+  border-bottom:0.5px solid var(--brass);
+  padding-bottom:3px;
+  transition:color 0.2s;
+}
+
+.btn-ghost:hover{
+  color:var(--brass);
+}
 
 .hero-right{
   position:relative;
@@ -73,83 +275,392 @@ section{position:relative}
   z-index:1;
 }
 
-/* DARK BAND */
-.dark-band{background:var(--dark);padding:80px 56px}
-.activities-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-left:0.5px solid rgba(176,138,74,0.15)}
-.activity-item{padding:0 40px 0 32px;border-right:0.5px solid rgba(176,138,74,0.15)}
-.activity-icon{margin-bottom:28px}
-.activity-title{font-family:var(--sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brass-light);line-height:1.6;margin-bottom:20px;font-weight:400}
-.activity-desc{font-family:var(--sans);font-size:13px;line-height:1.75;color:rgba(243,239,232,0.45);font-weight:300}
+/* ACTIVITIES BAND */
+.dark-band{
+  background:linear-gradient(135deg,#0E1A2B 0%,#13243A 100%);
+  padding:80px 56px;
+  border-top:1px solid rgba(176,138,74,0.38);
+  border-bottom:1px solid rgba(176,138,74,0.18);
+}
+
+.activities-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border-left:0.5px solid rgba(176,138,74,0.22);
+}
+
+.activity-item{
+  padding:0 40px 0 32px;
+  border-right:0.5px solid rgba(176,138,74,0.22);
+}
+
+.activity-icon{
+  margin-bottom:28px;
+}
+
+.activity-title{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--brass-light);
+  line-height:1.6;
+  margin-bottom:20px;
+  font-weight:500;
+}
+
+.activity-desc{
+  font-family:var(--sans);
+  font-size:13px;
+  line-height:1.75;
+  color:rgba(243,239,232,0.58);
+  font-weight:300;
+}
 
 /* APPROACH */
-.approach-preview{padding:120px 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.section-label{font-family:var(--sans);font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--brass);margin-bottom:28px;font-weight:400}
-.section-headline{font-family:var(--serif);font-size:clamp(32px,3.5vw,50px);font-weight:300;line-height:1.2;color:var(--carbon)}
-.section-headline em{font-style:italic}
-.brass-line{width:32px;height:1px;background:var(--brass);margin-bottom:32px}
-.link-arrow{font-family:var(--sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--carbon);text-decoration:none;border-bottom:0.5px solid var(--brass);padding-bottom:3px;display:inline-flex;align-items:center;gap:10px;transition:color 0.2s;font-weight:400}
-.link-arrow:hover{color:var(--brass)}
-.link-arrow::after{content:'→';font-size:14px}
-.approach-right p{font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--greige);margin-bottom:24px;font-weight:300}
+.approach-preview{
+  padding:120px 56px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.section-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:28px;
+  font-weight:500;
+}
+
+.section-headline{
+  font-family:var(--serif);
+  font-size:clamp(32px,3.5vw,50px);
+  font-weight:300;
+  line-height:1.2;
+  color:var(--navy);
+}
+
+.section-headline em{
+  font-style:italic;
+  color:var(--brass);
+}
+
+.brass-line{
+  width:32px;
+  height:1px;
+  background:var(--brass);
+  margin-bottom:32px;
+}
+
+.link-arrow{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--navy);
+  text-decoration:none;
+  border-bottom:0.5px solid var(--brass);
+  padding-bottom:3px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  transition:color 0.2s;
+  font-weight:500;
+}
+
+.link-arrow:hover{
+  color:var(--brass);
+}
+
+.link-arrow::after{
+  content:'→';
+  font-size:14px;
+}
+
+.approach-right p{
+  font-family:var(--sans);
+  font-size:14px;
+  line-height:1.9;
+  color:var(--greige);
+  margin-bottom:24px;
+  font-weight:300;
+}
 
 /* SPLIT */
-.split-section{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
-.split-dark{background:var(--dark);padding:80px 64px;display:flex;align-items:flex-end;position:relative;overflow:hidden}
-.split-dark-inner{position:relative;z-index:1}
-.split-dark-bg{position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 80px,rgba(176,138,74,0.03) 80px,rgba(176,138,74,0.03) 81px)}
-.split-dark .section-label{color:var(--brass-light)}
-.split-dark .section-headline{color:var(--ivory);font-size:clamp(28px,3vw,44px)}
-.split-ivory{background:var(--ivory);padding:80px 64px;display:flex;flex-direction:column;justify-content:center}
-.split-ivory .section-headline{font-size:clamp(28px,3vw,44px);margin-bottom:28px}
-.split-ivory p{font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--greige);margin-bottom:32px;font-weight:300}
+.split-section{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:520px;
+}
+
+.split-dark{
+  background:linear-gradient(135deg,#0E1A2B 0%,#13243A 100%);
+  padding:80px 64px;
+  display:flex;
+  align-items:flex-end;
+  position:relative;
+  overflow:hidden;
+}
+
+.split-dark-inner{
+  position:relative;
+  z-index:1;
+}
+
+.split-dark-bg{
+  position:absolute;
+  inset:0;
+  background:
+    repeating-linear-gradient(45deg,transparent,transparent 80px,rgba(176,138,74,0.04) 80px,rgba(176,138,74,0.04) 81px);
+}
+
+.split-dark .section-label{
+  color:var(--brass-light);
+}
+
+.split-dark .section-headline{
+  color:var(--ivory);
+  font-size:clamp(28px,3vw,44px);
+}
+
+.split-dark .section-headline em{
+  color:var(--brass-light);
+}
+
+.split-ivory{
+  background:var(--ivory);
+  padding:80px 64px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.split-ivory .section-headline{
+  font-size:clamp(28px,3vw,44px);
+  margin-bottom:28px;
+}
+
+.split-ivory p{
+  font-family:var(--sans);
+  font-size:14px;
+  line-height:1.9;
+  color:var(--greige);
+  margin-bottom:32px;
+  font-weight:300;
+}
 
 /* POSITIONING */
-.pos-band{padding:100px 56px;background:var(--dark);text-align:center}
-.pos-tagline{font-family:var(--serif);font-size:clamp(28px,4vw,58px);font-weight:300;color:var(--ivory);line-height:1.25;max-width:720px;margin:0 auto 56px;font-style:italic}
-.pos-stats{display:flex;justify-content:center;gap:80px;border-top:0.5px solid rgba(176,138,74,0.2);padding-top:56px}
-.pos-stat-num{font-family:var(--serif);font-size:48px;font-weight:300;color:var(--brass-light);line-height:1;margin-bottom:8px}
-.pos-stat-label{font-family:var(--sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(243,239,232,0.4);font-weight:400}
+.pos-band{
+  padding:100px 56px;
+  background:linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  text-align:center;
+  border-top:1px solid rgba(176,138,74,0.18);
+}
+
+.pos-tagline{
+  font-family:var(--serif);
+  font-size:clamp(28px,4vw,58px);
+  font-weight:300;
+  color:var(--ivory);
+  line-height:1.25;
+  max-width:720px;
+  margin:0 auto 56px;
+  font-style:italic;
+}
+
+.pos-stats{
+  display:flex;
+  justify-content:center;
+  gap:80px;
+  border-top:0.5px solid rgba(176,138,74,0.28);
+  padding-top:56px;
+}
+
+.pos-stat-num{
+  font-family:var(--serif);
+  font-size:48px;
+  font-weight:300;
+  color:var(--brass-light);
+  line-height:1;
+  margin-bottom:8px;
+}
+
+.pos-stat-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(243,239,232,0.46);
+  font-weight:500;
+}
 
 /* CTA */
-.cta-band{padding:80px 56px;display:flex;align-items:center;justify-content:space-between;border-top:0.5px solid rgba(176,138,74,0.15)}
-.cta-band-text{font-family:var(--serif);font-size:clamp(22px,2.5vw,36px);font-weight:300;color:var(--carbon)}
-.cta-band-text em{font-style:italic}
+.cta-band{
+  padding:80px 56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:0.5px solid rgba(176,138,74,0.18);
+  background:var(--ivory);
+}
+
+.cta-band-text{
+  font-family:var(--serif);
+  font-size:clamp(22px,2.5vw,36px);
+  font-weight:300;
+  color:var(--navy);
+}
+
+.cta-band-text em{
+  font-style:italic;
+  color:var(--brass);
+}
 
 /* FOOTER */
-footer{background:#0d0d0b;padding:40px 56px;display:flex;align-items:center;justify-content:space-between;border-top:0.5px solid rgba(176,138,74,0.1)}
-.footer-copy{font-family:var(--sans);font-size:11px;color:rgba(243,239,232,0.2);font-weight:300;letter-spacing:0.08em}
-.footer-tagline{font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(176,138,74,0.4)}
+footer{
+  background:#08111F;
+  padding:40px 56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:0.5px solid rgba(176,138,74,0.18);
+}
+
+.footer-copy{
+  font-family:var(--sans);
+  font-size:11px;
+  color:rgba(243,239,232,0.28);
+  font-weight:300;
+  letter-spacing:0.08em;
+}
+
+.footer-tagline{
+  font-family:var(--serif);
+  font-size:13px;
+  font-style:italic;
+  color:rgba(176,138,74,0.62);
+}
 
 /* ANIMATIONS */
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
-.fade-in.visible{opacity:1;transform:none}
+.fade-in{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 0.7s ease,transform 0.7s ease;
+}
+
+.fade-in.visible{
+  opacity:1;
+  transform:none;
+}
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  nav{padding:0 24px}
-  .nav-links{display:none}
-  #hero{grid-template-columns:1fr;min-height:auto}
-  .hero-left{padding:80px 28px 64px}
-  .hero-right{height:420px}
-  .dark-band{padding:64px 28px}
-  .activities-grid{grid-template-columns:1fr;border-left:none}
-  .activity-item{padding:32px 0;border-right:none;border-bottom:0.5px solid rgba(176,138,74,0.15)}
-  .approach-preview{grid-template-columns:1fr;padding:80px 28px;gap:48px}
-  .split-section{grid-template-columns:1fr}
-  .split-dark,.split-ivory{padding:72px 28px}
-  .pos-band{padding:80px 28px}
-  .pos-stats{flex-direction:column;gap:36px}
-  .cta-band{padding:64px 28px;flex-direction:column;align-items:flex-start;gap:32px}
-  footer{padding:32px 28px;flex-direction:column;align-items:flex-start;gap:12px}
+  nav{
+    padding:0 24px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  #hero{
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
+
+  .hero-left{
+    padding:80px 28px 64px;
+  }
+
+  .hero-right{
+    height:420px;
+  }
+
+  .dark-band{
+    padding:64px 28px;
+  }
+
+  .activities-grid{
+    grid-template-columns:1fr;
+    border-left:none;
+  }
+
+  .activity-item{
+    padding:32px 0;
+    border-right:none;
+    border-bottom:0.5px solid rgba(176,138,74,0.18);
+  }
+
+  .approach-preview{
+    grid-template-columns:1fr;
+    padding:80px 28px;
+    gap:48px;
+  }
+
+  .split-section{
+    grid-template-columns:1fr;
+  }
+
+  .split-dark,
+  .split-ivory{
+    padding:72px 28px;
+  }
+
+  .pos-band{
+    padding:80px 28px;
+  }
+
+  .pos-stats{
+    flex-direction:column;
+    gap:36px;
+  }
+
+  .cta-band{
+    padding:64px 28px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:32px;
+  }
+
+  footer{
+    padding:32px 28px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
 }
 
 @media(max-width:600px){
-  .hero-headline{font-size:42px}
-  .hero-ctas{flex-direction:column;align-items:flex-start;gap:24px}
-  .hero-right{height:340px}
+  .hero-headline{
+    font-size:42px;
+  }
+
+  .hero-ctas{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:24px;
+  }
+
+  .hero-right{
+    height:340px;
+  }
+
+  .language-switch{
+    padding:4px 8px;
+  }
+
+  .lang-btn{
+    font-size:10px;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <nav>
@@ -166,24 +677,35 @@ footer{background:#0d0d0b;padding:40px 56px;display:flex;align-items:center;just
   </a>
 
   <ul class="nav-links">
-    <li><a href="about.html">Chi siamo</a></li>
-    <li><a href="attivita.html">Attività</a></li>
-    <li><a href="approccio.html">Approccio</a></li>
-    <li><a href="studio.html">Lo Studio</a></li>
-    <li><a href="contatti.html">Contatti</a></li>
+    <li><a href="about.html" data-i18n="navAbout">Chi siamo</a></li>
+    <li><a href="attivita.html" data-i18n="navActivities">Attività</a></li>
+    <li><a href="approccio.html" data-i18n="navApproach">Approccio</a></li>
+    <li><a href="studio.html" data-i18n="navStudio">Lo Studio</a></li>
+    <li><a href="contatti.html" data-i18n="navContacts">Contatti</a></li>
   </ul>
 
-  <span class="nav-lang">IT</span>
+  <div class="language-switch">
+    <button class="lang-btn active" data-lang-switch="it">IT</button>
+    <span class="lang-separator">/</span>
+    <button class="lang-btn" data-lang-switch="en">EN</button>
+  </div>
 </nav>
 
 <section id="hero">
   <div class="hero-left fade-in">
-    <p class="hero-eyebrow">Struttura · Visione · Risultato</p>
-    <h1 class="hero-headline">Diamo forma<br>alle operazioni<br>che <em>definiscono</em><br>il futuro.</h1>
-    <p class="hero-sub">KTS Advisory affianca imprenditori, investitori e istituzioni in operazioni complesse, dove visione strategica, esecuzione e riservatezza fanno la differenza.</p>
+    <p class="hero-eyebrow" data-i18n="heroEyebrow">Struttura · Visione · Risultato</p>
+
+    <h1 class="hero-headline" data-i18n="heroTitle">
+      Diamo forma<br>alle operazioni<br>che <em>definiscono</em><br>il futuro.
+    </h1>
+
+    <p class="hero-sub" data-i18n="heroSubtitle">
+      KTS Advisory affianca imprenditori, investitori e istituzioni in operazioni complesse, dove visione strategica, esecuzione e riservatezza fanno la differenza.
+    </p>
+
     <div class="hero-ctas">
-      <a href="about.html" class="btn-primary">Chi siamo</a>
-      <a href="approccio.html" class="btn-ghost">Il nostro approccio</a>
+      <a href="about.html" class="btn-primary" data-i18n="heroCtaPrimary">Chi siamo</a>
+      <a href="approccio.html" class="btn-ghost" data-i18n="heroCtaSecondary">Il nostro approccio</a>
     </div>
   </div>
 
@@ -194,6 +716,7 @@ footer{background:#0d0d0b;padding:40px 56px;display:flex;align-items:center;just
 
 <div class="dark-band">
   <div class="activities-grid">
+
     <div class="activity-item fade-in">
       <div class="activity-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -201,8 +724,8 @@ footer{background:#0d0d0b;padding:40px 56px;display:flex;align-items:center;just
           <line x1="12" y1="11" x2="12" y2="20" stroke="#B08A4A" stroke-width="1"/>
         </svg>
       </div>
-      <p class="activity-title">M&A<br>e Operazioni<br>Straordinarie</p>
-      <p class="activity-desc">Supportiamo operazioni di aggregazione, dismissione e ristrutturazione.</p>
+      <p class="activity-title" data-i18n="activityOneTitle">M&A<br>e Operazioni<br>Straordinarie</p>
+      <p class="activity-desc" data-i18n="activityOneDesc">Supportiamo operazioni di aggregazione, dismissione e ristrutturazione.</p>
     </div>
 
     <div class="activity-item fade-in" style="transition-delay:0.1s">
@@ -212,8 +735,8 @@ footer{background:#0d0d0b;padding:40px 56px;display:flex;align-items:center;just
           <rect x="8" y="8" width="4" height="4" fill="#B08A4A"/>
         </svg>
       </div>
-      <p class="activity-title">Advisory<br>Strategica</p>
-      <p class="activity-desc">Affianchiamo il management nelle decisioni che definiscono la traiettoria dell'azienda.</p>
+      <p class="activity-title" data-i18n="activityTwoTitle">Advisory<br>Strategica</p>
+      <p class="activity-desc" data-i18n="activityTwoDesc">Affianchiamo il management nelle decisioni che definiscono la traiettoria dell'azienda.</p>
     </div>
 
     <div class="activity-item fade-in" style="transition-delay:0.2s">
@@ -223,8 +746,8 @@ footer{background:#0d0d0b;padding:40px 56px;display:flex;align-items:center;just
           <circle cx="11" cy="11" r="3" fill="#B08A4A"/>
         </svg>
       </div>
-      <p class="activity-title">Capital<br>Advisory</p>
-      <p class="activity-desc">Colleghiamo progetti imprenditoriali e capitale istituzionale.</p>
+      <p class="activity-title" data-i18n="activityThreeTitle">Capital<br>Advisory</p>
+      <p class="activity-desc" data-i18n="activityThreeDesc">Colleghiamo progetti imprenditoriali e capitale istituzionale.</p>
     </div>
 
     <div class="activity-item fade-in" style="transition-delay:0.3s">
@@ -236,23 +759,30 @@ footer{background:#0d0d0b;padding:40px 56px;display:flex;align-items:center;just
           <line x1="15" y1="2" x2="15" y2="8" stroke="#B08A4A" stroke-width="1"/>
         </svg>
       </div>
-      <p class="activity-title">Operazioni<br>Immobiliari</p>
-      <p class="activity-desc">Strutturiamo e accompagniamo operazioni immobiliari complesse.</p>
+      <p class="activity-title" data-i18n="activityFourTitle">Operazioni<br>Immobiliari</p>
+      <p class="activity-desc" data-i18n="activityFourDesc">Strutturiamo e accompagniamo operazioni immobiliari complesse.</p>
     </div>
+
   </div>
 </div>
 
 <div class="approach-preview">
   <div class="fade-in">
-    <p class="section-label">Il nostro approccio</p>
+    <p class="section-label" data-i18n="approachLabel">Il nostro approccio</p>
     <div class="brass-line"></div>
-    <h2 class="section-headline">Rigore nei processi.<br><em>Discrezione</em> nelle relazioni.<br>Focalizzazione sul risultato.</h2>
+    <h2 class="section-headline" data-i18n="approachTitle">
+      Rigore nei processi.<br><em>Discrezione</em> nelle relazioni.<br>Focalizzazione sul risultato.
+    </h2>
   </div>
 
-  <div class="fade-in" style="transition-delay:0.15s">
-    <p style="font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--greige);margin-bottom:24px;font-weight:300">Ogni incarico viene analizzato come un sistema complesso, in cui struttura, capitale e governance devono essere coerenti fin dalle fasi iniziali.</p>
-    <p style="font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--greige);margin-bottom:32px;font-weight:300">L'intervento si concentra sulla definizione dell'architettura dell'operazione, coordinando in modo integrato i profili legali, fiscali e finanziari.</p>
-    <a href="approccio.html" class="link-arrow">Scopri di più</a>
+  <div class="approach-right fade-in" style="transition-delay:0.15s">
+    <p data-i18n="approachTextOne">
+      Ogni incarico viene analizzato come un sistema complesso, in cui struttura, capitale e governance devono essere coerenti fin dalle fasi iniziali.
+    </p>
+    <p data-i18n="approachTextTwo">
+      L'intervento si concentra sulla definizione dell'architettura dell'operazione, coordinando in modo integrato i profili legali, fiscali e finanziari.
+    </p>
+    <a href="approccio.html" class="link-arrow" data-i18n="discoverMore">Scopri di più</a>
   </div>
 </div>
 
@@ -260,46 +790,58 @@ footer{background:#0d0d0b;padding:40px 56px;display:flex;align-items:center;just
   <div class="split-dark fade-in">
     <div class="split-dark-bg"></div>
     <div class="split-dark-inner">
-      <p class="section-label">Chi siamo</p>
-      <h2 class="section-headline">Una boutique <em>indipendente</em>.<br>Una visione internazionale.<br>Radici italiane.</h2>
+      <p class="section-label" data-i18n="aboutLabel">Chi siamo</p>
+      <h2 class="section-headline" data-i18n="aboutDarkTitle">
+        Una boutique <em>indipendente</em>.<br>Una visione internazionale.<br>Radici italiane.
+      </h2>
     </div>
   </div>
 
   <div class="split-ivory fade-in" style="transition-delay:0.15s">
-    <h2 class="section-headline" style="margin-bottom:28px;color:var(--carbon)">Boutique indipendente.<br><em>Operazioni</em> complesse.</h2>
-    <p>KTS Advisory nasce con l'obiettivo di offrire consulenza di alto profilo in ambito corporate, finanziario e immobiliare.</p>
-    <p>Lavoriamo su un numero selezionato di mandati, garantendo attenzione totale, analisi approfondita e execution impeccabile.</p>
-    <a href="about.html" class="link-arrow">La nostra storia</a>
+    <h2 class="section-headline" data-i18n="aboutTitle">
+      Boutique indipendente.<br><em>Operazioni</em> complesse.
+    </h2>
+    <p data-i18n="aboutTextOne">
+      KTS Advisory nasce con l'obiettivo di offrire consulenza di alto profilo in ambito corporate, finanziario e immobiliare.
+    </p>
+    <p data-i18n="aboutTextTwo">
+      Lavoriamo su un numero selezionato di mandati, garantendo attenzione totale, analisi approfondita e execution impeccabile.
+    </p>
+    <a href="about.html" class="link-arrow" data-i18n="ourStory">La nostra storia</a>
   </div>
 </div>
 
 <div class="pos-band">
-  <p class="pos-tagline fade-in">"Qui non vendiamo servizi.<br>Qui strutturiamo operazioni."</p>
+  <p class="pos-tagline fade-in" data-i18n="quote">
+    "Qui non vendiamo servizi.<br>Qui strutturiamo operazioni."
+  </p>
 
   <div class="pos-stats fade-in" style="transition-delay:0.2s">
     <div>
-      <p class="pos-stat-num">Italia</p>
-      <p class="pos-stat-label">Radici operative</p>
+      <p class="pos-stat-num" data-i18n="statOneNum">Italia</p>
+      <p class="pos-stat-label" data-i18n="statOneLabel">Radici operative</p>
     </div>
     <div>
-      <p class="pos-stat-num">Selettivo</p>
-      <p class="pos-stat-label">Numero di mandati</p>
+      <p class="pos-stat-num" data-i18n="statTwoNum">Selettivo</p>
+      <p class="pos-stat-label" data-i18n="statTwoLabel">Numero di mandati</p>
     </div>
     <div>
-      <p class="pos-stat-num">Int'l</p>
-      <p class="pos-stat-label">Visione internazionale</p>
+      <p class="pos-stat-num" data-i18n="statThreeNum">Internazionale</p>
+      <p class="pos-stat-label" data-i18n="statThreeLabel">Visione internazionale</p>
     </div>
   </div>
 </div>
 
 <div class="cta-band fade-in">
-  <p class="cta-band-text">Valutiamo insieme<br>il tuo prossimo <em>passo</em>.</p>
-  <a href="contatti.html" class="btn-primary">Contattaci</a>
+  <p class="cta-band-text" data-i18n="ctaText">
+    Valutiamo insieme<br>il tuo prossimo <em>passo</em>.
+  </p>
+  <a href="contatti.html" class="btn-primary" data-i18n="ctaButton">Contattaci</a>
 </div>
 
 <footer>
-  <span class="footer-copy">© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
-  <span class="footer-tagline">Struttura. Visione. Risultato.</span>
+  <span class="footer-copy" data-i18n="footerCopy">© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
+  <span class="footer-tagline" data-i18n="footerTagline">Struttura. Visione. Risultato.</span>
 </footer>
 
 <script>
@@ -311,6 +853,132 @@ const obs = new IntersectionObserver(
 );
 
 document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+const translations = {
+  it: {
+    navAbout: "Chi siamo",
+    navActivities: "Attività",
+    navApproach: "Approccio",
+    navStudio: "Lo Studio",
+    navContacts: "Contatti",
+
+    heroEyebrow: "Struttura · Visione · Risultato",
+    heroTitle: "Diamo forma<br>alle operazioni<br>che <em>definiscono</em><br>il futuro.",
+    heroSubtitle: "KTS Advisory affianca imprenditori, investitori e istituzioni in operazioni complesse, dove visione strategica, esecuzione e riservatezza fanno la differenza.",
+    heroCtaPrimary: "Chi siamo",
+    heroCtaSecondary: "Il nostro approccio",
+
+    activityOneTitle: "M&A<br>e Operazioni<br>Straordinarie",
+    activityOneDesc: "Supportiamo operazioni di aggregazione, dismissione e ristrutturazione.",
+    activityTwoTitle: "Advisory<br>Strategica",
+    activityTwoDesc: "Affianchiamo il management nelle decisioni che definiscono la traiettoria dell'azienda.",
+    activityThreeTitle: "Capital<br>Advisory",
+    activityThreeDesc: "Colleghiamo progetti imprenditoriali e capitale istituzionale.",
+    activityFourTitle: "Operazioni<br>Immobiliari",
+    activityFourDesc: "Strutturiamo e accompagniamo operazioni immobiliari complesse.",
+
+    approachLabel: "Il nostro approccio",
+    approachTitle: "Rigore nei processi.<br><em>Discrezione</em> nelle relazioni.<br>Focalizzazione sul risultato.",
+    approachTextOne: "Ogni incarico viene analizzato come un sistema complesso, in cui struttura, capitale e governance devono essere coerenti fin dalle fasi iniziali.",
+    approachTextTwo: "L'intervento si concentra sulla definizione dell'architettura dell'operazione, coordinando in modo integrato i profili legali, fiscali e finanziari.",
+    discoverMore: "Scopri di più",
+
+    aboutLabel: "Chi siamo",
+    aboutDarkTitle: "Una boutique <em>indipendente</em>.<br>Una visione internazionale.<br>Radici italiane.",
+    aboutTitle: "Boutique indipendente.<br><em>Operazioni</em> complesse.",
+    aboutTextOne: "KTS Advisory nasce con l'obiettivo di offrire consulenza di alto profilo in ambito corporate, finanziario e immobiliare.",
+    aboutTextTwo: "Lavoriamo su un numero selezionato di mandati, garantendo attenzione totale, analisi approfondita e execution impeccabile.",
+    ourStory: "La nostra storia",
+
+    quote: "\"Qui non vendiamo servizi.<br>Qui strutturiamo operazioni.\"",
+    statOneNum: "Italia",
+    statOneLabel: "Radici operative",
+    statTwoNum: "Selettivo",
+    statTwoLabel: "Numero di mandati",
+    statThreeNum: "Internazionale",
+    statThreeLabel: "Visione internazionale",
+
+    ctaText: "Valutiamo insieme<br>il tuo prossimo <em>passo</em>.",
+    ctaButton: "Contattaci",
+    footerCopy: "© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.",
+    footerTagline: "Struttura. Visione. Risultato."
+  },
+
+  en: {
+    navAbout: "About us",
+    navActivities: "Services",
+    navApproach: "Approach",
+    navStudio: "The Firm",
+    navContacts: "Contacts",
+
+    heroEyebrow: "Structure · Vision · Outcome",
+    heroTitle: "We shape<br>the transactions<br>that <em>define</em><br>the future.",
+    heroSubtitle: "KTS Advisory supports entrepreneurs, investors and institutions in complex transactions where strategic vision, execution and discretion make the difference.",
+    heroCtaPrimary: "About us",
+    heroCtaSecondary: "Our approach",
+
+    activityOneTitle: "M&A<br>and Extraordinary<br>Transactions",
+    activityOneDesc: "We support aggregation, disposal and restructuring transactions.",
+    activityTwoTitle: "Strategic<br>Advisory",
+    activityTwoDesc: "We support management in decisions that define the company’s trajectory.",
+    activityThreeTitle: "Capital<br>Advisory",
+    activityThreeDesc: "We connect entrepreneurial projects with institutional capital.",
+    activityFourTitle: "Real Estate<br>Transactions",
+    activityFourDesc: "We structure and support complex real estate transactions.",
+
+    approachLabel: "Our approach",
+    approachTitle: "Process discipline.<br><em>Discretion</em> in relationships.<br>Focus on results.",
+    approachTextOne: "Each mandate is analysed as a complex system in which structure, capital and governance must be coherent from the earliest stages.",
+    approachTextTwo: "Our work focuses on defining the architecture of the transaction, coordinating legal, tax and financial aspects in an integrated manner.",
+    discoverMore: "Discover more",
+
+    aboutLabel: "About us",
+    aboutDarkTitle: "An <em>independent</em> boutique.<br>An international vision.<br>Italian roots.",
+    aboutTitle: "Independent boutique.<br><em>Complex</em> transactions.",
+    aboutTextOne: "KTS Advisory was created to provide high-level advisory services in corporate, financial and real estate matters.",
+    aboutTextTwo: "We work on a selected number of mandates, ensuring full attention, in-depth analysis and impeccable execution.",
+    ourStory: "Our story",
+
+    quote: "\"We do not sell services.<br>We structure transactions.\"",
+    statOneNum: "Italy",
+    statOneLabel: "Operating roots",
+    statTwoNum: "Selective",
+    statTwoLabel: "Number of mandates",
+    statThreeNum: "International",
+    statThreeLabel: "International vision",
+
+    ctaText: "Let us assess together<br>your next <em>step</em>.",
+    ctaButton: "Contact us",
+    footerCopy: "© 2025 KTS Advisory S.r.l. — All rights reserved.",
+    footerTagline: "Structure. Vision. Outcome."
+  }
+};
+
+function setLanguage(lang){
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.getAttribute("data-i18n");
+    if(translations[lang] && translations[lang][key]){
+      element.innerHTML = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll("[data-lang-switch]").forEach(button => {
+    button.classList.toggle("active", button.getAttribute("data-lang-switch") === lang);
+  });
+
+  localStorage.setItem("siteLanguage", lang);
+}
+
+document.querySelectorAll("[data-lang-switch]").forEach(button => {
+  button.addEventListener("click", () => {
+    setLanguage(button.getAttribute("data-lang-switch"));
+  });
+});
+
+const savedLanguage = localStorage.getItem("siteLanguage") || "it";
+setLanguage(savedLanguage);
 </script>
 
 </body>
