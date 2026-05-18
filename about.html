@@ -362,28 +362,16 @@ nav{
 .tetractis-svg{
   position:relative;
   z-index:2;
-  width:min(360px,100%);
+  width:min(320px,100%);
   height:auto;
   overflow:visible;
-}
-
-.tetractis-line{
-  stroke:rgba(176,138,74,0.72);
-  stroke-width:1.05;
-  fill:none;
-}
-
-.tetractis-inner-line{
-  stroke:rgba(176,138,74,0.34);
-  stroke-width:0.8;
-  fill:none;
 }
 
 .tetractis-dot{
   fill:var(--brass-light);
   stroke:rgba(176,138,74,0.42);
   stroke-width:0.7;
-  filter:drop-shadow(0 4px 8px rgba(176,138,74,0.20));
+  filter:drop-shadow(0 6px 10px rgba(176,138,74,0.22));
 }
 
 .tetractis-panel{
@@ -659,7 +647,7 @@ footer{
   }
 
   .tetractis-svg{
-    width:min(300px,100%);
+    width:min(280px,100%);
   }
 
   .tetractis-visual::before{
@@ -706,7 +694,7 @@ footer{
 
   .page-hero-right{
     padding:42px 28px 64px;
-    min-height:560px;
+    min-height:520px;
     border-left:none;
     border-top:none;
     background:transparent;
@@ -775,7 +763,7 @@ footer{
   }
 
   .tetractis-svg{
-    width:260px;
+    width:250px;
   }
 
   .tetractis-visual::before{
@@ -794,7 +782,7 @@ footer{
 
 <nav>
   <a href="index.html" class="logo-wrap logo-image-wrap">
-    <img src="assets/kts-advisory-logo-web.png?v=12" alt="KTS Advisory" class="site-logo">
+    <img src="assets/kts-advisory-logo-web.png?v=14" alt="KTS Advisory" class="site-logo">
   </a>
 
   <ul class="nav-links">
@@ -822,7 +810,7 @@ footer{
     </h1>
 
     <p data-i18n="heroSubtitle">
-      Radici italiane. Operazioni complesse. Approccio selettivo, rigoroso e internazionale.
+      Approccio selettivo, rigoroso e internazionale.
     </p>
   </div>
 
@@ -830,43 +818,20 @@ footer{
     <div class="tetractis-wrap">
 
       <div class="tetractis-visual">
-        <svg class="tetractis-svg" viewBox="0 0 420 390" aria-hidden="true">
-          <!-- Tetractis corretta: 10 punti in schema 1 · 2 · 3 · 4 -->
+        <svg class="tetractis-svg" viewBox="0 0 420 360" aria-hidden="true">
+          <circle class="tetractis-dot" cx="210" cy="52" r="11"/>
 
-          <!-- Triangolo esterno corretto: non attraversa i punti e avvolge tutta la figura -->
-          <path class="tetractis-line" d="M210 24 L70 270 L350 270 Z"/>
+          <circle class="tetractis-dot" cx="166" cy="132" r="11"/>
+          <circle class="tetractis-dot" cx="254" cy="132" r="11"/>
 
-          <!-- Punti della tetractis -->
-          <circle class="tetractis-dot" cx="210" cy="50" r="8"/>
+          <circle class="tetractis-dot" cx="122" cy="212" r="11"/>
+          <circle class="tetractis-dot" cx="210" cy="212" r="11"/>
+          <circle class="tetractis-dot" cx="298" cy="212" r="11"/>
 
-          <circle class="tetractis-dot" cx="174" cy="110" r="8"/>
-          <circle class="tetractis-dot" cx="246" cy="110" r="8"/>
-
-          <circle class="tetractis-dot" cx="138" cy="170" r="8"/>
-          <circle class="tetractis-dot" cx="210" cy="170" r="8"/>
-          <circle class="tetractis-dot" cx="282" cy="170" r="8"/>
-
-          <circle class="tetractis-dot" cx="102" cy="230" r="8"/>
-          <circle class="tetractis-dot" cx="174" cy="230" r="8"/>
-          <circle class="tetractis-dot" cx="246" cy="230" r="8"/>
-          <circle class="tetractis-dot" cx="318" cy="230" r="8"/>
-
-          <!-- Linee orizzontali leggere -->
-          <path class="tetractis-inner-line" d="M174 110 H246"/>
-          <path class="tetractis-inner-line" d="M138 170 H282"/>
-          <path class="tetractis-inner-line" d="M102 230 H318"/>
-
-          <!-- Linee diagonali principali leggere -->
-          <path class="tetractis-inner-line" d="M210 50 L102 230"/>
-          <path class="tetractis-inner-line" d="M210 50 L318 230"/>
-
-          <!-- Linee interne leggere -->
-          <path class="tetractis-inner-line" d="M174 110 L138 170"/>
-          <path class="tetractis-inner-line" d="M246 110 L282 170"/>
-
-          <path class="tetractis-inner-line" d="M138 170 L102 230"/>
-          <path class="tetractis-inner-line" d="M210 170 L210 230"/>
-          <path class="tetractis-inner-line" d="M282 170 L318 230"/>
+          <circle class="tetractis-dot" cx="78" cy="292" r="11"/>
+          <circle class="tetractis-dot" cx="166" cy="292" r="11"/>
+          <circle class="tetractis-dot" cx="254" cy="292" r="11"/>
+          <circle class="tetractis-dot" cx="342" cy="292" r="11"/>
         </svg>
       </div>
 
@@ -1068,7 +1033,7 @@ const translations = {
 
     heroLabel: "Chi siamo",
     heroTitle: "Una boutique<br><em>indipendente</em>.<br>Una visione<br>internazionale.",
-    heroSubtitle: "Radici italiane. Operazioni complesse. Approccio selettivo, rigoroso e internazionale.",
+    heroSubtitle: "Approccio selettivo, rigoroso e internazionale.",
 
     tetractisOneTitle: "Indipendenza",
     tetractisOneText: "Valutiamo ogni operazione con autonomia, lucidità e assenza di conflitti.",
@@ -1133,7 +1098,7 @@ const translations = {
 
     heroLabel: "About us",
     heroTitle: "An <em>independent</em><br>boutique.<br>An international<br>vision.",
-    heroSubtitle: "Italian roots. Complex transactions. A selective, rigorous and international approach.",
+    heroSubtitle: "A selective, rigorous and international approach.",
 
     tetractisOneTitle: "Independence",
     tetractisOneText: "We assess each transaction with autonomy, clarity and absence of conflicts.",
