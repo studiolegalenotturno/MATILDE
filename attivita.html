@@ -176,31 +176,6 @@ nav{
   color:var(--navy-deep);
 }
 
-.link-arrow{
-  font-family:var(--sans);
-  font-size:10px;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:var(--navy);
-  text-decoration:none;
-  border-bottom:0.5px solid var(--brass);
-  padding-bottom:3px;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  transition:color 0.2s;
-  font-weight:500;
-}
-
-.link-arrow:hover{
-  color:var(--brass);
-}
-
-.link-arrow::after{
-  content:'→';
-  font-size:14px;
-}
-
 /* HERO */
 .page-hero{
   min-height:68vh;
@@ -209,18 +184,11 @@ nav{
   padding-top:76px;
   border-bottom:0.5px solid rgba(176,138,74,0.16);
   background:
-    radial-gradient(circle at 68% 46%,
-      rgba(201,169,110,0.13) 0%,
-      rgba(201,169,110,0.07) 25%,
-      rgba(201,169,110,0.03) 46%,
-      transparent 70%
-    ),
     linear-gradient(90deg,
       #F8F4EC 0%,
-      #F8F4EC 34%,
-      #F6F1E8 52%,
-      #F3EFE8 70%,
-      #F8F4EC 100%
+      #F8F4EC 36%,
+      #F4EFE6 58%,
+      #F3EFE8 100%
     );
   position:relative;
   overflow:hidden;
@@ -236,8 +204,8 @@ nav{
     repeating-linear-gradient(45deg,
       transparent,
       transparent 104px,
-      rgba(176,138,74,0.026) 104px,
-      rgba(176,138,74,0.026) 105px
+      rgba(176,138,74,0.025) 104px,
+      rgba(176,138,74,0.025) 105px
     ),
     repeating-linear-gradient(-45deg,
       transparent,
@@ -245,7 +213,7 @@ nav{
       rgba(176,138,74,0.014) 104px,
       rgba(176,138,74,0.014) 105px
     );
-  opacity:0.72;
+  opacity:0.70;
 }
 
 .page-hero::after{
@@ -253,20 +221,20 @@ nav{
   position:absolute;
   inset:76px 0 0 0;
   pointer-events:none;
-  z-index:1;
+  z-index:2;
   background:
     linear-gradient(90deg,
       rgba(248,244,236,0.98) 0%,
       rgba(248,244,236,0.86) 34%,
-      rgba(248,244,236,0.46) 50%,
-      rgba(248,244,236,0.10) 68%,
+      rgba(248,244,236,0.38) 52%,
+      rgba(248,244,236,0.05) 74%,
       rgba(248,244,236,0.00) 100%
     );
 }
 
 .hero-left{
   position:relative;
-  z-index:3;
+  z-index:4;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -285,79 +253,44 @@ nav{
 
 .hero-right{
   position:relative;
-  z-index:2;
+  z-index:1;
   display:flex;
-  align-items:center;
+  align-items:stretch;
   justify-content:center;
-  padding:76px 56px;
+  overflow:hidden;
 }
 
-.hero-visual{
-  width:100%;
-  max-width:540px;
-  min-height:420px;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.hero-compass{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(248,244,236,0.18) 0%,rgba(248,244,236,0.00) 36%),
+    url("assets/kts-bussola-hero.png") center center / cover no-repeat;
+  opacity:0.92;
 }
 
-.hero-visual::before{
+.hero-compass::before{
   content:"";
   position:absolute;
-  width:420px;
-  height:420px;
-  border:0.5px solid rgba(176,138,74,0.12);
-  border-radius:50%;
+  inset:0;
+  background:
+    radial-gradient(circle at 52% 48%,
+      rgba(176,138,74,0.04) 0%,
+      rgba(176,138,74,0.08) 34%,
+      rgba(14,26,43,0.05) 100%
+    );
 }
 
-.hero-visual::after{
+.hero-compass::after{
   content:"";
   position:absolute;
-  width:280px;
-  height:280px;
-  border:0.5px solid rgba(176,138,74,0.10);
-  border-radius:50%;
-}
-
-.orbit-word{
-  position:absolute;
-  font-family:var(--sans);
-  font-size:10px;
-  letter-spacing:0.22em;
-  text-transform:uppercase;
-  color:rgba(14,26,43,0.64);
-  font-weight:500;
-}
-
-.orbit-word.one{top:42px;left:50%;transform:translateX(-50%)}
-.orbit-word.two{right:10px;top:48%;transform:translateY(-50%)}
-.orbit-word.three{bottom:52px;left:50%;transform:translateX(-50%)}
-.orbit-word.four{left:8px;top:48%;transform:translateY(-50%)}
-
-.central-mark{
-  width:150px;
-  height:150px;
-  border:0.5px solid rgba(176,138,74,0.32);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  z-index:2;
-  background:rgba(248,244,236,0.42);
-  box-shadow:0 24px 70px rgba(176,138,74,0.10);
-}
-
-.central-mark svg{
-  width:86px;
-  height:86px;
-}
-
-.central-mark path,
-.central-mark circle,
-.central-mark rect{
-  stroke:var(--brass);
+  inset:0;
+  background:
+    linear-gradient(90deg,
+      rgba(248,244,236,0.88) 0%,
+      rgba(248,244,236,0.36) 28%,
+      rgba(248,244,236,0.00) 58%
+    );
 }
 
 /* INTRO */
@@ -440,6 +373,7 @@ nav{
   justify-content:center;
   background:rgba(248,244,236,0.38);
   transition:transform 0.35s ease,border-color 0.35s ease;
+  overflow:hidden;
 }
 
 .activity-card:hover .activity-icon{
@@ -447,17 +381,21 @@ nav{
   border-color:rgba(176,138,74,0.45);
 }
 
-.activity-icon svg{
-  width:74px;
-  height:74px;
+.activity-icon img{
+  width:82px;
+  height:82px;
+  object-fit:contain;
+  display:block;
 }
 
-.activity-icon path,
-.activity-icon circle,
-.activity-icon rect,
-.activity-icon line,
-.activity-icon polyline{
-  stroke:var(--brass);
+.activity-icon.icon-column img{
+  width:72px;
+  height:92px;
+}
+
+.activity-icon.icon-compass img{
+  width:86px;
+  height:86px;
 }
 
 /* METHOD */
@@ -597,9 +535,14 @@ footer{
     height:104px;
   }
 
-  .activity-icon svg{
-    width:60px;
-    height:60px;
+  .activity-icon img{
+    width:68px;
+    height:68px;
+  }
+
+  .activity-icon.icon-column img{
+    width:58px;
+    height:76px;
   }
 
   .activity-content{
@@ -649,31 +592,15 @@ footer{
   }
 
   .hero-right{
-    padding:30px 28px 70px;
+    min-height:340px;
   }
 
-  .hero-visual{
-    min-height:330px;
-  }
-
-  .hero-visual::before{
-    width:310px;
-    height:310px;
-  }
-
-  .hero-visual::after{
-    width:210px;
-    height:210px;
-  }
-
-  .central-mark{
-    width:122px;
-    height:122px;
-  }
-
-  .central-mark svg{
-    width:68px;
-    height:68px;
+  .hero-compass::after{
+    background:
+      linear-gradient(180deg,
+        rgba(248,244,236,0.24) 0%,
+        rgba(248,244,236,0.02) 100%
+      );
   }
 
   .activities-intro{
@@ -734,10 +661,6 @@ footer{
     font-size:10px;
   }
 
-  .orbit-word{
-    font-size:8.5px;
-  }
-
   .activity-number{
     font-size:22px;
   }
@@ -786,22 +709,7 @@ footer{
   </div>
 
   <div class="hero-right fade-in" style="transition-delay:0.15s">
-    <div class="hero-visual">
-      <span class="orbit-word one" data-i18n="orbitOne">Struttura</span>
-      <span class="orbit-word two" data-i18n="orbitTwo">Capitale</span>
-      <span class="orbit-word three" data-i18n="orbitThree">Governance</span>
-      <span class="orbit-word four" data-i18n="orbitFour">Visione</span>
-
-      <div class="central-mark">
-        <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <circle cx="50" cy="50" r="34" stroke-width="1.2"/>
-          <path d="M50 16V84" stroke-width="1.2"/>
-          <path d="M16 50H84" stroke-width="1.2"/>
-          <path d="M30 30L70 70" stroke-width="1.2"/>
-          <path d="M70 30L30 70" stroke-width="1.2"/>
-        </svg>
-      </div>
-    </div>
+    <div class="hero-compass" aria-hidden="true"></div>
   </div>
 </div>
 
@@ -833,11 +741,7 @@ footer{
     </div>
 
     <div class="activity-icon">
-      <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-        <path d="M50 12L86 82H14L50 12Z" stroke-width="1.3"/>
-        <path d="M50 28L72 72H28L50 28Z" stroke-width="1.1" opacity="0.55"/>
-        <path d="M50 12V82" stroke-width="1" opacity="0.45"/>
-      </svg>
+      <img src="assets/kts-icon-triangolo.png" alt="">
     </div>
   </article>
 
@@ -854,12 +758,7 @@ footer{
     </div>
 
     <div class="activity-icon">
-      <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-        <rect x="18" y="18" width="64" height="64" stroke-width="1.2"/>
-        <path d="M18 58C34 28 56 18 82 18" stroke-width="1.4"/>
-        <path d="M58 18V82" stroke-width="1" opacity="0.45"/>
-        <path d="M18 58H82" stroke-width="1" opacity="0.45"/>
-      </svg>
+      <img src="assets/kts-icon-spirale-aurea.png" alt="">
     </div>
   </article>
 
@@ -876,12 +775,7 @@ footer{
     </div>
 
     <div class="activity-icon">
-      <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-        <circle cx="50" cy="50" r="32" stroke-width="1.2"/>
-        <path d="M50 18C62 34 62 66 50 82" stroke-width="1.2"/>
-        <path d="M50 18C38 34 38 66 50 82" stroke-width="1.2"/>
-        <path d="M22 50H78" stroke-width="1.1"/>
-      </svg>
+      <img src="assets/kts-icon-ouroboros.png" alt="">
     </div>
   </article>
 
@@ -897,13 +791,8 @@ footer{
       </p>
     </div>
 
-    <div class="activity-icon">
-      <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-        <path d="M24 82V34L50 18L76 34V82" stroke-width="1.3"/>
-        <path d="M36 82V48H64V82" stroke-width="1.1"/>
-        <path d="M24 34H76" stroke-width="1" opacity="0.45"/>
-        <path d="M50 18V82" stroke-width="1" opacity="0.35"/>
-      </svg>
+    <div class="activity-icon icon-column">
+      <img src="assets/kts-icon-colonna.png" alt="">
     </div>
   </article>
 
@@ -920,14 +809,24 @@ footer{
     </div>
 
     <div class="activity-icon">
-      <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-        <circle cx="50" cy="50" r="34" stroke-width="1.2"/>
-        <path d="M16 50H84" stroke-width="1"/>
-        <path d="M50 16C36 34 36 66 50 84" stroke-width="1.2"/>
-        <path d="M50 16C64 34 64 66 50 84" stroke-width="1.2"/>
-        <path d="M26 28C38 36 62 36 74 28" stroke-width="1" opacity="0.55"/>
-        <path d="M26 72C38 64 62 64 74 72" stroke-width="1" opacity="0.55"/>
-      </svg>
+      <img src="assets/kts-icon-mappamondo.png" alt="">
+    </div>
+  </article>
+
+  <article class="activity-card fade-in" style="transition-delay:0.25s">
+    <div class="activity-number">06</div>
+
+    <div class="activity-content">
+      <h3 class="activity-title" data-i18n="activitySixTitle">
+        Gestione e valorizzazione<br>di <em>brevetti</em>
+      </h3>
+      <p class="activity-text" data-i18n="activitySixText">
+        Affianchiamo imprese e investitori nella tutela, gestione e valorizzazione di brevetti e asset immateriali, trasformando l’innovazione in un vantaggio competitivo e in valore strategico.
+      </p>
+    </div>
+
+    <div class="activity-icon icon-compass">
+      <img src="assets/kts-icon-compasso.png" alt="">
     </div>
   </article>
 
@@ -1008,11 +907,6 @@ const translations = {
     heroTitle: "Operazioni complesse.<br>Una <em>struttura</em> dedicata.",
     heroSubtitle: "KTS Advisory interviene nei momenti in cui una decisione, un investimento o una trasformazione richiedono coordinamento, visione e architettura.",
 
-    orbitOne: "Struttura",
-    orbitTwo: "Capitale",
-    orbitThree: "Governance",
-    orbitFour: "Visione",
-
     introLabel: "Aree operative",
     introTitle: "Non servizi isolati,<br>ma <em>operazioni</em> integrate.",
     introText: "Lavoriamo su incarichi selezionati in cui la complessità richiede un presidio unitario: dall’analisi strategica alla struttura finanziaria, dalla governance all’esecuzione operativa.",
@@ -1031,6 +925,9 @@ const translations = {
 
     activityFiveTitle: "Operazioni internazionali<br>e <em>commodities</em>",
     activityFiveText: "Interveniamo in operazioni cross-border e su asset strategici, incluse commodities, supportando la costruzione di architetture contrattuali, societarie e finanziarie adeguate al contesto internazionale.",
+
+    activitySixTitle: "Gestione e valorizzazione<br>di <em>brevetti</em>",
+    activitySixText: "Affianchiamo imprese e investitori nella tutela, gestione e valorizzazione di brevetti e asset immateriali, trasformando l’innovazione in un vantaggio competitivo e in valore strategico.",
 
     methodLabel: "Metodo integrato",
     methodTitle: "Una sola regia.<br>Più profili di <em>complessità</em>.",
@@ -1063,11 +960,6 @@ const translations = {
     heroTitle: "Complex transactions.<br>A dedicated <em>structure</em>.",
     heroSubtitle: "KTS Advisory intervenes when a decision, investment or transformation requires coordination, vision and architecture.",
 
-    orbitOne: "Structure",
-    orbitTwo: "Capital",
-    orbitThree: "Governance",
-    orbitFour: "Vision",
-
     introLabel: "Operating areas",
     introTitle: "Not isolated services,<br>but integrated <em>transactions</em>.",
     introText: "We work on selected mandates where complexity requires unified oversight: from strategic analysis to financial structure, from governance to operational execution.",
@@ -1086,6 +978,9 @@ const translations = {
 
     activityFiveTitle: "International transactions<br>and <em>commodities</em>",
     activityFiveText: "We operate on cross-border transactions and strategic assets, including commodities, supporting the construction of contractual, corporate and financial architectures suited to the international context.",
+
+    activitySixTitle: "Patent management<br>and <em>enhancement</em>",
+    activitySixText: "We support companies and investors in protecting, managing and enhancing patents and intangible assets, turning innovation into competitive advantage and strategic value.",
 
     methodLabel: "Integrated method",
     methodTitle: "One direction.<br>Multiple layers of <em>complexity</em>.",
