@@ -342,7 +342,6 @@ nav{
   letter-spacing:0.18em;
 }
 
-/* Posizionamento città */
 .city-napoli{right:25%;top:51%}
 .label-napoli{right:9%;top:53%;transform:translateY(-50%)}
 
@@ -367,7 +366,6 @@ nav{
 .city-madrid{right:62%;top:68%}
 .label-madrid{right:64%;top:71%}
 
-/* Linee sottili di collegamento */
 .map-connection{
   position:absolute;
   z-index:3;
@@ -521,71 +519,21 @@ textarea.form-field{
   margin:14px 0 20px;
 }
 
-/* WHERE */
-.where-card{
+/* GOOGLE MAP */
+.google-map{
   margin-top:34px;
-  min-height:300px;
-  position:relative;
+  height:300px;
+  border:0.5px solid rgba(176,138,74,0.28);
   overflow:hidden;
-  border:0.5px solid rgba(176,138,74,0.18);
-  background:
-    linear-gradient(180deg,rgba(248,244,236,0.20),rgba(8,17,31,0.05)),
-    radial-gradient(circle at 62% 40%,rgba(176,138,74,0.20) 0%,transparent 32%),
-    linear-gradient(135deg,#E8DED0 0%,#F8F4EC 38%,#CFC2AD 100%);
+  background:rgba(248,244,236,0.6);
 }
 
-.where-card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(90deg,rgba(14,26,43,0.10) 0 8%,transparent 8% 18%,rgba(14,26,43,0.08) 18% 21%,transparent 21% 52%,rgba(14,26,43,0.10) 52% 55%,transparent 55% 78%,rgba(14,26,43,0.10) 78% 82%,transparent 82% 100%),
-    linear-gradient(180deg,rgba(255,255,255,0.62) 0%,rgba(255,255,255,0.08) 45%,rgba(14,26,43,0.18) 100%);
-  opacity:0.88;
-}
-
-.where-card::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:42%;
-  background:
-    radial-gradient(ellipse at 62% 100%,rgba(14,26,43,0.22) 0%,transparent 52%),
-    linear-gradient(90deg,rgba(14,26,43,0.28),rgba(14,26,43,0.03),rgba(14,26,43,0.20));
-}
-
-.where-mountain{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:72px;
-  height:120px;
-  background:
-    linear-gradient(145deg,transparent 0 36%,rgba(139,132,124,0.16) 36% 43%,transparent 43%),
-    linear-gradient(35deg,transparent 0 52%,rgba(139,132,124,0.18) 52% 59%,transparent 59%);
-  opacity:0.8;
-}
-
-.where-desk{
-  position:absolute;
-  left:18%;
-  right:16%;
-  bottom:36px;
-  height:42px;
-  background:rgba(14,26,43,0.75);
-  box-shadow:0 18px 30px rgba(14,26,43,0.18);
-}
-
-.where-lamp{
-  position:absolute;
-  left:46%;
-  bottom:78px;
-  width:48px;
-  height:34px;
-  border-radius:48px 48px 0 0;
-  background:rgba(176,138,74,0.75);
+.google-map iframe{
+  width:100%;
+  height:100%;
+  display:block;
+  border:0;
+  filter:saturate(0.72) contrast(0.92) brightness(1.02);
 }
 
 /* DARK CTA */
@@ -802,8 +750,8 @@ footer{
     opacity:0.34;
   }
 
-  .where-card{
-    min-height:240px;
+  .google-map{
+    height:260px;
   }
 }
 </style>
@@ -969,10 +917,15 @@ footer{
     <p class="section-label" data-i18n="whereLabel">Dove siamo</p>
     <div class="brass-line"></div>
 
-    <div class="where-card" aria-hidden="true">
-      <span class="where-mountain"></span>
-      <span class="where-desk"></span>
-      <span class="where-lamp"></span>
+    <div class="google-map">
+      <iframe
+        src="https://www.google.com/maps?q=Via%20dei%20Mille%2016%2C%2080121%20Napoli&output=embed"
+        width="100%"
+        height="100%"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </div>
 
