@@ -57,7 +57,9 @@ nav{
   text-decoration:none;
 }
 
-.logo-image-wrap{height:52px}
+.logo-image-wrap{
+  height:52px;
+}
 
 .site-logo{
   height:52px;
@@ -112,7 +114,9 @@ nav{
 }
 
 .lang-btn.active,
-.lang-btn:hover{color:var(--brass)}
+.lang-btn:hover{
+  color:var(--brass);
+}
 
 .lang-separator{
   font-family:var(--sans);
@@ -267,46 +271,89 @@ nav{
   overflow:hidden;
 }
 
-.hero-symbol{
+/* SFUMATURA MATERICA */
+.material-visual{
   position:relative;
-  width:390px;
+  width:100%;
+  max-width:560px;
   height:390px;
-  border:0.5px solid rgba(176,138,74,0.12);
-  border-radius:50%;
+  overflow:hidden;
+  opacity:0.96;
 }
 
-.hero-symbol::before{
-  content:"";
-  position:absolute;
-  inset:68px;
-  border:0.5px solid rgba(176,138,74,0.10);
-  border-radius:50%;
-}
-
-.hero-symbol::after{
+.material-visual::before{
   content:"";
   position:absolute;
   inset:0;
   background:
-    linear-gradient(45deg, transparent 49.7%, rgba(176,138,74,0.14) 50%, transparent 50.3%),
-    linear-gradient(-45deg, transparent 49.7%, rgba(176,138,74,0.10) 50%, transparent 50.3%);
-  opacity:0.8;
+    radial-gradient(circle at 72% 28%,rgba(176,138,74,0.18) 0%,rgba(176,138,74,0.07) 22%,transparent 48%),
+    radial-gradient(circle at 36% 62%,rgba(255,255,255,0.72) 0%,rgba(255,255,255,0.28) 30%,transparent 64%),
+    linear-gradient(135deg,rgba(248,244,236,0.92) 0%,rgba(232,220,199,0.44) 52%,rgba(248,244,236,0.76) 100%);
 }
 
-.hero-word{
+.material-visual::after{
+  content:"";
   position:absolute;
-  font-family:var(--sans);
-  font-size:10px;
-  letter-spacing:0.22em;
-  text-transform:uppercase;
-  color:rgba(14,26,43,0.55);
-  font-weight:500;
+  inset:0;
+  background:
+    linear-gradient(112deg,transparent 0%,transparent 42%,rgba(176,138,74,0.18) 42.4%,transparent 43.1%,transparent 100%),
+    linear-gradient(128deg,transparent 0%,transparent 56%,rgba(176,138,74,0.13) 56.4%,transparent 57.1%,transparent 100%),
+    linear-gradient(18deg,transparent 0%,transparent 69%,rgba(176,138,74,0.10) 69.4%,transparent 70.1%,transparent 100%),
+    radial-gradient(circle at 68% 46%,rgba(176,138,74,0.13) 0%,transparent 28%);
+  opacity:0.9;
 }
 
-.hero-word.one{top:48px;left:50%;transform:translateX(-50%)}
-.hero-word.two{right:-4px;top:50%;transform:translateY(-50%)}
-.hero-word.three{bottom:48px;left:50%;transform:translateX(-50%)}
-.hero-word.four{left:-4px;top:50%;transform:translateY(-50%)}
+.material-line{
+  position:absolute;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(176,138,74,0.32),transparent);
+  transform-origin:center;
+  opacity:0.75;
+}
+
+.material-line.one{
+  width:360px;
+  top:132px;
+  right:-28px;
+  transform:rotate(-18deg);
+}
+
+.material-line.two{
+  width:420px;
+  top:220px;
+  right:-64px;
+  transform:rotate(16deg);
+}
+
+.material-line.three{
+  width:260px;
+  top:82px;
+  right:62px;
+  transform:rotate(41deg);
+}
+
+.material-grain{
+  position:absolute;
+  inset:0;
+  opacity:0.38;
+  background-image:
+    radial-gradient(circle at 12% 24%,rgba(176,138,74,0.08) 0 1px,transparent 2px),
+    radial-gradient(circle at 62% 74%,rgba(176,138,74,0.07) 0 1px,transparent 2px),
+    radial-gradient(circle at 84% 34%,rgba(14,26,43,0.035) 0 1px,transparent 2px);
+  background-size:72px 72px,96px 96px,120px 120px;
+}
+
+.material-label{
+  position:absolute;
+  right:42px;
+  bottom:44px;
+  font-family:var(--serif);
+  font-size:78px;
+  line-height:1;
+  color:rgba(176,138,74,0.075);
+  font-weight:300;
+  letter-spacing:0.04em;
+}
 
 /* PROFESSIONALS */
 .professionals-section{
@@ -573,9 +620,17 @@ footer{
     height:74px;
   }
 
-  .site-logo{height:48px}
-  .logo-image-wrap{height:48px}
-  .nav-links{display:none}
+  .site-logo{
+    height:48px;
+  }
+
+  .logo-image-wrap{
+    height:48px;
+  }
+
+  .nav-links{
+    display:none;
+  }
 
   .page-hero{
     grid-template-columns:1fr;
@@ -583,20 +638,30 @@ footer{
     padding-top:74px;
   }
 
-  .page-hero::before{inset:74px 0 0 0}
-  .page-hero::after{display:none}
+  .page-hero::before{
+    inset:74px 0 0 0;
+  }
+
+  .page-hero::after{
+    display:none;
+  }
 
   .hero-left{
     padding:80px 28px 40px;
   }
 
   .hero-right{
-    padding:30px 28px 70px;
+    padding:20px 28px 64px;
   }
 
-  .hero-symbol{
-    width:310px;
-    height:310px;
+  .material-visual{
+    height:260px;
+  }
+
+  .material-label{
+    font-size:54px;
+    right:28px;
+    bottom:30px;
   }
 
   .professionals-section{
@@ -641,13 +706,22 @@ footer{
 }
 
 @media(max-width:600px){
-  .section-headline{font-size:38px}
+  .section-headline{
+    font-size:38px;
+  }
 
-  .language-switch{padding:4px 8px}
-  .lang-btn{font-size:10px}
-  .hero-word{font-size:8.5px}
+  .language-switch{
+    padding:4px 8px;
+  }
 
-  .professional-name{font-size:32px}
+  .lang-btn{
+    font-size:10px;
+  }
+
+  .professional-name{
+    font-size:32px;
+  }
+
   .professional-photo{
     height:320px;
     min-height:320px;
@@ -693,11 +767,12 @@ footer{
   </div>
 
   <div class="hero-right fade-in" style="transition-delay:0.15s">
-    <div class="hero-symbol" aria-hidden="true">
-      <span class="hero-word one" data-i18n="heroWordOne">Competenze</span>
-      <span class="hero-word two" data-i18n="heroWordTwo">Metodo</span>
-      <span class="hero-word three" data-i18n="heroWordThree">Tutela</span>
-      <span class="hero-word four" data-i18n="heroWordFour">Visione</span>
+    <div class="material-visual" aria-hidden="true">
+      <span class="material-line one"></span>
+      <span class="material-line two"></span>
+      <span class="material-line three"></span>
+      <span class="material-grain"></span>
+      <span class="material-label">KTS</span>
     </div>
   </div>
 </div>
@@ -855,10 +930,6 @@ const translations = {
     heroLabel: "Lo Studio",
     heroTitle: "Professionisti di<br>alto profilo.<br><em>Un’unica visione.</em>",
     heroSubtitle: "KTS Advisory opera attraverso un modello boutique, fondato sull’integrazione di competenze specialistiche e sulla collaborazione con professionisti selezionati nei diversi ambiti dell’operazione.",
-    heroWordOne: "Competenze",
-    heroWordTwo: "Metodo",
-    heroWordThree: "Tutela",
-    heroWordFour: "Visione",
 
     professionalsLabel: "Professionisti",
     professionalsTitle: "Competenze selezionate.<br><em>Prospettive integrate.</em>",
@@ -909,10 +980,6 @@ const translations = {
     heroLabel: "The Firm",
     heroTitle: "High-profile<br>professionals.<br><em>One vision.</em>",
     heroSubtitle: "KTS Advisory operates through a boutique model based on the integration of specialised expertise and collaboration with selected professionals across the different areas of each transaction.",
-    heroWordOne: "Expertise",
-    heroWordTwo: "Method",
-    heroWordThree: "Protection",
-    heroWordFour: "Vision",
 
     professionalsLabel: "Professionals",
     professionalsTitle: "Selected expertise.<br><em>Integrated perspectives.</em>",
