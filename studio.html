@@ -13,14 +13,13 @@
 
 :root{
   --ivory:#F3EFE8;
+  --ivory-light:#F8F4EC;
   --carbon:#0E1A2B;
   --navy:#0E1A2B;
-  --navy-soft:#13243A;
   --navy-deep:#08111F;
   --brass:#B08A4A;
   --brass-light:#C9A96E;
   --greige:#8B847C;
-  --dark:#0E1A2B;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'DM Sans',sans-serif;
 }
@@ -46,9 +45,9 @@ nav{
   align-items:center;
   justify-content:space-between;
   padding:0 56px;
-  height:82px;
-  background:rgba(243,239,232,0.94);
-  backdrop-filter:blur(12px);
+  height:76px;
+  background:rgba(243,239,232,0.88);
+  backdrop-filter:blur(14px);
   border-bottom:0.5px solid rgba(176,138,74,0.18);
 }
 
@@ -59,11 +58,11 @@ nav{
 }
 
 .logo-image-wrap{
-  height:62px;
+  height:52px;
 }
 
 .site-logo{
-  height:62px;
+  height:52px;
   width:auto;
   display:block;
   object-fit:contain;
@@ -138,9 +137,9 @@ nav{
 
 .section-headline{
   font-family:var(--serif);
-  font-size:clamp(32px,3.5vw,52px);
+  font-size:clamp(34px,4.2vw,66px);
   font-weight:300;
-  line-height:1.2;
+  line-height:1.08;
   color:var(--navy);
 }
 
@@ -177,292 +176,397 @@ nav{
   color:var(--navy-deep);
 }
 
+.btn-outline{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--navy);
+  background:transparent;
+  border:0.5px solid rgba(176,138,74,0.55);
+  padding:14px 28px;
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:500;
+  transition:background 0.25s,color 0.25s,border-color 0.25s;
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+}
+
+.btn-outline:hover{
+  background:var(--navy);
+  color:var(--ivory);
+  border-color:var(--navy);
+}
+
 /* HERO */
 .page-hero{
-  min-height:60vh;
+  min-height:66vh;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  padding-top:82px;
-}
-
-.page-hero-left{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:80px 64px 80px 56px;
-}
-
-.page-hero-left p{
-  font-family:var(--sans);
-  font-size:14px;
-  line-height:1.8;
-  color:var(--greige);
-  max-width:410px;
-  font-weight:300;
-}
-
-.page-hero-right{
-  background:linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  grid-template-columns:0.95fr 1.05fr;
+  padding-top:76px;
+  border-bottom:0.5px solid rgba(176,138,74,0.16);
+  background:
+    radial-gradient(circle at 70% 45%,
+      rgba(201,169,110,0.13) 0%,
+      rgba(201,169,110,0.06) 30%,
+      rgba(201,169,110,0.02) 50%,
+      transparent 74%
+    ),
+    linear-gradient(90deg,
+      #F8F4EC 0%,
+      #F8F4EC 36%,
+      #F6F1E8 54%,
+      #F3EFE8 100%
+    );
   position:relative;
   overflow:hidden;
 }
 
-.page-hero-bg{
-  width:100%;
-  height:100%;
+.page-hero::before{
+  content:"";
+  position:absolute;
+  inset:76px 0 0 0;
+  pointer-events:none;
+  z-index:0;
   background:
-    repeating-linear-gradient(45deg,transparent,transparent 80px,rgba(176,138,74,0.05) 80px,rgba(176,138,74,0.05) 81px),
-    repeating-linear-gradient(-45deg,transparent,transparent 80px,rgba(176,138,74,0.035) 80px,rgba(176,138,74,0.035) 81px),
-    radial-gradient(circle at 72% 34%,rgba(201,169,110,0.16),transparent 36%);
+    repeating-linear-gradient(45deg,
+      transparent,
+      transparent 104px,
+      rgba(176,138,74,0.026) 104px,
+      rgba(176,138,74,0.026) 105px
+    ),
+    repeating-linear-gradient(-45deg,
+      transparent,
+      transparent 104px,
+      rgba(176,138,74,0.014) 104px,
+      rgba(176,138,74,0.014) 105px
+    );
+  opacity:0.72;
 }
 
-/* INTRO */
-.intro-band{
-  padding:90px 56px;
-  border-bottom:0.5px solid rgba(176,138,74,0.18);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:start;
+.page-hero::after{
+  content:"";
+  position:absolute;
+  inset:76px 0 0 0;
+  pointer-events:none;
+  z-index:1;
+  background:
+    linear-gradient(90deg,
+      rgba(248,244,236,0.98) 0%,
+      rgba(248,244,236,0.86) 35%,
+      rgba(248,244,236,0.42) 52%,
+      rgba(248,244,236,0.08) 72%,
+      rgba(248,244,236,0.00) 100%
+    );
 }
 
-.intro-band p{
+.hero-left{
+  position:relative;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:90px 64px 90px 56px;
+}
+
+.hero-left p{
   font-family:var(--sans);
   font-size:14px;
-  line-height:1.9;
+  line-height:1.8;
   color:var(--greige);
+  max-width:500px;
   font-weight:300;
-  margin-bottom:16px;
+  margin-top:30px;
 }
 
-/* PROFESSIONALS */
-.profiles-section{
-  padding:90px 56px 120px;
-}
-
-.profiles-label-row{
-  display:flex;
-  align-items:baseline;
-  justify-content:space-between;
-  margin-bottom:60px;
-  border-bottom:0.5px solid rgba(176,138,74,0.22);
-  padding-bottom:24px;
-}
-
-.profiles-count{
-  font-family:var(--serif);
-  font-size:13px;
-  color:var(--greige);
-  font-weight:300;
-  font-style:italic;
-}
-
-.profiles-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:0;
-  border-top:0.5px solid rgba(176,138,74,0.18);
-  border-left:0.5px solid rgba(176,138,74,0.18);
-}
-
-.profile-card{
-  border-right:0.5px solid rgba(176,138,74,0.18);
-  border-bottom:0.5px solid rgba(176,138,74,0.18);
-  padding:44px 40px;
+.hero-right{
   position:relative;
-  cursor:pointer;
-  transition:background 0.3s;
-  background:rgba(243,239,232,0.35);
-}
-
-.profile-card:hover{
-  background:rgba(176,138,74,0.05);
-}
-
-.profile-card::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  width:2px;
-  height:0;
-  background:var(--brass);
-  transition:height 0.35s ease;
-}
-
-.profile-card:hover::before{
-  height:100%;
-}
-
-.profile-avatar{
-  width:56px;
-  height:56px;
-  margin-bottom:28px;
-  position:relative;
-}
-
-.avatar-bg{
-  width:100%;
-  height:100%;
-  background:linear-gradient(135deg,rgba(176,138,74,0.14),rgba(176,138,74,0.06));
-  border:0.5px solid rgba(176,138,74,0.30);
+  z-index:2;
   display:flex;
   align-items:center;
   justify-content:center;
+  padding:76px 56px;
+  overflow:hidden;
 }
 
-.avatar-initials{
-  font-family:var(--serif);
-  font-size:18px;
-  font-weight:300;
-  color:var(--brass);
-  letter-spacing:0.08em;
+.hero-symbol{
+  position:relative;
+  width:420px;
+  height:420px;
+  border:0.5px solid rgba(176,138,74,0.12);
+  border-radius:50%;
 }
 
-.profile-role{
+.hero-symbol::before{
+  content:"";
+  position:absolute;
+  inset:70px;
+  border:0.5px solid rgba(176,138,74,0.10);
+  border-radius:50%;
+}
+
+.hero-symbol::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(45deg, transparent 49.7%, rgba(176,138,74,0.14) 50%, transparent 50.3%),
+    linear-gradient(-45deg, transparent 49.7%, rgba(176,138,74,0.10) 50%, transparent 50.3%);
+  opacity:0.8;
+}
+
+.hero-word{
+  position:absolute;
   font-family:var(--sans);
-  font-size:9px;
+  font-size:10px;
   letter-spacing:0.22em;
   text-transform:uppercase;
-  color:var(--brass);
-  margin-bottom:10px;
+  color:rgba(14,26,43,0.55);
   font-weight:500;
 }
 
-.profile-name{
+.hero-word.one{top:52px;left:50%;transform:translateX(-50%)}
+.hero-word.two{right:-4px;top:50%;transform:translateY(-50%)}
+.hero-word.three{bottom:52px;left:50%;transform:translateX(-50%)}
+.hero-word.four{left:-4px;top:50%;transform:translateY(-50%)}
+
+/* PROFESSIONALS */
+.professionals-section{
+  padding:96px 56px 42px;
+  background:var(--ivory);
+}
+
+.professionals-heading{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  margin-bottom:34px;
+}
+
+.professionals-heading .section-label{
+  margin-bottom:0;
+}
+
+.professionals-heading::after{
+  content:"";
+  width:70px;
+  height:1px;
+  background:rgba(176,138,74,0.55);
+}
+
+.professional-card{
+  display:grid;
+  grid-template-columns:0.75fr 1.25fr;
+  gap:48px;
+  align-items:stretch;
+  border-top:0.5px solid rgba(176,138,74,0.22);
+  border-bottom:0.5px solid rgba(176,138,74,0.22);
+  padding:42px 0;
+}
+
+.professional-photo{
+  position:relative;
+  min-height:480px;
+  border:0.5px solid rgba(176,138,74,0.42);
+  padding:6px;
+  background:rgba(248,244,236,0.56);
+}
+
+.professional-photo img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center top;
+  filter:saturate(0.92) contrast(0.98);
+}
+
+.professional-info{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:42px 48px;
+  background:linear-gradient(135deg,rgba(248,244,236,0.78),rgba(243,239,232,0.42));
+}
+
+.professional-name{
+  font-family:var(--serif);
+  font-size:clamp(34px,3.3vw,54px);
+  line-height:1.04;
+  font-weight:300;
+  color:var(--navy);
+  margin-bottom:16px;
+}
+
+.professional-role{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--brass);
+  font-weight:500;
+  margin-bottom:24px;
+}
+
+.professional-line{
+  width:44px;
+  height:1px;
+  background:var(--brass);
+  margin-bottom:26px;
+}
+
+.professional-focus{
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.22em;
+  line-height:1.9;
+  text-transform:uppercase;
+  color:var(--navy);
+  font-weight:500;
+  margin-bottom:28px;
+}
+
+.professional-bio{
+  font-size:14px;
+  line-height:1.9;
+  color:var(--greige);
+  max-width:720px;
+  margin-bottom:28px;
+}
+
+/* COMPETENCE */
+.competence-section{
+  padding:0 56px 92px;
+}
+
+.competence-title{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  margin-bottom:26px;
+}
+
+.competence-title .section-label{
+  margin-bottom:0;
+}
+
+.competence-title::after{
+  content:"";
+  width:70px;
+  height:1px;
+  background:rgba(176,138,74,0.55);
+}
+
+.competence-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:0.5px solid rgba(176,138,74,0.18);
+  border-left:0.5px solid rgba(176,138,74,0.14);
+}
+
+.competence-item{
+  padding:28px 24px;
+  border-right:0.5px solid rgba(176,138,74,0.14);
+  border-bottom:0.5px solid rgba(176,138,74,0.14);
+}
+
+.competence-icon{
+  width:36px;
+  height:36px;
+  margin-bottom:18px;
+}
+
+.competence-icon svg{
+  width:36px;
+  height:36px;
+}
+
+.competence-icon path,
+.competence-icon circle,
+.competence-icon rect,
+.competence-icon line,
+.competence-icon polyline{
+  stroke:var(--brass);
+}
+
+.competence-item h4{
   font-family:var(--serif);
   font-size:22px;
   font-weight:300;
   color:var(--navy);
-  margin-bottom:6px;
   line-height:1.2;
+  margin-bottom:10px;
 }
 
-.profile-name em{
-  font-style:italic;
-  color:var(--brass);
-}
-
-.profile-anon-note{
-  font-family:var(--sans);
-  font-size:11px;
-  color:rgba(139,132,124,0.7);
-  margin-bottom:20px;
-  font-weight:300;
-  letter-spacing:0.04em;
-}
-
-.profile-bio{
-  font-family:var(--sans);
-  font-size:13px;
-  line-height:1.8;
+.competence-item p{
+  font-size:12.5px;
+  line-height:1.75;
   color:var(--greige);
-  font-weight:300;
-  margin-bottom:24px;
 }
 
-.profile-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-}
-
-.profile-tag{
-  font-family:var(--sans);
-  font-size:9px;
-  letter-spacing:0.15em;
-  text-transform:uppercase;
-  color:var(--brass);
-  border:0.5px solid rgba(176,138,74,0.32);
-  padding:4px 10px;
-  font-weight:500;
-}
-
-/* DISCIPLINE */
-.discipline-band{
+/* METHOD */
+.method-section{
   background:linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
-  padding:100px 56px;
+  padding:96px 56px;
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:80px;
+  align-items:start;
   border-top:1px solid rgba(176,138,74,0.18);
   border-bottom:1px solid rgba(176,138,74,0.18);
 }
 
-.discipline-band .section-label{
+.method-section .section-label{
   color:var(--brass-light);
 }
 
-.discipline-band .section-headline{
+.method-section .section-headline{
   color:var(--ivory);
+  font-size:clamp(32px,3.5vw,54px);
 }
 
-.discipline-band .section-headline em{
+.method-section .section-headline em{
   color:var(--brass-light);
 }
 
-.disc-grid{
+.method-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:1fr 1fr;
   gap:0;
-  border-left:0.5px solid rgba(176,138,74,0.22);
-  margin-top:56px;
+  border-top:0.5px solid rgba(176,138,74,0.26);
+  border-left:0.5px solid rgba(176,138,74,0.16);
 }
 
-.disc-item{
-  padding:0 36px 0 28px;
-  border-right:0.5px solid rgba(176,138,74,0.22);
+.method-item{
+  padding:28px;
+  border-right:0.5px solid rgba(176,138,74,0.16);
+  border-bottom:0.5px solid rgba(176,138,74,0.16);
 }
 
-.disc-num{
+.method-num{
   font-family:var(--serif);
-  font-size:40px;
-  font-weight:300;
-  color:rgba(176,138,74,0.22);
-  line-height:1;
+  font-size:34px;
+  color:var(--brass-light);
   margin-bottom:12px;
+  font-weight:300;
 }
 
-.disc-label{
+.method-item h4{
   font-family:var(--sans);
   font-size:10px;
-  letter-spacing:0.2em;
+  letter-spacing:0.22em;
   text-transform:uppercase;
-  color:var(--brass-light);
+  color:var(--ivory);
+  margin-bottom:12px;
   font-weight:500;
-  margin-bottom:16px;
 }
 
-.disc-text{
-  font-family:var(--sans);
+.method-item p{
   font-size:13px;
-  line-height:1.8;
+  line-height:1.75;
   color:rgba(243,239,232,0.58);
-  font-weight:300;
-}
-
-/* CONFIDENTIALITY */
-.riservatezza-band{
-  padding:90px 56px;
-  border-top:0.5px solid rgba(176,138,74,0.18);
-  border-bottom:0.5px solid rgba(176,138,74,0.18);
-  display:grid;
-  grid-template-columns:1fr 2fr;
-  gap:80px;
-  align-items:center;
-  background:var(--ivory);
-}
-
-.riservatezza-note{
-  font-family:var(--serif);
-  font-size:17px;
-  font-weight:300;
-  line-height:1.8;
-  color:var(--greige);
-  font-style:italic;
-}
-
-.riservatezza-note strong{
-  font-style:normal;
-  color:var(--navy);
-  font-weight:400;
 }
 
 /* CTA */
@@ -512,152 +616,6 @@ footer{
   color:rgba(176,138,74,0.62);
 }
 
-/* MODAL */
-.modal-overlay{
-  position:fixed;
-  inset:0;
-  z-index:200;
-  background:rgba(8,17,31,0.86);
-  backdrop-filter:blur(8px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity 0.35s;
-}
-
-.modal-overlay.open{
-  opacity:1;
-  pointer-events:all;
-}
-
-.modal{
-  background:var(--ivory);
-  max-width:640px;
-  width:calc(100% - 48px);
-  max-height:85vh;
-  overflow-y:auto;
-  position:relative;
-  padding:56px;
-  transform:translateY(20px);
-  transition:transform 0.35s;
-  border:1px solid rgba(176,138,74,0.22);
-}
-
-.modal-overlay.open .modal{
-  transform:none;
-}
-
-.modal-close{
-  position:absolute;
-  top:24px;
-  right:24px;
-  width:36px;
-  height:36px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  border:0.5px solid rgba(176,138,74,0.35);
-  background:none;
-  font-family:var(--sans);
-  font-size:16px;
-  color:var(--greige);
-  transition:color 0.2s,border-color 0.2s;
-}
-
-.modal-close:hover{
-  color:var(--brass);
-  border-color:var(--brass);
-}
-
-.modal-role{
-  font-family:var(--sans);
-  font-size:10px;
-  letter-spacing:0.22em;
-  text-transform:uppercase;
-  color:var(--brass);
-  margin-bottom:12px;
-  font-weight:500;
-}
-
-.modal-name{
-  font-family:var(--serif);
-  font-size:clamp(28px,3vw,44px);
-  font-weight:300;
-  color:var(--navy);
-  margin-bottom:8px;
-  line-height:1.2;
-}
-
-.modal-name em{
-  font-style:italic;
-  color:var(--brass);
-}
-
-.modal-anon{
-  font-family:var(--sans);
-  font-size:12px;
-  color:var(--greige);
-  margin-bottom:32px;
-  font-weight:300;
-  letter-spacing:0.04em;
-}
-
-.modal-brass-line{
-  width:32px;
-  height:1px;
-  background:var(--brass);
-  margin-bottom:32px;
-}
-
-.modal-bio-full{
-  font-family:var(--sans);
-  font-size:14px;
-  line-height:1.9;
-  color:var(--greige);
-  font-weight:300;
-  margin-bottom:28px;
-}
-
-.modal-expertise-label,
-.modal-lang-label{
-  font-family:var(--sans);
-  font-size:10px;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:var(--brass);
-  margin-bottom:16px;
-  font-weight:500;
-}
-
-.modal-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-bottom:28px;
-}
-
-.modal-tag{
-  font-family:var(--sans);
-  font-size:9px;
-  letter-spacing:0.15em;
-  text-transform:uppercase;
-  color:var(--brass);
-  border:0.5px solid rgba(176,138,74,0.32);
-  padding:5px 12px;
-  font-weight:500;
-}
-
-.modal-languages{
-  font-family:var(--serif);
-  font-size:16px;
-  font-weight:300;
-  color:var(--navy);
-  font-style:italic;
-}
-
 /* ANIMATION */
 .fade-in{
   opacity:0;
@@ -671,29 +629,36 @@ footer{
 }
 
 /* RESPONSIVE */
-@media(max-width:1000px){
-  .profiles-grid{
-    grid-template-columns:repeat(2,1fr);
+@media(max-width:1050px){
+  .professional-card{
+    grid-template-columns:1fr;
   }
 
-  .disc-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:36px 0;
+  .professional-photo{
+    min-height:520px;
+  }
+
+  .competence-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .method-grid{
+    grid-template-columns:1fr;
   }
 }
 
 @media(max-width:900px){
   nav{
     padding:0 24px;
-    height:76px;
+    height:74px;
   }
 
   .site-logo{
-    height:52px;
+    height:48px;
   }
 
   .logo-image-wrap{
-    height:52px;
+    height:48px;
   }
 
   .nav-links{
@@ -703,61 +668,51 @@ footer{
   .page-hero{
     grid-template-columns:1fr;
     min-height:auto;
-    padding-top:76px;
+    padding-top:74px;
   }
 
-  .page-hero-left{
-    padding:80px 28px 64px;
+  .page-hero::before{
+    inset:74px 0 0 0;
   }
 
-  .page-hero-right{
-    height:320px;
+  .page-hero::after{
+    display:none;
   }
 
-  .intro-band{
+  .hero-left{
+    padding:80px 28px 40px;
+  }
+
+  .hero-right{
+    padding:30px 28px 70px;
+  }
+
+  .hero-symbol{
+    width:310px;
+    height:310px;
+  }
+
+  .professionals-section{
+    padding:80px 28px 34px;
+  }
+
+  .professional-info{
+    padding:34px 0 0;
+    background:transparent;
+  }
+
+  .professional-photo{
+    min-height:460px;
+  }
+
+  .competence-section{
+    padding:0 28px 72px;
+  }
+
+  .method-section{
     grid-template-columns:1fr;
     padding:80px 28px;
-    gap:48px;
-  }
-
-  .profiles-section{
-    padding:80px 28px;
-  }
-
-  .profiles-label-row{
-    flex-direction:column;
-    gap:12px;
-  }
-
-  .profiles-grid{
-    grid-template-columns:1fr;
-    border-left:none;
-  }
-
-  .profile-card{
-    border-right:none;
-  }
-
-  .discipline-band{
-    padding:80px 28px;
-  }
-
-  .disc-grid{
-    grid-template-columns:1fr;
-    border-left:none;
-    gap:0;
-  }
-
-  .disc-item{
-    padding:32px 0;
-    border-right:none;
-    border-bottom:0.5px solid rgba(176,138,74,0.22);
-  }
-
-  .riservatezza-band{
-    grid-template-columns:1fr;
-    padding:80px 28px;
-    gap:48px;
+    gap:42px;
   }
 
   .cta-band{
@@ -773,15 +728,11 @@ footer{
     align-items:flex-start;
     gap:12px;
   }
-
-  .modal{
-    padding:44px 28px;
-  }
 }
 
 @media(max-width:600px){
   .section-headline{
-    font-size:36px;
+    font-size:38px;
   }
 
   .language-switch{
@@ -791,6 +742,22 @@ footer{
   .lang-btn{
     font-size:10px;
   }
+
+  .hero-word{
+    font-size:8.5px;
+  }
+
+  .professional-name{
+    font-size:38px;
+  }
+
+  .professional-photo{
+    min-height:390px;
+  }
+
+  .competence-grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -799,7 +766,7 @@ footer{
 
 <nav>
   <a href="index.html" class="logo-wrap logo-image-wrap">
-    <img src="assets/kts-advisory-logo-web.png" alt="KTS Advisory" class="site-logo">
+    <img src="assets/kts-advisory-logo-web.png?v=15" alt="KTS Advisory" class="site-logo">
   </a>
 
   <ul class="nav-links">
@@ -818,209 +785,207 @@ footer{
 </nav>
 
 <div class="page-hero">
-  <div class="page-hero-left fade-in">
+  <div class="hero-left fade-in">
     <p class="section-label" data-i18n="heroLabel">Lo Studio</p>
     <div class="brass-line"></div>
 
-    <h1 class="section-headline" style="font-size:clamp(40px,5vw,64px);margin-bottom:32px" data-i18n="heroTitle">
-      Professionisti<br>di <em>alto profilo</em>.<br>Un'unica visione.
+    <h1 class="section-headline" data-i18n="heroTitle">
+      Professionisti di<br>alto profilo.<br><em>Un’unica visione.</em>
     </h1>
 
     <p data-i18n="heroSubtitle">
-      KTS Advisory riunisce competenze eterogenee e complementari, integrate in un metodo comune fondato su struttura, riservatezza e visione internazionale.
+      KTS Advisory opera attraverso un modello boutique, fondato sull’integrazione di competenze specialistiche e sulla collaborazione con professionisti selezionati nei diversi ambiti dell’operazione.
     </p>
   </div>
 
-  <div class="page-hero-right">
-    <div class="page-hero-bg"></div>
+  <div class="hero-right fade-in" style="transition-delay:0.15s">
+    <div class="hero-symbol" aria-hidden="true">
+      <span class="hero-word one" data-i18n="heroWordOne">Competenze</span>
+      <span class="hero-word two" data-i18n="heroWordTwo">Metodo</span>
+      <span class="hero-word three" data-i18n="heroWordThree">Tutela</span>
+      <span class="hero-word four" data-i18n="heroWordFour">Visione</span>
+    </div>
   </div>
 </div>
 
-<div class="intro-band">
+<section class="professionals-section">
+  <div class="professionals-heading fade-in">
+    <p class="section-label" data-i18n="professionalsLabel">Professionisti</p>
+  </div>
+
+  <article class="professional-card fade-in">
+    <div class="professional-photo">
+      <img src="assets/foto-avv-notturno.jpeg" alt="Avv. Giovanni Battista Notturno">
+    </div>
+
+    <div class="professional-info">
+      <h2 class="professional-name" data-i18n="notturnoName">Avv. Giovanni Battista Notturno</h2>
+      <p class="professional-role" data-i18n="notturnoRole">Studio Legale Notturno</p>
+      <div class="professional-line"></div>
+
+      <p class="professional-focus" data-i18n="notturnoFocus">
+        Diritto penale · Civile · Commerciale · Finanziario · Tributario
+      </p>
+
+      <p class="professional-bio" data-i18n="notturnoBio">
+        Avvocato iscritto all’Ordine degli Avvocati dal 2016, con esperienza in Italia, Spagna, Svizzera e Regno Unito. Opera in ambito penale, civile, commerciale, finanziario e tributario, con particolare attenzione alla tutela dei diritti e alla gestione di contesti legali complessi.
+      </p>
+
+      <a href="giovanni-battista-notturno.html" class="btn-outline" data-i18n="notturnoButton">Vedi profilo <span>→</span></a>
+    </div>
+  </article>
+</section>
+
+<section class="competence-section">
+  <div class="competence-title fade-in">
+    <p class="section-label" data-i18n="competenceLabel">Aree di competenza</p>
+  </div>
+
+  <div class="competence-grid fade-in" style="transition-delay:0.15s">
+
+    <div class="competence-item">
+      <div class="competence-icon">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M20 5V34" stroke-width="1.3"/>
+          <path d="M9 13H31" stroke-width="1.3"/>
+          <path d="M12 13L7 25H17L12 13Z" stroke-width="1.3"/>
+          <path d="M28 13L23 25H33L28 13Z" stroke-width="1.3"/>
+          <path d="M14 34H26" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <h4 data-i18n="compOneTitle">Diritto penale</h4>
+      <p data-i18n="compOneText">Difesa e assistenza in procedimenti penali e questioni giudiziarie complesse.</p>
+    </div>
+
+    <div class="competence-item">
+      <div class="competence-icon">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M11 6H25L31 12V34H11V6Z" stroke-width="1.3"/>
+          <path d="M25 6V12H31" stroke-width="1.3"/>
+          <path d="M15 18H27" stroke-width="1.1"/>
+          <path d="M15 23H27" stroke-width="1.1"/>
+          <path d="M15 28H23" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <h4 data-i18n="compTwoTitle">Diritto civile</h4>
+      <p data-i18n="compTwoText">Gestione di controversie, rapporti obbligatori e tutela degli interessi privati.</p>
+    </div>
+
+    <div class="competence-item">
+      <div class="competence-icon">
+        <svg viewBox="0 0 40 40" fill="none">
+          <rect x="8" y="13" width="24" height="19" stroke-width="1.3"/>
+          <path d="M15 13V9H25V13" stroke-width="1.3"/>
+          <path d="M8 20H32" stroke-width="1.1"/>
+          <path d="M18 20V23H22V20" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <h4 data-i18n="compThreeTitle">Diritto commerciale</h4>
+      <p data-i18n="compThreeText">Supporto in ambito societario, commerciale e nella gestione di rapporti d’impresa.</p>
+    </div>
+
+    <div class="competence-item">
+      <div class="competence-icon">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M8 16L20 8L32 16H8Z" stroke-width="1.3"/>
+          <path d="M11 16V31" stroke-width="1.3"/>
+          <path d="M17 16V31" stroke-width="1.3"/>
+          <path d="M23 16V31" stroke-width="1.3"/>
+          <path d="M29 16V31" stroke-width="1.3"/>
+          <path d="M8 31H32" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <h4 data-i18n="compFourTitle">Diritto finanziario</h4>
+      <p data-i18n="compFourText">Assistenza in contesti con profili economici, finanziari e patrimoniali rilevanti.</p>
+    </div>
+
+    <div class="competence-item">
+      <div class="competence-icon">
+        <svg viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="13" stroke-width="1.3"/>
+          <path d="M20 7V20H33" stroke-width="1.3"/>
+          <path d="M11 29L29 11" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <h4 data-i18n="compFiveTitle">Diritto tributario</h4>
+      <p data-i18n="compFiveText">Approfondimento di profili fiscali, penali tributari e societari.</p>
+    </div>
+
+    <div class="competence-item">
+      <div class="competence-icon">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M20 6L31 11V19C31 26 26 31 20 34C14 31 9 26 9 19V11L20 6Z" stroke-width="1.3"/>
+          <path d="M15 20L19 24L26 16" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <h4 data-i18n="compSixTitle">Tutela dei diritti</h4>
+      <p data-i18n="compSixText">Impegno nella tutela dei detenuti, degli italiani all’estero e dei soggetti vulnerabili.</p>
+    </div>
+
+    <div class="competence-item">
+      <div class="competence-icon">
+        <svg viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="13" stroke-width="1.3"/>
+          <path d="M7 20H33" stroke-width="1.1"/>
+          <path d="M20 7C15 12 15 28 20 33" stroke-width="1.1"/>
+          <path d="M20 7C25 12 25 28 20 33" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <h4 data-i18n="compSevenTitle">Contesti internazionali</h4>
+      <p data-i18n="compSevenText">Operatività professionale in Italia, Spagna, Svizzera e Regno Unito.</p>
+    </div>
+
+    <div class="competence-item">
+      <div class="competence-icon">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M20 6L25 16H35L27 23L30 34L20 28L10 34L13 23L5 16H15L20 6Z" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <h4 data-i18n="compEightTitle">Processi complessi</h4>
+      <p data-i18n="compEightText">Esperienza in processi con articolate indagini giudiziarie e questioni multidisciplinari.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="method-section">
   <div class="fade-in">
-    <p class="section-label" data-i18n="introLabel">Team e metodo</p>
-    <h2 class="section-headline" data-i18n="introTitle">
-      Una struttura snella,<br>una competenza <em>integrata</em>.
+    <p class="section-label" data-i18n="methodLabel">Disciplina operativa</p>
+    <h2 class="section-headline" data-i18n="methodTitle">
+      Metodo rigoroso.<br>Competenze <em>integrate</em>.
     </h2>
   </div>
 
-  <div class="fade-in" style="transition-delay:0.15s">
-    <p data-i18n="introTextOne">
-      Lo Studio opera attraverso un modello boutique, fondato sulla selezione dei mandati e sull'integrazione di competenze specialistiche. Ogni incarico viene seguito con attenzione diretta, coordinamento operativo e presidio delle fasi più sensibili.
-    </p>
-    <p data-i18n="introTextTwo">
-      La composizione del team riflette la natura delle operazioni trattate: profili corporate, finanziari, fiscali, immobiliari e internazionali dialogano all'interno di una regia unitaria.
-    </p>
-  </div>
-</div>
-
-<div class="profiles-section">
-  <div class="profiles-label-row fade-in">
-    <div>
-      <p class="section-label" data-i18n="profilesLabel">Professionisti</p>
-      <h2 class="section-headline" data-i18n="profilesTitle">Competenze selezionate.</h2>
-    </div>
-    <span class="profiles-count" data-i18n="profilesCount">Profili rappresentativi del network</span>
-  </div>
-
-  <div class="profiles-grid">
-
-    <div class="profile-card fade-in" data-profile="0">
-      <div class="profile-avatar">
-        <div class="avatar-bg"><span class="avatar-initials">KT</span></div>
-      </div>
-      <p class="profile-role" data-i18n="profileOneRole">Managing Partner</p>
-      <h3 class="profile-name" data-i18n="profileOneName">Corporate <em>Advisory</em></h3>
-      <p class="profile-anon-note" data-i18n="profileAnon">Profilo riservato</p>
-      <p class="profile-bio" data-i18n="profileOneBio">
-        Coordinamento di operazioni straordinarie, architetture societarie e processi di strutturazione complessa.
-      </p>
-      <div class="profile-tags">
-        <span class="profile-tag" data-i18n="profileOneTagOne">M&A</span>
-        <span class="profile-tag" data-i18n="profileOneTagTwo">Corporate</span>
-        <span class="profile-tag" data-i18n="profileOneTagThree">Governance</span>
-      </div>
+  <div class="method-grid fade-in" style="transition-delay:0.15s">
+    <div class="method-item">
+      <div class="method-num">01</div>
+      <h4 data-i18n="methodOneTitle">Analisi</h4>
+      <p data-i18n="methodOneText">Comprensione approfondita del contesto, degli obiettivi e dei profili critici.</p>
     </div>
 
-    <div class="profile-card fade-in" style="transition-delay:0.08s" data-profile="1">
-      <div class="profile-avatar">
-        <div class="avatar-bg"><span class="avatar-initials">FA</span></div>
-      </div>
-      <p class="profile-role" data-i18n="profileTwoRole">Financial Advisor</p>
-      <h3 class="profile-name" data-i18n="profileTwoName">Capital <em>Structuring</em></h3>
-      <p class="profile-anon-note" data-i18n="profileAnon">Profilo riservato</p>
-      <p class="profile-bio" data-i18n="profileTwoBio">
-        Analisi finanziaria, capital advisory, strutturazione di operazioni e relazione con investitori.
-      </p>
-      <div class="profile-tags">
-        <span class="profile-tag" data-i18n="profileTwoTagOne">Capital</span>
-        <span class="profile-tag" data-i18n="profileTwoTagTwo">Finance</span>
-        <span class="profile-tag" data-i18n="profileTwoTagThree">Investors</span>
-      </div>
+    <div class="method-item">
+      <div class="method-num">02</div>
+      <h4 data-i18n="methodTwoTitle">Struttura</h4>
+      <p data-i18n="methodTwoText">Definizione della strategia più coerente con il caso e con gli interessi coinvolti.</p>
     </div>
 
-    <div class="profile-card fade-in" style="transition-delay:0.16s" data-profile="2">
-      <div class="profile-avatar">
-        <div class="avatar-bg"><span class="avatar-initials">RE</span></div>
-      </div>
-      <p class="profile-role" data-i18n="profileThreeRole">Real Estate Advisor</p>
-      <h3 class="profile-name" data-i18n="profileThreeName">Real Estate <em>Operations</em></h3>
-      <p class="profile-anon-note" data-i18n="profileAnon">Profilo riservato</p>
-      <p class="profile-bio" data-i18n="profileThreeBio">
-        Valorizzazione di asset immobiliari, sviluppo, acquisizioni e strutturazione di operazioni real estate.
-      </p>
-      <div class="profile-tags">
-        <span class="profile-tag" data-i18n="profileThreeTagOne">Real Estate</span>
-        <span class="profile-tag" data-i18n="profileThreeTagTwo">Asset</span>
-        <span class="profile-tag" data-i18n="profileThreeTagThree">Development</span>
-      </div>
+    <div class="method-item">
+      <div class="method-num">03</div>
+      <h4 data-i18n="methodThreeTitle">Coordinamento</h4>
+      <p data-i18n="methodThreeText">Gestione dei rapporti professionali e dei diversi livelli dell’attività.</p>
     </div>
 
-    <div class="profile-card fade-in" style="transition-delay:0.24s" data-profile="3">
-      <div class="profile-avatar">
-        <div class="avatar-bg"><span class="avatar-initials">TX</span></div>
-      </div>
-      <p class="profile-role" data-i18n="profileFourRole">Tax & Legal Advisor</p>
-      <h3 class="profile-name" data-i18n="profileFourName">Tax & Legal <em>Architecture</em></h3>
-      <p class="profile-anon-note" data-i18n="profileAnon">Profilo riservato</p>
-      <p class="profile-bio" data-i18n="profileFourBio">
-        Presidio dei profili fiscali, societari e contrattuali nelle operazioni ad alto livello di complessità.
-      </p>
-      <div class="profile-tags">
-        <span class="profile-tag" data-i18n="profileFourTagOne">Tax</span>
-        <span class="profile-tag" data-i18n="profileFourTagTwo">Legal</span>
-        <span class="profile-tag" data-i18n="profileFourTagThree">Structuring</span>
-      </div>
-    </div>
-
-    <div class="profile-card fade-in" style="transition-delay:0.32s" data-profile="4">
-      <div class="profile-avatar">
-        <div class="avatar-bg"><span class="avatar-initials">CB</span></div>
-      </div>
-      <p class="profile-role" data-i18n="profileFiveRole">Cross-Border Advisor</p>
-      <h3 class="profile-name" data-i18n="profileFiveName">International <em>Transactions</em></h3>
-      <p class="profile-anon-note" data-i18n="profileAnon">Profilo riservato</p>
-      <p class="profile-bio" data-i18n="profileFiveBio">
-        Coordinamento di operazioni internazionali, controparti estere, commodities e asset strategici.
-      </p>
-      <div class="profile-tags">
-        <span class="profile-tag" data-i18n="profileFiveTagOne">Cross-border</span>
-        <span class="profile-tag" data-i18n="profileFiveTagTwo">Commodities</span>
-        <span class="profile-tag" data-i18n="profileFiveTagThree">International</span>
-      </div>
-    </div>
-
-    <div class="profile-card fade-in" style="transition-delay:0.40s" data-profile="5">
-      <div class="profile-avatar">
-        <div class="avatar-bg"><span class="avatar-initials">EX</span></div>
-      </div>
-      <p class="profile-role" data-i18n="profileSixRole">Execution Manager</p>
-      <h3 class="profile-name" data-i18n="profileSixName">Process <em>Coordination</em></h3>
-      <p class="profile-anon-note" data-i18n="profileAnon">Profilo riservato</p>
-      <p class="profile-bio" data-i18n="profileSixBio">
-        Coordinamento operativo delle fasi di processo, gestione documentale e allineamento tra stakeholder.
-      </p>
-      <div class="profile-tags">
-        <span class="profile-tag" data-i18n="profileSixTagOne">Execution</span>
-        <span class="profile-tag" data-i18n="profileSixTagTwo">Process</span>
-        <span class="profile-tag" data-i18n="profileSixTagThree">Coordination</span>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="discipline-band">
-  <div class="fade-in">
-    <p class="section-label" data-i18n="disciplineLabel">Disciplina operativa</p>
-    <h2 class="section-headline" data-i18n="disciplineTitle">
-      Un metodo comune<br>per competenze <em>diverse</em>.
-    </h2>
-  </div>
-
-  <div class="disc-grid fade-in" style="transition-delay:0.15s">
-    <div class="disc-item">
-      <p class="disc-num">01</p>
-      <p class="disc-label" data-i18n="discOneLabel">Analisi</p>
-      <p class="disc-text" data-i18n="discOneText">Lettura integrata del contesto, degli obiettivi e dei vincoli dell'operazione.</p>
-    </div>
-
-    <div class="disc-item">
-      <p class="disc-num">02</p>
-      <p class="disc-label" data-i18n="discTwoLabel">Struttura</p>
-      <p class="disc-text" data-i18n="discTwoText">Definizione dell'architettura societaria, finanziaria, fiscale e contrattuale.</p>
-    </div>
-
-    <div class="disc-item">
-      <p class="disc-num">03</p>
-      <p class="disc-label" data-i18n="discThreeLabel">Coordinamento</p>
-      <p class="disc-text" data-i18n="discThreeText">Regia unitaria tra professionisti, advisor, controparti e stakeholder.</p>
-    </div>
-
-    <div class="disc-item">
-      <p class="disc-num">04</p>
-      <p class="disc-label" data-i18n="discFourLabel">Execution</p>
-      <p class="disc-text" data-i18n="discFourText">Presidio delle fasi operative fino alla chiusura dell'operazione.</p>
+    <div class="method-item">
+      <div class="method-num">04</div>
+      <h4 data-i18n="methodFourTitle">Tutela</h4>
+      <p data-i18n="methodFourText">Presidio del risultato con attenzione ai diritti, alla persona e alla complessità del caso.</p>
     </div>
   </div>
-</div>
-
-<div class="riservatezza-band fade-in">
-  <div>
-    <p class="section-label" data-i18n="confidentialityLabel">Riservatezza</p>
-    <h2 class="section-headline" data-i18n="confidentialityTitle">
-      La discrezione è parte<br>della <em>struttura</em>.
-    </h2>
-  </div>
-
-  <p class="riservatezza-note" data-i18n="confidentialityText">
-    <strong>KTS Advisory opera con un approccio riservato e selettivo.</strong> Le informazioni sui professionisti, sui mandati e sulle controparti vengono gestite secondo criteri di massima discrezione, coerentemente con la natura delle operazioni trattate.
-  </p>
-</div>
+</section>
 
 <div class="cta-band fade-in">
   <p class="cta-band-text" data-i18n="ctaText">
-    Un team selezionato<br>per operazioni <em>complesse</em>.
+    Il vostro progetto richiede<br>competenze integrate e <em>visione chiara</em>?
   </p>
   <a href="contatti.html" class="btn-primary" data-i18n="ctaButton">Contattaci</a>
 </div>
@@ -1029,21 +994,6 @@ footer{
   <span class="footer-copy" data-i18n="footerCopy">© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
   <span class="footer-tagline" data-i18n="footerTagline">Struttura. Visione. Risultato.</span>
 </footer>
-
-<div class="modal-overlay" id="profileModal">
-  <div class="modal">
-    <button class="modal-close" id="modalClose">×</button>
-    <p class="modal-role" id="modalRole"></p>
-    <h3 class="modal-name" id="modalName"></h3>
-    <p class="modal-anon" id="modalAnon"></p>
-    <div class="modal-brass-line"></div>
-    <p class="modal-bio-full" id="modalBio"></p>
-    <p class="modal-expertise-label" id="modalExpertiseLabel"></p>
-    <div class="modal-tags" id="modalTags"></div>
-    <p class="modal-lang-label" id="modalLangLabel"></p>
-    <p class="modal-languages" id="modalLanguages"></p>
-  </div>
-</div>
 
 <script>
 const obs = new IntersectionObserver(
@@ -1064,77 +1014,50 @@ const translations = {
     navContacts: "Contatti",
 
     heroLabel: "Lo Studio",
-    heroTitle: "Professionisti<br>di <em>alto profilo</em>.<br>Un'unica visione.",
-    heroSubtitle: "KTS Advisory riunisce competenze eterogenee e complementari, integrate in un metodo comune fondato su struttura, riservatezza e visione internazionale.",
+    heroTitle: "Professionisti di<br>alto profilo.<br><em>Un’unica visione.</em>",
+    heroSubtitle: "KTS Advisory opera attraverso un modello boutique, fondato sull’integrazione di competenze specialistiche e sulla collaborazione con professionisti selezionati nei diversi ambiti dell’operazione.",
+    heroWordOne: "Competenze",
+    heroWordTwo: "Metodo",
+    heroWordThree: "Tutela",
+    heroWordFour: "Visione",
 
-    introLabel: "Team e metodo",
-    introTitle: "Una struttura snella,<br>una competenza <em>integrata</em>.",
-    introTextOne: "Lo Studio opera attraverso un modello boutique, fondato sulla selezione dei mandati e sull'integrazione di competenze specialistiche. Ogni incarico viene seguito con attenzione diretta, coordinamento operativo e presidio delle fasi più sensibili.",
-    introTextTwo: "La composizione del team riflette la natura delle operazioni trattate: profili corporate, finanziari, fiscali, immobiliari e internazionali dialogano all'interno di una regia unitaria.",
+    professionalsLabel: "Professionisti",
+    notturnoName: "Avv. Giovanni Battista Notturno",
+    notturnoRole: "Studio Legale Notturno",
+    notturnoFocus: "Diritto penale · Civile · Commerciale · Finanziario · Tributario",
+    notturnoBio: "Avvocato iscritto all’Ordine degli Avvocati dal 2016, con esperienza in Italia, Spagna, Svizzera e Regno Unito. Opera in ambito penale, civile, commerciale, finanziario e tributario, con particolare attenzione alla tutela dei diritti e alla gestione di contesti legali complessi.",
+    notturnoButton: "Vedi profilo <span>→</span>",
 
-    profilesLabel: "Professionisti",
-    profilesTitle: "Competenze selezionate.",
-    profilesCount: "Profili rappresentativi del network",
-    profileAnon: "Profilo riservato",
+    competenceLabel: "Aree di competenza",
+    compOneTitle: "Diritto penale",
+    compOneText: "Difesa e assistenza in procedimenti penali e questioni giudiziarie complesse.",
+    compTwoTitle: "Diritto civile",
+    compTwoText: "Gestione di controversie, rapporti obbligatori e tutela degli interessi privati.",
+    compThreeTitle: "Diritto commerciale",
+    compThreeText: "Supporto in ambito societario, commerciale e nella gestione di rapporti d’impresa.",
+    compFourTitle: "Diritto finanziario",
+    compFourText: "Assistenza in contesti con profili economici, finanziari e patrimoniali rilevanti.",
+    compFiveTitle: "Diritto tributario",
+    compFiveText: "Approfondimento di profili fiscali, penali tributari e societari.",
+    compSixTitle: "Tutela dei diritti",
+    compSixText: "Impegno nella tutela dei detenuti, degli italiani all’estero e dei soggetti vulnerabili.",
+    compSevenTitle: "Contesti internazionali",
+    compSevenText: "Operatività professionale in Italia, Spagna, Svizzera e Regno Unito.",
+    compEightTitle: "Processi complessi",
+    compEightText: "Esperienza in processi con articolate indagini giudiziarie e questioni multidisciplinari.",
 
-    profileOneRole: "Managing Partner",
-    profileOneName: "Corporate <em>Advisory</em>",
-    profileOneBio: "Coordinamento di operazioni straordinarie, architetture societarie e processi di strutturazione complessa.",
-    profileOneTagOne: "M&A",
-    profileOneTagTwo: "Corporate",
-    profileOneTagThree: "Governance",
+    methodLabel: "Disciplina operativa",
+    methodTitle: "Metodo rigoroso.<br>Competenze <em>integrate</em>.",
+    methodOneTitle: "Analisi",
+    methodOneText: "Comprensione approfondita del contesto, degli obiettivi e dei profili critici.",
+    methodTwoTitle: "Struttura",
+    methodTwoText: "Definizione della strategia più coerente con il caso e con gli interessi coinvolti.",
+    methodThreeTitle: "Coordinamento",
+    methodThreeText: "Gestione dei rapporti professionali e dei diversi livelli dell’attività.",
+    methodFourTitle: "Tutela",
+    methodFourText: "Presidio del risultato con attenzione ai diritti, alla persona e alla complessità del caso.",
 
-    profileTwoRole: "Financial Advisor",
-    profileTwoName: "Capital <em>Structuring</em>",
-    profileTwoBio: "Analisi finanziaria, capital advisory, strutturazione di operazioni e relazione con investitori.",
-    profileTwoTagOne: "Capital",
-    profileTwoTagTwo: "Finance",
-    profileTwoTagThree: "Investors",
-
-    profileThreeRole: "Real Estate Advisor",
-    profileThreeName: "Real Estate <em>Operations</em>",
-    profileThreeBio: "Valorizzazione di asset immobiliari, sviluppo, acquisizioni e strutturazione di operazioni real estate.",
-    profileThreeTagOne: "Real Estate",
-    profileThreeTagTwo: "Asset",
-    profileThreeTagThree: "Development",
-
-    profileFourRole: "Tax & Legal Advisor",
-    profileFourName: "Tax & Legal <em>Architecture</em>",
-    profileFourBio: "Presidio dei profili fiscali, societari e contrattuali nelle operazioni ad alto livello di complessità.",
-    profileFourTagOne: "Tax",
-    profileFourTagTwo: "Legal",
-    profileFourTagThree: "Structuring",
-
-    profileFiveRole: "Cross-Border Advisor",
-    profileFiveName: "International <em>Transactions</em>",
-    profileFiveBio: "Coordinamento di operazioni internazionali, controparti estere, commodities e asset strategici.",
-    profileFiveTagOne: "Cross-border",
-    profileFiveTagTwo: "Commodities",
-    profileFiveTagThree: "International",
-
-    profileSixRole: "Execution Manager",
-    profileSixName: "Process <em>Coordination</em>",
-    profileSixBio: "Coordinamento operativo delle fasi di processo, gestione documentale e allineamento tra stakeholder.",
-    profileSixTagOne: "Execution",
-    profileSixTagTwo: "Process",
-    profileSixTagThree: "Coordination",
-
-    disciplineLabel: "Disciplina operativa",
-    disciplineTitle: "Un metodo comune<br>per competenze <em>diverse</em>.",
-    discOneLabel: "Analisi",
-    discOneText: "Lettura integrata del contesto, degli obiettivi e dei vincoli dell'operazione.",
-    discTwoLabel: "Struttura",
-    discTwoText: "Definizione dell'architettura societaria, finanziaria, fiscale e contrattuale.",
-    discThreeLabel: "Coordinamento",
-    discThreeText: "Regia unitaria tra professionisti, advisor, controparti e stakeholder.",
-    discFourLabel: "Execution",
-    discFourText: "Presidio delle fasi operative fino alla chiusura dell'operazione.",
-
-    confidentialityLabel: "Riservatezza",
-    confidentialityTitle: "La discrezione è parte<br>della <em>struttura</em>.",
-    confidentialityText: "<strong>KTS Advisory opera con un approccio riservato e selettivo.</strong> Le informazioni sui professionisti, sui mandati e sulle controparti vengono gestite secondo criteri di massima discrezione, coerentemente con la natura delle operazioni trattate.",
-
-    ctaText: "Un team selezionato<br>per operazioni <em>complesse</em>.",
+    ctaText: "Il vostro progetto richiede<br>competenze integrate e <em>visione chiara</em>?",
     ctaButton: "Contattaci",
     footerCopy: "© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.",
     footerTagline: "Struttura. Visione. Risultato."
@@ -1148,190 +1071,57 @@ const translations = {
     navContacts: "Contacts",
 
     heroLabel: "The Firm",
-    heroTitle: "High-profile<br><em>professionals</em>.<br>One vision.",
-    heroSubtitle: "KTS Advisory brings together diverse and complementary expertise, integrated into a common method based on structure, discretion and international vision.",
+    heroTitle: "High-profile<br>professionals.<br><em>One vision.</em>",
+    heroSubtitle: "KTS Advisory operates through a boutique model based on the integration of specialised expertise and collaboration with selected professionals across the different areas of each transaction.",
+    heroWordOne: "Expertise",
+    heroWordTwo: "Method",
+    heroWordThree: "Protection",
+    heroWordFour: "Vision",
 
-    introLabel: "Team and method",
-    introTitle: "A lean structure,<br><em>integrated</em> expertise.",
-    introTextOne: "The Firm operates through a boutique model, based on selective mandates and the integration of specialist expertise. Each assignment is followed with direct attention, operational coordination and control of the most sensitive phases.",
-    introTextTwo: "The composition of the team reflects the nature of the transactions handled: corporate, financial, tax, real estate and international profiles interact within a unified direction.",
+    professionalsLabel: "Professionals",
+    notturnoName: "Avv. Giovanni Battista Notturno",
+    notturnoRole: "Studio Legale Notturno",
+    notturnoFocus: "Criminal law · Civil · Commercial · Financial · Tax",
+    notturnoBio: "Lawyer admitted to the Bar since 2016, with experience in Italy, Spain, Switzerland and the United Kingdom. He operates in criminal, civil, commercial, financial and tax law, with particular attention to rights protection and the management of complex legal contexts.",
+    notturnoButton: "View profile <span>→</span>",
 
-    profilesLabel: "Professionals",
-    profilesTitle: "Selected expertise.",
-    profilesCount: "Representative profiles of the network",
-    profileAnon: "Confidential profile",
+    competenceLabel: "Practice areas",
+    compOneTitle: "Criminal law",
+    compOneText: "Defence and assistance in criminal proceedings and complex judicial matters.",
+    compTwoTitle: "Civil law",
+    compTwoText: "Management of disputes, obligations and protection of private interests.",
+    compThreeTitle: "Commercial law",
+    compThreeText: "Support in corporate, commercial and business-related matters.",
+    compFourTitle: "Financial law",
+    compFourText: "Assistance in contexts involving significant economic, financial and asset-related profiles.",
+    compFiveTitle: "Tax law",
+    compFiveText: "Focus on tax, criminal-tax and corporate law profiles.",
+    compSixTitle: "Rights protection",
+    compSixText: "Commitment to the protection of detainees, Italians abroad and vulnerable individuals.",
+    compSevenTitle: "International contexts",
+    compSevenText: "Professional activity in Italy, Spain, Switzerland and the United Kingdom.",
+    compEightTitle: "Complex proceedings",
+    compEightText: "Experience in proceedings involving articulated judicial investigations and multidisciplinary issues.",
 
-    profileOneRole: "Managing Partner",
-    profileOneName: "Corporate <em>Advisory</em>",
-    profileOneBio: "Coordination of extraordinary transactions, corporate architectures and complex structuring processes.",
-    profileOneTagOne: "M&A",
-    profileOneTagTwo: "Corporate",
-    profileOneTagThree: "Governance",
+    methodLabel: "Operational discipline",
+    methodTitle: "Rigorous method.<br><em>Integrated</em> expertise.",
+    methodOneTitle: "Analysis",
+    methodOneText: "In-depth understanding of the context, objectives and critical profiles.",
+    methodTwoTitle: "Structure",
+    methodTwoText: "Definition of the strategy most consistent with the case and the interests involved.",
+    methodThreeTitle: "Coordination",
+    methodThreeText: "Management of professional relationships and the various levels of activity.",
+    methodFourTitle: "Protection",
+    methodFourText: "Oversight of the outcome with attention to rights, the individual and the complexity of the case.",
 
-    profileTwoRole: "Financial Advisor",
-    profileTwoName: "Capital <em>Structuring</em>",
-    profileTwoBio: "Financial analysis, capital advisory, transaction structuring and investor relations.",
-    profileTwoTagOne: "Capital",
-    profileTwoTagTwo: "Finance",
-    profileTwoTagThree: "Investors",
-
-    profileThreeRole: "Real Estate Advisor",
-    profileThreeName: "Real Estate <em>Operations</em>",
-    profileThreeBio: "Real estate asset enhancement, development, acquisitions and structuring of real estate transactions.",
-    profileThreeTagOne: "Real Estate",
-    profileThreeTagTwo: "Asset",
-    profileThreeTagThree: "Development",
-
-    profileFourRole: "Tax & Legal Advisor",
-    profileFourName: "Tax & Legal <em>Architecture</em>",
-    profileFourBio: "Oversight of tax, corporate and contractual profiles in highly complex transactions.",
-    profileFourTagOne: "Tax",
-    profileFourTagTwo: "Legal",
-    profileFourTagThree: "Structuring",
-
-    profileFiveRole: "Cross-Border Advisor",
-    profileFiveName: "International <em>Transactions</em>",
-    profileFiveBio: "Coordination of international transactions, foreign counterparties, commodities and strategic assets.",
-    profileFiveTagOne: "Cross-border",
-    profileFiveTagTwo: "Commodities",
-    profileFiveTagThree: "International",
-
-    profileSixRole: "Execution Manager",
-    profileSixName: "Process <em>Coordination</em>",
-    profileSixBio: "Operational coordination of process phases, document management and stakeholder alignment.",
-    profileSixTagOne: "Execution",
-    profileSixTagTwo: "Process",
-    profileSixTagThree: "Coordination",
-
-    disciplineLabel: "Operating discipline",
-    disciplineTitle: "A common method<br>for <em>different</em> expertise.",
-    discOneLabel: "Analysis",
-    discOneText: "Integrated reading of the context, objectives and constraints of the transaction.",
-    discTwoLabel: "Structure",
-    discTwoText: "Definition of the corporate, financial, tax and contractual architecture.",
-    discThreeLabel: "Coordination",
-    discThreeText: "Unified direction among professionals, advisors, counterparties and stakeholders.",
-    discFourLabel: "Execution",
-    discFourText: "Oversight of operational phases through to transaction closing.",
-
-    confidentialityLabel: "Confidentiality",
-    confidentialityTitle: "Discretion is part<br>of the <em>structure</em>.",
-    confidentialityText: "<strong>KTS Advisory operates with a confidential and selective approach.</strong> Information relating to professionals, mandates and counterparties is managed according to the highest standards of discretion, consistent with the nature of the transactions handled.",
-
-    ctaText: "A selected team<br>for <em>complex</em> transactions.",
+    ctaText: "Does your project require<br>integrated expertise and <em>clear vision</em>?",
     ctaButton: "Contact us",
     footerCopy: "© 2025 KTS Advisory S.r.l. — All rights reserved.",
     footerTagline: "Structure. Vision. Outcome."
   }
 };
 
-const profileDetails = {
-  it: [
-    {
-      role:"Managing Partner",
-      name:"Corporate <em>Advisory</em>",
-      anon:"Profilo riservato",
-      bio:"Professionista dedicato al coordinamento di operazioni straordinarie, architetture societarie e processi di strutturazione complessa. Il profilo integra visione strategica, capacità negoziale e presidio della governance dell'operazione.",
-      tags:["M&A","Corporate","Governance","Structuring"],
-      languages:"Italiano · Inglese"
-    },
-    {
-      role:"Financial Advisor",
-      name:"Capital <em>Structuring</em>",
-      anon:"Profilo riservato",
-      bio:"Figura focalizzata su analisi finanziaria, capital advisory e relazione con investitori. Supporta la definizione del fabbisogno di capitale e l'individuazione delle strutture più coerenti con l'operazione.",
-      tags:["Capital","Finance","Investors","Structured finance"],
-      languages:"Italiano · Inglese"
-    },
-    {
-      role:"Real Estate Advisor",
-      name:"Real Estate <em>Operations</em>",
-      anon:"Profilo riservato",
-      bio:"Profilo dedicato ad asset immobiliari complessi, processi di valorizzazione, sviluppo, acquisizione e strutturazione di operazioni real estate connesse a capitale, governance e tempi di execution.",
-      tags:["Real Estate","Asset","Development","Value enhancement"],
-      languages:"Italiano · Inglese"
-    },
-    {
-      role:"Tax & Legal Advisor",
-      name:"Tax & Legal <em>Architecture</em>",
-      anon:"Profilo riservato",
-      bio:"Professionista specializzato nel presidio dei profili fiscali, societari e contrattuali delle operazioni complesse, con particolare attenzione alla coerenza tra struttura giuridica e obiettivi economici.",
-      tags:["Tax","Legal","Structuring","Corporate"],
-      languages:"Italiano · Inglese"
-    },
-    {
-      role:"Cross-Border Advisor",
-      name:"International <em>Transactions</em>",
-      anon:"Profilo riservato",
-      bio:"Figura orientata al coordinamento di operazioni internazionali, relazioni con controparti estere, commodities e asset strategici. Supporta la gestione di contesti multi-giurisdizionali.",
-      tags:["Cross-border","Commodities","International","Strategic assets"],
-      languages:"Italiano · Inglese"
-    },
-    {
-      role:"Execution Manager",
-      name:"Process <em>Coordination</em>",
-      anon:"Profilo riservato",
-      bio:"Profilo dedicato al coordinamento operativo, alla gestione delle fasi di processo, all'allineamento documentale e alla relazione tra advisor, controparti e stakeholder.",
-      tags:["Execution","Process","Coordination","Stakeholders"],
-      languages:"Italiano · Inglese"
-    }
-  ],
-  en: [
-    {
-      role:"Managing Partner",
-      name:"Corporate <em>Advisory</em>",
-      anon:"Confidential profile",
-      bio:"Professional dedicated to the coordination of extraordinary transactions, corporate architectures and complex structuring processes. The profile integrates strategic vision, negotiation ability and governance oversight.",
-      tags:["M&A","Corporate","Governance","Structuring"],
-      languages:"Italian · English"
-    },
-    {
-      role:"Financial Advisor",
-      name:"Capital <em>Structuring</em>",
-      anon:"Confidential profile",
-      bio:"Profile focused on financial analysis, capital advisory and investor relations. Supports the definition of capital needs and the identification of structures most consistent with the transaction.",
-      tags:["Capital","Finance","Investors","Structured finance"],
-      languages:"Italian · English"
-    },
-    {
-      role:"Real Estate Advisor",
-      name:"Real Estate <em>Operations</em>",
-      anon:"Confidential profile",
-      bio:"Profile dedicated to complex real estate assets, value enhancement, development, acquisitions and structuring of real estate transactions connected to capital, governance and execution timing.",
-      tags:["Real Estate","Asset","Development","Value enhancement"],
-      languages:"Italian · English"
-    },
-    {
-      role:"Tax & Legal Advisor",
-      name:"Tax & Legal <em>Architecture</em>",
-      anon:"Confidential profile",
-      bio:"Professional specialised in overseeing the tax, corporate and contractual profiles of complex transactions, with particular attention to consistency between legal structure and economic objectives.",
-      tags:["Tax","Legal","Structuring","Corporate"],
-      languages:"Italian · English"
-    },
-    {
-      role:"Cross-Border Advisor",
-      name:"International <em>Transactions</em>",
-      anon:"Confidential profile",
-      bio:"Profile oriented towards the coordination of international transactions, relationships with foreign counterparties, commodities and strategic assets. Supports the management of multi-jurisdictional contexts.",
-      tags:["Cross-border","Commodities","International","Strategic assets"],
-      languages:"Italian · English"
-    },
-    {
-      role:"Execution Manager",
-      name:"Process <em>Coordination</em>",
-      anon:"Confidential profile",
-      bio:"Profile dedicated to operational coordination, process management, document alignment and relationships among advisors, counterparties and stakeholders.",
-      tags:["Execution","Process","Coordination","Stakeholders"],
-      languages:"Italian · English"
-    }
-  ]
-};
-
-let currentLanguage = localStorage.getItem("siteLanguage") || "it";
-
 function setLanguage(lang){
-  currentLanguage = lang;
   document.documentElement.lang = lang;
 
   document.querySelectorAll("[data-i18n]").forEach(element => {
@@ -1354,46 +1144,8 @@ document.querySelectorAll("[data-lang-switch]").forEach(button => {
   });
 });
 
-setLanguage(currentLanguage);
-
-const modal = document.getElementById("profileModal");
-const modalClose = document.getElementById("modalClose");
-
-document.querySelectorAll(".profile-card").forEach(card => {
-  card.addEventListener("click", () => {
-    const index = Number(card.getAttribute("data-profile"));
-    const data = profileDetails[currentLanguage][index];
-
-    document.getElementById("modalRole").innerHTML = data.role;
-    document.getElementById("modalName").innerHTML = data.name;
-    document.getElementById("modalAnon").innerHTML = data.anon;
-    document.getElementById("modalBio").innerHTML = data.bio;
-    document.getElementById("modalExpertiseLabel").innerHTML = currentLanguage === "it" ? "Competenze" : "Expertise";
-    document.getElementById("modalLangLabel").innerHTML = currentLanguage === "it" ? "Lingue" : "Languages";
-    document.getElementById("modalLanguages").innerHTML = data.languages;
-
-    const tags = document.getElementById("modalTags");
-    tags.innerHTML = "";
-    data.tags.forEach(tag => {
-      const span = document.createElement("span");
-      span.className = "modal-tag";
-      span.textContent = tag;
-      tags.appendChild(span);
-    });
-
-    modal.classList.add("open");
-  });
-});
-
-modalClose.addEventListener("click", () => modal.classList.remove("open"));
-
-modal.addEventListener("click", e => {
-  if(e.target === modal) modal.classList.remove("open");
-});
-
-document.addEventListener("keydown", e => {
-  if(e.key === "Escape") modal.classList.remove("open");
-});
+const savedLanguage = localStorage.getItem("siteLanguage") || "it";
+setLanguage(savedLanguage);
 </script>
 
 </body>
