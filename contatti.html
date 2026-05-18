@@ -306,39 +306,103 @@ nav{
   mask-image:radial-gradient(circle at 72% 52%,black 0%,black 42%,transparent 72%);
 }
 
-.map-marker{
+/* MAP CITIES */
+.map-point{
   position:absolute;
-  right:25%;
-  top:51%;
-  width:54px;
-  height:54px;
-  border:0.5px solid rgba(176,138,74,0.52);
+  width:8px;
+  height:8px;
+  background:rgba(176,138,74,0.82);
   border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  box-shadow:0 0 0 7px rgba(176,138,74,0.08);
+  z-index:4;
 }
 
-.map-marker::before{
-  content:"";
+.map-point.main-city{
   width:15px;
   height:15px;
   background:var(--brass);
-  border-radius:50%;
   box-shadow:0 0 0 12px rgba(176,138,74,0.10);
 }
 
-.map-city{
+.map-label{
   position:absolute;
-  right:9%;
-  top:53%;
-  transform:translateY(-50%);
+  z-index:5;
   font-family:var(--sans);
-  font-size:18px;
+  font-size:9px;
   letter-spacing:0.18em;
   text-transform:uppercase;
-  color:var(--brass);
+  color:rgba(14,26,43,0.62);
   font-weight:500;
+  white-space:nowrap;
+}
+
+.label-napoli{
+  font-size:18px;
+  color:var(--brass);
+  letter-spacing:0.18em;
+}
+
+/* Posizionamento città */
+.city-napoli{right:25%;top:51%}
+.label-napoli{right:9%;top:53%;transform:translateY(-50%)}
+
+.city-roma{right:36%;top:56%}
+.label-roma{right:38%;top:59%}
+
+.city-firenze{right:42%;top:45%}
+.label-firenze{right:44%;top:41%}
+
+.city-milano{right:39%;top:31%}
+.label-milano{right:41%;top:27%}
+
+.city-como{right:32%;top:25%}
+.label-como{right:25%;top:22%}
+
+.city-lugano{right:27%;top:20%}
+.label-lugano{right:16%;top:17%}
+
+.city-zurigo{right:20%;top:15%}
+.label-zurigo{right:8%;top:12%}
+
+.city-madrid{right:62%;top:68%}
+.label-madrid{right:64%;top:71%}
+
+/* Linee sottili di collegamento */
+.map-connection{
+  position:absolute;
+  z-index:3;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(176,138,74,0.32),transparent);
+  transform-origin:center;
+  opacity:0.58;
+}
+
+.connection-one{
+  width:210px;
+  right:25%;
+  top:50%;
+  transform:rotate(-47deg);
+}
+
+.connection-two{
+  width:190px;
+  right:28%;
+  top:47%;
+  transform:rotate(-25deg);
+}
+
+.connection-three{
+  width:250px;
+  right:25%;
+  top:55%;
+  transform:rotate(18deg);
+}
+
+.connection-four{
+  width:260px;
+  right:34%;
+  top:61%;
+  transform:rotate(28deg);
 }
 
 /* CONTACT AREA */
@@ -666,13 +730,25 @@ footer{
     min-height:300px;
   }
 
-  .map-city{
+  .label-napoli{
     right:28px;
     top:52%;
+    font-size:15px;
   }
 
-  .map-marker{
+  .city-napoli{
     right:168px;
+    top:51%;
+  }
+
+  .map-label:not(.label-napoli){
+    font-size:8px;
+    opacity:0.78;
+  }
+
+  .map-point:not(.main-city){
+    width:6px;
+    height:6px;
   }
 
   .contact-column{
@@ -714,14 +790,16 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .map-city{
+  .label-napoli{
     font-size:14px;
   }
 
-  .map-marker{
-    width:44px;
-    height:44px;
+  .city-napoli{
     right:130px;
+  }
+
+  .map-connection{
+    opacity:0.34;
   }
 
   .where-card{
@@ -770,8 +848,35 @@ footer{
   <div class="hero-right fade-in" style="transition-delay:0.15s">
     <div class="map-visual" aria-hidden="true">
       <span class="map-lines"></span>
-      <span class="map-marker"></span>
-      <span class="map-city">Napoli</span>
+
+      <span class="map-connection connection-one"></span>
+      <span class="map-connection connection-two"></span>
+      <span class="map-connection connection-three"></span>
+      <span class="map-connection connection-four"></span>
+
+      <span class="map-point city-napoli main-city"></span>
+      <span class="map-label label-napoli">Napoli</span>
+
+      <span class="map-point city-roma"></span>
+      <span class="map-label label-roma">Roma</span>
+
+      <span class="map-point city-firenze"></span>
+      <span class="map-label label-firenze">Firenze</span>
+
+      <span class="map-point city-milano"></span>
+      <span class="map-label label-milano">Milano</span>
+
+      <span class="map-point city-como"></span>
+      <span class="map-label label-como">Como</span>
+
+      <span class="map-point city-lugano"></span>
+      <span class="map-label label-lugano">Lugano</span>
+
+      <span class="map-point city-zurigo"></span>
+      <span class="map-label label-zurigo">Zurigo</span>
+
+      <span class="map-point city-madrid"></span>
+      <span class="map-label label-madrid">Madrid</span>
     </div>
   </div>
 </div>
