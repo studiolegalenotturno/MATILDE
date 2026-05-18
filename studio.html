@@ -57,9 +57,7 @@ nav{
   text-decoration:none;
 }
 
-.logo-image-wrap{
-  height:52px;
-}
+.logo-image-wrap{height:52px}
 
 .site-logo{
   height:52px;
@@ -114,9 +112,7 @@ nav{
 }
 
 .lang-btn.active,
-.lang-btn:hover{
-  color:var(--brass);
-}
+.lang-btn:hover{color:var(--brass)}
 
 .lang-separator{
   font-family:var(--sans);
@@ -184,14 +180,15 @@ nav{
   color:var(--navy);
   background:transparent;
   border:0.5px solid rgba(176,138,74,0.55);
-  padding:14px 28px;
+  padding:13px 24px;
   cursor:pointer;
   text-decoration:none;
   font-weight:500;
   transition:background 0.25s,color 0.25s,border-color 0.25s;
   display:inline-flex;
   align-items:center;
-  gap:18px;
+  gap:14px;
+  width:max-content;
 }
 
 .btn-outline:hover{
@@ -202,7 +199,7 @@ nav{
 
 /* HERO */
 .page-hero{
-  min-height:66vh;
+  min-height:60vh;
   display:grid;
   grid-template-columns:0.95fr 1.05fr;
   padding-top:76px;
@@ -214,12 +211,7 @@ nav{
       rgba(201,169,110,0.02) 50%,
       transparent 74%
     ),
-    linear-gradient(90deg,
-      #F8F4EC 0%,
-      #F8F4EC 36%,
-      #F6F1E8 54%,
-      #F3EFE8 100%
-    );
+    linear-gradient(90deg,#F8F4EC 0%,#F8F4EC 36%,#F6F1E8 54%,#F3EFE8 100%);
   position:relative;
   overflow:hidden;
 }
@@ -231,18 +223,8 @@ nav{
   pointer-events:none;
   z-index:0;
   background:
-    repeating-linear-gradient(45deg,
-      transparent,
-      transparent 104px,
-      rgba(176,138,74,0.026) 104px,
-      rgba(176,138,74,0.026) 105px
-    ),
-    repeating-linear-gradient(-45deg,
-      transparent,
-      transparent 104px,
-      rgba(176,138,74,0.014) 104px,
-      rgba(176,138,74,0.014) 105px
-    );
+    repeating-linear-gradient(45deg,transparent,transparent 104px,rgba(176,138,74,0.026) 104px,rgba(176,138,74,0.026) 105px),
+    repeating-linear-gradient(-45deg,transparent,transparent 104px,rgba(176,138,74,0.014) 104px,rgba(176,138,74,0.014) 105px);
   opacity:0.72;
 }
 
@@ -253,13 +235,7 @@ nav{
   pointer-events:none;
   z-index:1;
   background:
-    linear-gradient(90deg,
-      rgba(248,244,236,0.98) 0%,
-      rgba(248,244,236,0.86) 35%,
-      rgba(248,244,236,0.42) 52%,
-      rgba(248,244,236,0.08) 72%,
-      rgba(248,244,236,0.00) 100%
-    );
+    linear-gradient(90deg,rgba(248,244,236,0.98) 0%,rgba(248,244,236,0.86) 35%,rgba(248,244,236,0.42) 52%,rgba(248,244,236,0.08) 72%,rgba(248,244,236,0.00) 100%);
 }
 
 .hero-left{
@@ -268,7 +244,7 @@ nav{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  padding:90px 64px 90px 56px;
+  padding:88px 64px 88px 56px;
 }
 
 .hero-left p{
@@ -276,7 +252,7 @@ nav{
   font-size:14px;
   line-height:1.8;
   color:var(--greige);
-  max-width:500px;
+  max-width:520px;
   font-weight:300;
   margin-top:30px;
 }
@@ -287,14 +263,14 @@ nav{
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:76px 56px;
+  padding:70px 56px;
   overflow:hidden;
 }
 
 .hero-symbol{
   position:relative;
-  width:420px;
-  height:420px;
+  width:390px;
+  height:390px;
   border:0.5px solid rgba(176,138,74,0.12);
   border-radius:50%;
 }
@@ -302,7 +278,7 @@ nav{
 .hero-symbol::before{
   content:"";
   position:absolute;
-  inset:70px;
+  inset:68px;
   border:0.5px solid rgba(176,138,74,0.10);
   border-radius:50%;
 }
@@ -327,51 +303,58 @@ nav{
   font-weight:500;
 }
 
-.hero-word.one{top:52px;left:50%;transform:translateX(-50%)}
+.hero-word.one{top:48px;left:50%;transform:translateX(-50%)}
 .hero-word.two{right:-4px;top:50%;transform:translateY(-50%)}
-.hero-word.three{bottom:52px;left:50%;transform:translateX(-50%)}
+.hero-word.three{bottom:48px;left:50%;transform:translateX(-50%)}
 .hero-word.four{left:-4px;top:50%;transform:translateY(-50%)}
 
 /* PROFESSIONALS */
 .professionals-section{
-  padding:96px 56px 42px;
+  padding:92px 56px 100px;
   background:var(--ivory);
 }
 
-.professionals-heading{
-  display:flex;
-  align-items:center;
-  gap:24px;
-  margin-bottom:34px;
+.professionals-top{
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:70px;
+  align-items:end;
+  margin-bottom:48px;
 }
 
-.professionals-heading .section-label{
-  margin-bottom:0;
+.professionals-top p{
+  font-size:14px;
+  line-height:1.9;
+  color:var(--greige);
+  max-width:620px;
 }
 
-.professionals-heading::after{
-  content:"";
-  width:70px;
-  height:1px;
-  background:rgba(176,138,74,0.55);
+.professional-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
 }
 
 .professional-card{
-  display:grid;
-  grid-template-columns:0.75fr 1.25fr;
-  gap:48px;
-  align-items:stretch;
-  border-top:0.5px solid rgba(176,138,74,0.22);
-  border-bottom:0.5px solid rgba(176,138,74,0.22);
-  padding:42px 0;
+  border:0.5px solid rgba(176,138,74,0.22);
+  background:linear-gradient(135deg,rgba(248,244,236,0.72),rgba(243,239,232,0.46));
+  display:flex;
+  flex-direction:column;
+  min-height:720px;
+  transition:transform 0.28s ease,border-color 0.28s ease,box-shadow 0.28s ease;
+}
+
+.professional-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(176,138,74,0.44);
+  box-shadow:0 24px 60px rgba(14,26,43,0.06);
 }
 
 .professional-photo{
-  position:relative;
-  min-height:480px;
-  border:0.5px solid rgba(176,138,74,0.42);
-  padding:6px;
-  background:rgba(248,244,236,0.56);
+  height:310px;
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+  background:rgba(248,244,236,0.7);
+  overflow:hidden;
 }
 
 .professional-photo img{
@@ -383,127 +366,59 @@ nav{
   filter:saturate(0.92) contrast(0.98);
 }
 
-.professional-info{
+.professional-body{
+  padding:30px 28px 28px;
   display:flex;
   flex-direction:column;
-  justify-content:center;
-  padding:42px 48px;
-  background:linear-gradient(135deg,rgba(248,244,236,0.78),rgba(243,239,232,0.42));
+  flex:1;
 }
 
 .professional-name{
   font-family:var(--serif);
-  font-size:clamp(34px,3.3vw,54px);
-  line-height:1.04;
+  font-size:34px;
+  line-height:1.05;
   font-weight:300;
   color:var(--navy);
-  margin-bottom:16px;
+  margin-bottom:12px;
 }
 
 .professional-role{
   font-family:var(--sans);
-  font-size:10px;
-  letter-spacing:0.26em;
+  font-size:9.5px;
+  letter-spacing:0.23em;
   text-transform:uppercase;
   color:var(--brass);
   font-weight:500;
-  margin-bottom:24px;
+  margin-bottom:20px;
 }
 
 .professional-line{
-  width:44px;
+  width:38px;
   height:1px;
   background:var(--brass);
-  margin-bottom:26px;
+  margin-bottom:20px;
 }
 
 .professional-focus{
   font-family:var(--sans);
-  font-size:11px;
-  letter-spacing:0.22em;
-  line-height:1.9;
+  font-size:10.5px;
+  letter-spacing:0.18em;
+  line-height:1.75;
   text-transform:uppercase;
   color:var(--navy);
   font-weight:500;
-  margin-bottom:28px;
+  margin-bottom:22px;
 }
 
 .professional-bio{
-  font-size:14px;
-  line-height:1.9;
+  font-size:13px;
+  line-height:1.78;
   color:var(--greige);
-  max-width:720px;
   margin-bottom:28px;
 }
 
-/* COMPETENCE */
-.competence-section{
-  padding:0 56px 92px;
-}
-
-.competence-title{
-  display:flex;
-  align-items:center;
-  gap:24px;
-  margin-bottom:26px;
-}
-
-.competence-title .section-label{
-  margin-bottom:0;
-}
-
-.competence-title::after{
-  content:"";
-  width:70px;
-  height:1px;
-  background:rgba(176,138,74,0.55);
-}
-
-.competence-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-top:0.5px solid rgba(176,138,74,0.18);
-  border-left:0.5px solid rgba(176,138,74,0.14);
-}
-
-.competence-item{
-  padding:28px 24px;
-  border-right:0.5px solid rgba(176,138,74,0.14);
-  border-bottom:0.5px solid rgba(176,138,74,0.14);
-}
-
-.competence-icon{
-  width:36px;
-  height:36px;
-  margin-bottom:18px;
-}
-
-.competence-icon svg{
-  width:36px;
-  height:36px;
-}
-
-.competence-icon path,
-.competence-icon circle,
-.competence-icon rect,
-.competence-icon line,
-.competence-icon polyline{
-  stroke:var(--brass);
-}
-
-.competence-item h4{
-  font-family:var(--serif);
-  font-size:22px;
-  font-weight:300;
-  color:var(--navy);
-  line-height:1.2;
-  margin-bottom:10px;
-}
-
-.competence-item p{
-  font-size:12.5px;
-  line-height:1.75;
-  color:var(--greige);
+.professional-body .btn-outline{
+  margin-top:auto;
 }
 
 /* METHOD */
@@ -629,17 +544,22 @@ footer{
 }
 
 /* RESPONSIVE */
-@media(max-width:1050px){
-  .professional-card{
+@media(max-width:1150px){
+  .professional-grid{
     grid-template-columns:1fr;
   }
 
-  .professional-photo{
-    min-height:520px;
+  .professional-card{
+    min-height:auto;
+    display:grid;
+    grid-template-columns:300px 1fr;
   }
 
-  .competence-grid{
-    grid-template-columns:1fr 1fr;
+  .professional-photo{
+    height:auto;
+    min-height:420px;
+    border-bottom:none;
+    border-right:0.5px solid rgba(176,138,74,0.18);
   }
 
   .method-grid{
@@ -653,17 +573,9 @@ footer{
     height:74px;
   }
 
-  .site-logo{
-    height:48px;
-  }
-
-  .logo-image-wrap{
-    height:48px;
-  }
-
-  .nav-links{
-    display:none;
-  }
+  .site-logo{height:48px}
+  .logo-image-wrap{height:48px}
+  .nav-links{display:none}
 
   .page-hero{
     grid-template-columns:1fr;
@@ -671,13 +583,8 @@ footer{
     padding-top:74px;
   }
 
-  .page-hero::before{
-    inset:74px 0 0 0;
-  }
-
-  .page-hero::after{
-    display:none;
-  }
+  .page-hero::before{inset:74px 0 0 0}
+  .page-hero::after{display:none}
 
   .hero-left{
     padding:80px 28px 40px;
@@ -693,20 +600,23 @@ footer{
   }
 
   .professionals-section{
-    padding:80px 28px 34px;
+    padding:80px 28px 76px;
   }
 
-  .professional-info{
-    padding:34px 0 0;
-    background:transparent;
+  .professionals-top{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .professional-card{
+    display:flex;
   }
 
   .professional-photo{
-    min-height:460px;
-  }
-
-  .competence-section{
-    padding:0 28px 72px;
+    height:360px;
+    min-height:360px;
+    border-right:none;
+    border-bottom:0.5px solid rgba(176,138,74,0.18);
   }
 
   .method-section{
@@ -731,32 +641,16 @@ footer{
 }
 
 @media(max-width:600px){
-  .section-headline{
-    font-size:38px;
-  }
+  .section-headline{font-size:38px}
 
-  .language-switch{
-    padding:4px 8px;
-  }
+  .language-switch{padding:4px 8px}
+  .lang-btn{font-size:10px}
+  .hero-word{font-size:8.5px}
 
-  .lang-btn{
-    font-size:10px;
-  }
-
-  .hero-word{
-    font-size:8.5px;
-  }
-
-  .professional-name{
-    font-size:38px;
-  }
-
+  .professional-name{font-size:32px}
   .professional-photo{
-    min-height:390px;
-  }
-
-  .competence-grid{
-    grid-template-columns:1fr;
+    height:320px;
+    min-height:320px;
   }
 }
 </style>
@@ -809,141 +703,86 @@ footer{
 </div>
 
 <section class="professionals-section">
-  <div class="professionals-heading fade-in">
-    <p class="section-label" data-i18n="professionalsLabel">Professionisti</p>
+  <div class="professionals-top fade-in">
+    <div>
+      <p class="section-label" data-i18n="professionalsLabel">Professionisti</p>
+      <h2 class="section-headline" style="font-size:clamp(32px,3.3vw,52px)" data-i18n="professionalsTitle">
+        Competenze selezionate.<br><em>Prospettive integrate.</em>
+      </h2>
+    </div>
+
+    <p data-i18n="professionalsIntro">
+      La rete professionale di KTS Advisory riunisce profili specializzati in ambiti legali, fiscali, finanziari, aziendali e strategici, con un approccio coordinato e orientato alla complessità dell’operazione.
+    </p>
   </div>
 
-  <article class="professional-card fade-in">
-    <div class="professional-photo">
-      <img src="assets/foto-avv-notturno.jpeg" alt="Avv. Giovanni Battista Notturno">
-    </div>
+  <div class="professional-grid">
 
-    <div class="professional-info">
-      <h2 class="professional-name" data-i18n="notturnoName">Avv. Giovanni Battista Notturno</h2>
-      <p class="professional-role" data-i18n="notturnoRole">Studio Legale Notturno</p>
-      <div class="professional-line"></div>
-
-      <p class="professional-focus" data-i18n="notturnoFocus">
-        Diritto penale · Civile · Commerciale · Finanziario · Tributario
-      </p>
-
-      <p class="professional-bio" data-i18n="notturnoBio">
-        Avvocato iscritto all’Ordine degli Avvocati dal 2016, con esperienza in Italia, Spagna, Svizzera e Regno Unito. Opera in ambito penale, civile, commerciale, finanziario e tributario, con particolare attenzione alla tutela dei diritti e alla gestione di contesti legali complessi.
-      </p>
-
-      <a href="giovanni-battista-notturno.html" class="btn-outline" data-i18n="notturnoButton">Vedi profilo <span>→</span></a>
-    </div>
-  </article>
-</section>
-
-<section class="competence-section">
-  <div class="competence-title fade-in">
-    <p class="section-label" data-i18n="competenceLabel">Aree di competenza</p>
-  </div>
-
-  <div class="competence-grid fade-in" style="transition-delay:0.15s">
-
-    <div class="competence-item">
-      <div class="competence-icon">
-        <svg viewBox="0 0 40 40" fill="none">
-          <path d="M20 5V34" stroke-width="1.3"/>
-          <path d="M9 13H31" stroke-width="1.3"/>
-          <path d="M12 13L7 25H17L12 13Z" stroke-width="1.3"/>
-          <path d="M28 13L23 25H33L28 13Z" stroke-width="1.3"/>
-          <path d="M14 34H26" stroke-width="1.3"/>
-        </svg>
+    <article class="professional-card fade-in">
+      <div class="professional-photo">
+        <img src="assets/foto-avv-notturno.jpeg" alt="Avv. Giovanni Battista Notturno">
       </div>
-      <h4 data-i18n="compOneTitle">Diritto penale</h4>
-      <p data-i18n="compOneText">Difesa e assistenza in procedimenti penali e questioni giudiziarie complesse.</p>
-    </div>
 
-    <div class="competence-item">
-      <div class="competence-icon">
-        <svg viewBox="0 0 40 40" fill="none">
-          <path d="M11 6H25L31 12V34H11V6Z" stroke-width="1.3"/>
-          <path d="M25 6V12H31" stroke-width="1.3"/>
-          <path d="M15 18H27" stroke-width="1.1"/>
-          <path d="M15 23H27" stroke-width="1.1"/>
-          <path d="M15 28H23" stroke-width="1.1"/>
-        </svg>
-      </div>
-      <h4 data-i18n="compTwoTitle">Diritto civile</h4>
-      <p data-i18n="compTwoText">Gestione di controversie, rapporti obbligatori e tutela degli interessi privati.</p>
-    </div>
+      <div class="professional-body">
+        <h3 class="professional-name" data-i18n="notturnoName">Avv. Giovanni Battista Notturno</h3>
+        <p class="professional-role" data-i18n="notturnoRole">Studio Legale Notturno</p>
+        <div class="professional-line"></div>
 
-    <div class="competence-item">
-      <div class="competence-icon">
-        <svg viewBox="0 0 40 40" fill="none">
-          <rect x="8" y="13" width="24" height="19" stroke-width="1.3"/>
-          <path d="M15 13V9H25V13" stroke-width="1.3"/>
-          <path d="M8 20H32" stroke-width="1.1"/>
-          <path d="M18 20V23H22V20" stroke-width="1.1"/>
-        </svg>
-      </div>
-      <h4 data-i18n="compThreeTitle">Diritto commerciale</h4>
-      <p data-i18n="compThreeText">Supporto in ambito societario, commerciale e nella gestione di rapporti d’impresa.</p>
-    </div>
+        <p class="professional-focus" data-i18n="notturnoFocus">
+          Diritto penale · Civile · Commerciale · Finanziario · Tributario
+        </p>
 
-    <div class="competence-item">
-      <div class="competence-icon">
-        <svg viewBox="0 0 40 40" fill="none">
-          <path d="M8 16L20 8L32 16H8Z" stroke-width="1.3"/>
-          <path d="M11 16V31" stroke-width="1.3"/>
-          <path d="M17 16V31" stroke-width="1.3"/>
-          <path d="M23 16V31" stroke-width="1.3"/>
-          <path d="M29 16V31" stroke-width="1.3"/>
-          <path d="M8 31H32" stroke-width="1.3"/>
-        </svg>
-      </div>
-      <h4 data-i18n="compFourTitle">Diritto finanziario</h4>
-      <p data-i18n="compFourText">Assistenza in contesti con profili economici, finanziari e patrimoniali rilevanti.</p>
-    </div>
+        <p class="professional-bio" data-i18n="notturnoBio">
+          Avvocato iscritto all’Ordine degli Avvocati dal 2016, con esperienza in Italia, Spagna, Svizzera e Regno Unito. Opera in ambito penale, civile, commerciale, finanziario e tributario, con particolare attenzione alla tutela dei diritti e alla gestione di contesti legali complessi.
+        </p>
 
-    <div class="competence-item">
-      <div class="competence-icon">
-        <svg viewBox="0 0 40 40" fill="none">
-          <circle cx="20" cy="20" r="13" stroke-width="1.3"/>
-          <path d="M20 7V20H33" stroke-width="1.3"/>
-          <path d="M11 29L29 11" stroke-width="1.1"/>
-        </svg>
+        <a href="giovanni-battista-notturno.html" class="btn-outline" data-i18n="notturnoButton">Vedi profilo <span>→</span></a>
       </div>
-      <h4 data-i18n="compFiveTitle">Diritto tributario</h4>
-      <p data-i18n="compFiveText">Approfondimento di profili fiscali, penali tributari e societari.</p>
-    </div>
+    </article>
 
-    <div class="competence-item">
-      <div class="competence-icon">
-        <svg viewBox="0 0 40 40" fill="none">
-          <path d="M20 6L31 11V19C31 26 26 31 20 34C14 31 9 26 9 19V11L20 6Z" stroke-width="1.3"/>
-          <path d="M15 20L19 24L26 16" stroke-width="1.3"/>
-        </svg>
+    <article class="professional-card fade-in" style="transition-delay:0.08s">
+      <div class="professional-photo">
+        <img src="assets/foto-avv-scalzone.jpg" alt="Avv. Alessandro Scalzone">
       </div>
-      <h4 data-i18n="compSixTitle">Tutela dei diritti</h4>
-      <p data-i18n="compSixText">Impegno nella tutela dei detenuti, degli italiani all’estero e dei soggetti vulnerabili.</p>
-    </div>
 
-    <div class="competence-item">
-      <div class="competence-icon">
-        <svg viewBox="0 0 40 40" fill="none">
-          <circle cx="20" cy="20" r="13" stroke-width="1.3"/>
-          <path d="M7 20H33" stroke-width="1.1"/>
-          <path d="M20 7C15 12 15 28 20 33" stroke-width="1.1"/>
-          <path d="M20 7C25 12 25 28 20 33" stroke-width="1.1"/>
-        </svg>
-      </div>
-      <h4 data-i18n="compSevenTitle">Contesti internazionali</h4>
-      <p data-i18n="compSevenText">Operatività professionale in Italia, Spagna, Svizzera e Regno Unito.</p>
-    </div>
+      <div class="professional-body">
+        <h3 class="professional-name" data-i18n="scalzoneName">Avv. Alessandro Scalzone</h3>
+        <p class="professional-role" data-i18n="scalzoneRole">Avvocato penalista</p>
+        <div class="professional-line"></div>
 
-    <div class="competence-item">
-      <div class="competence-icon">
-        <svg viewBox="0 0 40 40" fill="none">
-          <path d="M20 6L25 16H35L27 23L30 34L20 28L10 34L13 23L5 16H15L20 6Z" stroke-width="1.2"/>
-        </svg>
+        <p class="professional-focus" data-i18n="scalzoneFocus">
+          Diritto penale · Esecuzione penale · Antiriciclaggio · Compliance AML/CTF
+        </p>
+
+        <p class="professional-bio" data-i18n="scalzoneBio">
+          Avvocato penalista, esercita la professione forense a Napoli dal 2017. Ha maturato esperienza nell’esecuzione penale e nell’assistenza a detenuti. Si occupa prevalentemente di procedure antiriciclaggio, consulenza AML/CTF, due diligence sugli investitori e compliance per istituzioni ed enti privati.
+        </p>
+
+        <a href="alessandro-scalzone.html" class="btn-outline" data-i18n="scalzoneButton">Vedi profilo <span>→</span></a>
       </div>
-      <h4 data-i18n="compEightTitle">Processi complessi</h4>
-      <p data-i18n="compEightText">Esperienza in processi con articolate indagini giudiziarie e questioni multidisciplinari.</p>
-    </div>
+    </article>
+
+    <article class="professional-card fade-in" style="transition-delay:0.16s">
+      <div class="professional-photo">
+        <img src="assets/foto-salvatore-ferraro.jpg" alt="Dott. Salvatore Ferraro">
+      </div>
+
+      <div class="professional-body">
+        <h3 class="professional-name" data-i18n="ferraroName">Dott. Salvatore Ferraro</h3>
+        <p class="professional-role" data-i18n="ferraroRole">CEO & Founder · Commercialista</p>
+        <div class="professional-line"></div>
+
+        <p class="professional-focus" data-i18n="ferraroFocus">
+          Economia · Informatica · Telemedicina · Gestione aziendale · Innovazione
+        </p>
+
+        <p class="professional-bio" data-i18n="ferraroBio">
+          Laureato in Economia presso l’Università Parthenope di Napoli, è CEO & Founder di Odd Studio srl, Mood 03 e Dotclick srl. Dottore commercialista iscritto all’Ordine di Napoli dal 2010, opera nelle aree dell’ingegneria, dell’informatica, della telemedicina e della gestione aziendale, in Italia e all’estero.
+        </p>
+
+        <a href="salvatore-ferraro.html" class="btn-outline" data-i18n="ferraroButton">Vedi profilo <span>→</span></a>
+      </div>
+    </article>
 
   </div>
 </section>
@@ -1022,29 +861,26 @@ const translations = {
     heroWordFour: "Visione",
 
     professionalsLabel: "Professionisti",
+    professionalsTitle: "Competenze selezionate.<br><em>Prospettive integrate.</em>",
+    professionalsIntro: "La rete professionale di KTS Advisory riunisce profili specializzati in ambiti legali, fiscali, finanziari, aziendali e strategici, con un approccio coordinato e orientato alla complessità dell’operazione.",
+
     notturnoName: "Avv. Giovanni Battista Notturno",
     notturnoRole: "Studio Legale Notturno",
     notturnoFocus: "Diritto penale · Civile · Commerciale · Finanziario · Tributario",
     notturnoBio: "Avvocato iscritto all’Ordine degli Avvocati dal 2016, con esperienza in Italia, Spagna, Svizzera e Regno Unito. Opera in ambito penale, civile, commerciale, finanziario e tributario, con particolare attenzione alla tutela dei diritti e alla gestione di contesti legali complessi.",
     notturnoButton: "Vedi profilo <span>→</span>",
 
-    competenceLabel: "Aree di competenza",
-    compOneTitle: "Diritto penale",
-    compOneText: "Difesa e assistenza in procedimenti penali e questioni giudiziarie complesse.",
-    compTwoTitle: "Diritto civile",
-    compTwoText: "Gestione di controversie, rapporti obbligatori e tutela degli interessi privati.",
-    compThreeTitle: "Diritto commerciale",
-    compThreeText: "Supporto in ambito societario, commerciale e nella gestione di rapporti d’impresa.",
-    compFourTitle: "Diritto finanziario",
-    compFourText: "Assistenza in contesti con profili economici, finanziari e patrimoniali rilevanti.",
-    compFiveTitle: "Diritto tributario",
-    compFiveText: "Approfondimento di profili fiscali, penali tributari e societari.",
-    compSixTitle: "Tutela dei diritti",
-    compSixText: "Impegno nella tutela dei detenuti, degli italiani all’estero e dei soggetti vulnerabili.",
-    compSevenTitle: "Contesti internazionali",
-    compSevenText: "Operatività professionale in Italia, Spagna, Svizzera e Regno Unito.",
-    compEightTitle: "Processi complessi",
-    compEightText: "Esperienza in processi con articolate indagini giudiziarie e questioni multidisciplinari.",
+    scalzoneName: "Avv. Alessandro Scalzone",
+    scalzoneRole: "Avvocato penalista",
+    scalzoneFocus: "Diritto penale · Esecuzione penale · Antiriciclaggio · Compliance AML/CTF",
+    scalzoneBio: "Avvocato penalista, esercita la professione forense a Napoli dal 2017. Ha maturato esperienza nell’esecuzione penale e nell’assistenza a detenuti. Si occupa prevalentemente di procedure antiriciclaggio, consulenza AML/CTF, due diligence sugli investitori e compliance per istituzioni ed enti privati.",
+    scalzoneButton: "Vedi profilo <span>→</span>",
+
+    ferraroName: "Dott. Salvatore Ferraro",
+    ferraroRole: "CEO & Founder · Commercialista",
+    ferraroFocus: "Economia · Informatica · Telemedicina · Gestione aziendale · Innovazione",
+    ferraroBio: "Laureato in Economia presso l’Università Parthenope di Napoli, è CEO & Founder di Odd Studio srl, Mood 03 e Dotclick srl. Dottore commercialista iscritto all’Ordine di Napoli dal 2010, opera nelle aree dell’ingegneria, dell’informatica, della telemedicina e della gestione aziendale, in Italia e all’estero.",
+    ferraroButton: "Vedi profilo <span>→</span>",
 
     methodLabel: "Disciplina operativa",
     methodTitle: "Metodo rigoroso.<br>Competenze <em>integrate</em>.",
@@ -1079,29 +915,26 @@ const translations = {
     heroWordFour: "Vision",
 
     professionalsLabel: "Professionals",
+    professionalsTitle: "Selected expertise.<br><em>Integrated perspectives.</em>",
+    professionalsIntro: "KTS Advisory’s professional network brings together specialised profiles across legal, tax, financial, corporate and strategic areas, with a coordinated approach focused on transaction complexity.",
+
     notturnoName: "Avv. Giovanni Battista Notturno",
     notturnoRole: "Studio Legale Notturno",
     notturnoFocus: "Criminal law · Civil · Commercial · Financial · Tax",
     notturnoBio: "Lawyer admitted to the Bar since 2016, with experience in Italy, Spain, Switzerland and the United Kingdom. He operates in criminal, civil, commercial, financial and tax law, with particular attention to rights protection and the management of complex legal contexts.",
     notturnoButton: "View profile <span>→</span>",
 
-    competenceLabel: "Practice areas",
-    compOneTitle: "Criminal law",
-    compOneText: "Defence and assistance in criminal proceedings and complex judicial matters.",
-    compTwoTitle: "Civil law",
-    compTwoText: "Management of disputes, obligations and protection of private interests.",
-    compThreeTitle: "Commercial law",
-    compThreeText: "Support in corporate, commercial and business-related matters.",
-    compFourTitle: "Financial law",
-    compFourText: "Assistance in contexts involving significant economic, financial and asset-related profiles.",
-    compFiveTitle: "Tax law",
-    compFiveText: "Focus on tax, criminal-tax and corporate law profiles.",
-    compSixTitle: "Rights protection",
-    compSixText: "Commitment to the protection of detainees, Italians abroad and vulnerable individuals.",
-    compSevenTitle: "International contexts",
-    compSevenText: "Professional activity in Italy, Spain, Switzerland and the United Kingdom.",
-    compEightTitle: "Complex proceedings",
-    compEightText: "Experience in proceedings involving articulated judicial investigations and multidisciplinary issues.",
+    scalzoneName: "Avv. Alessandro Scalzone",
+    scalzoneRole: "Criminal lawyer",
+    scalzoneFocus: "Criminal law · Criminal enforcement · AML · AML/CTF compliance",
+    scalzoneBio: "Criminal lawyer practising in Naples since 2017. He has developed experience in criminal enforcement and assistance to detainees. He mainly deals with anti-money laundering procedures, AML/CTF consulting, investor due diligence and compliance for institutions and private entities.",
+    scalzoneButton: "View profile <span>→</span>",
+
+    ferraroName: "Dott. Salvatore Ferraro",
+    ferraroRole: "CEO & Founder · Chartered accountant",
+    ferraroFocus: "Economics · IT · Telemedicine · Business management · Innovation",
+    ferraroBio: "Graduated in Economics from the Parthenope University of Naples, he is CEO & Founder of Odd Studio srl, Mood 03 and Dotclick srl. A chartered accountant enrolled with the Naples Register since 2010, he operates in engineering, IT, telemedicine and business management in Italy and abroad.",
+    ferraroButton: "View profile <span>→</span>",
 
     methodLabel: "Operational discipline",
     methodTitle: "Rigorous method.<br><em>Integrated</em> expertise.",
