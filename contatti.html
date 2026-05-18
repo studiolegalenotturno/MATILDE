@@ -13,14 +13,13 @@
 
 :root{
   --ivory:#F3EFE8;
+  --ivory-light:#F8F4EC;
   --carbon:#0E1A2B;
   --navy:#0E1A2B;
-  --navy-soft:#13243A;
   --navy-deep:#08111F;
   --brass:#B08A4A;
   --brass-light:#C9A96E;
   --greige:#8B847C;
-  --dark:#0E1A2B;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'DM Sans',sans-serif;
 }
@@ -28,7 +27,7 @@
 html{scroll-behavior:smooth}
 
 body{
-  background:var(--navy-deep);
+  background:var(--ivory);
   color:var(--carbon);
   font-family:var(--sans);
   font-weight:300;
@@ -46,10 +45,10 @@ nav{
   align-items:center;
   justify-content:space-between;
   padding:0 56px;
-  height:82px;
-  background:rgba(8,17,31,0.94);
-  backdrop-filter:blur(12px);
-  border-bottom:0.5px solid rgba(176,138,74,0.22);
+  height:76px;
+  background:rgba(243,239,232,0.88);
+  backdrop-filter:blur(14px);
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
 }
 
 .logo-wrap{
@@ -59,11 +58,11 @@ nav{
 }
 
 .logo-image-wrap{
-  height:62px;
+  height:52px;
 }
 
 .site-logo{
-  height:62px;
+  height:52px;
   width:auto;
   display:block;
   object-fit:contain;
@@ -80,17 +79,17 @@ nav{
   font-size:11px;
   letter-spacing:0.18em;
   text-transform:uppercase;
-  color:var(--ivory);
+  color:var(--navy);
   text-decoration:none;
   font-weight:500;
-  opacity:0.62;
+  opacity:0.68;
   transition:opacity 0.2s,color 0.2s;
 }
 
 .nav-links a:hover,
 .nav-links a.active{
   opacity:1;
-  color:var(--brass-light);
+  color:var(--brass);
 }
 
 .language-switch{
@@ -99,7 +98,7 @@ nav{
   gap:6px;
   border:0.5px solid rgba(176,138,74,0.45);
   padding:5px 10px;
-  background:rgba(243,239,232,0.04);
+  background:rgba(243,239,232,0.35);
 }
 
 .lang-btn{
@@ -108,7 +107,7 @@ nav{
   font-family:var(--sans);
   font-size:11px;
   letter-spacing:0.14em;
-  color:rgba(243,239,232,0.48);
+  color:var(--greige);
   cursor:pointer;
   font-weight:500;
   transition:color 0.2s;
@@ -116,13 +115,13 @@ nav{
 
 .lang-btn.active,
 .lang-btn:hover{
-  color:var(--brass-light);
+  color:var(--brass);
 }
 
 .lang-separator{
   font-family:var(--sans);
   font-size:10px;
-  color:rgba(243,239,232,0.28);
+  color:rgba(139,132,124,0.45);
 }
 
 /* SHARED */
@@ -131,223 +130,32 @@ nav{
   font-size:10px;
   letter-spacing:0.26em;
   text-transform:uppercase;
-  color:var(--brass-light);
-  margin-bottom:28px;
+  color:var(--brass);
+  margin-bottom:24px;
   font-weight:500;
 }
 
 .section-headline{
   font-family:var(--serif);
-  font-size:clamp(32px,3.5vw,52px);
+  font-size:clamp(38px,4.8vw,72px);
   font-weight:300;
-  line-height:1.2;
-  color:var(--ivory);
+  line-height:1.04;
+  color:var(--navy);
 }
 
 .section-headline em{
   font-style:italic;
-  color:var(--brass-light);
+  color:var(--brass);
 }
 
 .brass-line{
   width:32px;
   height:1px;
   background:var(--brass);
-  margin-bottom:32px;
+  margin-bottom:26px;
 }
 
-/* HERO */
-.page-hero{
-  padding:170px 56px 100px;
-  background:
-    radial-gradient(circle at 80% 20%,rgba(201,169,110,0.13),transparent 34%),
-    linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
-  border-bottom:0.5px solid rgba(176,138,74,0.18);
-}
-
-.page-hero-inner{
-  max-width:760px;
-}
-
-.page-hero-inner .section-headline{
-  font-size:clamp(44px,5.5vw,72px);
-  margin-bottom:32px;
-}
-
-.page-hero-inner p{
-  font-family:var(--sans);
-  font-size:15px;
-  line-height:1.9;
-  color:rgba(243,239,232,0.58);
-  font-weight:300;
-  max-width:520px;
-}
-
-/* MAIN */
-.contact-main{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:70vh;
-}
-
-/* LEFT */
-.contact-left{
-  padding:80px 64px 80px 56px;
-  background:linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
-  border-right:0.5px solid rgba(176,138,74,0.18);
-}
-
-.contact-left .section-headline{
-  font-size:clamp(28px,3vw,44px);
-}
-
-.contact-details{
-  margin-top:48px;
-  display:flex;
-  flex-direction:column;
-  gap:0;
-}
-
-.contact-row{
-  padding:28px 0;
-  border-bottom:0.5px solid rgba(176,138,74,0.16);
-  display:flex;
-  gap:24px;
-  align-items:flex-start;
-}
-
-.contact-row:first-child{
-  border-top:0.5px solid rgba(176,138,74,0.16);
-}
-
-.contact-key{
-  font-family:var(--sans);
-  font-size:10px;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:rgba(243,239,232,0.34);
-  min-width:90px;
-  padding-top:3px;
-  font-weight:500;
-}
-
-.contact-val{
-  font-family:var(--sans);
-  font-size:14px;
-  color:rgba(243,239,232,0.68);
-  font-weight:300;
-  line-height:1.7;
-}
-
-.contact-val a{
-  color:var(--brass-light);
-  text-decoration:none;
-  transition:color 0.2s;
-}
-
-.contact-val a:hover{
-  color:var(--ivory);
-}
-
-.contact-note{
-  margin-top:56px;
-  padding:32px;
-  border:0.5px solid rgba(176,138,74,0.20);
-  background:rgba(176,138,74,0.04);
-}
-
-.contact-note p{
-  font-family:var(--serif);
-  font-size:16px;
-  font-weight:300;
-  color:rgba(243,239,232,0.58);
-  line-height:1.7;
-  font-style:italic;
-}
-
-/* RIGHT */
-.contact-right{
-  padding:80px 56px 80px 64px;
-  background:#F3EFE8;
-}
-
-.form-title{
-  font-family:var(--serif);
-  font-size:clamp(24px,2.5vw,36px);
-  font-weight:300;
-  color:var(--navy);
-  margin-bottom:48px;
-  line-height:1.3;
-}
-
-.form-title em{
-  font-style:italic;
-  color:var(--brass);
-}
-
-.form-group{
-  margin-bottom:28px;
-}
-
-.form-label{
-  display:block;
-  font-family:var(--sans);
-  font-size:10px;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:var(--brass);
-  margin-bottom:10px;
-  font-weight:500;
-}
-
-.form-input,
-.form-textarea,
-.form-select{
-  width:100%;
-  background:rgba(255,255,255,0.36);
-  border:0.5px solid rgba(176,138,74,0.30);
-  color:var(--navy);
-  font-family:var(--sans);
-  font-size:14px;
-  font-weight:300;
-  padding:14px 16px;
-  outline:none;
-  transition:border-color 0.25s,background 0.25s;
-  -webkit-appearance:none;
-  appearance:none;
-}
-
-.form-input:focus,
-.form-textarea:focus,
-.form-select:focus{
-  border-color:rgba(176,138,74,0.70);
-  background:rgba(255,255,255,0.56);
-}
-
-.form-textarea{
-  resize:vertical;
-  min-height:130px;
-}
-
-.form-select{
-  cursor:pointer;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B08A4A' stroke-width='1' fill='none'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;
-  background-position:right 16px center;
-}
-
-.form-select option{
-  background:#F3EFE8;
-  color:var(--navy);
-}
-
-.form-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.btn-submit{
+.btn-primary{
   font-family:var(--sans);
   font-size:10px;
   letter-spacing:0.22em;
@@ -355,53 +163,414 @@ nav{
   color:var(--ivory);
   background:var(--navy);
   border:none;
-  padding:18px 40px;
+  padding:16px 32px;
   cursor:pointer;
+  text-decoration:none;
   font-weight:500;
   transition:background 0.25s,color 0.25s;
-  width:100%;
-  margin-top:8px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
 }
 
-.btn-submit:hover{
+.btn-primary:hover{
   background:var(--brass);
   color:var(--navy-deep);
 }
 
-.form-disclaimer{
+.btn-outline-dark{
   font-family:var(--sans);
-  font-size:11px;
-  color:rgba(14,26,43,0.48);
-  line-height:1.7;
-  margin-top:20px;
-  font-weight:300;
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--ivory);
+  border:0.5px solid rgba(176,138,74,0.75);
+  padding:17px 34px;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:36px;
+  font-weight:500;
+  transition:background 0.25s,color 0.25s;
 }
 
-/* SUCCESS */
-.success-msg{
-  display:none;
-  text-align:center;
-  padding:40px 0;
+.btn-outline-dark:hover{
+  background:var(--brass);
+  color:var(--navy-deep);
 }
 
-.success-msg svg{
-  margin-bottom:24px;
+/* HERO */
+.page-hero{
+  min-height:56vh;
+  padding-top:76px;
+  display:grid;
+  grid-template-columns:0.95fr 1.05fr;
+  position:relative;
+  overflow:hidden;
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+  background:
+    linear-gradient(90deg,#F8F4EC 0%,#F7F2EA 38%,#F3EFE8 100%);
 }
 
-.success-msg h3{
-  font-family:var(--serif);
-  font-size:28px;
-  font-weight:300;
+.page-hero::before{
+  content:"";
+  position:absolute;
+  inset:76px 0 0 0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 78% 52%,rgba(176,138,74,0.13) 0%,rgba(176,138,74,0.045) 24%,transparent 50%),
+    repeating-linear-gradient(34deg,transparent,transparent 118px,rgba(176,138,74,0.026) 118px,rgba(176,138,74,0.026) 119px),
+    repeating-linear-gradient(-21deg,transparent,transparent 150px,rgba(14,26,43,0.018) 150px,rgba(14,26,43,0.018) 151px);
+  opacity:0.95;
+}
+
+.page-hero::after{
+  content:"";
+  position:absolute;
+  inset:76px 0 0 0;
+  z-index:2;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,
+      rgba(248,244,236,0.99) 0%,
+      rgba(248,244,236,0.93) 33%,
+      rgba(248,244,236,0.64) 48%,
+      rgba(248,244,236,0.24) 64%,
+      rgba(248,244,236,0.02) 100%
+    );
+}
+
+.hero-left{
+  position:relative;
+  z-index:4;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:88px 64px 88px 56px;
+}
+
+.hero-left p.hero-text{
+  font-size:14px;
+  line-height:1.9;
   color:var(--navy);
+  max-width:520px;
+  font-weight:400;
+  margin-top:30px;
+}
+
+.hero-right{
+  position:relative;
+  z-index:1;
+  min-height:430px;
+  overflow:hidden;
+}
+
+.map-visual{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+}
+
+.map-visual::before{
+  content:"";
+  position:absolute;
+  inset:-10%;
+  background:
+    radial-gradient(circle at 72% 56%,rgba(176,138,74,0.15) 0%,rgba(176,138,74,0.06) 18%,transparent 42%),
+    linear-gradient(118deg,transparent 0%,transparent 42%,rgba(176,138,74,0.16) 42.35%,transparent 43.1%,transparent 100%),
+    linear-gradient(162deg,transparent 0%,transparent 52%,rgba(176,138,74,0.10) 52.35%,transparent 53.1%,transparent 100%),
+    linear-gradient(22deg,transparent 0%,transparent 64%,rgba(176,138,74,0.08) 64.35%,transparent 65.1%,transparent 100%);
+}
+
+.map-visual::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:0.40;
+  background-image:
+    radial-gradient(circle at 15% 22%,rgba(139,132,124,0.10) 0 1px,transparent 2px),
+    radial-gradient(circle at 62% 68%,rgba(139,132,124,0.12) 0 1px,transparent 2px),
+    radial-gradient(circle at 88% 38%,rgba(176,138,74,0.13) 0 1px,transparent 2px);
+  background-size:78px 78px,104px 104px,128px 128px;
+}
+
+.map-lines{
+  position:absolute;
+  inset:0;
+  opacity:0.34;
+  background:
+    repeating-linear-gradient(8deg,transparent,transparent 38px,rgba(139,132,124,0.055) 39px),
+    repeating-linear-gradient(101deg,transparent,transparent 52px,rgba(139,132,124,0.035) 53px);
+  mask-image:radial-gradient(circle at 72% 52%,black 0%,black 42%,transparent 72%);
+}
+
+.map-marker{
+  position:absolute;
+  right:25%;
+  top:51%;
+  width:54px;
+  height:54px;
+  border:0.5px solid rgba(176,138,74,0.52);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.map-marker::before{
+  content:"";
+  width:15px;
+  height:15px;
+  background:var(--brass);
+  border-radius:50%;
+  box-shadow:0 0 0 12px rgba(176,138,74,0.10);
+}
+
+.map-city{
+  position:absolute;
+  right:9%;
+  top:53%;
+  transform:translateY(-50%);
+  font-family:var(--sans);
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--brass);
+  font-weight:500;
+}
+
+/* CONTACT AREA */
+.contact-section{
+  display:grid;
+  grid-template-columns:0.85fr 1.25fr 1fr;
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+  background:var(--ivory);
+}
+
+.contact-column{
+  padding:64px 56px;
+  border-right:0.5px solid rgba(176,138,74,0.18);
+}
+
+.contact-column:last-child{
+  border-right:none;
+}
+
+.info-list{
+  margin-top:28px;
+}
+
+.info-item{
+  display:grid;
+  grid-template-columns:42px 1fr;
+  gap:24px;
+  padding:22px 0;
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
+
+.info-item:last-child{
+  border-bottom:none;
+}
+
+.info-icon{
+  width:32px;
+  height:32px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+.info-icon svg{
+  width:30px;
+  height:30px;
+}
+
+.info-icon path,
+.info-icon circle,
+.info-icon rect,
+.info-icon line,
+.info-icon polyline{
+  stroke:var(--brass);
+}
+
+.info-text{
+  font-size:13px;
+  line-height:1.75;
+  color:var(--navy);
+}
+
+.info-text a{
+  color:var(--navy);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.info-text a:hover{
+  color:var(--brass);
+}
+
+/* FORM */
+.contact-form{
+  margin-top:28px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.form-field{
+  width:100%;
+  border:0.5px solid rgba(139,132,124,0.28);
+  background:rgba(248,244,236,0.58);
+  padding:15px 16px;
+  font-family:var(--sans);
+  font-size:13px;
+  color:var(--navy);
+  outline:none;
+  transition:border-color 0.2s,background 0.2s;
+}
+
+.form-field:focus{
+  border-color:rgba(176,138,74,0.75);
+  background:rgba(248,244,236,0.85);
+}
+
+textarea.form-field{
+  min-height:130px;
+  resize:vertical;
   margin-bottom:12px;
 }
 
-.success-msg p{
-  font-family:var(--sans);
-  font-size:14px;
-  color:var(--greige);
+.form-field.full{
+  margin-bottom:10px;
+}
+
+.form-note{
+  font-size:11px;
+  line-height:1.6;
+  color:rgba(139,132,124,0.78);
+  margin:14px 0 20px;
+}
+
+/* WHERE */
+.where-card{
+  margin-top:34px;
+  min-height:300px;
+  position:relative;
+  overflow:hidden;
+  border:0.5px solid rgba(176,138,74,0.18);
+  background:
+    linear-gradient(180deg,rgba(248,244,236,0.20),rgba(8,17,31,0.05)),
+    radial-gradient(circle at 62% 40%,rgba(176,138,74,0.20) 0%,transparent 32%),
+    linear-gradient(135deg,#E8DED0 0%,#F8F4EC 38%,#CFC2AD 100%);
+}
+
+.where-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(14,26,43,0.10) 0 8%,transparent 8% 18%,rgba(14,26,43,0.08) 18% 21%,transparent 21% 52%,rgba(14,26,43,0.10) 52% 55%,transparent 55% 78%,rgba(14,26,43,0.10) 78% 82%,transparent 82% 100%),
+    linear-gradient(180deg,rgba(255,255,255,0.62) 0%,rgba(255,255,255,0.08) 45%,rgba(14,26,43,0.18) 100%);
+  opacity:0.88;
+}
+
+.where-card::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:42%;
+  background:
+    radial-gradient(ellipse at 62% 100%,rgba(14,26,43,0.22) 0%,transparent 52%),
+    linear-gradient(90deg,rgba(14,26,43,0.28),rgba(14,26,43,0.03),rgba(14,26,43,0.20));
+}
+
+.where-mountain{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:72px;
+  height:120px;
+  background:
+    linear-gradient(145deg,transparent 0 36%,rgba(139,132,124,0.16) 36% 43%,transparent 43%),
+    linear-gradient(35deg,transparent 0 52%,rgba(139,132,124,0.18) 52% 59%,transparent 59%);
+  opacity:0.8;
+}
+
+.where-desk{
+  position:absolute;
+  left:18%;
+  right:16%;
+  bottom:36px;
+  height:42px;
+  background:rgba(14,26,43,0.75);
+  box-shadow:0 18px 30px rgba(14,26,43,0.18);
+}
+
+.where-lamp{
+  position:absolute;
+  left:46%;
+  bottom:78px;
+  width:48px;
+  height:34px;
+  border-radius:48px 48px 0 0;
+  background:rgba(176,138,74,0.75);
+}
+
+/* DARK CTA */
+.dark-cta{
+  background:
+    radial-gradient(circle at 88% 50%,rgba(176,138,74,0.09),transparent 28%),
+    linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  padding:66px 56px;
+  display:grid;
+  grid-template-columns:1fr 0.7fr;
+  gap:60px;
+  align-items:center;
+  border-bottom:0.5px solid rgba(176,138,74,0.24);
+  position:relative;
+  overflow:hidden;
+}
+
+.dark-cta::after{
+  content:"";
+  position:absolute;
+  right:-80px;
+  top:-80px;
+  width:360px;
+  height:360px;
+  border:0.5px solid rgba(176,138,74,0.08);
+  border-radius:50%;
+}
+
+.dark-cta-text{
+  font-family:var(--serif);
+  font-size:clamp(26px,3vw,42px);
+  line-height:1.2;
+  color:var(--ivory);
   font-weight:300;
-  line-height:1.7;
+  border-left:3px solid var(--brass);
+  padding-left:32px;
+  position:relative;
+  z-index:2;
+}
+
+.dark-cta-text em{
+  color:var(--brass-light);
+  font-style:italic;
+}
+
+.dark-cta-action{
+  justify-self:end;
+  position:relative;
+  z-index:2;
 }
 
 /* FOOTER */
@@ -442,18 +611,33 @@ footer{
 }
 
 /* RESPONSIVE */
+@media(max-width:1100px){
+  .contact-section{
+    grid-template-columns:1fr;
+  }
+
+  .contact-column{
+    border-right:none;
+    border-bottom:0.5px solid rgba(176,138,74,0.18);
+  }
+
+  .contact-column:last-child{
+    border-bottom:none;
+  }
+}
+
 @media(max-width:900px){
   nav{
     padding:0 24px;
-    height:76px;
+    height:74px;
   }
 
   .site-logo{
-    height:52px;
+    height:48px;
   }
 
   .logo-image-wrap{
-    height:52px;
+    height:48px;
   }
 
   .nav-links{
@@ -461,30 +645,48 @@ footer{
   }
 
   .page-hero{
-    padding:150px 28px 72px;
-  }
-
-  .contact-main{
     grid-template-columns:1fr;
+    min-height:auto;
+    padding-top:74px;
   }
 
-  .contact-left,
-  .contact-right{
-    padding:72px 28px;
+  .page-hero::before{
+    inset:74px 0 0 0;
   }
 
-  .contact-row{
-    flex-direction:column;
-    gap:8px;
+  .page-hero::after{
+    display:none;
   }
 
-  .contact-key{
-    min-width:auto;
+  .hero-left{
+    padding:80px 28px 42px;
   }
 
-  .form-row{
+  .hero-right{
+    min-height:300px;
+  }
+
+  .map-city{
+    right:28px;
+    top:52%;
+  }
+
+  .map-marker{
+    right:168px;
+  }
+
+  .contact-column{
+    padding:54px 28px;
+  }
+
+  .dark-cta{
     grid-template-columns:1fr;
-    gap:0;
+    padding:60px 28px;
+    gap:36px;
+  }
+
+  .dark-cta-action{
+    justify-self:start;
   }
 
   footer{
@@ -497,7 +699,7 @@ footer{
 
 @media(max-width:600px){
   .section-headline{
-    font-size:36px;
+    font-size:38px;
   }
 
   .language-switch{
@@ -507,6 +709,24 @@ footer{
   .lang-btn{
     font-size:10px;
   }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .map-city{
+    font-size:14px;
+  }
+
+  .map-marker{
+    width:44px;
+    height:44px;
+    right:130px;
+  }
+
+  .where-card{
+    min-height:240px;
+  }
 }
 </style>
 </head>
@@ -515,7 +735,7 @@ footer{
 
 <nav>
   <a href="index.html" class="logo-wrap logo-image-wrap">
-    <img src="assets/kts-advisory-logo-web.png" alt="KTS Advisory" class="site-logo">
+    <img src="assets/kts-advisory-logo-web.png?v=15" alt="KTS Advisory" class="site-logo">
   </a>
 
   <ul class="nav-links">
@@ -534,134 +754,135 @@ footer{
 </nav>
 
 <div class="page-hero">
-  <div class="page-hero-inner fade-in">
+  <div class="hero-left fade-in">
     <p class="section-label" data-i18n="heroLabel">Contatti</p>
     <div class="brass-line"></div>
 
     <h1 class="section-headline" data-i18n="heroTitle">
-      Parliamo della vostra<br><em>prossima operazione</em>.
+      Siamo a disposizione.<br><em>Parliamo del vostro progetto.</em>
     </h1>
 
-    <p data-i18n="heroSubtitle">
-      Per richieste riservate, operazioni complesse o valutazioni preliminari, è possibile contattare KTS Advisory attraverso il modulo o i riferimenti indicati.
+    <p class="hero-text" data-i18n="heroSubtitle">
+      KTS Advisory affianca imprenditori, investitori e istituzioni nella gestione di operazioni complesse. Contattateci per una prima conversazione riservata.
     </p>
   </div>
+
+  <div class="hero-right fade-in" style="transition-delay:0.15s">
+    <div class="map-visual" aria-hidden="true">
+      <span class="map-lines"></span>
+      <span class="map-marker"></span>
+      <span class="map-city">Napoli</span>
+    </div>
+  </div>
 </div>
 
-<div class="contact-main">
+<section class="contact-section">
 
-  <div class="contact-left">
-    <div class="fade-in">
-      <p class="section-label" data-i18n="detailsLabel">Riferimenti</p>
-      <h2 class="section-headline" data-i18n="detailsTitle">
-        Un primo confronto,<br>in modo <em>riservato</em>.
-      </h2>
+  <div class="contact-column fade-in">
+    <p class="section-label" data-i18n="infoLabel">Informazioni</p>
+    <div class="brass-line"></div>
 
-      <div class="contact-details">
-        <div class="contact-row">
-          <span class="contact-key" data-i18n="emailKey">Email</span>
-          <span class="contact-val">
-            <a href="mailto:info@ktsadvisory.com">info@ktsadvisory.com</a>
-          </span>
+    <div class="info-list">
+      <div class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M20 35C20 35 30 24 30 15C30 9.5 25.5 5 20 5C14.5 5 10 9.5 10 15C10 24 20 35 20 35Z" stroke-width="1.3"/>
+            <circle cx="20" cy="15" r="4" stroke-width="1.3"/>
+          </svg>
         </div>
-
-        <div class="contact-row">
-          <span class="contact-key" data-i18n="locationKey">Sede</span>
-          <span class="contact-val" data-i18n="locationValue">Italia</span>
-        </div>
-
-        <div class="contact-row">
-          <span class="contact-key" data-i18n="focusKey">Focus</span>
-          <span class="contact-val" data-i18n="focusValue">Operazioni straordinarie, capital advisory, real estate, operazioni internazionali.</span>
-        </div>
-
-        <div class="contact-row">
-          <span class="contact-key" data-i18n="availabilityKey">Disponibilità</span>
-          <span class="contact-val" data-i18n="availabilityValue">Incontri su appuntamento e interlocuzioni riservate.</span>
-        </div>
+        <p class="info-text" data-i18n="addressText">
+          KTS Advisory S.r.l.<br>
+          Via dei Mille, 16<br>
+          80121 Napoli, Italia
+        </p>
       </div>
 
-      <div class="contact-note">
-        <p data-i18n="noteText">
-          Le informazioni condivise saranno trattate con riservatezza e utilizzate esclusivamente per valutare la natura dell'operazione e l'eventuale avvio di un confronto.
+      <div class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M12 8L17 17L14 20C16 24 19 27 23 29L26 26L32 30C32 30 30 34 27 34C17 34 6 23 6 13C6 10 12 8 12 8Z" stroke-width="1.3"/>
+          </svg>
+        </div>
+        <p class="info-text">
+          <a href="tel:+390811234567">+39 081 123 4567</a><br>
+          <a href="tel:+393511234567">+39 351 123 4567</a>
+        </p>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 40 40" fill="none">
+            <rect x="7" y="11" width="26" height="19" stroke-width="1.3"/>
+            <path d="M7 12L20 22L33 12" stroke-width="1.3"/>
+          </svg>
+        </div>
+        <p class="info-text">
+          <a href="mailto:info@ktsadvisory.it">info@ktsadvisory.it</a><br>
+          <a href="mailto:segreteria@ktsadvisory.it">segreteria@ktsadvisory.it</a>
+        </p>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="13" stroke-width="1.3"/>
+            <path d="M20 11V21L27 25" stroke-width="1.3"/>
+          </svg>
+        </div>
+        <p class="info-text" data-i18n="hoursText">
+          Lunedì – Venerdì<br>
+          9:00 – 18:00
         </p>
       </div>
     </div>
   </div>
 
-  <div class="contact-right">
-    <div id="form-wrap" class="fade-in">
-      <h2 class="form-title" data-i18n="formTitle">
-        Inviateci una richiesta<br><em>preliminare</em>.
-      </h2>
+  <div class="contact-column fade-in" style="transition-delay:0.1s">
+    <p class="section-label" data-i18n="formLabel">Invia un messaggio</p>
+    <div class="brass-line"></div>
 
-      <form name="contatti" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
-        <input type="hidden" name="form-name" value="contatti">
-        <p style="display:none">
-          <label>Non compilare: <input name="bot-field"></label>
-        </p>
+    <form class="contact-form" action="mailto:info@ktsadvisory.it" method="post" enctype="text/plain">
+      <div class="form-grid">
+        <input class="form-field" type="text" name="nome" placeholder="Nome e Cognome" data-i18n-placeholder="formName" required>
+        <input class="form-field" type="text" name="azienda" placeholder="Azienda" data-i18n-placeholder="formCompany">
+      </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="nome" data-i18n="nameLabel">Nome</label>
-            <input class="form-input" type="text" id="nome" name="nome" required>
-          </div>
+      <input class="form-field full" type="email" name="email" placeholder="Email" data-i18n-placeholder="formEmail" required>
+      <input class="form-field full" type="text" name="oggetto" placeholder="Oggetto" data-i18n-placeholder="formSubject">
 
-          <div class="form-group">
-            <label class="form-label" for="cognome" data-i18n="surnameLabel">Cognome</label>
-            <input class="form-input" type="text" id="cognome" name="cognome">
-          </div>
-        </div>
+      <textarea class="form-field" name="messaggio" placeholder="Messaggio" data-i18n-placeholder="formMessage" required></textarea>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="email" data-i18n="formEmailLabel">Email</label>
-            <input class="form-input" type="email" id="email" name="email" required>
-          </div>
+      <p class="form-note" data-i18n="formNote">
+        L’invio del messaggio aprirà il vostro client email. Per comunicazioni riservate, potete scriverci direttamente all’indirizzo indicato.
+      </p>
 
-          <div class="form-group">
-            <label class="form-label" for="telefono" data-i18n="phoneLabel">Telefono</label>
-            <input class="form-input" type="tel" id="telefono" name="telefono">
-          </div>
-        </div>
+      <button type="submit" class="btn-primary" data-i18n="formButton">Invia messaggio <span>→</span></button>
+    </form>
+  </div>
 
-        <div class="form-group">
-          <label class="form-label" for="tipologia" data-i18n="typeLabel">Tipologia di richiesta</label>
-          <select class="form-select" id="tipologia" name="tipologia">
-            <option value="" data-i18n="typeOptionDefault">Seleziona una voce</option>
-            <option value="ma" data-i18n="typeOptionOne">M&A e operazioni straordinarie</option>
-            <option value="strategica" data-i18n="typeOptionTwo">Advisory strategica</option>
-            <option value="capital" data-i18n="typeOptionThree">Capital advisory</option>
-            <option value="real-estate" data-i18n="typeOptionFour">Operazioni immobiliari</option>
-            <option value="internazionale" data-i18n="typeOptionFive">Operazioni internazionali</option>
-            <option value="altro" data-i18n="typeOptionSix">Altro</option>
-          </select>
-        </div>
+  <div class="contact-column fade-in" style="transition-delay:0.2s">
+    <p class="section-label" data-i18n="whereLabel">Dove siamo</p>
+    <div class="brass-line"></div>
 
-        <div class="form-group">
-          <label class="form-label" for="messaggio" data-i18n="messageLabel">Messaggio</label>
-          <textarea class="form-textarea" id="messaggio" name="messaggio" required></textarea>
-        </div>
-
-        <button class="btn-submit" type="submit" data-i18n="submitButton">Invia richiesta</button>
-
-        <p class="form-disclaimer" data-i18n="disclaimer">
-          L'invio del modulo non comporta l'instaurazione automatica di un rapporto professionale. La richiesta sarà valutata preliminarmente da KTS Advisory.
-        </p>
-      </form>
-    </div>
-
-    <div class="success-msg" id="successMsg">
-      <svg width="42" height="42" viewBox="0 0 42 42" fill="none">
-        <circle cx="21" cy="21" r="20" stroke="#B08A4A" stroke-width="1"/>
-        <path d="M13 21.5L18.5 27L29.5 15.5" stroke="#B08A4A" stroke-width="1.5" fill="none"/>
-      </svg>
-      <h3 data-i18n="successTitle">Richiesta inviata</h3>
-      <p data-i18n="successText">Grazie. Vi ricontatteremo dopo una valutazione preliminare.</p>
+    <div class="where-card" aria-hidden="true">
+      <span class="where-mountain"></span>
+      <span class="where-desk"></span>
+      <span class="where-lamp"></span>
     </div>
   </div>
 
-</div>
+</section>
+
+<section class="dark-cta fade-in">
+  <p class="dark-cta-text" data-i18n="darkCtaText">
+    Ogni progetto richiede competenze integrate e una visione chiara.<br>
+    <em>Costruiamola insieme.</em>
+  </p>
+
+  <div class="dark-cta-action">
+    <a href="approccio.html" class="btn-outline-dark" data-i18n="darkCtaButton">Scopri il nostro approccio <span>→</span></a>
+  </div>
+</section>
 
 <footer>
   <span class="footer-copy" data-i18n="footerCopy">© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
@@ -687,39 +908,26 @@ const translations = {
     navContacts: "Contatti",
 
     heroLabel: "Contatti",
-    heroTitle: "Parliamo della vostra<br><em>prossima operazione</em>.",
-    heroSubtitle: "Per richieste riservate, operazioni complesse o valutazioni preliminari, è possibile contattare KTS Advisory attraverso il modulo o i riferimenti indicati.",
+    heroTitle: "Siamo a disposizione.<br><em>Parliamo del vostro progetto.</em>",
+    heroSubtitle: "KTS Advisory affianca imprenditori, investitori e istituzioni nella gestione di operazioni complesse. Contattateci per una prima conversazione riservata.",
 
-    detailsLabel: "Riferimenti",
-    detailsTitle: "Un primo confronto,<br>in modo <em>riservato</em>.",
-    emailKey: "Email",
-    locationKey: "Sede",
-    locationValue: "Italia",
-    focusKey: "Focus",
-    focusValue: "Operazioni straordinarie, capital advisory, real estate, operazioni internazionali.",
-    availabilityKey: "Disponibilità",
-    availabilityValue: "Incontri su appuntamento e interlocuzioni riservate.",
-    noteText: "Le informazioni condivise saranno trattate con riservatezza e utilizzate esclusivamente per valutare la natura dell'operazione e l'eventuale avvio di un confronto.",
+    infoLabel: "Informazioni",
+    addressText: "KTS Advisory S.r.l.<br>Via dei Mille, 16<br>80121 Napoli, Italia",
+    hoursText: "Lunedì – Venerdì<br>9:00 – 18:00",
 
-    formTitle: "Inviateci una richiesta<br><em>preliminare</em>.",
-    nameLabel: "Nome",
-    surnameLabel: "Cognome",
-    formEmailLabel: "Email",
-    phoneLabel: "Telefono",
-    typeLabel: "Tipologia di richiesta",
-    typeOptionDefault: "Seleziona una voce",
-    typeOptionOne: "M&A e operazioni straordinarie",
-    typeOptionTwo: "Advisory strategica",
-    typeOptionThree: "Capital advisory",
-    typeOptionFour: "Operazioni immobiliari",
-    typeOptionFive: "Operazioni internazionali",
-    typeOptionSix: "Altro",
-    messageLabel: "Messaggio",
-    submitButton: "Invia richiesta",
-    disclaimer: "L'invio del modulo non comporta l'instaurazione automatica di un rapporto professionale. La richiesta sarà valutata preliminarmente da KTS Advisory.",
+    formLabel: "Invia un messaggio",
+    formName: "Nome e Cognome",
+    formCompany: "Azienda",
+    formEmail: "Email",
+    formSubject: "Oggetto",
+    formMessage: "Messaggio",
+    formNote: "L’invio del messaggio aprirà il vostro client email. Per comunicazioni riservate, potete scriverci direttamente all’indirizzo indicato.",
+    formButton: "Invia messaggio <span>→</span>",
 
-    successTitle: "Richiesta inviata",
-    successText: "Grazie. Vi ricontatteremo dopo una valutazione preliminare.",
+    whereLabel: "Dove siamo",
+
+    darkCtaText: "Ogni progetto richiede competenze integrate e una visione chiara.<br><em>Costruiamola insieme.</em>",
+    darkCtaButton: "Scopri il nostro approccio <span>→</span>",
 
     footerCopy: "© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.",
     footerTagline: "Struttura. Visione. Risultato."
@@ -733,39 +941,26 @@ const translations = {
     navContacts: "Contacts",
 
     heroLabel: "Contacts",
-    heroTitle: "Let us discuss your<br><em>next transaction</em>.",
-    heroSubtitle: "For confidential requests, complex transactions or preliminary assessments, you may contact KTS Advisory through the form or the details below.",
+    heroTitle: "We are available.<br><em>Let’s discuss your project.</em>",
+    heroSubtitle: "KTS Advisory supports entrepreneurs, investors and institutions in the management of complex transactions. Contact us for an initial confidential conversation.",
 
-    detailsLabel: "Details",
-    detailsTitle: "A first conversation,<br>with <em>discretion</em>.",
-    emailKey: "Email",
-    locationKey: "Base",
-    locationValue: "Italy",
-    focusKey: "Focus",
-    focusValue: "Extraordinary transactions, capital advisory, real estate, international transactions.",
-    availabilityKey: "Availability",
-    availabilityValue: "Meetings by appointment and confidential discussions.",
-    noteText: "The information shared will be treated confidentially and used exclusively to assess the nature of the transaction and the potential start of a discussion.",
+    infoLabel: "Information",
+    addressText: "KTS Advisory S.r.l.<br>Via dei Mille, 16<br>80121 Naples, Italy",
+    hoursText: "Monday – Friday<br>9:00 AM – 6:00 PM",
 
-    formTitle: "Send us a<br><em>preliminary request</em>.",
-    nameLabel: "Name",
-    surnameLabel: "Surname",
-    formEmailLabel: "Email",
-    phoneLabel: "Phone",
-    typeLabel: "Type of request",
-    typeOptionDefault: "Select an option",
-    typeOptionOne: "M&A and extraordinary transactions",
-    typeOptionTwo: "Strategic advisory",
-    typeOptionThree: "Capital advisory",
-    typeOptionFour: "Real estate transactions",
-    typeOptionFive: "International transactions",
-    typeOptionSix: "Other",
-    messageLabel: "Message",
-    submitButton: "Send request",
-    disclaimer: "Submitting the form does not automatically create a professional relationship. The request will be preliminarily assessed by KTS Advisory.",
+    formLabel: "Send a message",
+    formName: "Full name",
+    formCompany: "Company",
+    formEmail: "Email",
+    formSubject: "Subject",
+    formMessage: "Message",
+    formNote: "Submitting the form will open your email client. For confidential communications, you may write directly to the address indicated.",
+    formButton: "Send message <span>→</span>",
 
-    successTitle: "Request sent",
-    successText: "Thank you. We will contact you after a preliminary assessment.",
+    whereLabel: "Where we are",
+
+    darkCtaText: "Every project requires integrated expertise and clear vision.<br><em>Let’s build it together.</em>",
+    darkCtaButton: "Discover our approach <span>→</span>",
 
     footerCopy: "© 2025 KTS Advisory S.r.l. — All rights reserved.",
     footerTagline: "Structure. Vision. Outcome."
@@ -779,6 +974,13 @@ function setLanguage(lang){
     const key = element.getAttribute("data-i18n");
     if(translations[lang] && translations[lang][key]){
       element.innerHTML = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
+    const key = element.getAttribute("data-i18n-placeholder");
+    if(translations[lang] && translations[lang][key]){
+      element.setAttribute("placeholder", translations[lang][key]);
     }
   });
 
@@ -797,17 +999,6 @@ document.querySelectorAll("[data-lang-switch]").forEach(button => {
 
 const savedLanguage = localStorage.getItem("siteLanguage") || "it";
 setLanguage(savedLanguage);
-
-const form = document.getElementById("contactForm");
-const formWrap = document.getElementById("form-wrap");
-const successMsg = document.getElementById("successMsg");
-
-if(form){
-  form.addEventListener("submit", function(){
-    formWrap.style.display = "none";
-    successMsg.style.display = "block";
-  });
-}
 </script>
 
 </body>
