@@ -59,7 +59,9 @@ nav{
   text-decoration:none;
 }
 
-.logo-image-wrap{height:52px}
+.logo-image-wrap{
+  height:52px;
+}
 
 .site-logo{
   height:52px;
@@ -114,7 +116,9 @@ nav{
 }
 
 .lang-btn.active,
-.lang-btn:hover{color:var(--brass)}
+.lang-btn:hover{
+  color:var(--brass);
+}
 
 .lang-separator{
   font-family:var(--sans);
@@ -342,35 +346,6 @@ nav{
   align-items:stretch;
 }
 
-.unified-badge{
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  background:
-    radial-gradient(circle at 35% 30%,rgba(255,255,255,0.38),transparent 30%),
-    linear-gradient(135deg,var(--brass-light),var(--brass));
-  border:0.5px solid rgba(243,239,232,0.55);
-  box-shadow:0 22px 60px rgba(14,26,43,0.18);
-  z-index:5;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
-}
-
-.unified-badge span{
-  font-family:var(--serif);
-  font-size:24px;
-  line-height:1.05;
-  color:var(--navy-deep);
-  font-weight:300;
-}
-
 .model-card{
   min-height:760px;
   position:relative;
@@ -434,8 +409,13 @@ nav{
   margin-bottom:20px;
 }
 
-.model-card.dark .model-title{color:var(--ivory)}
-.model-card.light .model-title{color:var(--navy)}
+.model-card.dark .model-title{
+  color:var(--ivory);
+}
+
+.model-card.light .model-title{
+  color:var(--navy);
+}
 
 .model-subtitle{
   position:relative;
@@ -446,8 +426,13 @@ nav{
   max-width:460px;
 }
 
-.model-card.dark .model-subtitle{color:rgba(243,239,232,0.66)}
-.model-card.light .model-subtitle{color:var(--greige)}
+.model-card.dark .model-subtitle{
+  color:rgba(243,239,232,0.66);
+}
+
+.model-card.light .model-subtitle{
+  color:var(--greige);
+}
 
 .service-list{
   position:relative;
@@ -481,11 +466,21 @@ nav{
   font-weight:300;
 }
 
-.model-card.dark .service-title{color:rgba(243,239,232,0.84)}
-.model-card.dark .service-desc{color:rgba(243,239,232,0.56)}
+.model-card.dark .service-title{
+  color:rgba(243,239,232,0.84);
+}
 
-.model-card.light .service-title{color:rgba(14,26,43,0.82)}
-.model-card.light .service-desc{color:rgba(139,132,124,0.92)}
+.model-card.dark .service-desc{
+  color:rgba(243,239,232,0.56);
+}
+
+.model-card.light .service-title{
+  color:rgba(14,26,43,0.82);
+}
+
+.model-card.light .service-desc{
+  color:rgba(139,132,124,0.92);
+}
 
 .model-action{
   position:relative;
@@ -511,12 +506,18 @@ nav{
   margin-bottom:48px;
 }
 
-.benefits-head .section-label{color:var(--brass-light)}
+.benefits-head .section-label{
+  color:var(--brass-light);
+}
+
 .benefits-head .section-headline{
   color:var(--ivory);
   font-size:clamp(32px,3.4vw,54px);
 }
-.benefits-head .section-headline em{color:var(--brass-light)}
+
+.benefits-head .section-headline em{
+  color:var(--brass-light);
+}
 
 .benefits-head p{
   color:rgba(243,239,232,0.58);
@@ -585,7 +586,9 @@ nav{
   font-style:italic;
 }
 
-.final-cta-action{justify-self:end}
+.final-cta-action{
+  justify-self:end;
+}
 
 /* FOOTER */
 footer{
@@ -626,21 +629,21 @@ footer{
 
 /* RESPONSIVE */
 @media(max-width:1150px){
-  .model-wrap{grid-template-columns:1fr}
+  .model-wrap{
+    grid-template-columns:1fr;
+  }
 
-  .unified-badge{
-    position:relative;
-    left:auto;
-    top:auto;
-    transform:none;
-    margin:0 auto;
+  .model-card.dark{
+    order:1;
+  }
+
+  .model-card.light{
     order:2;
   }
 
-  .model-card.dark{order:1}
-  .model-card.light{order:3}
-
-  .benefits-grid{grid-template-columns:1fr 1fr}
+  .benefits-grid{
+    grid-template-columns:1fr 1fr;
+  }
 }
 
 @media(max-width:900px){
@@ -649,9 +652,17 @@ footer{
     height:74px;
   }
 
-  .site-logo{height:48px}
-  .logo-image-wrap{height:48px}
-  .nav-links{display:none}
+  .site-logo{
+    height:48px;
+  }
+
+  .logo-image-wrap{
+    height:48px;
+  }
+
+  .nav-links{
+    display:none;
+  }
 
   .activities-hero{
     padding-top:74px;
@@ -689,15 +700,6 @@ footer{
     padding:44px 30px;
   }
 
-  .unified-badge{
-    width:124px;
-    height:124px;
-  }
-
-  .unified-badge span{
-    font-size:21px;
-  }
-
   .benefits-band{
     padding:78px 28px;
   }
@@ -723,16 +725,25 @@ footer{
 }
 
 @media(max-width:600px){
-  .section-headline{font-size:38px}
+  .section-headline{
+    font-size:38px;
+  }
 
   .activities-hero .section-headline{
     font-size:42px;
   }
 
-  .language-switch{padding:4px 8px}
-  .lang-btn{font-size:10px}
+  .language-switch{
+    padding:4px 8px;
+  }
 
-  .model-title{font-size:38px}
+  .lang-btn{
+    font-size:10px;
+  }
+
+  .model-title{
+    font-size:38px;
+  }
 
   .service-title{
     font-size:10.5px;
@@ -820,11 +831,7 @@ footer{
       </div>
     </article>
 
-    <div class="unified-badge fade-in" style="transition-delay:0.12s">
-      <span>Unified<br>Direction</span>
-    </div>
-
-    <article class="model-card light fade-in" style="transition-delay:0.16s">
+    <article class="model-card light fade-in" style="transition-delay:0.12s">
       <span class="model-number">02</span>
       <h3 class="model-title">KTS<br>Corporate</h3>
       <p class="model-subtitle" data-i18n="corporateSubtitle">
