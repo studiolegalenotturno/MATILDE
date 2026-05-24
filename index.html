@@ -462,56 +462,135 @@ nav{
   margin-top:auto;
 }
 
-/* ABOUT HOME */
-.about-home{
-  padding:74px 56px;
+/* PARTNERS */
+.partners-home{
+  padding:76px 0 84px;
   background:
-    linear-gradient(90deg,rgba(248,244,236,0.98) 0%,rgba(248,244,236,0.88) 48%,rgba(248,244,236,0.20) 100%),
-    radial-gradient(circle at 82% 50%,rgba(176,138,74,0.10),transparent 28%);
+    linear-gradient(90deg,rgba(248,244,236,0.98) 0%,rgba(248,244,236,0.90) 52%,rgba(248,244,236,0.72) 100%),
+    radial-gradient(circle at 82% 48%,rgba(176,138,74,0.10),transparent 30%);
   border-top:0.5px solid rgba(176,138,74,0.16);
   border-bottom:0.5px solid rgba(176,138,74,0.16);
+  overflow:hidden;
 }
 
-.about-wrap{
-  display:grid;
-  grid-template-columns:210px 1fr;
-  gap:58px;
-  align-items:center;
-  max-width:1180px;
-  margin:0 auto;
+.partners-heading{
+  max-width:900px;
+  margin:0 auto 42px;
+  padding:0 56px;
+  text-align:center;
 }
 
-.about-symbol{
-  width:170px;
-  height:170px;
-  opacity:0.52;
+.partners-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:18px;
+  font-weight:500;
 }
 
-.about-symbol svg{
-  width:100%;
-  height:100%;
-}
-
-.about-symbol path,
-.about-symbol line,
-.about-symbol rect{
-  stroke:var(--brass);
-}
-
-.about-content h2{
+.partners-heading h2{
   font-family:var(--serif);
-  font-size:clamp(32px,3vw,48px);
+  font-size:clamp(34px,3.4vw,54px);
   font-weight:300;
+  line-height:1.1;
   color:var(--navy);
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 
-.about-content p{
-  max-width:780px;
+.partners-heading p{
   font-size:14px;
-  line-height:1.9;
-  color:rgba(14,26,43,0.72);
-  margin-bottom:26px;
+  line-height:1.85;
+  color:rgba(14,26,43,0.70);
+}
+
+.partners-marquee{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  padding:10px 0;
+}
+
+.partners-marquee::before,
+.partners-marquee::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:160px;
+  z-index:2;
+  pointer-events:none;
+}
+
+.partners-marquee::before{
+  left:0;
+  background:linear-gradient(90deg,var(--ivory-light),rgba(248,244,236,0));
+}
+
+.partners-marquee::after{
+  right:0;
+  background:linear-gradient(270deg,var(--ivory-light),rgba(248,244,236,0));
+}
+
+.partners-track{
+  display:flex;
+  width:max-content;
+  gap:24px;
+  animation:partnerScroll 28s linear infinite;
+}
+
+.partners-marquee:hover .partners-track{
+  animation-play-state:paused;
+}
+
+.partner-card{
+  min-width:245px;
+  height:92px;
+  border:0.5px solid rgba(176,138,74,0.38);
+  background:rgba(243,239,232,0.58);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px 28px;
+  position:relative;
+  overflow:hidden;
+}
+
+.partner-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 78% 20%,rgba(176,138,74,0.12),transparent 32%);
+  opacity:0.9;
+}
+
+.partner-name{
+  position:relative;
+  z-index:1;
+  font-family:var(--serif);
+  font-size:26px;
+  line-height:1;
+  color:var(--navy);
+  font-weight:300;
+  white-space:nowrap;
+}
+
+.partner-card span.small{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--brass);
+  display:block;
+  margin-top:8px;
+  text-align:center;
+}
+
+@keyframes partnerScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
 }
 
 /* DARK CTA */
@@ -672,10 +751,6 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .about-wrap{
-    grid-template-columns:1fr;
-  }
-
   .footer-grid{
     grid-template-columns:1fr 1fr;
   }
@@ -740,8 +815,22 @@ footer{
     height:78px;
   }
 
-  .about-home{
-    padding:62px 28px;
+  .partners-heading{
+    padding:0 28px;
+  }
+
+  .partners-marquee::before,
+  .partners-marquee::after{
+    width:70px;
+  }
+
+  .partner-card{
+    min-width:210px;
+    height:84px;
+  }
+
+  .partner-name{
+    font-size:23px;
   }
 
   .dark-cta{
@@ -914,26 +1003,28 @@ footer{
   </div>
 </section>
 
-<section class="about-home">
-  <div class="about-wrap fade-in">
-    <div class="about-symbol" aria-hidden="true">
-      <svg viewBox="0 0 160 160" fill="none">
-        <rect x="42" y="56" width="76" height="76" stroke-width="1.2"/>
-        <path d="M35 56H125L80 22L35 56Z" stroke-width="1.2"/>
-        <path d="M50 132V72H110V132" stroke-width="1.2"/>
-        <path d="M64 132V88H96V132" stroke-width="1.2"/>
-        <path d="M72 88V132" stroke-width="1.2"/>
-        <path d="M88 88V132" stroke-width="1.2"/>
-        <line x1="32" y1="132" x2="128" y2="132" stroke-width="1.2"/>
-      </svg>
-    </div>
+<section class="partners-home">
+  <div class="partners-heading fade-in">
+    <p class="partners-label" data-i18n="partnersLabel">Partner Network</p>
+    <h2 data-i18n="partnersTitle">Un ecosistema di competenze integrate.</h2>
+    <p data-i18n="partnersText">
+      KTS opera attraverso una rete selezionata di professionisti, società e partner specializzati, coordinati in funzione delle esigenze strategiche e operative del cliente.
+    </p>
+  </div>
 
-    <div class="about-content">
-      <h2 data-i18n="aboutTitle">Chi siamo</h2>
-      <p data-i18n="aboutText">
-        KTS Advisory è una boutique indipendente con radici italiane e visione internazionale. Un team di professionisti senior affianca imprese, investitori e istituzioni per trasformare complessità in opportunità di crescita sostenibile.
-      </p>
-      <a href="about.html" class="btn-outline" data-i18n="aboutButton">Scopri di più</a>
+  <div class="partners-marquee" aria-label="Partner KTS">
+    <div class="partners-track">
+      <div class="partner-card"><div><div class="partner-name">Gesu</div><span class="small">Partner</span></div></div>
+      <div class="partner-card"><div><div class="partner-name">Giuseppe</div><span class="small">Partner</span></div></div>
+      <div class="partner-card"><div><div class="partner-name">Maria</div><span class="small">Partner</span></div></div>
+      <div class="partner-card"><div><div class="partner-name">Il Bue</div><span class="small">Partner</span></div></div>
+      <div class="partner-card"><div><div class="partner-name">L’Asinello</div><span class="small">Partner</span></div></div>
+
+      <div class="partner-card"><div><div class="partner-name">Gesu</div><span class="small">Partner</span></div></div>
+      <div class="partner-card"><div><div class="partner-name">Giuseppe</div><span class="small">Partner</span></div></div>
+      <div class="partner-card"><div><div class="partner-name">Maria</div><span class="small">Partner</span></div></div>
+      <div class="partner-card"><div><div class="partner-name">Il Bue</div><span class="small">Partner</span></div></div>
+      <div class="partner-card"><div><div class="partner-name">L’Asinello</div><span class="small">Partner</span></div></div>
     </div>
   </div>
 </section>
@@ -1039,9 +1130,9 @@ const translations = {
     corporateSix: "Mediazione e supporto continuativo",
     corporateButton: "Scopri KTS Corporate <span>→</span>",
 
-    aboutTitle: "Chi siamo",
-    aboutText: "KTS Advisory è una boutique indipendente con radici italiane e visione internazionale. Un team di professionisti senior affianca imprese, investitori e istituzioni per trasformare complessità in opportunità di crescita sostenibile.",
-    aboutButton: "Scopri di più",
+    partnersLabel: "Partner Network",
+    partnersTitle: "Un ecosistema di competenze integrate.",
+    partnersText: "KTS opera attraverso una rete selezionata di professionisti, società e partner specializzati, coordinati in funzione delle esigenze strategiche e operative del cliente.",
 
     ctaTitle: "Dalla strategia all’operatività.",
     ctaSubtitle: "Parliamo dei vostri obiettivi.",
@@ -1091,9 +1182,9 @@ const translations = {
     corporateSix: "Mediation and ongoing support",
     corporateButton: "Discover KTS Corporate <span>→</span>",
 
-    aboutTitle: "About us",
-    aboutText: "KTS Advisory is an independent boutique with Italian roots and an international vision. A team of senior professionals supports companies, investors and institutions in turning complexity into sustainable growth opportunities.",
-    aboutButton: "Discover more",
+    partnersLabel: "Partner Network",
+    partnersTitle: "An ecosystem of integrated expertise.",
+    partnersText: "KTS operates through a selected network of professionals, companies and specialised partners, coordinated according to the client’s strategic and operational needs.",
 
     ctaTitle: "From strategy to operations.",
     ctaSubtitle: "Let’s discuss your objectives.",
