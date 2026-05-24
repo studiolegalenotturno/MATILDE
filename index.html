@@ -444,6 +444,142 @@ nav{
   margin-top:auto;
 }
 
+/* PARTNER RUNNER INLINE */
+.partners-inline-runner{
+  padding:76px 0 84px;
+  background:
+    linear-gradient(90deg,rgba(248,244,236,0.98) 0%,rgba(248,244,236,0.90) 52%,rgba(248,244,236,0.72) 100%),
+    radial-gradient(circle at 82% 48%,rgba(176,138,74,0.10),transparent 30%);
+  border-top:0.5px solid rgba(176,138,74,0.16);
+  border-bottom:0.5px solid rgba(176,138,74,0.16);
+  overflow:hidden;
+}
+
+.partners-inline-heading{
+  max-width:900px;
+  margin:0 auto 42px;
+  padding:0 56px;
+  text-align:center;
+}
+
+.partners-inline-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:18px;
+  font-weight:500;
+}
+
+.partners-inline-heading h2{
+  font-family:var(--serif);
+  font-size:clamp(34px,3.4vw,54px);
+  font-weight:300;
+  line-height:1.1;
+  color:var(--navy);
+  margin-bottom:18px;
+}
+
+.partners-inline-heading p{
+  font-size:14px;
+  line-height:1.85;
+  color:rgba(14,26,43,0.70);
+  max-width:760px;
+  margin:0 auto;
+}
+
+.kts-runner-wrap{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  padding:10px 0;
+}
+
+.kts-runner-wrap::before,
+.kts-runner-wrap::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:150px;
+  z-index:3;
+  pointer-events:none;
+}
+
+.kts-runner-wrap::before{
+  left:0;
+  background:linear-gradient(90deg,#F8F4EC,rgba(248,244,236,0));
+}
+
+.kts-runner-wrap::after{
+  right:0;
+  background:linear-gradient(270deg,#F8F4EC,rgba(248,244,236,0));
+}
+
+.kts-runner-track{
+  display:flex;
+  flex-wrap:nowrap;
+  gap:24px;
+  width:max-content;
+  animation:ktsPartnerRunner 24s linear infinite;
+  will-change:transform;
+}
+
+.kts-runner-wrap:hover .kts-runner-track{
+  animation-play-state:paused;
+}
+
+.kts-partner-card{
+  flex:0 0 auto;
+  min-width:245px;
+  height:92px;
+  border:0.5px solid rgba(176,138,74,0.38);
+  background:rgba(243,239,232,0.58);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:18px 28px;
+  position:relative;
+  overflow:hidden;
+}
+
+.kts-partner-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 78% 20%,rgba(176,138,74,0.12),transparent 32%);
+}
+
+.kts-partner-name{
+  position:relative;
+  z-index:2;
+  font-family:var(--serif);
+  font-size:26px;
+  line-height:1;
+  color:var(--navy);
+  font-weight:300;
+  white-space:nowrap;
+}
+
+.kts-partner-role{
+  position:relative;
+  z-index:2;
+  display:block;
+  margin-top:8px;
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--brass);
+}
+
+@keyframes ktsPartnerRunner{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
 /* DARK CTA */
 .dark-cta{
   background:
@@ -635,10 +771,6 @@ footer{
     inset:74px 0 0 0;
   }
 
-  .hero-bg{
-    background-position:center right;
-  }
-
   .hero-content{
     padding:86px 28px 80px;
     min-height:620px;
@@ -664,6 +796,24 @@ footer{
   .symbol{
     width:78px;
     height:78px;
+  }
+
+  .partners-inline-heading{
+    padding:0 28px;
+  }
+
+  .kts-runner-wrap::before,
+  .kts-runner-wrap::after{
+    width:70px;
+  }
+
+  .kts-partner-card{
+    min-width:210px;
+    height:84px;
+  }
+
+  .kts-partner-name{
+    font-size:23px;
   }
 
   .dark-cta{
@@ -703,7 +853,6 @@ footer{
   .btn-outline,
   .btn-gold{
     width:100%;
-    justify-content:center;
   }
 
   .model-card h3{
@@ -834,161 +983,11 @@ footer{
   </div>
 </section>
 
-<section class="partners-inline-runner" style="
-  padding:76px 0 84px;
-  background:
-    linear-gradient(90deg,rgba(248,244,236,0.98) 0%,rgba(248,244,236,0.90) 52%,rgba(248,244,236,0.72) 100%),
-    radial-gradient(circle at 82% 48%,rgba(176,138,74,0.10),transparent 30%);
-  border-top:0.5px solid rgba(176,138,74,0.16);
-  border-bottom:0.5px solid rgba(176,138,74,0.16);
-  overflow:hidden;
-">
-
-  <style>
-    @keyframes ktsPartnerRunner {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .kts-runner-wrap{
-      position:relative;
-      width:100%;
-      overflow:hidden;
-      padding:10px 0;
-    }
-
-    .kts-runner-wrap::before,
-    .kts-runner-wrap::after{
-      content:"";
-      position:absolute;
-      top:0;
-      bottom:0;
-      width:150px;
-      z-index:3;
-      pointer-events:none;
-    }
-
-    .kts-runner-wrap::before{
-      left:0;
-      background:linear-gradient(90deg,#F8F4EC,rgba(248,244,236,0));
-    }
-
-    .kts-runner-wrap::after{
-      right:0;
-      background:linear-gradient(270deg,#F8F4EC,rgba(248,244,236,0));
-    }
-
-    .kts-runner-track{
-      display:flex;
-      flex-wrap:nowrap;
-      gap:24px;
-      width:max-content;
-      animation:ktsPartnerRunner 24s linear infinite;
-      will-change:transform;
-    }
-
-    .kts-runner-wrap:hover .kts-runner-track{
-      animation-play-state:paused;
-    }
-
-    .kts-partner-card{
-      flex:0 0 auto;
-      min-width:245px;
-      height:92px;
-      border:0.5px solid rgba(176,138,74,0.38);
-      background:rgba(243,239,232,0.58);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:18px 28px;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .kts-partner-card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:radial-gradient(circle at 78% 20%,rgba(176,138,74,0.12),transparent 32%);
-    }
-
-    .kts-partner-name{
-      position:relative;
-      z-index:2;
-      font-family:var(--serif);
-      font-size:26px;
-      line-height:1;
-      color:var(--navy);
-      font-weight:300;
-      white-space:nowrap;
-    }
-
-    .kts-partner-role{
-      position:relative;
-      z-index:2;
-      display:block;
-      margin-top:8px;
-      font-family:var(--sans);
-      font-size:10px;
-      letter-spacing:0.22em;
-      text-transform:uppercase;
-      color:var(--brass);
-    }
-
-    @media(max-width:900px){
-      .kts-runner-wrap::before,
-      .kts-runner-wrap::after{
-        width:70px;
-      }
-
-      .kts-partner-card{
-        min-width:210px;
-        height:84px;
-      }
-
-      .kts-partner-name{
-        font-size:23px;
-      }
-    }
-  </style>
-
-  <div style="
-    max-width:900px;
-    margin:0 auto 42px;
-    padding:0 56px;
-    text-align:center;
-  ">
-    <p style="
-      font-family:var(--sans);
-      font-size:10px;
-      letter-spacing:0.26em;
-      text-transform:uppercase;
-      color:var(--brass);
-      margin-bottom:18px;
-      font-weight:500;
-    ">
-      Partner Network
-    </p>
-
-    <h2 style="
-      font-family:var(--serif);
-      font-size:clamp(34px,3.4vw,54px);
-      font-weight:300;
-      line-height:1.1;
-      color:var(--navy);
-      margin-bottom:18px;
-    ">
-      Un ecosistema di competenze integrate.
-    </h2>
-
-    <p style="
-      font-size:14px;
-      line-height:1.85;
-      color:rgba(14,26,43,0.70);
-      max-width:760px;
-      margin:0 auto;
-    ">
+<section class="partners-inline-runner">
+  <div class="partners-inline-heading fade-in">
+    <p class="partners-inline-label">Partner Network</p>
+    <h2>Un ecosistema di competenze integrate.</h2>
+    <p>
       KTS opera attraverso una rete selezionata di professionisti, società e partner specializzati,
       coordinati in funzione delle esigenze strategiche e operative del cliente.
     </p>
@@ -996,7 +995,6 @@ footer{
 
   <div class="kts-runner-wrap" aria-label="Partner KTS">
     <div class="kts-runner-track">
-
       <div class="kts-partner-card"><div><div class="kts-partner-name">Gesu</div><span class="kts-partner-role">Partner</span></div></div>
       <div class="kts-partner-card"><div><div class="kts-partner-name">Giuseppe</div><span class="kts-partner-role">Partner</span></div></div>
       <div class="kts-partner-card"><div><div class="kts-partner-name">Maria</div><span class="kts-partner-role">Partner</span></div></div>
@@ -1008,7 +1006,6 @@ footer{
       <div class="kts-partner-card"><div><div class="kts-partner-name">Maria</div><span class="kts-partner-role">Partner</span></div></div>
       <div class="kts-partner-card"><div><div class="kts-partner-name">Il Bue</div><span class="kts-partner-role">Partner</span></div></div>
       <div class="kts-partner-card"><div><div class="kts-partner-name">L’Asinello</div><span class="kts-partner-role">Partner</span></div></div>
-
     </div>
   </div>
 </section>
