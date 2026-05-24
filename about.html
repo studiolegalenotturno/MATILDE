@@ -186,42 +186,54 @@ nav{
   min-height:72vh;
   position:relative;
   overflow:hidden;
-  background:
-    radial-gradient(circle at 82% 32%,rgba(176,138,74,0.13),transparent 32%),
-    linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  background:linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
   border-bottom:0.5px solid rgba(176,138,74,0.28);
+}
+
+.about-hero-bg{
+  position:absolute;
+  inset:76px 0 0 0;
+  background-image:url("assets/kts-network-hero.jpg");
+  background-size:cover;
+  background-position:center right;
+  opacity:0.72;
+  filter:saturate(0.95) contrast(1.06);
 }
 
 .about-hero::before{
   content:"";
   position:absolute;
   inset:76px 0 0 0;
+  z-index:1;
+  background:
+    linear-gradient(90deg,
+      rgba(8,17,31,0.98) 0%,
+      rgba(8,17,31,0.90) 30%,
+      rgba(14,26,43,0.72) 56%,
+      rgba(14,26,43,0.38) 100%
+    ),
+    radial-gradient(circle at 78% 32%,rgba(176,138,74,0.16),transparent 34%);
+}
+
+.about-hero::after{
+  content:"";
+  position:absolute;
+  inset:76px 0 0 0;
+  z-index:2;
+  pointer-events:none;
   background:
     repeating-linear-gradient(45deg,
       transparent,
       transparent 110px,
-      rgba(176,138,74,0.045) 110px,
-      rgba(176,138,74,0.045) 111px
+      rgba(176,138,74,0.035) 110px,
+      rgba(176,138,74,0.035) 111px
     );
-  opacity:0.75;
-}
-
-.about-hero::after{
-  content:"KTS";
-  position:absolute;
-  right:5vw;
-  bottom:-4vw;
-  font-family:var(--serif);
-  font-size:22vw;
-  line-height:0.8;
-  color:rgba(243,239,232,0.035);
-  letter-spacing:0.04em;
-  pointer-events:none;
+  opacity:0.46;
 }
 
 .about-hero-content{
   position:relative;
-  z-index:2;
+  z-index:3;
   min-height:calc(72vh - 76px);
   display:flex;
   flex-direction:column;
@@ -255,7 +267,7 @@ nav{
   max-width:680px;
   font-size:15px;
   line-height:1.9;
-  color:rgba(243,239,232,0.72);
+  color:rgba(243,239,232,0.74);
 }
 
 .hero-actions{
@@ -314,7 +326,7 @@ nav{
   margin-bottom:0;
 }
 
-/* MODEL EXPLAIN */
+/* MODEL */
 .about-model{
   padding:86px 56px 96px;
   background:
@@ -362,13 +374,6 @@ nav{
   flex-direction:column;
 }
 
-.model-box::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-}
-
 .model-box.executive{
   background:
     radial-gradient(circle at 84% 18%,rgba(176,138,74,0.18),transparent 32%),
@@ -377,22 +382,12 @@ nav{
   color:var(--ivory);
 }
 
-.model-box.executive::before{
-  background:
-    repeating-linear-gradient(45deg,transparent,transparent 92px,rgba(176,138,74,0.045) 92px,rgba(176,138,74,0.045) 93px);
-}
-
 .model-box.corporate{
   background:
     radial-gradient(circle at 84% 18%,rgba(176,138,74,0.10),transparent 34%),
     linear-gradient(135deg,rgba(248,244,236,0.98),rgba(237,230,218,0.78));
   border:0.5px solid rgba(176,138,74,0.28);
   color:var(--navy);
-}
-
-.model-box.corporate::before{
-  background:
-    repeating-linear-gradient(-45deg,transparent,transparent 92px,rgba(176,138,74,0.035) 92px,rgba(176,138,74,0.035) 93px);
 }
 
 .model-box-inner{
@@ -589,10 +584,6 @@ nav{
   margin-bottom:22px;
 }
 
-.ecosystem-copy p:last-child{
-  margin-bottom:0;
-}
-
 .ecosystem-points{
   margin-top:34px;
   display:grid;
@@ -608,42 +599,6 @@ nav{
   letter-spacing:0.18em;
   text-transform:uppercase;
   color:rgba(243,239,232,0.82);
-}
-
-/* FINAL */
-.final-statement{
-  padding:84px 56px 94px;
-  background:var(--ivory);
-  text-align:center;
-}
-
-.final-statement-inner{
-  max-width:950px;
-  margin:0 auto;
-}
-
-.final-statement h2{
-  font-family:var(--serif);
-  font-size:clamp(40px,4.2vw,70px);
-  font-weight:300;
-  line-height:1.08;
-  color:var(--navy);
-  margin-bottom:24px;
-}
-
-.final-statement p{
-  max-width:720px;
-  margin:0 auto 34px;
-  font-size:15px;
-  line-height:1.85;
-  color:rgba(14,26,43,0.72);
-}
-
-.final-actions{
-  display:flex;
-  justify-content:center;
-  gap:18px;
-  flex-wrap:wrap;
 }
 
 /* FOOTER */
@@ -804,7 +759,9 @@ footer{
     padding-top:74px;
   }
 
-  .about-hero::before{
+  .about-hero-bg,
+  .about-hero::before,
+  .about-hero::after{
     inset:74px 0 0 0;
   }
 
@@ -820,8 +777,7 @@ footer{
   .about-intro,
   .about-model,
   .values-section,
-  .ecosystem-section,
-  .final-statement{
+  .ecosystem-section{
     padding-left:28px;
     padding-right:28px;
   }
@@ -869,8 +825,7 @@ footer{
     font-size:40px;
   }
 
-  .hero-actions,
-  .final-actions{
+  .hero-actions{
     flex-direction:column;
   }
 
@@ -919,6 +874,8 @@ footer{
 </nav>
 
 <header class="about-hero">
+  <div class="about-hero-bg" aria-hidden="true"></div>
+
   <div class="about-hero-content fade-in">
     <p class="eyebrow" data-i18n="heroEyebrow">Chi siamo</p>
 
@@ -1096,23 +1053,6 @@ footer{
   </div>
 </section>
 
-<section class="final-statement">
-  <div class="final-statement-inner fade-in">
-    <h2 data-i18n="finalTitle">
-      Non offriamo singoli servizi. Costruiamo direzioni operative, strutture e relazioni.
-    </h2>
-
-    <p data-i18n="finalText">
-      KTS è il partner strategico per chi deve affrontare decisioni complesse, proteggere valore e trasformare la crescita in un percorso strutturato.
-    </p>
-
-    <div class="final-actions">
-      <a href="attivita.html" class="btn-primary" data-i18n="finalButtonOne">Scopri le attività <span>→</span></a>
-      <a href="contatti.html" class="btn-outline" data-i18n="finalButtonTwo">Contattaci</a>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="footer-grid">
     <div>
@@ -1232,11 +1172,6 @@ const translations = {
     pointThree: "Approccio multidisciplinare",
     pointFour: "Esecuzione continuativa",
 
-    finalTitle: "Non offriamo singoli servizi. Costruiamo direzioni operative, strutture e relazioni.",
-    finalText: "KTS è il partner strategico per chi deve affrontare decisioni complesse, proteggere valore e trasformare la crescita in un percorso strutturato.",
-    finalButtonOne: "Scopri le attività <span>→</span>",
-    finalButtonTwo: "Contattaci",
-
     footerText: "Strategia, struttura e continuità per accompagnare imprese, investitori e istituzioni nelle fasi decisive del percorso aziendale.",
     footerNavTitle: "Navigazione",
     footerAbout: "Chi siamo",
@@ -1308,11 +1243,6 @@ const translations = {
     pointTwo: "Coordinated expertise",
     pointThree: "Multidisciplinary approach",
     pointFour: "Ongoing execution",
-
-    finalTitle: "We do not offer isolated services. We build operational directions, structures and relationships.",
-    finalText: "KTS is the strategic partner for those who need to face complex decisions, protect value and turn growth into a structured path.",
-    finalButtonOne: "Discover services <span>→</span>",
-    finalButtonTwo: "Contact us",
 
     footerText: "Strategy, structure and continuity to support companies, investors and institutions in decisive phases of the business journey.",
     footerNavTitle: "Navigation",
