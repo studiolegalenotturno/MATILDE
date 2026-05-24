@@ -631,40 +631,6 @@ nav{
   100%{transform:translateX(-50%)}
 }
 
-/* DARK CTA */
-.dark-cta{
-  background:
-    radial-gradient(circle at 80% 38%,rgba(176,138,74,0.10),transparent 32%),
-    linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
-  padding:80px 56px;
-  border-bottom:0.5px solid rgba(176,138,74,0.24);
-}
-
-.dark-cta-inner{
-  max-width:1180px;
-  margin:0 auto;
-  border:0.5px solid rgba(176,138,74,0.42);
-  padding:46px 54px;
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:40px;
-  align-items:center;
-}
-
-.dark-cta h2{
-  font-family:var(--serif);
-  font-size:clamp(34px,3.4vw,56px);
-  font-weight:300;
-  color:var(--brass-light);
-  line-height:1.1;
-}
-
-.dark-cta p{
-  margin-top:12px;
-  font-size:15px;
-  color:rgba(243,239,232,0.70);
-}
-
 /* FOOTER */
 footer{
   background:#08111F;
@@ -865,15 +831,6 @@ footer{
 
   .kts-partner-name{
     font-size:23px;
-  }
-
-  .dark-cta{
-    padding:64px 28px;
-  }
-
-  .dark-cta-inner{
-    grid-template-columns:1fr;
-    padding:38px 30px;
   }
 
   footer{
@@ -1088,16 +1045,6 @@ footer{
   </div>
 </section>
 
-<section class="dark-cta fade-in">
-  <div class="dark-cta-inner">
-    <div>
-      <h2 data-i18n="ctaTitle">Dalla strategia all’operatività.</h2>
-      <p data-i18n="ctaSubtitle">Parliamo dei vostri obiettivi.</p>
-    </div>
-    <a href="contatti.html" class="btn-gold" data-i18n="ctaButton">Contattaci <span>→</span></a>
-  </div>
-</section>
-
 <footer>
   <div class="footer-grid">
     <div>
@@ -1189,10 +1136,6 @@ const translations = {
     corporateSix: "Mediazione e supporto continuativo",
     corporateButton: "Scopri KTS Corporate <span>→</span>",
 
-    ctaTitle: "Dalla strategia all’operatività.",
-    ctaSubtitle: "Parliamo dei vostri obiettivi.",
-    ctaButton: "Contattaci <span>→</span>",
-
     footerText: "Strategia, struttura e continuità per accompagnare imprese, investitori e istituzioni nelle fasi decisive del percorso aziendale.",
     footerNavTitle: "Navigazione",
     footerAbout: "Chi siamo",
@@ -1236,10 +1179,6 @@ const translations = {
     corporateFive: "Tax credits and energy instruments",
     corporateSix: "Mediation and ongoing support",
     corporateButton: "Discover KTS Corporate <span>→</span>",
-
-    ctaTitle: "From strategy to operations.",
-    ctaSubtitle: "Let’s discuss your objectives.",
-    ctaButton: "Contact us <span>→</span>",
 
     footerText: "Strategy, structure and continuity to support companies, investors and institutions in decisive phases of the business journey.",
     footerNavTitle: "Navigation",
