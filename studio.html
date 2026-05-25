@@ -16,9 +16,11 @@
   --ivory-light:#F8F4EC;
   --carbon:#0E1A2B;
   --navy:#0E1A2B;
+  --navy-soft:#13243A;
   --navy-deep:#08111F;
   --brass:#B08A4A;
   --brass-light:#C9A96E;
+  --brass-soft:#D8C39A;
   --greige:#8B847C;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'DM Sans',sans-serif;
@@ -57,9 +59,7 @@ nav{
   text-decoration:none;
 }
 
-.logo-image-wrap{
-  height:52px;
-}
+.logo-image-wrap{height:52px}
 
 .site-logo{
   height:52px;
@@ -114,9 +114,7 @@ nav{
 }
 
 .lang-btn.active,
-.lang-btn:hover{
-  color:var(--brass);
-}
+.lang-btn:hover{color:var(--brass)}
 
 .lang-separator{
   font-family:var(--sans);
@@ -131,7 +129,7 @@ nav{
   letter-spacing:0.26em;
   text-transform:uppercase;
   color:var(--brass);
-  margin-bottom:28px;
+  margin-bottom:24px;
   font-weight:500;
 }
 
@@ -167,8 +165,11 @@ nav{
   cursor:pointer;
   text-decoration:none;
   font-weight:500;
-  transition:background 0.25s,color 0.25s;
-  display:inline-block;
+  transition:background 0.25s,color 0.25s,border-color 0.25s;
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+  width:max-content;
 }
 
 .btn-primary:hover{
@@ -184,14 +185,14 @@ nav{
   color:var(--navy);
   background:transparent;
   border:0.5px solid rgba(176,138,74,0.55);
-  padding:13px 24px;
+  padding:15px 28px;
   cursor:pointer;
   text-decoration:none;
   font-weight:500;
   transition:background 0.25s,color 0.25s,border-color 0.25s;
   display:inline-flex;
   align-items:center;
-  gap:14px;
+  gap:18px;
   width:max-content;
 }
 
@@ -202,440 +203,354 @@ nav{
 }
 
 /* HERO */
-.page-hero{
-  min-height:60vh;
-  display:grid;
-  grid-template-columns:0.95fr 1.05fr;
+.studio-hero{
+  min-height:72vh;
   padding-top:76px;
-  border-bottom:0.5px solid rgba(176,138,74,0.16);
-  background:
-    radial-gradient(circle at 70% 45%,
-      rgba(201,169,110,0.13) 0%,
-      rgba(201,169,110,0.06) 30%,
-      rgba(201,169,110,0.02) 50%,
-      transparent 74%
-    ),
-    linear-gradient(90deg,
-      #F8F4EC 0%,
-      #F8F4EC 35%,
-      #F6F1E8 52%,
-      #F3EFE8 72%,
-      #F8F4EC 100%
-    );
   position:relative;
   overflow:hidden;
+  background:var(--navy-deep);
+  border-bottom:0.5px solid rgba(176,138,74,0.24);
 }
 
-.page-hero::before{
-  content:"";
+.hero-photo{
   position:absolute;
   inset:76px 0 0 0;
-  pointer-events:none;
-  z-index:0;
   background:
-    repeating-linear-gradient(45deg,
-      transparent,
-      transparent 104px,
-      rgba(176,138,74,0.022) 104px,
-      rgba(176,138,74,0.022) 105px
+    linear-gradient(90deg,
+      rgba(243,239,232,0.96) 0%,
+      rgba(243,239,232,0.88) 28%,
+      rgba(243,239,232,0.66) 46%,
+      rgba(243,239,232,0.16) 68%,
+      rgba(8,17,31,0.08) 100%
     ),
-    repeating-linear-gradient(-45deg,
+    radial-gradient(circle at 78% 42%,rgba(176,138,74,0.18),transparent 36%),
+    linear-gradient(120deg,#F3EFE8 0%,#E8E0D2 38%,#1A2638 39%,#08111F 100%);
+}
+
+.hero-photo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(243,239,232,0.98) 0%,rgba(243,239,232,0.55) 42%,rgba(8,17,31,0.10) 100%),
+    repeating-linear-gradient(90deg,
       transparent,
-      transparent 104px,
-      rgba(176,138,74,0.012) 104px,
-      rgba(176,138,74,0.012) 105px
+      transparent 64px,
+      rgba(176,138,74,0.055) 64px,
+      rgba(176,138,74,0.055) 65px
     );
+}
+
+.hero-photo::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  width:68%;
+  background:
+    radial-gradient(circle at 55% 38%,rgba(201,169,110,0.28),transparent 18%),
+    radial-gradient(circle at 70% 40%,rgba(255,255,255,0.13),transparent 13%),
+    linear-gradient(90deg,rgba(243,239,232,0.08),rgba(8,17,31,0.12)),
+    repeating-linear-gradient(0deg,
+      rgba(255,255,255,0.04),
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px,
+      transparent 88px
+    );
+  opacity:0.95;
+}
+
+.boardroom-lines{
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:70%;
+  height:58%;
+  z-index:1;
+  background:
+    linear-gradient(180deg,transparent 0%,rgba(8,17,31,0.30) 100%),
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,0.10),
+      rgba(255,255,255,0.10) 2px,
+      transparent 2px,
+      transparent 150px
+    );
+  clip-path:polygon(10% 12%,100% 0,100% 100%,0 100%);
   opacity:0.62;
 }
 
-.page-hero::after{
-  content:"";
-  position:absolute;
-  inset:76px 0 0 0;
-  pointer-events:none;
-  z-index:2;
-  background:
-    linear-gradient(90deg,
-      rgba(248,244,236,0.99) 0%,
-      rgba(248,244,236,0.94) 31%,
-      rgba(248,244,236,0.76) 42%,
-      rgba(248,244,236,0.46) 52%,
-      rgba(248,244,236,0.18) 64%,
-      rgba(248,244,236,0.04) 78%,
-      rgba(248,244,236,0.00) 100%
-    );
-}
-
-.hero-left{
+.hero-content{
   position:relative;
-  z-index:4;
+  z-index:3;
   display:flex;
   flex-direction:column;
   justify-content:center;
-  padding:88px 64px 88px 56px;
+  min-height:calc(72vh - 76px);
+  padding:112px 56px 96px;
+  max-width:840px;
 }
 
-.hero-left p{
-  font-family:var(--sans);
-  font-size:14px;
-  line-height:1.8;
-  color:var(--greige);
-  max-width:520px;
-  font-weight:300;
-  margin-top:30px;
+.studio-hero .section-headline{
+  color:var(--navy);
+  font-size:clamp(44px,5.4vw,82px);
+  max-width:820px;
 }
 
-.hero-right{
-  position:relative;
-  z-index:1;
-  display:flex;
-  align-items:stretch;
-  justify-content:center;
-  padding:0;
-  overflow:hidden;
-}
-
-/* SFUMATURA MATERICA INTEGRATA */
-.material-visual{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  max-width:none;
-  overflow:hidden;
-  opacity:1;
-}
-
-.material-visual::before{
-  content:"";
-  position:absolute;
-  inset:-12%;
-  background:
-    radial-gradient(circle at 72% 30%,
-      rgba(176,138,74,0.20) 0%,
-      rgba(176,138,74,0.095) 18%,
-      rgba(176,138,74,0.032) 38%,
-      transparent 62%
-    ),
-    radial-gradient(circle at 36% 62%,
-      rgba(255,255,255,0.72) 0%,
-      rgba(255,255,255,0.30) 28%,
-      transparent 62%
-    ),
-    linear-gradient(135deg,
-      rgba(248,244,236,0.98) 0%,
-      rgba(242,235,222,0.82) 32%,
-      rgba(232,220,199,0.46) 58%,
-      rgba(248,244,236,0.82) 100%
-    );
-}
-
-.material-visual::after{
-  content:"";
-  position:absolute;
-  inset:-8%;
-  background:
-    linear-gradient(112deg,
-      transparent 0%,
-      transparent 43%,
-      rgba(176,138,74,0.15) 43.35%,
-      transparent 44.1%,
-      transparent 100%
-    ),
-    linear-gradient(128deg,
-      transparent 0%,
-      transparent 56%,
-      rgba(176,138,74,0.105) 56.35%,
-      transparent 57.1%,
-      transparent 100%
-    ),
-    linear-gradient(18deg,
-      transparent 0%,
-      transparent 70%,
-      rgba(176,138,74,0.085) 70.35%,
-      transparent 71.1%,
-      transparent 100%
-    ),
-    radial-gradient(circle at 68% 46%,
-      rgba(176,138,74,0.11) 0%,
-      transparent 30%
-    );
-  opacity:0.82;
-}
-
-.material-line{
-  position:absolute;
-  height:1px;
-  background:linear-gradient(90deg,transparent,rgba(176,138,74,0.28),transparent);
-  transform-origin:center;
-  opacity:0.55;
-}
-
-.material-line.one{
-  width:430px;
-  top:32%;
-  right:-56px;
-  transform:rotate(-18deg);
-}
-
-.material-line.two{
-  width:500px;
-  top:57%;
-  right:-92px;
-  transform:rotate(16deg);
-}
-
-.material-line.three{
-  width:320px;
-  top:20%;
-  right:8%;
-  transform:rotate(41deg);
-}
-
-.material-grain{
-  position:absolute;
-  inset:0;
-  opacity:0.28;
-  background-image:
-    radial-gradient(circle at 12% 24%,rgba(176,138,74,0.07) 0 1px,transparent 2px),
-    radial-gradient(circle at 62% 74%,rgba(176,138,74,0.055) 0 1px,transparent 2px),
-    radial-gradient(circle at 84% 34%,rgba(14,26,43,0.028) 0 1px,transparent 2px);
-  background-size:72px 72px,96px 96px,120px 120px;
-}
-
-.material-label{
-  position:absolute;
-  right:8%;
-  bottom:14%;
-  font-family:var(--serif);
-  font-size:92px;
-  line-height:1;
-  color:rgba(176,138,74,0.055);
-  font-weight:300;
-  letter-spacing:0.04em;
+.hero-text{
+  margin-top:34px;
+  max-width:610px;
+  font-size:15px;
+  line-height:1.9;
+  color:rgba(14,26,43,0.78);
 }
 
 /* PROFESSIONALS */
 .professionals-section{
-  padding:92px 56px 100px;
-  background:var(--ivory);
+  padding:86px 56px 92px;
+  background:
+    radial-gradient(circle at 50% 12%,rgba(176,138,74,0.07),transparent 30%),
+    var(--ivory);
 }
 
-.professionals-top{
+.professionals-head{
+  max-width:1220px;
+  margin:0 auto 42px;
   display:grid;
-  grid-template-columns:0.9fr 1.1fr;
+  grid-template-columns:0.8fr 1.2fr;
   gap:70px;
   align-items:end;
-  margin-bottom:48px;
 }
 
-.professionals-top p{
+.professionals-head p:not(.section-label){
   font-size:14px;
-  line-height:1.9;
+  line-height:1.85;
   color:var(--greige);
   max-width:620px;
 }
 
-.professional-grid{
+.professionals-grid{
+  max-width:1220px;
+  margin:0 auto;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
 }
 
-.professional-card{
-  border:0.5px solid rgba(176,138,74,0.22);
-  background:linear-gradient(135deg,rgba(248,244,236,0.72),rgba(243,239,232,0.46));
+.prof-card{
+  background:rgba(248,244,236,0.78);
+  border:0.5px solid rgba(176,138,74,0.26);
+  overflow:hidden;
+  min-height:456px;
   display:flex;
   flex-direction:column;
-  min-height:720px;
-  transition:transform 0.28s ease,border-color 0.28s ease,box-shadow 0.28s ease;
+  box-shadow:0 18px 38px rgba(14,26,43,0.055);
 }
 
-.professional-card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(176,138,74,0.44);
-  box-shadow:0 24px 60px rgba(14,26,43,0.06);
-}
-
-.professional-photo{
-  height:310px;
-  border-bottom:0.5px solid rgba(176,138,74,0.18);
-  background:rgba(248,244,236,0.7);
+.prof-photo{
+  height:222px;
+  background:rgba(14,26,43,0.08);
   overflow:hidden;
 }
 
-.professional-photo img{
+.prof-photo img{
   width:100%;
   height:100%;
-  display:block;
   object-fit:cover;
-  object-position:center top;
-  filter:saturate(0.92) contrast(0.98);
+  display:block;
+  filter:saturate(0.92) contrast(1.02);
 }
 
-.professional-body{
-  padding:30px 28px 28px;
+.prof-content{
+  padding:22px 22px 24px;
   display:flex;
   flex-direction:column;
   flex:1;
 }
 
-.professional-name{
+.prof-name{
   font-family:var(--serif);
-  font-size:34px;
+  font-size:25px;
   line-height:1.05;
-  font-weight:300;
   color:var(--navy);
-  margin-bottom:12px;
-}
-
-.professional-role{
-  font-family:var(--sans);
-  font-size:9.5px;
-  letter-spacing:0.23em;
-  text-transform:uppercase;
-  color:var(--brass);
-  font-weight:500;
-  margin-bottom:20px;
-}
-
-.professional-line{
-  width:38px;
-  height:1px;
-  background:var(--brass);
-  margin-bottom:20px;
-}
-
-.professional-focus{
-  font-family:var(--sans);
-  font-size:10.5px;
-  letter-spacing:0.18em;
-  line-height:1.75;
-  text-transform:uppercase;
-  color:var(--navy);
-  font-weight:500;
-  margin-bottom:22px;
-}
-
-.professional-bio{
-  font-size:13px;
-  line-height:1.78;
-  color:var(--greige);
-  margin-bottom:28px;
-}
-
-.professional-body .btn-outline{
-  margin-top:auto;
-}
-
-/* METHOD */
-.method-section{
-  background:linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
-  padding:96px 56px;
-  display:grid;
-  grid-template-columns:0.9fr 1.1fr;
-  gap:80px;
-  align-items:start;
-  border-top:1px solid rgba(176,138,74,0.18);
-  border-bottom:1px solid rgba(176,138,74,0.18);
-}
-
-.method-section .section-label{
-  color:var(--brass-light);
-}
-
-.method-section .section-headline{
-  color:var(--ivory);
-  font-size:clamp(32px,3.5vw,54px);
-}
-
-.method-section .section-headline em{
-  color:var(--brass-light);
-}
-
-.method-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:0;
-  border-top:0.5px solid rgba(176,138,74,0.26);
-  border-left:0.5px solid rgba(176,138,74,0.16);
-}
-
-.method-item{
-  padding:28px;
-  border-right:0.5px solid rgba(176,138,74,0.16);
-  border-bottom:0.5px solid rgba(176,138,74,0.16);
-}
-
-.method-num{
-  font-family:var(--serif);
-  font-size:34px;
-  color:var(--brass-light);
-  margin-bottom:12px;
   font-weight:300;
+  margin-bottom:10px;
 }
 
-.method-item h4{
+.prof-role{
   font-family:var(--sans);
   font-size:10px;
-  letter-spacing:0.22em;
+  letter-spacing:0.18em;
   text-transform:uppercase;
-  color:var(--ivory);
-  margin-bottom:12px;
+  color:var(--brass);
   font-weight:500;
+  margin-bottom:18px;
+  padding-bottom:14px;
+  border-bottom:0.5px solid rgba(176,138,74,0.36);
 }
 
-.method-item p{
-  font-size:13px;
-  line-height:1.75;
-  color:rgba(243,239,232,0.58);
+.prof-desc{
+  font-size:12.2px;
+  line-height:1.68;
+  color:rgba(14,26,43,0.70);
 }
 
-/* CTA */
-.cta-band{
-  padding:80px 56px;
+/* VALUE BAND */
+.value-band{
+  padding:54px 56px;
+  background:
+    linear-gradient(135deg,rgba(248,244,236,0.96),rgba(237,230,218,0.80));
+  border-top:0.5px solid rgba(176,138,74,0.18);
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
+
+.value-inner{
+  max-width:1220px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:42px;
+  align-items:center;
+}
+
+.value-icon{
+  width:86px;
+  height:86px;
+  border-radius:50%;
+  border:0.5px solid rgba(176,138,74,0.50);
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  border-top:0.5px solid rgba(176,138,74,0.18);
-  background:var(--ivory);
+  justify-content:center;
+  color:var(--brass);
 }
 
-.cta-band-text{
+.value-icon svg{
+  width:46px;
+  height:46px;
+  stroke:currentColor;
+  stroke-width:1.2;
+  fill:none;
+}
+
+.value-text h2{
   font-family:var(--serif);
-  font-size:clamp(22px,2.5vw,36px);
+  font-size:clamp(30px,3vw,48px);
   font-weight:300;
   color:var(--navy);
+  line-height:1.1;
+  margin-bottom:10px;
 }
 
-.cta-band-text em{
-  font-style:italic;
-  color:var(--brass);
+.value-text p{
+  font-size:14px;
+  line-height:1.75;
+  color:rgba(14,26,43,0.68);
 }
 
 /* FOOTER */
 footer{
   background:#08111F;
-  padding:40px 56px;
+  padding:56px 56px 34px;
+  color:var(--ivory);
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr 0.8fr 1fr;
+  gap:56px;
+  max-width:1220px;
+  margin:0 auto 44px;
+}
+
+.footer-logo{
+  font-family:var(--serif);
+  font-size:42px;
+  letter-spacing:0.12em;
+  line-height:0.95;
+  color:var(--ivory);
+  margin-bottom:20px;
+}
+
+.footer-logo span{
+  display:block;
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.34em;
+  color:var(--brass-light);
+  margin-top:8px;
+}
+
+.footer-text{
+  font-size:13px;
+  line-height:1.75;
+  color:rgba(243,239,232,0.62);
+  max-width:260px;
+}
+
+.footer-title{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:var(--brass-light);
+  margin-bottom:18px;
+  font-weight:500;
+}
+
+.footer-links{
+  list-style:none;
+}
+
+.footer-links li{
+  margin-bottom:10px;
+}
+
+.footer-links a,
+.footer-contact a{
+  color:rgba(243,239,232,0.66);
+  font-size:13px;
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover{
+  color:var(--brass-light);
+}
+
+.footer-contact p{
+  font-size:13px;
+  line-height:1.8;
+  color:rgba(243,239,232,0.66);
+  margin-bottom:12px;
+}
+
+.footer-bottom{
+  max-width:1220px;
+  margin:0 auto;
+  padding-top:24px;
+  border-top:0.5px solid rgba(176,138,74,0.22);
   display:flex;
   align-items:center;
   justify-content:space-between;
-  border-top:0.5px solid rgba(176,138,74,0.18);
+  gap:20px;
 }
 
 .footer-copy{
-  font-family:var(--sans);
   font-size:11px;
-  color:rgba(243,239,232,0.28);
-  font-weight:300;
+  color:rgba(243,239,232,0.30);
   letter-spacing:0.08em;
 }
 
-.footer-tagline{
-  font-family:var(--serif);
-  font-size:13px;
-  font-style:italic;
-  color:rgba(176,138,74,0.62);
+.footer-policy{
+  display:flex;
+  gap:28px;
+}
+
+.footer-policy a{
+  font-size:11px;
+  color:rgba(243,239,232,0.46);
+  text-decoration:none;
 }
 
 /* ANIMATION */
@@ -651,26 +566,18 @@ footer{
 }
 
 /* RESPONSIVE */
-@media(max-width:1150px){
-  .professional-grid{
+@media(max-width:1120px){
+  .professionals-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .professionals-head,
+  .value-inner{
     grid-template-columns:1fr;
   }
 
-  .professional-card{
-    min-height:auto;
-    display:grid;
-    grid-template-columns:300px 1fr;
-  }
-
-  .professional-photo{
-    height:auto;
-    min-height:420px;
-    border-bottom:none;
-    border-right:0.5px solid rgba(176,138,74,0.18);
-  }
-
-  .method-grid{
-    grid-template-columns:1fr;
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
   }
 }
 
@@ -680,111 +587,67 @@ footer{
     height:74px;
   }
 
-  .site-logo{
-    height:48px;
-  }
+  .site-logo{height:48px}
+  .logo-image-wrap{height:48px}
+  .nav-links{display:none}
 
-  .logo-image-wrap{
-    height:48px;
-  }
-
-  .nav-links{
-    display:none;
-  }
-
-  .page-hero{
-    grid-template-columns:1fr;
-    min-height:auto;
+  .studio-hero{
     padding-top:74px;
+    min-height:auto;
   }
 
-  .page-hero::before{
+  .hero-photo{
     inset:74px 0 0 0;
   }
 
-  .page-hero::after{
-    display:none;
+  .hero-content{
+    padding:88px 28px 78px;
+    min-height:560px;
   }
 
-  .hero-left{
-    padding:80px 28px 40px;
+  .studio-hero .section-headline{
+    font-size:42px;
   }
 
-  .hero-right{
-    min-height:280px;
+  .professionals-section,
+  .value-band{
+    padding-left:28px;
+    padding-right:28px;
   }
 
-  .material-label{
-    font-size:58px;
-    right:28px;
-    bottom:32px;
-  }
-
-  .professionals-section{
-    padding:80px 28px 76px;
-  }
-
-  .professionals-top{
+  .professionals-head{
     grid-template-columns:1fr;
-    gap:28px;
+    gap:24px;
   }
 
-  .professional-card{
-    display:flex;
-  }
-
-  .professional-photo{
-    height:360px;
-    min-height:360px;
-    border-right:none;
-    border-bottom:0.5px solid rgba(176,138,74,0.18);
-  }
-
-  .method-section{
+  .footer-grid{
     grid-template-columns:1fr;
-    padding:80px 28px;
-    gap:42px;
-  }
-
-  .cta-band{
-    padding:64px 28px;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:32px;
+    gap:34px;
   }
 
   footer{
-    padding:32px 28px;
+    padding:46px 28px 30px;
+  }
+
+  .footer-bottom{
     flex-direction:column;
     align-items:flex-start;
-    gap:12px;
   }
 }
 
-@media(max-width:600px){
-  .section-headline{
-    font-size:38px;
+@media(max-width:620px){
+  .professionals-grid{
+    grid-template-columns:1fr;
   }
 
-  .language-switch{
-    padding:4px 8px;
+  .prof-photo{
+    height:260px;
   }
 
-  .lang-btn{
-    font-size:10px;
-  }
-
-  .professional-name{
-    font-size:32px;
-  }
-
-  .professional-photo{
-    height:320px;
-    min-height:320px;
-  }
-
-  .material-label{
-    font-size:48px;
+  .btn-primary,
+  .btn-outline{
+    width:100%;
+    justify-content:center;
   }
 }
 </style>
@@ -812,161 +675,165 @@ footer{
   </div>
 </nav>
 
-<div class="page-hero">
-  <div class="hero-left fade-in">
+<header class="studio-hero">
+  <div class="hero-photo" aria-hidden="true"></div>
+  <div class="boardroom-lines" aria-hidden="true"></div>
+
+  <div class="hero-content fade-in">
     <p class="section-label" data-i18n="heroLabel">Lo Studio</p>
     <div class="brass-line"></div>
 
     <h1 class="section-headline" data-i18n="heroTitle">
-      Professionisti di<br>alto profilo.<br><em>Un’unica visione.</em>
+      Esperienza.<br>Indipendenza.<br>Risultati.
     </h1>
 
-    <p data-i18n="heroSubtitle">
-      KTS Advisory opera attraverso un modello boutique, fondato sull’integrazione di competenze specialistiche e sulla collaborazione con professionisti selezionati nei diversi ambiti dell’operazione.
+    <p class="hero-text" data-i18n="heroSubtitle">
+      KTS Advisory è una boutique indipendente che integra competenze legali, societarie, fiscali, finanziarie e strategiche al servizio di imprese, investitori e famiglie imprenditoriali.
     </p>
   </div>
-
-  <div class="hero-right fade-in" style="transition-delay:0.15s">
-    <div class="material-visual" aria-hidden="true">
-      <span class="material-line one"></span>
-      <span class="material-line two"></span>
-      <span class="material-line three"></span>
-      <span class="material-grain"></span>
-      <span class="material-label">KTS</span>
-    </div>
-  </div>
-</div>
+</header>
 
 <section class="professionals-section">
-  <div class="professionals-top fade-in">
+  <div class="professionals-head fade-in">
     <div>
       <p class="section-label" data-i18n="professionalsLabel">Professionisti</p>
-      <h2 class="section-headline" style="font-size:clamp(32px,3.3vw,52px)" data-i18n="professionalsTitle">
-        Competenze selezionate.<br><em>Prospettive integrate.</em>
+      <h2 class="section-headline" style="font-size:clamp(32px,3.4vw,54px)" data-i18n="professionalsTitle">
+        Il nostro team
       </h2>
     </div>
 
     <p data-i18n="professionalsIntro">
-      La rete professionale di KTS Advisory riunisce profili specializzati in ambiti legali, fiscali, finanziari, aziendali e strategici, con un approccio coordinato e orientato alla complessità dell’operazione.
+      Un network di professionisti con competenze complementari ed esperienza consolidata, coordinato per offrire al cliente una direzione chiara e multidisciplinare.
     </p>
   </div>
 
-  <div class="professional-grid">
+  <div class="professionals-grid">
 
-    <article class="professional-card fade-in">
-      <div class="professional-photo">
-        <img src="assets/foto-avv-notturno.jpeg" alt="Avv. Giovanni Battista Notturno">
+    <article class="prof-card fade-in">
+      <div class="prof-photo">
+        <img src="assets/notturno.jpg" alt="Giovanni Battista Notturno">
       </div>
-
-      <div class="professional-body">
-        <h3 class="professional-name" data-i18n="notturnoName">Avv. Giovanni Battista Notturno</h3>
-        <p class="professional-role" data-i18n="notturnoRole">Studio Legale Notturno</p>
-        <div class="professional-line"></div>
-
-        <p class="professional-focus" data-i18n="notturnoFocus">
-          Diritto penale · Civile · Commerciale · Finanziario · Tributario
+      <div class="prof-content">
+        <h3 class="prof-name">Avv. Giovanni Battista<br>Notturno</h3>
+        <p class="prof-role">Partner</p>
+        <p class="prof-desc">
+          Specialista in finanza straordinaria e operazioni di M&amp;A. Supporta imprese e investitori nella definizione di strategie di crescita e nella gestione di operazioni complesse.
         </p>
-
-        <p class="professional-bio" data-i18n="notturnoBio">
-          Avvocato iscritto all’Ordine degli Avvocati dal 2016, con esperienza in Italia, Spagna, Svizzera e Regno Unito. Opera in ambito penale, civile, commerciale, finanziario e tributario, con particolare attenzione alla tutela dei diritti e alla gestione di contesti legali complessi.
-        </p>
-
-        <a href="giovanni-battista-notturno.html" class="btn-outline" data-i18n="notturnoButton">Vedi profilo <span>→</span></a>
       </div>
     </article>
 
-    <article class="professional-card fade-in" style="transition-delay:0.08s">
-      <div class="professional-photo">
-        <img src="assets/foto-avv-scalzone.jpg" alt="Avv. Alessandro Scalzone">
+    <article class="prof-card fade-in" style="transition-delay:0.08s">
+      <div class="prof-photo">
+        <img src="assets/scalzone.jpg" alt="Alessandro Scalzone">
       </div>
-
-      <div class="professional-body">
-        <h3 class="professional-name" data-i18n="scalzoneName">Avv. Alessandro Scalzone</h3>
-        <p class="professional-role" data-i18n="scalzoneRole">Avvocato penalista</p>
-        <div class="professional-line"></div>
-
-        <p class="professional-focus" data-i18n="scalzoneFocus">
-          Diritto penale · Esecuzione penale · Antiriciclaggio · Compliance AML/CTF
+      <div class="prof-content">
+        <h3 class="prof-name">Avv. Alessandro<br>Scalzone</h3>
+        <p class="prof-role">Partner</p>
+        <p class="prof-desc">
+          Esperto in diritto civile e commerciale, contrattualistica d’impresa e contenzioso. Si occupa di operazioni straordinarie e governance societaria.
         </p>
-
-        <p class="professional-bio" data-i18n="scalzoneBio">
-          Avvocato penalista, esercita la professione forense a Napoli dal 2017. Ha maturato esperienza nell’esecuzione penale e nell’assistenza a detenuti. Si occupa prevalentemente di procedure antiriciclaggio, consulenza AML/CTF, due diligence sugli investitori e compliance per istituzioni ed enti privati.
-        </p>
-
-        <a href="alessandro-scalzone.html" class="btn-outline" data-i18n="scalzoneButton">Vedi profilo <span>→</span></a>
       </div>
     </article>
 
-    <article class="professional-card fade-in" style="transition-delay:0.16s">
-      <div class="professional-photo">
-        <img src="assets/foto-salvatore-ferraro.jpg" alt="Dott. Salvatore Ferraro">
+    <article class="prof-card fade-in" style="transition-delay:0.16s">
+      <div class="prof-photo">
+        <img src="assets/ferraro.jpg" alt="Salvatore Ferraro">
       </div>
-
-      <div class="professional-body">
-        <h3 class="professional-name" data-i18n="ferraroName">Dott. Salvatore Ferraro</h3>
-        <p class="professional-role" data-i18n="ferraroRole">CEO & Founder · Commercialista</p>
-        <div class="professional-line"></div>
-
-        <p class="professional-focus" data-i18n="ferraroFocus">
-          Economia · Informatica · Telemedicina · Gestione aziendale · Innovazione
+      <div class="prof-content">
+        <h3 class="prof-name">Dott. Salvatore<br>Ferraro</h3>
+        <p class="prof-role">Tax &amp; Corporate Advisor</p>
+        <p class="prof-desc">
+          Specialista in fiscalità nazionale e internazionale, pianificazione fiscale e consulenza societaria. Supporta aziende e gruppi nella gestione di questioni tributarie complesse.
         </p>
+      </div>
+    </article>
 
-        <p class="professional-bio" data-i18n="ferraroBio">
-          Laureato in Economia presso l’Università Parthenope di Napoli, è CEO & Founder di Odd Studio srl, Mood 03 e Dotclick srl. Dottore commercialista iscritto all’Ordine di Napoli dal 2010, opera nelle aree dell’ingegneria, dell’informatica, della telemedicina e della gestione aziendale, in Italia e all’estero.
+    <article class="prof-card fade-in" style="transition-delay:0.24s">
+      <div class="prof-photo">
+        <img src="assets/musella.jpg" alt="Avv. Musella">
+      </div>
+      <div class="prof-content">
+        <h3 class="prof-name">Avv.<br>Musella</h3>
+        <p class="prof-role">Mediazione Civile e Commerciale</p>
+        <p class="prof-desc">
+          Avvocato civilista esperto in mediazione civile e commerciale. Socio fondatore dell’Organismo di Mediazione De Jure Conciliando S.r.l. e responsabile delle procedure di mediazione, con oltre dieci anni di esperienza e più di 2.000 procedure gestite. Consulente legale per imprese e privati interessati a investimenti all’estero.
         </p>
-
-        <a href="salvatore-ferraro.html" class="btn-outline" data-i18n="ferraroButton">Vedi profilo <span>→</span></a>
       </div>
     </article>
 
   </div>
 </section>
 
-<section class="method-section">
-  <div class="fade-in">
-    <p class="section-label" data-i18n="methodLabel">Disciplina operativa</p>
-    <h2 class="section-headline" data-i18n="methodTitle">
-      Metodo rigoroso.<br>Competenze <em>integrate</em>.
-    </h2>
-  </div>
-
-  <div class="method-grid fade-in" style="transition-delay:0.15s">
-    <div class="method-item">
-      <div class="method-num">01</div>
-      <h4 data-i18n="methodOneTitle">Analisi</h4>
-      <p data-i18n="methodOneText">Comprensione approfondita del contesto, degli obiettivi e dei profili critici.</p>
+<section class="value-band">
+  <div class="value-inner fade-in">
+    <div class="value-icon">
+      <svg viewBox="0 0 64 64">
+        <path d="M18 34c6-8 12-8 18 0"/>
+        <path d="M28 34c6-8 12-8 18 0"/>
+        <path d="M18 34l-6 10 8 4 8-8"/>
+        <path d="M46 34l6 10-8 4-8-8"/>
+        <circle cx="22" cy="20" r="6"/>
+        <circle cx="42" cy="20" r="6"/>
+      </svg>
     </div>
 
-    <div class="method-item">
-      <div class="method-num">02</div>
-      <h4 data-i18n="methodTwoTitle">Struttura</h4>
-      <p data-i18n="methodTwoText">Definizione della strategia più coerente con il caso e con gli interessi coinvolti.</p>
+    <div class="value-text">
+      <h2 data-i18n="valueTitle">Parliamo del tuo progetto</h2>
+      <p data-i18n="valueText">
+        Il nostro team è a disposizione per ascoltare le tue esigenze e costruire insieme la soluzione più adatta.
+      </p>
     </div>
 
-    <div class="method-item">
-      <div class="method-num">03</div>
-      <h4 data-i18n="methodThreeTitle">Coordinamento</h4>
-      <p data-i18n="methodThreeText">Gestione dei rapporti professionali e dei diversi livelli dell’attività.</p>
-    </div>
-
-    <div class="method-item">
-      <div class="method-num">04</div>
-      <h4 data-i18n="methodFourTitle">Tutela</h4>
-      <p data-i18n="methodFourText">Presidio del risultato con attenzione ai diritti, alla persona e alla complessità del caso.</p>
-    </div>
+    <a href="contatti.html" class="btn-outline" data-i18n="valueButton">Contattaci <span>→</span></a>
   </div>
 </section>
-
-<div class="cta-band fade-in">
-  <p class="cta-band-text" data-i18n="ctaText">
-    Il vostro progetto richiede<br>competenze integrate e <em>visione chiara</em>?
-  </p>
-  <a href="contatti.html" class="btn-primary" data-i18n="ctaButton">Contattaci</a>
-</div>
 
 <footer>
-  <span class="footer-copy" data-i18n="footerCopy">© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
-  <span class="footer-tagline" data-i18n="footerTagline">Struttura. Visione. Risultato.</span>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">KTS<span>ADVISORY</span></div>
+      <p class="footer-text" data-i18n="footerText">
+        Strategia, struttura e continuità per accompagnare imprese, investitori e istituzioni nelle fasi decisive del percorso aziendale.
+      </p>
+    </div>
+
+    <div>
+      <p class="footer-title" data-i18n="footerNavTitle">Navigazione</p>
+      <ul class="footer-links">
+        <li><a href="about.html" data-i18n="footerAbout">Chi siamo</a></li>
+        <li><a href="attivita.html" data-i18n="footerActivities">Attività</a></li>
+        <li><a href="approccio.html" data-i18n="footerApproach">Approccio</a></li>
+        <li><a href="studio.html" data-i18n="footerStudio">Lo Studio</a></li>
+        <li><a href="contatti.html" data-i18n="footerContacts">Contatti</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-title" data-i18n="footerActivitiesTitle">Attività</p>
+      <ul class="footer-links">
+        <li><a href="attivita.html">KTS Executive</a></li>
+        <li><a href="attivita.html">KTS Corporate</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <p class="footer-title" data-i18n="footerContactTitle">Contatti</p>
+      <p>
+        Via dei Mille, 16<br>
+        80121 Napoli, Italia
+      </p>
+      <p><a href="tel:+390811853526">+39 081 185 35 26</a></p>
+      <p><a href="mailto:info@ktsadvisory.com">info@ktsadvisory.com</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-copy" data-i18n="footerCopy">© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
+    <div class="footer-policy">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
 </footer>
 
 <script>
@@ -988,46 +855,27 @@ const translations = {
     navContacts: "Contatti",
 
     heroLabel: "Lo Studio",
-    heroTitle: "Professionisti di<br>alto profilo.<br><em>Un’unica visione.</em>",
-    heroSubtitle: "KTS Advisory opera attraverso un modello boutique, fondato sull’integrazione di competenze specialistiche e sulla collaborazione con professionisti selezionati nei diversi ambiti dell’operazione.",
+    heroTitle: "Esperienza.<br>Indipendenza.<br>Risultati.",
+    heroSubtitle: "KTS Advisory è una boutique indipendente che integra competenze legali, societarie, fiscali, finanziarie e strategiche al servizio di imprese, investitori e famiglie imprenditoriali.",
 
     professionalsLabel: "Professionisti",
-    professionalsTitle: "Competenze selezionate.<br><em>Prospettive integrate.</em>",
-    professionalsIntro: "La rete professionale di KTS Advisory riunisce profili specializzati in ambiti legali, fiscali, finanziari, aziendali e strategici, con un approccio coordinato e orientato alla complessità dell’operazione.",
+    professionalsTitle: "Il nostro team",
+    professionalsIntro: "Un network di professionisti con competenze complementari ed esperienza consolidata, coordinato per offrire al cliente una direzione chiara e multidisciplinare.",
 
-    notturnoName: "Avv. Giovanni Battista Notturno",
-    notturnoRole: "Studio Legale Notturno",
-    notturnoFocus: "Diritto penale · Civile · Commerciale · Finanziario · Tributario",
-    notturnoBio: "Avvocato iscritto all’Ordine degli Avvocati dal 2016, con esperienza in Italia, Spagna, Svizzera e Regno Unito. Opera in ambito penale, civile, commerciale, finanziario e tributario, con particolare attenzione alla tutela dei diritti e alla gestione di contesti legali complessi.",
-    notturnoButton: "Vedi profilo <span>→</span>",
+    valueTitle: "Parliamo del tuo progetto",
+    valueText: "Il nostro team è a disposizione per ascoltare le tue esigenze e costruire insieme la soluzione più adatta.",
+    valueButton: "Contattaci <span>→</span>",
 
-    scalzoneName: "Avv. Alessandro Scalzone",
-    scalzoneRole: "Avvocato penalista",
-    scalzoneFocus: "Diritto penale · Esecuzione penale · Antiriciclaggio · Compliance AML/CTF",
-    scalzoneBio: "Avvocato penalista, esercita la professione forense a Napoli dal 2017. Ha maturato esperienza nell’esecuzione penale e nell’assistenza a detenuti. Si occupa prevalentemente di procedure antiriciclaggio, consulenza AML/CTF, due diligence sugli investitori e compliance per istituzioni ed enti privati.",
-    scalzoneButton: "Vedi profilo <span>→</span>",
-
-    ferraroName: "Dott. Salvatore Ferraro",
-    ferraroRole: "CEO & Founder · Commercialista",
-    ferraroFocus: "Economia · Informatica · Telemedicina · Gestione aziendale · Innovazione",
-    ferraroBio: "Laureato in Economia presso l’Università Parthenope di Napoli, è CEO & Founder di Odd Studio srl, Mood 03 e Dotclick srl. Dottore commercialista iscritto all’Ordine di Napoli dal 2010, opera nelle aree dell’ingegneria, dell’informatica, della telemedicina e della gestione aziendale, in Italia e all’estero.",
-    ferraroButton: "Vedi profilo <span>→</span>",
-
-    methodLabel: "Disciplina operativa",
-    methodTitle: "Metodo rigoroso.<br>Competenze <em>integrate</em>.",
-    methodOneTitle: "Analisi",
-    methodOneText: "Comprensione approfondita del contesto, degli obiettivi e dei profili critici.",
-    methodTwoTitle: "Struttura",
-    methodTwoText: "Definizione della strategia più coerente con il caso e con gli interessi coinvolti.",
-    methodThreeTitle: "Coordinamento",
-    methodThreeText: "Gestione dei rapporti professionali e dei diversi livelli dell’attività.",
-    methodFourTitle: "Tutela",
-    methodFourText: "Presidio del risultato con attenzione ai diritti, alla persona e alla complessità del caso.",
-
-    ctaText: "Il vostro progetto richiede<br>competenze integrate e <em>visione chiara</em>?",
-    ctaButton: "Contattaci",
-    footerCopy: "© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.",
-    footerTagline: "Struttura. Visione. Risultato."
+    footerText: "Strategia, struttura e continuità per accompagnare imprese, investitori e istituzioni nelle fasi decisive del percorso aziendale.",
+    footerNavTitle: "Navigazione",
+    footerAbout: "Chi siamo",
+    footerActivities: "Attività",
+    footerApproach: "Approccio",
+    footerStudio: "Lo Studio",
+    footerContacts: "Contatti",
+    footerActivitiesTitle: "Attività",
+    footerContactTitle: "Contatti",
+    footerCopy: "© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati."
   },
 
   en: {
@@ -1038,46 +886,27 @@ const translations = {
     navContacts: "Contacts",
 
     heroLabel: "The Firm",
-    heroTitle: "High-profile<br>professionals.<br><em>One vision.</em>",
-    heroSubtitle: "KTS Advisory operates through a boutique model based on the integration of specialised expertise and collaboration with selected professionals across the different areas of each transaction.",
+    heroTitle: "Experience.<br>Independence.<br>Results.",
+    heroSubtitle: "KTS Advisory is an independent boutique integrating legal, corporate, tax, financial and strategic expertise for companies, investors and entrepreneurial families.",
 
     professionalsLabel: "Professionals",
-    professionalsTitle: "Selected expertise.<br><em>Integrated perspectives.</em>",
-    professionalsIntro: "KTS Advisory’s professional network brings together specialised profiles across legal, tax, financial, corporate and strategic areas, with a coordinated approach focused on transaction complexity.",
+    professionalsTitle: "Our team",
+    professionalsIntro: "A network of professionals with complementary skills and consolidated experience, coordinated to provide clients with clear and multidisciplinary direction.",
 
-    notturnoName: "Avv. Giovanni Battista Notturno",
-    notturnoRole: "Studio Legale Notturno",
-    notturnoFocus: "Criminal law · Civil · Commercial · Financial · Tax",
-    notturnoBio: "Lawyer admitted to the Bar since 2016, with experience in Italy, Spain, Switzerland and the United Kingdom. He operates in criminal, civil, commercial, financial and tax law, with particular attention to rights protection and the management of complex legal contexts.",
-    notturnoButton: "View profile <span>→</span>",
+    valueTitle: "Let’s discuss your project",
+    valueText: "Our team is available to listen to your needs and build the most suitable solution together.",
+    valueButton: "Contact us <span>→</span>",
 
-    scalzoneName: "Avv. Alessandro Scalzone",
-    scalzoneRole: "Criminal lawyer",
-    scalzoneFocus: "Criminal law · Criminal enforcement · AML · AML/CTF compliance",
-    scalzoneBio: "Criminal lawyer practising in Naples since 2017. He has developed experience in criminal enforcement and assistance to detainees. He mainly deals with anti-money laundering procedures, AML/CTF consulting, investor due diligence and compliance for institutions and private entities.",
-    scalzoneButton: "View profile <span>→</span>",
-
-    ferraroName: "Dott. Salvatore Ferraro",
-    ferraroRole: "CEO & Founder · Chartered accountant",
-    ferraroFocus: "Economics · IT · Telemedicine · Business management · Innovation",
-    ferraroBio: "Graduated in Economics from the Parthenope University of Naples, he is CEO & Founder of Odd Studio srl, Mood 03 and Dotclick srl. A chartered accountant enrolled with the Naples Register since 2010, he operates in engineering, IT, telemedicine and business management in Italy and abroad.",
-    ferraroButton: "View profile <span>→</span>",
-
-    methodLabel: "Operational discipline",
-    methodTitle: "Rigorous method.<br><em>Integrated</em> expertise.",
-    methodOneTitle: "Analysis",
-    methodOneText: "In-depth understanding of the context, objectives and critical profiles.",
-    methodTwoTitle: "Structure",
-    methodTwoText: "Definition of the strategy most consistent with the case and the interests involved.",
-    methodThreeTitle: "Coordination",
-    methodThreeText: "Management of professional relationships and the various levels of activity.",
-    methodFourTitle: "Protection",
-    methodFourText: "Oversight of the outcome with attention to rights, the individual and the complexity of the case.",
-
-    ctaText: "Does your project require<br>integrated expertise and <em>clear vision</em>?",
-    ctaButton: "Contact us",
-    footerCopy: "© 2025 KTS Advisory S.r.l. — All rights reserved.",
-    footerTagline: "Structure. Vision. Outcome."
+    footerText: "Strategy, structure and continuity to support companies, investors and institutions in decisive phases of the business journey.",
+    footerNavTitle: "Navigation",
+    footerAbout: "About us",
+    footerActivities: "Services",
+    footerApproach: "Approach",
+    footerStudio: "The Firm",
+    footerContacts: "Contacts",
+    footerActivitiesTitle: "Services",
+    footerContactTitle: "Contacts",
+    footerCopy: "© 2025 KTS Advisory S.r.l. — All rights reserved."
   }
 };
 
