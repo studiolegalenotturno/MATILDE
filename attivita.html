@@ -342,35 +342,6 @@ nav{
   align-items:stretch;
 }
 
-.unified-badge{
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  background:
-    radial-gradient(circle at 35% 30%,rgba(255,255,255,0.38),transparent 30%),
-    linear-gradient(135deg,var(--brass-light),var(--brass));
-  border:0.5px solid rgba(243,239,232,0.55);
-  box-shadow:0 22px 60px rgba(14,26,43,0.18);
-  z-index:5;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
-}
-
-.unified-badge span{
-  font-family:var(--serif);
-  font-size:24px;
-  line-height:1.05;
-  color:var(--navy-deep);
-  font-weight:300;
-}
-
 .model-card{
   min-height:760px;
   position:relative;
@@ -627,19 +598,6 @@ footer{
 /* RESPONSIVE */
 @media(max-width:1150px){
   .model-wrap{grid-template-columns:1fr}
-
-  .unified-badge{
-    position:relative;
-    left:auto;
-    top:auto;
-    transform:none;
-    margin:0 auto;
-    order:2;
-  }
-
-  .model-card.dark{order:1}
-  .model-card.light{order:3}
-
   .benefits-grid{grid-template-columns:1fr 1fr}
 }
 
@@ -687,15 +645,6 @@ footer{
   .model-card{
     min-height:auto;
     padding:44px 30px;
-  }
-
-  .unified-badge{
-    width:124px;
-    height:124px;
-  }
-
-  .unified-badge span{
-    font-size:21px;
   }
 
   .benefits-band{
@@ -819,10 +768,6 @@ footer{
         <a href="contatti.html" class="btn-light" data-i18n="executiveButton">Scopri KTS Executive <span>→</span></a>
       </div>
     </article>
-
-    <div class="unified-badge fade-in" style="transition-delay:0.12s">
-      <span>Unified<br>Direction</span>
-    </div>
 
     <article class="model-card light fade-in" style="transition-delay:0.16s">
       <span class="model-number">02</span>
