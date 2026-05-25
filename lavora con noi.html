@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lavora con noi | KTS Advisory</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ivory:#F3EFE8;
+  --ivory-light:#F8F4EC;
+  --carbon:#0E1A2B;
+  --navy:#0E1A2B;
+  --navy-soft:#13243A;
+  --navy-deep:#08111F;
+  --brass:#B08A4A;
+  --brass-light:#C9A96E;
+  --brass-soft:#D8C39A;
+  --greige:#8B847C;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',sans-serif;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--ivory);
+  color:var(--carbon);
+  font-family:var(--sans);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 56px;
+  height:76px;
+  background:rgba(8,17,31,0.92);
+  backdrop-filter:blur(14px);
+  border-bottom:0.5px solid rgba(176,138,74,0.22);
+}
+
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+}
+
+.logo-image-wrap{height:52px}
+
+.site-logo{
+  height:52px;
+  width:auto;
+  display:block;
+  object-fit:contain;
+}
+
+.nav-links{
+  display:flex;
+  gap:38px;
+  list-style:none;
+}
+
+.nav-links a{
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--ivory);
+  text-decoration:none;
+  font-weight:500;
+  opacity:0.72;
+  transition:opacity 0.2s,color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  opacity:1;
+  color:var(--brass-light);
+}
+
+.language-switch{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  border:0.5px solid rgba(176,138,74,0.48);
+  padding:5px 10px;
+  background:rgba(8,17,31,0.28);
+}
+
+.lang-btn{
+  border:none;
+  background:transparent;
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.14em;
+  color:rgba(243,239,232,0.58);
+  cursor:pointer;
+  font-weight:500;
+  transition:color 0.2s;
+}
+
+.lang-btn.active,
+.lang-btn:hover{color:var(--brass-light)}
+
+.lang-separator{
+  font-family:var(--sans);
+  font-size:10px;
+  color:rgba(243,239,232,0.35);
+}
+
+/* SHARED */
+.section-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:24px;
+  font-weight:500;
+}
+
+.section-headline{
+  font-family:var(--serif);
+  font-size:clamp(34px,4.2vw,66px);
+  font-weight:300;
+  line-height:1.08;
+  color:var(--navy);
+}
+
+.section-headline em{
+  font-style:italic;
+  color:var(--brass);
+}
+
+.brass-line{
+  width:42px;
+  height:1px;
+  background:var(--brass);
+  margin-bottom:28px;
+}
+
+.btn-primary,
+.btn-light,
+.btn-outline{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  text-decoration:none;
+  font-weight:500;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  width:max-content;
+  cursor:pointer;
+  transition:background 0.25s,color 0.25s,border-color 0.25s;
+}
+
+.btn-primary{
+  color:var(--ivory);
+  background:var(--navy);
+  border:none;
+  padding:15px 32px;
+}
+
+.btn-primary:hover{
+  background:var(--brass);
+  color:var(--navy-deep);
+}
+
+.btn-light{
+  color:var(--navy-deep);
+  background:var(--brass-light);
+  border:0.5px solid rgba(201,169,110,0.65);
+  padding:15px 30px;
+}
+
+.btn-light:hover{
+  background:var(--ivory);
+  color:var(--navy);
+}
+
+.btn-outline{
+  color:var(--navy);
+  background:transparent;
+  border:0.5px solid rgba(176,138,74,0.55);
+  padding:15px 28px;
+}
+
+.btn-outline:hover{
+  background:var(--navy);
+  color:var(--ivory);
+  border-color:var(--navy);
+}
+
+/* HERO */
+.work-hero{
+  min-height:72vh;
+  padding-top:76px;
+  position:relative;
+  overflow:hidden;
+  background:var(--navy-deep);
+  border-bottom:0.5px solid rgba(176,138,74,0.26);
+}
+
+.hero-photo{
+  position:absolute;
+  inset:76px 0 0 0;
+  background-image:url("assets/lavora-con-noi-hero.jpg?v=1");
+  background-size:cover;
+  background-position:center right;
+  opacity:0.96;
+}
+
+.hero-photo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,
+      rgba(8,17,31,0.98) 0%,
+      rgba(8,17,31,0.92) 30%,
+      rgba(8,17,31,0.70) 50%,
+      rgba(8,17,31,0.28) 100%
+    );
+}
+
+.hero-photo::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    repeating-linear-gradient(45deg,
+      transparent,
+      transparent 112px,
+      rgba(176,138,74,0.035) 112px,
+      rgba(176,138,74,0.035) 113px
+    );
+  opacity:0.65;
+}
+
+.hero-content{
+  position:relative;
+  z-index:3;
+  min-height:calc(72vh - 76px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:112px 56px 96px;
+  max-width:920px;
+}
+
+.work-hero .section-label{
+  color:var(--brass-light);
+}
+
+.work-hero .section-headline{
+  color:var(--ivory);
+  font-size:clamp(48px,5.8vw,90px);
+  max-width:850px;
+}
+
+.hero-subtitle{
+  margin-top:26px;
+  max-width:690px;
+  font-family:var(--serif);
+  font-size:clamp(24px,2.4vw,36px);
+  line-height:1.24;
+  color:var(--brass-light);
+  font-weight:300;
+}
+
+.hero-text{
+  margin-top:28px;
+  max-width:690px;
+  font-size:15px;
+  line-height:1.9;
+  color:rgba(243,239,232,0.74);
+}
+
+/* PARTNER */
+.partner-section{
+  padding:76px 56px 68px;
+  background:var(--ivory);
+}
+
+.partner-card{
+  max-width:1220px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:130px 1fr 0.95fr;
+  gap:46px;
+  align-items:center;
+  padding:42px;
+  border:0.5px solid rgba(176,138,74,0.26);
+  background:rgba(248,244,236,0.74);
+}
+
+.circle-icon{
+  width:92px;
+  height:92px;
+  border-radius:50%;
+  background:var(--navy-deep);
+  border:0.5px solid rgba(176,138,74,0.42);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--brass-light);
+}
+
+.circle-icon.light{
+  background:transparent;
+  color:var(--brass);
+  border-color:rgba(176,138,74,0.42);
+}
+
+.circle-icon svg{
+  width:48px;
+  height:48px;
+  stroke:currentColor;
+  stroke-width:1.25;
+  fill:none;
+}
+
+.partner-text h2{
+  font-family:var(--serif);
+  font-size:clamp(34px,3.2vw,54px);
+  line-height:1.06;
+  color:var(--navy);
+  font-weight:300;
+  margin-bottom:16px;
+}
+
+.partner-text p{
+  font-size:14px;
+  line-height:1.85;
+  color:rgba(14,26,43,0.72);
+  margin-bottom:12px;
+}
+
+.partner-image{
+  min-height:230px;
+  border:0.5px solid rgba(176,138,74,0.20);
+  background:
+    linear-gradient(90deg,rgba(8,17,31,0.20),rgba(8,17,31,0.78)),
+    radial-gradient(circle at 72% 32%,rgba(176,138,74,0.20),transparent 28%),
+    linear-gradient(135deg,#263346,#08111F);
+  position:relative;
+  overflow:hidden;
+}
+
+.partner-image::before{
+  content:"KTS";
+  position:absolute;
+  right:38px;
+  top:54px;
+  font-family:var(--serif);
+  font-size:78px;
+  letter-spacing:0.10em;
+  color:rgba(243,239,232,0.60);
+}
+
+.partner-image::after{
+  content:"ADVISORY";
+  position:absolute;
+  right:44px;
+  top:136px;
+  font-family:var(--sans);
+  font-size:12px;
+  letter-spacing:0.40em;
+  color:rgba(201,169,110,0.70);
+}
+
+/* COLLAB INTRO */
+.collab-intro{
+  padding:42px 56px 62px;
+  background:var(--ivory);
+  text-align:center;
+}
+
+.collab-intro-inner{
+  max-width:880px;
+  margin:0 auto;
+}
+
+.collab-intro h2{
+  font-family:var(--serif);
+  font-size:clamp(38px,4vw,64px);
+  font-weight:300;
+  line-height:1.08;
+  color:var(--navy);
+  margin-bottom:18px;
+}
+
+.collab-intro h2 em{
+  color:var(--brass);
+  font-style:italic;
+}
+
+.collab-intro p{
+  font-size:15px;
+  line-height:1.9;
+  color:rgba(14,26,43,0.72);
+}
+
+/* SERVICES */
+.services-section{
+  padding:60px 56px 76px;
+  background:
+    linear-gradient(135deg,rgba(248,244,236,0.94),rgba(237,230,218,0.74));
+}
+
+.services-head{
+  max-width:900px;
+  margin:0 auto 38px;
+  text-align:center;
+}
+
+.services-head h2{
+  font-family:var(--serif);
+  font-size:clamp(34px,3.4vw,54px);
+  font-weight:300;
+  color:var(--navy);
+  line-height:1.1;
+  margin-bottom:16px;
+}
+
+.services-head p{
+  font-size:14px;
+  line-height:1.85;
+  color:rgba(14,26,43,0.70);
+}
+
+.services-grid{
+  max-width:1220px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:0;
+  border-top:0.5px solid rgba(176,138,74,0.24);
+  border-left:0.5px solid rgba(176,138,74,0.18);
+}
+
+.service-item{
+  min-height:155px;
+  padding:28px 18px;
+  text-align:center;
+  border-right:0.5px solid rgba(176,138,74,0.18);
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+  background:rgba(248,244,236,0.54);
+}
+
+.service-icon{
+  width:44px;
+  height:44px;
+  margin:0 auto 14px;
+  color:var(--brass);
+}
+
+.service-icon svg{
+  width:44px;
+  height:44px;
+  stroke:currentColor;
+  stroke-width:1.35;
+  fill:none;
+}
+
+.service-item h3{
+  font-size:11px;
+  line-height:1.45;
+  letter-spacing:0.05em;
+  color:var(--navy);
+  font-weight:500;
+}
+
+/* ADVANTAGES */
+.advantages-section{
+  padding:72px 56px;
+  background:
+    radial-gradient(circle at 84% 30%,rgba(176,138,74,0.12),transparent 34%),
+    linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  color:var(--ivory);
+}
+
+.advantages-grid{
+  max-width:1220px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-left:0.5px solid rgba(176,138,74,0.28);
+}
+
+.advantage-card{
+  min-height:270px;
+  padding:38px 38px 40px;
+  border-right:0.5px solid rgba(176,138,74,0.28);
+}
+
+.advantage-card .circle-small{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  border:0.5px solid rgba(201,169,110,0.65);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--brass-light);
+  margin-bottom:26px;
+}
+
+.circle-small svg{
+  width:30px;
+  height:30px;
+  stroke:currentColor;
+  stroke-width:1.4;
+  fill:none;
+}
+
+.advantage-card h3{
+  font-family:var(--serif);
+  font-size:clamp(28px,2.4vw,40px);
+  font-weight:300;
+  line-height:1.08;
+  color:var(--ivory);
+  margin-bottom:18px;
+}
+
+.advantage-card p{
+  font-size:14px;
+  line-height:1.78;
+  color:rgba(243,239,232,0.68);
+}
+
+/* MODES */
+.modes-section{
+  padding:74px 56px 86px;
+  background:var(--ivory);
+}
+
+.modes-title{
+  text-align:center;
+  font-family:var(--serif);
+  font-size:clamp(34px,3.4vw,54px);
+  color:var(--navy);
+  font-weight:300;
+  margin-bottom:38px;
+}
+
+.modes-wrap{
+  max-width:1220px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+}
+
+.mode-card{
+  padding:42px 44px;
+  border:0.5px solid rgba(176,138,74,0.28);
+  background:rgba(248,244,236,0.70);
+  display:grid;
+  grid-template-columns:92px 1fr;
+  gap:30px;
+  align-items:start;
+}
+
+.mode-card.dark{
+  background:
+    radial-gradient(circle at 84% 18%,rgba(176,138,74,0.15),transparent 34%),
+    linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  color:var(--ivory);
+}
+
+.mode-card h3{
+  font-family:var(--serif);
+  font-size:clamp(30px,2.8vw,46px);
+  font-weight:300;
+  line-height:1.05;
+  margin-bottom:18px;
+}
+
+.mode-card.dark h3{color:var(--brass-light)}
+.mode-card.light h3{color:var(--navy)}
+
+.mode-card ul{
+  list-style:none;
+}
+
+.mode-card li{
+  font-size:14px;
+  line-height:1.72;
+  margin-bottom:10px;
+  position:relative;
+  padding-left:22px;
+}
+
+.mode-card li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:var(--brass);
+  font-weight:500;
+}
+
+.mode-card.dark li{
+  color:rgba(243,239,232,0.74);
+}
+
+.mode-card.light li{
+  color:rgba(14,26,43,0.72);
+}
+
+/* CTA */
+.work-cta{
+  padding:48px 56px;
+  background:var(--ivory);
+}
+
+.cta-box{
+  max-width:1220px;
+  margin:0 auto;
+  padding:42px;
+  background:
+    linear-gradient(135deg,rgba(201,169,110,0.78),rgba(176,138,74,0.90));
+  display:grid;
+  grid-template-columns:90px 1fr auto;
+  gap:34px;
+  align-items:center;
+  border:0.5px solid rgba(176,138,74,0.32);
+}
+
+.cta-icon{
+  width:76px;
+  height:76px;
+  border-radius:50%;
+  background:rgba(8,17,31,0.14);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--ivory);
+}
+
+.cta-icon svg{
+  width:40px;
+  height:40px;
+  stroke:currentColor;
+  stroke-width:1.3;
+  fill:none;
+}
+
+.cta-text h2{
+  font-family:var(--serif);
+  font-size:clamp(28px,3vw,46px);
+  color:var(--navy-deep);
+  font-weight:300;
+  margin-bottom:10px;
+}
+
+.cta-text p{
+  color:rgba(8,17,31,0.74);
+  font-size:14px;
+  line-height:1.7;
+}
+
+/* FOOTER */
+footer{
+  background:#08111F;
+  padding:56px 56px 34px;
+  color:var(--ivory);
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr 0.8fr 1fr;
+  gap:56px;
+  max-width:1220px;
+  margin:0 auto 44px;
+}
+
+.footer-logo{
+  font-family:var(--serif);
+  font-size:42px;
+  letter-spacing:0.12em;
+  line-height:0.95;
+  color:var(--ivory);
+  margin-bottom:20px;
+}
+
+.footer-logo span{
+  display:block;
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.34em;
+  color:var(--brass-light);
+  margin-top:8px;
+}
+
+.footer-text{
+  font-size:13px;
+  line-height:1.75;
+  color:rgba(243,239,232,0.62);
+  max-width:260px;
+}
+
+.footer-title{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:var(--brass-light);
+  margin-bottom:18px;
+  font-weight:500;
+}
+
+.footer-links{
+  list-style:none;
+}
+
+.footer-links li{
+  margin-bottom:10px;
+}
+
+.footer-links a,
+.footer-contact a{
+  color:rgba(243,239,232,0.66);
+  font-size:13px;
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover{
+  color:var(--brass-light);
+}
+
+.footer-contact p{
+  font-size:13px;
+  line-height:1.8;
+  color:rgba(243,239,232,0.66);
+  margin-bottom:12px;
+}
+
+.footer-bottom{
+  max-width:1220px;
+  margin:0 auto;
+  padding-top:24px;
+  border-top:0.5px solid rgba(176,138,74,0.22);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.footer-copy{
+  font-size:11px;
+  color:rgba(243,239,232,0.30);
+  letter-spacing:0.08em;
+}
+
+.footer-policy{
+  display:flex;
+  gap:28px;
+}
+
+.footer-policy a{
+  font-size:11px;
+  color:rgba(243,239,232,0.46);
+  text-decoration:none;
+}
+
+/* ANIMATION */
+.fade-in{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 0.7s ease,transform 0.7s ease;
+}
+
+.fade-in.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* RESPONSIVE */
+@media(max-width:1120px){
+  .partner-card{
+    grid-template-columns:90px 1fr;
+  }
+
+  .partner-image{
+    grid-column:1 / -1;
+  }
+
+  .services-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .advantages-grid,
+  .modes-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:900px){
+  nav{
+    padding:0 24px;
+    height:74px;
+  }
+
+  .site-logo{height:48px}
+  .logo-image-wrap{height:48px}
+  .nav-links{display:none}
+
+  .work-hero{
+    padding-top:74px;
+    min-height:auto;
+  }
+
+  .hero-photo{
+    inset:74px 0 0 0;
+  }
+
+  .hero-content{
+    min-height:560px;
+    padding:88px 28px 78px;
+  }
+
+  .partner-section,
+  .collab-intro,
+  .services-section,
+  .advantages-section,
+  .modes-section,
+  .work-cta{
+    padding-left:28px;
+    padding-right:28px;
+  }
+
+  .partner-card,
+  .mode-card,
+  .cta-box{
+    grid-template-columns:1fr;
+  }
+
+  .services-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+
+  footer{
+    padding:46px 28px 30px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media(max-width:620px){
+  .services-grid{
+    grid-template-columns:1fr;
+  }
+
+  .btn-primary,
+  .btn-light,
+  .btn-outline{
+    width:100%;
+  }
+
+  .hero-subtitle{
+    font-size:23px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html" class="logo-wrap logo-image-wrap">
+    <img src="assets/kts-advisory-logo-web.png?v=15" alt="KTS Advisory" class="site-logo">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="about.html" data-i18n="navAbout">Chi siamo</a></li>
+    <li><a href="attivita.html" data-i18n="navActivities">Attività</a></li>
+    <li><a href="approccio.html" data-i18n="navApproach">Approccio</a></li>
+    <li><a href="studio.html" data-i18n="navStudio">Lo Studio</a></li>
+    <li><a href="lavora-con-noi.html" class="active" data-i18n="navWork">Lavora con noi</a></li>
+    <li><a href="contatti.html" data-i18n="navContacts">Contatti</a></li>
+  </ul>
+
+  <div class="language-switch">
+    <button class="lang-btn active" data-lang-switch="it">IT</button>
+    <span class="lang-separator">/</span>
+    <button class="lang-btn" data-lang-switch="en">EN</button>
+  </div>
+</nav>
+
+<header class="work-hero">
+  <div class="hero-photo" aria-hidden="true"></div>
+
+  <div class="hero-content fade-in">
+    <p class="section-label" data-i18n="heroLabel">Lavora con noi</p>
+    <div class="brass-line"></div>
+
+    <h1 class="section-headline" data-i18n="heroTitle">
+      Lavora con noi.
+    </h1>
+
+    <p class="hero-subtitle" data-i18n="heroSubtitle">
+      Due modalità per entrare in relazione con KTS: Partner della struttura o Collaboratore esterno.
+    </p>
+
+    <p class="hero-text" data-i18n="heroText">
+      KTS è un ecosistema di professionisti, relazioni e servizi corporate pensato per offrire soluzioni integrate a imprese, privati e famiglie imprenditoriali.
+    </p>
+  </div>
+</header>
+
+<section class="partner-section">
+  <div class="partner-card fade-in">
+    <div class="circle-icon light">
+      <svg viewBox="0 0 64 64">
+        <circle cx="22" cy="24" r="8"/>
+        <circle cx="42" cy="24" r="8"/>
+        <path d="M10 52c2-12 8-18 18-18"/>
+        <path d="M54 52c-2-12-8-18-18-18"/>
+      </svg>
+    </div>
+
+    <div class="partner-text">
+      <h2 data-i18n="partnerTitle">Partner KTS</h2>
+      <p data-i18n="partnerTextOne">
+        La qualifica di Partner KTS è riservata a professionisti selezionati che entrano stabilmente nella struttura, contribuendo con competenze specialistiche, esperienza e responsabilità operative.
+      </p>
+      <p data-i18n="partnerTextTwo">
+        Il Partner può essere inserito nel network professionale KTS e partecipare alle attività della struttura secondo modalità definite caso per caso.
+      </p>
+    </div>
+
+    <div class="partner-image" aria-hidden="true"></div>
+  </div>
+</section>
+
+<section class="collab-intro">
+  <div class="collab-intro-inner fade-in">
+    <h2 data-i18n="collabTitle">
+      Collabora con KTS<br><em>e amplia i servizi per i tuoi clienti.</em>
+    </h2>
+    <p data-i18n="collabText">
+      La collaborazione è pensata per società di consulenza, professionisti, advisor, intermediari e realtà che assistono imprese e privati e desiderano mettere a disposizione dei propri clienti l’intero ecosistema KTS, senza sostenere canoni, abbonamenti o costi fissi.
+    </p>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="services-head fade-in">
+    <h2 data-i18n="servicesTitle">Cosa KTS mette a disposizione</h2>
+    <p data-i18n="servicesIntro">
+      KTS mette a disposizione del collaboratore il proprio network di professionisti e relazioni operative, inclusi rapporti con istituti bancari, fondi privati, mediatori creditizi, advisor, consulenti legali, fiscali, societari e tecnici.
+    </p>
+    <p data-i18n="servicesIntroTwo">
+      Il Collaboratore KTS opera come punto di raccordo qualificato tra il cliente e la struttura. Una volta individuata l’esigenza, saranno i professionisti KTS a gestire l’interlocuzione tecnica e professionale con il cliente, curando analisi, istruttoria e sviluppo della pratica.
+    </p>
+  </div>
+
+  <div class="services-grid">
+    <article class="service-item fade-in">
+      <div class="service-icon">
+        <svg viewBox="0 0 64 64"><path d="M10 54h44M14 26h36M18 26v24M30 26v24M42 26v24M12 22l20-12 20 12z"/></svg>
+      </div>
+      <h3 data-i18n="serviceOne">Istituti bancari e fondi privati</h3>
+    </article>
+
+    <article class="service-item fade-in" style="transition-delay:0.04s">
+      <div class="service-icon">
+        <svg viewBox="0 0 64 64"><circle cx="22" cy="24" r="7"/><circle cx="42" cy="24" r="7"/><path d="M12 52c2-12 8-18 18-18M52 52c-2-12-8-18-18-18"/></svg>
+      </div>
+      <h3 data-i18n="serviceTwo">Mediatori creditizi e intermediari</h3>
+    </article>
+
+    <article class="service-item fade-in" style="transition-delay:0.08s">
+      <div class="service-icon">
+        <svg viewBox="0 0 64 64"><path d="M12 50h40M18 44V30M32 44V18M46 44V24"/><path d="M18 30l14-12 14 6"/></svg>
+      </div>
+      <h3 data-i18n="serviceThree">Consulenza finanziaria</h3>
+    </article>
+
+    <article class="service-item fade-in" style="transition-delay:0.12s">
+      <div class="service-icon">
+        <svg viewBox="0 0 64 64"><path d="M18 10h22l8 8v36H18z"/><path d="M40 10v10h10M24 30h18M24 38h18M24 46h12"/></svg>
+      </div>
+      <h3 data-i18n="serviceFour">Consulenza legale, fiscale e societaria</h3>
+    </article>
+
+    <article class="service-item fade-in" style="transition-delay:0.16s">
+      <div class="service-icon">
+        <svg viewBox="0 0 64 64"><path d="M18 16h28v34H18z"/><path d="M18 26h28M24 16v-6M40 16v-6M24 36h16M24 44h10"/></svg>
+      </div>
+      <h3 data-i18n="serviceFive">Bandi, agevolazioni e crediti fiscali</h3>
+    </article>
+
+    <article class="service-item fade-in" style="transition-delay:0.20s">
+      <div class="service-icon">
+        <svg viewBox="0 0 64 64"><path d="M18 50h28"/><path d="M22 46l20-20 6 6-20 20z"/><path d="M38 22l4-4 6 6-4 4"/></svg>
+      </div>
+      <h3 data-i18n="serviceSix">Operazioni societarie, notarili e straordinarie</h3>
+    </article>
+
+    <article class="service-item fade-in" style="transition-delay:0.24s">
+      <div class="service-icon">
+        <svg viewBox="0 0 64 64"><circle cx="32" cy="18" r="7"/><path d="M18 52c2-14 8-22 14-22s12 8 14 22"/><circle cx="15" cy="30" r="5"/><circle cx="49" cy="30" r="5"/></svg>
+      </div>
+      <h3 data-i18n="serviceSeven">Advisor e professionisti specialistici</h3>
+    </article>
+  </div>
+</section>
+
+<section class="advantages-section">
+  <div class="advantages-grid">
+    <article class="advantage-card fade-in">
+      <div class="circle-small">
+        <svg viewBox="0 0 64 64"><path d="M18 18l28 28M46 18L18 46"/></svg>
+      </div>
+      <h3 data-i18n="advOneTitle">Nessun canone. Nessun abbonamento.</h3>
+      <p data-i18n="advOneText">
+        L’accesso ai servizi KTS non prevede canoni, abbonamenti o costi fissi per il collaboratore.
+      </p>
+    </article>
+
+    <article class="advantage-card fade-in" style="transition-delay:0.08s">
+      <div class="circle-small">
+        <svg viewBox="0 0 64 64"><circle cx="32" cy="22" r="8"/><path d="M16 52c3-14 9-22 16-22s13 8 16 22"/></svg>
+      </div>
+      <h3 data-i18n="advTwoTitle">Supporto professionale KTS.</h3>
+      <p data-i18n="advTwoText">
+        Le attività professionali, l’interlocuzione tecnica e la gestione operativa delle pratiche sono curate direttamente dai professionisti KTS.
+      </p>
+    </article>
+
+    <article class="advantage-card fade-in" style="transition-delay:0.16s">
+      <div class="circle-small">
+        <svg viewBox="0 0 64 64"><path d="M40 18c-4-4-18-4-18 8s18 8 18 18-16 12-22 6"/><path d="M32 8v48"/></svg>
+      </div>
+      <h3 data-i18n="advThreeTitle">Fee per ogni pratica espletata.</h3>
+      <p data-i18n="advThreeText">
+        Per ogni pratica effettivamente espletata, KTS riconosce al collaboratore una fee definita in funzione del servizio, del valore dell’operazione e del contributo fornito nello sviluppo della relazione.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="modes-section">
+  <h2 class="modes-title fade-in" data-i18n="modesTitle">Le due modalità di collaborazione</h2>
+
+  <div class="modes-wrap">
+    <article class="mode-card dark fade-in">
+      <div class="circle-icon">
+        <svg viewBox="0 0 64 64">
+          <path d="M12 54h40M16 50V26M48 50V26M12 22l20-12 20 12z"/>
+        </svg>
+      </div>
+      <div>
+        <h3 data-i18n="modePartnerTitle">Partner KTS</h3>
+        <ul>
+          <li data-i18n="modePartnerOne">Entra stabilmente nella struttura.</li>
+          <li data-i18n="modePartnerTwo">Partecipa al network professionale.</li>
+          <li data-i18n="modePartnerThree">Può essere inserito nelle attività operative secondo accordi specifici.</li>
+          <li data-i18n="modePartnerFour">Contribuisce con competenze, esperienza e responsabilità operative.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="mode-card light fade-in" style="transition-delay:0.10s">
+      <div class="circle-icon light">
+        <svg viewBox="0 0 64 64">
+          <path d="M18 34c6-8 12-8 18 0"/>
+          <path d="M28 34c6-8 12-8 18 0"/>
+          <path d="M18 34l-6 10 8 4 8-8"/>
+          <path d="M46 34l6 10-8 4-8-8"/>
+        </svg>
+      </div>
+      <div>
+        <h3 data-i18n="modeCollabTitle">Collaboratore KTS</h3>
+        <ul>
+          <li data-i18n="modeCollabOne">Resta soggetto esterno.</li>
+          <li data-i18n="modeCollabTwo">Non entra nel board e non assume poteri gestionali o autonomia decisionale.</li>
+          <li data-i18n="modeCollabThree">Opera come punto di raccordo qualificato tra cliente e struttura KTS.</li>
+          <li data-i18n="modeCollabFour">Accede ai servizi KTS per i propri clienti senza costi fissi.</li>
+          <li data-i18n="modeCollabFive">Beneficia del riconoscimento di una fee sulle pratiche concluse.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="work-cta">
+  <div class="cta-box fade-in">
+    <div class="cta-icon">
+      <svg viewBox="0 0 64 64">
+        <path d="M18 34c6-8 12-8 18 0"/>
+        <path d="M28 34c6-8 12-8 18 0"/>
+        <path d="M18 34l-6 10 8 4 8-8"/>
+        <path d="M46 34l6 10-8 4-8-8"/>
+      </svg>
+    </div>
+
+    <div class="cta-text">
+      <h2 data-i18n="ctaTitle">Vuoi collaborare con KTS?</h2>
+      <p data-i18n="ctaText">
+        Raccontaci il tuo profilo, il tuo mercato di riferimento e il tipo di clienti che segui. Valuteremo insieme la forma di collaborazione più adatta.
+      </p>
+    </div>
+
+    <a href="contatti.html" class="btn-primary" data-i18n="ctaButton">Contattaci <span>→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">KTS<span>ADVISORY</span></div>
+      <p class="footer-text" data-i18n="footerText">
+        Strategia, struttura e continuità per accompagnare imprese, investitori e istituzioni nelle fasi decisive del percorso aziendale.
+      </p>
+    </div>
+
+    <div>
+      <p class="footer-title" data-i18n="footerNavTitle">Navigazione</p>
+      <ul class="footer-links">
+        <li><a href="about.html" data-i18n="footerAbout">Chi siamo</a></li>
+        <li><a href="attivita.html" data-i18n="footerActivities">Attività</a></li>
+        <li><a href="approccio.html" data-i18n="footerApproach">Approccio</a></li>
+        <li><a href="studio.html" data-i18n="footerStudio">Lo Studio</a></li>
+        <li><a href="lavora-con-noi.html" data-i18n="footerWork">Lavora con noi</a></li>
+        <li><a href="contatti.html" data-i18n="footerContacts">Contatti</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-title" data-i18n="footerActivitiesTitle">Attività</p>
+      <ul class="footer-links">
+        <li><a href="attivita.html">KTS Executive</a></li>
+        <li><a href="attivita.html">KTS Corporate</a></li>
+        <li><a href="lavora-con-noi.html">Collaborazioni</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <p class="footer-title" data-i18n="footerContactTitle">Contatti</p>
+      <p>
+        Via dei Mille, 16<br>
+        80121 Napoli, Italia
+      </p>
+      <p><a href="tel:+390811853526">+39 081 185 35 26</a></p>
+      <p><a href="mailto:info@ktsadvisory.com">info@ktsadvisory.com</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-copy" data-i18n="footerCopy">© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
+    <div class="footer-policy">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+  }),
+  {threshold:0.1}
+);
+
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+const translations = {
+  it: {
+    navAbout: "Chi siamo",
+    navActivities: "Attività",
+    navApproach: "Approccio",
+    navStudio: "Lo Studio",
+    navWork: "Lavora con noi",
+    navContacts: "Contatti",
+
+    heroLabel: "Lavora con noi",
+    heroTitle: "Lavora con noi.",
+    heroSubtitle: "Due modalità per entrare in relazione con KTS: Partner della struttura o Collaboratore esterno.",
+    heroText: "KTS è un ecosistema di professionisti, relazioni e servizi corporate pensato per offrire soluzioni integrate a imprese, privati e famiglie imprenditoriali.",
+
+    partnerTitle: "Partner KTS",
+    partnerTextOne: "La qualifica di Partner KTS è riservata a professionisti selezionati che entrano stabilmente nella struttura, contribuendo con competenze specialistiche, esperienza e responsabilità operative.",
+    partnerTextTwo: "Il Partner può essere inserito nel network professionale KTS e partecipare alle attività della struttura secondo modalità definite caso per caso.",
+
+    collabTitle: "Collabora con KTS<br><em>e amplia i servizi per i tuoi clienti.</em>",
+    collabText: "La collaborazione è pensata per società di consulenza, professionisti, advisor, intermediari e realtà che assistono imprese e privati e desiderano mettere a disposizione dei propri clienti l’intero ecosistema KTS, senza sostenere canoni, abbonamenti o costi fissi.",
+
+    servicesTitle: "Cosa KTS mette a disposizione",
+    servicesIntro: "KTS mette a disposizione del collaboratore il proprio network di professionisti e relazioni operative, inclusi rapporti con istituti bancari, fondi privati, mediatori creditizi, advisor, consulenti legali, fiscali, societari e tecnici.",
+    servicesIntroTwo: "Il Collaboratore KTS opera come punto di raccordo qualificato tra il cliente e la struttura. Una volta individuata l’esigenza, saranno i professionisti KTS a gestire l’interlocuzione tecnica e professionale con il cliente, curando analisi, istruttoria e sviluppo della pratica.",
+
+    serviceOne: "Istituti bancari e fondi privati",
+    serviceTwo: "Mediatori creditizi e intermediari",
+    serviceThree: "Consulenza finanziaria",
+    serviceFour: "Consulenza legale, fiscale e societaria",
+    serviceFive: "Bandi, agevolazioni e crediti fiscali",
+    serviceSix: "Operazioni societarie, notarili e straordinarie",
+    serviceSeven: "Advisor e professionisti specialistici",
+
+    advOneTitle: "Nessun canone. Nessun abbonamento.",
+    advOneText: "L’accesso ai servizi KTS non prevede canoni, abbonamenti o costi fissi per il collaboratore.",
+    advTwoTitle: "Supporto professionale KTS.",
+    advTwoText: "Le attività professionali, l’interlocuzione tecnica e la gestione operativa delle pratiche sono curate direttamente dai professionisti KTS.",
+    advThreeTitle: "Fee per ogni pratica espletata.",
+    advThreeText: "Per ogni pratica effettivamente espletata, KTS riconosce al collaboratore una fee definita in funzione del servizio, del valore dell’operazione e del contributo fornito nello sviluppo della relazione.",
+
+    modesTitle: "Le due modalità di collaborazione",
+    modePartnerTitle: "Partner KTS",
+    modePartnerOne: "Entra stabilmente nella struttura.",
+    modePartnerTwo: "Partecipa al network professionale.",
+    modePartnerThree: "Può essere inserito nelle attività operative secondo accordi specifici.",
+    modePartnerFour: "Contribuisce con competenze, esperienza e responsabilità operative.",
+
+    modeCollabTitle: "Collaboratore KTS",
+    modeCollabOne: "Resta soggetto esterno.",
+    modeCollabTwo: "Non entra nel board e non assume poteri gestionali o autonomia decisionale.",
+    modeCollabThree: "Opera come punto di raccordo qualificato tra cliente e struttura KTS.",
+    modeCollabFour: "Accede ai servizi KTS per i propri clienti senza costi fissi.",
+    modeCollabFive: "Beneficia del riconoscimento di una fee sulle pratiche concluse.",
+
+    ctaTitle: "Vuoi collaborare con KTS?",
+    ctaText: "Raccontaci il tuo profilo, il tuo mercato di riferimento e il tipo di clienti che segui. Valuteremo insieme la forma di collaborazione più adatta.",
+    ctaButton: "Contattaci <span>→</span>",
+
+    footerText: "Strategia, struttura e continuità per accompagnare imprese, investitori e istituzioni nelle fasi decisive del percorso aziendale.",
+    footerNavTitle: "Navigazione",
+    footerAbout: "Chi siamo",
+    footerActivities: "Attività",
+    footerApproach: "Approccio",
+    footerStudio: "Lo Studio",
+    footerWork: "Lavora con noi",
+    footerContacts: "Contatti",
+    footerActivitiesTitle: "Attività",
+    footerContactTitle: "Contatti",
+    footerCopy: "© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati."
+  },
+
+  en: {
+    navAbout: "About us",
+    navActivities: "Services",
+    navApproach: "Approach",
+    navStudio: "The Firm",
+    navWork: "Work with us",
+    navContacts: "Contacts",
+
+    heroLabel: "Work with us",
+    heroTitle: "Work with us.",
+    heroSubtitle: "Two ways to connect with KTS: as a Partner of the structure or as an external Collaborator.",
+    heroText: "KTS is an ecosystem of professionals, relationships and corporate services designed to offer integrated solutions to companies, private clients and entrepreneurial families.",
+
+    partnerTitle: "KTS Partner",
+    partnerTextOne: "The KTS Partner status is reserved for selected professionals who join the structure on a stable basis, contributing specialist expertise, experience and operational responsibility.",
+    partnerTextTwo: "The Partner may be included in the KTS professional network and participate in the structure’s activities according to arrangements defined case by case.",
+
+    collabTitle: "Collaborate with KTS<br><em>and expand the services for your clients.</em>",
+    collabText: "Collaboration is designed for consulting firms, professionals, advisors, intermediaries and organisations assisting companies and private clients that wish to make the KTS ecosystem available to their clients without fees, subscriptions or fixed costs.",
+
+    servicesTitle: "What KTS makes available",
+    servicesIntro: "KTS makes its network of professionals and operational relationships available to the collaborator, including relationships with banks, private funds, credit brokers, advisors, legal, tax, corporate and technical consultants.",
+    servicesIntroTwo: "The KTS Collaborator acts as a qualified point of connection between the client and the structure. Once the need has been identified, KTS professionals manage the technical and professional interaction with the client, handling analysis, assessment and development of the matter.",
+
+    serviceOne: "Banks and private funds",
+    serviceTwo: "Credit brokers and intermediaries",
+    serviceThree: "Financial consulting",
+    serviceFour: "Legal, tax and corporate consulting",
+    serviceFive: "Grants, incentives and tax credits",
+    serviceSix: "Corporate, notarial and extraordinary transactions",
+    serviceSeven: "Specialist advisors and professionals",
+
+    advOneTitle: "No fees. No subscriptions.",
+    advOneText: "Access to KTS services does not involve fees, subscriptions or fixed costs for the collaborator.",
+    advTwoTitle: "Professional KTS support.",
+    advTwoText: "Professional activities, technical interaction and operational management of matters are handled directly by KTS professionals.",
+    advThreeTitle: "Fee for each completed matter.",
+    advThreeText: "For each completed matter, KTS recognises a fee to the collaborator, defined according to the service, the value of the transaction and the contribution made in developing the relationship.",
+
+    modesTitle: "The two collaboration models",
+    modePartnerTitle: "KTS Partner",
+    modePartnerOne: "Joins the structure on a stable basis.",
+    modePartnerTwo: "Participates in the professional network.",
+    modePartnerThree: "May be involved in operational activities under specific agreements.",
+    modePartnerFour: "Contributes expertise, experience and operational responsibility.",
+
+    modeCollabTitle: "KTS Collaborator",
+    modeCollabOne: "Remains an external party.",
+    modeCollabTwo: "Does not join the board and does not assume management powers or decision-making autonomy.",
+    modeCollabThree: "Acts as a qualified connection between the client and KTS.",
+    modeCollabFour: "Accesses KTS services for clients without fixed costs.",
+    modeCollabFive: "Benefits from a fee on completed matters.",
+
+    ctaTitle: "Would you like to collaborate with KTS?",
+    ctaText: "Tell us about your profile, your reference market and the type of clients you support. We will evaluate together the most suitable collaboration model.",
+    ctaButton: "Contact us <span>→</span>",
+
+    footerText: "Strategy, structure and continuity to support companies, investors and institutions in decisive phases of the business journey.",
+    footerNavTitle: "Navigation",
+    footerAbout: "About us",
+    footerActivities: "Services",
+    footerApproach: "Approach",
+    footerStudio: "The Firm",
+    footerWork: "Work with us",
+    footerContacts: "Contacts",
+    footerActivitiesTitle: "Services",
+    footerContactTitle: "Contacts",
+    footerCopy: "© 2025 KTS Advisory S.r.l. — All rights reserved."
+  }
+};
+
+function setLanguage(lang){
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.getAttribute("data-i18n");
+    if(translations[lang] && translations[lang][key]){
+      element.innerHTML = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll("[data-lang-switch]").forEach(button => {
+    button.classList.toggle("active", button.getAttribute("data-lang-switch") === lang);
+  });
+
+  localStorage.setItem("siteLanguage", lang);
+}
+
+document.querySelectorAll("[data-lang-switch]").forEach(button => {
+  button.addEventListener("click", () => {
+    setLanguage(button.getAttribute("data-lang-switch"));
+  });
+});
+
+const savedLanguage = localStorage.getItem("siteLanguage") || "it";
+setLanguage(savedLanguage);
+</script>
+
+</body>
+</html>
