@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Attività | KTS Advisory</title>
+<title>KTS Advisory — Attività</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -16,9 +16,11 @@
   --ivory-light:#F8F4EC;
   --carbon:#0E1A2B;
   --navy:#0E1A2B;
+  --navy-soft:#13243A;
   --navy-deep:#08111F;
   --brass:#B08A4A;
   --brass-light:#C9A96E;
+  --brass-soft:#D8C39A;
   --greige:#8B847C;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'DM Sans',sans-serif;
@@ -57,9 +59,7 @@ nav{
   text-decoration:none;
 }
 
-.logo-image-wrap{
-  height:52px;
-}
+.logo-image-wrap{height:52px}
 
 .site-logo{
   height:52px;
@@ -114,9 +114,7 @@ nav{
 }
 
 .lang-btn.active,
-.lang-btn:hover{
-  color:var(--brass);
-}
+.lang-btn:hover{color:var(--brass)}
 
 .lang-separator{
   font-family:var(--sans);
@@ -124,30 +122,54 @@ nav{
   color:rgba(139,132,124,0.45);
 }
 
-/* BUTTONS */
-.btn-primary,
-.btn-outline,
-.btn-gold{
+/* SHARED */
+.section-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:26px;
+  font-weight:500;
+}
+
+.section-headline{
+  font-family:var(--serif);
+  font-size:clamp(34px,4.2vw,66px);
+  font-weight:300;
+  line-height:1.08;
+  color:var(--navy);
+}
+
+.section-headline em{
+  font-style:italic;
+  color:var(--brass);
+}
+
+.brass-line{
+  width:32px;
+  height:1px;
+  background:var(--brass);
+  margin-bottom:32px;
+}
+
+.btn-primary{
   font-family:var(--sans);
   font-size:10px;
   letter-spacing:0.22em;
   text-transform:uppercase;
-  text-decoration:none;
-  font-weight:500;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:18px;
-  width:max-content;
-  cursor:pointer;
-  transition:background 0.25s,color 0.25s,border-color 0.25s;
-}
-
-.btn-primary{
   color:var(--ivory);
   background:var(--navy);
   border:none;
   padding:15px 32px;
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:500;
+  transition:background 0.25s,color 0.25s,border-color 0.25s;
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+  width:max-content;
 }
 
 .btn-primary:hover{
@@ -155,11 +177,47 @@ nav{
   color:var(--navy-deep);
 }
 
+.btn-light{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--navy-deep);
+  background:var(--brass-light);
+  border:0.5px solid rgba(201,169,110,0.65);
+  padding:15px 28px;
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:500;
+  transition:background 0.25s,color 0.25s,border-color 0.25s;
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+  width:max-content;
+}
+
+.btn-light:hover{
+  background:var(--ivory);
+  color:var(--navy);
+}
+
 .btn-outline{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
   color:var(--navy);
   background:transparent;
   border:0.5px solid rgba(176,138,74,0.55);
-  padding:14px 30px;
+  padding:15px 28px;
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:500;
+  transition:background 0.25s,color 0.25s,border-color 0.25s;
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+  width:max-content;
 }
 
 .btn-outline:hover{
@@ -168,574 +226,390 @@ nav{
   border-color:var(--navy);
 }
 
-.btn-gold{
-  color:var(--navy-deep);
-  background:var(--brass-light);
-  border:0.5px solid rgba(201,169,110,0.65);
-  padding:14px 28px;
-}
-
-.btn-gold:hover{
-  background:var(--ivory);
-  color:var(--navy);
-}
-
 /* HERO */
 .activities-hero{
+  min-height:72vh;
   padding-top:76px;
-  min-height:68vh;
   position:relative;
   overflow:hidden;
-  background:
-    radial-gradient(circle at 78% 34%,rgba(176,138,74,0.18),transparent 34%),
-    linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
-  border-bottom:0.5px solid rgba(176,138,74,0.28);
+  background:var(--navy-deep);
+  border-bottom:0.5px solid rgba(176,138,74,0.24);
+}
+
+.hero-photo{
+  position:absolute;
+  inset:76px 0 0 0;
+  background-image:url("assets/attivita-colonne-hero.png");
+  background-size:cover;
+  background-position:center right;
+  opacity:0.95;
 }
 
 .activities-hero::before{
   content:"";
   position:absolute;
   inset:76px 0 0 0;
+  z-index:1;
   background:
-    repeating-linear-gradient(45deg,
-      transparent,
-      transparent 110px,
-      rgba(176,138,74,0.035) 110px,
-      rgba(176,138,74,0.035) 111px
+    linear-gradient(90deg,
+      rgba(8,17,31,0.96) 0%,
+      rgba(8,17,31,0.90) 28%,
+      rgba(8,17,31,0.72) 46%,
+      rgba(8,17,31,0.36) 66%,
+      rgba(8,17,31,0.16) 100%
     ),
-    radial-gradient(circle at 82% 28%,rgba(201,169,110,0.14),transparent 28%);
-  opacity:0.75;
+    radial-gradient(circle at 76% 42%,rgba(176,138,74,0.22),transparent 42%);
 }
 
 .activities-hero::after{
   content:"";
   position:absolute;
-  right:-160px;
-  top:120px;
-  width:620px;
-  height:620px;
-  border:0.5px solid rgba(201,169,110,0.20);
-  border-radius:50%;
-  box-shadow:
-    0 0 0 80px rgba(176,138,74,0.025),
-    0 0 0 160px rgba(176,138,74,0.018);
+  inset:76px 0 0 0;
+  z-index:2;
+  pointer-events:none;
+  background:
+    repeating-linear-gradient(45deg,
+      transparent,
+      transparent 104px,
+      rgba(176,138,74,0.034) 104px,
+      rgba(176,138,74,0.034) 105px
+    );
+  opacity:0.55;
 }
 
-.activities-hero-content{
+.hero-content{
   position:relative;
   z-index:3;
-  min-height:calc(68vh - 76px);
   display:flex;
   flex-direction:column;
   justify-content:center;
-  padding:100px 56px 90px;
+  min-height:calc(72vh - 76px);
+  padding:112px 56px 96px;
   max-width:980px;
 }
 
-.eyebrow{
-  font-family:var(--sans);
-  font-size:10px;
-  letter-spacing:0.28em;
-  text-transform:uppercase;
+.activities-hero .section-label{
   color:var(--brass-light);
-  font-weight:500;
-  margin-bottom:22px;
 }
 
-.activities-hero h1{
-  font-family:var(--serif);
-  font-size:clamp(50px,5.5vw,90px);
-  font-weight:300;
-  line-height:1.04;
+.activities-hero .section-headline{
   color:var(--ivory);
-  letter-spacing:-0.02em;
-  max-width:900px;
+  font-size:clamp(44px,5.4vw,82px);
+  max-width:920px;
 }
 
-.activities-hero p{
-  margin-top:30px;
-  max-width:690px;
+.activities-hero .section-headline em{
+  color:var(--brass-light);
+}
+
+.hero-text{
+  margin-top:34px;
+  max-width:680px;
   font-size:15px;
   line-height:1.9;
-  color:rgba(243,239,232,0.76);
-}
-
-.hero-actions{
-  margin-top:36px;
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
-}
-
-/* INTRO */
-.activities-intro{
-  padding:80px 56px 70px;
-  background:var(--ivory);
-}
-
-.intro-grid{
-  max-width:1220px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:0.82fr 1.18fr;
-  gap:70px;
-  align-items:start;
-}
-
-.section-kicker{
-  font-family:var(--sans);
-  font-size:10px;
-  letter-spacing:0.26em;
-  text-transform:uppercase;
-  color:var(--brass);
-  font-weight:500;
-  margin-bottom:18px;
-}
-
-.intro-title{
-  font-family:var(--serif);
-  font-size:clamp(36px,3.8vw,62px);
-  font-weight:300;
-  line-height:1.08;
-  color:var(--navy);
-}
-
-.intro-copy{
-  border-left:0.5px solid rgba(176,138,74,0.34);
-  padding-left:44px;
-}
-
-.intro-copy p{
-  font-size:15px;
-  line-height:1.9;
-  color:rgba(14,26,43,0.74);
-  margin-bottom:22px;
-}
-
-.intro-copy p:last-child{
-  margin-bottom:0;
+  color:rgba(243,239,232,0.70);
 }
 
 /* MODEL */
 .model-section{
-  padding:80px 56px 90px;
+  padding:102px 56px 110px;
   background:
-    linear-gradient(90deg,rgba(248,244,236,0.96),rgba(237,230,218,0.82)),
-    radial-gradient(circle at 84% 34%,rgba(176,138,74,0.10),transparent 34%);
-  border-top:0.5px solid rgba(176,138,74,0.16);
-  border-bottom:0.5px solid rgba(176,138,74,0.16);
+    radial-gradient(circle at 50% 20%,rgba(176,138,74,0.08),transparent 26%),
+    var(--ivory);
+  position:relative;
 }
 
-.model-heading{
-  max-width:900px;
-  margin:0 auto 48px;
-  text-align:center;
+.model-intro{
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:80px;
+  align-items:end;
+  margin-bottom:60px;
 }
 
-.model-heading h2{
-  font-family:var(--serif);
-  font-size:clamp(38px,3.8vw,62px);
-  font-weight:300;
-  line-height:1.1;
-  color:var(--navy);
-  margin-bottom:18px;
-}
-
-.model-heading p{
+.model-intro p{
   font-size:14px;
-  line-height:1.85;
-  color:rgba(14,26,43,0.70);
+  line-height:1.9;
+  color:var(--greige);
+  max-width:640px;
 }
 
-.model-grid{
-  max-width:1220px;
-  margin:0 auto;
+.model-wrap{
+  position:relative;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:34px;
+  align-items:stretch;
 }
 
-.model-card{
-  min-height:420px;
-  padding:46px;
-  position:relative;
-  overflow:hidden;
-}
-
-.model-card.executive{
-  background:
-    radial-gradient(circle at 84% 18%,rgba(176,138,74,0.18),transparent 32%),
-    linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
-  border:0.5px solid rgba(176,138,74,0.34);
-  color:var(--ivory);
-}
-
-.model-card.corporate{
-  background:
-    radial-gradient(circle at 84% 18%,rgba(176,138,74,0.10),transparent 34%),
-    linear-gradient(135deg,rgba(248,244,236,0.98),rgba(237,230,218,0.78));
-  border:0.5px solid rgba(176,138,74,0.28);
-  color:var(--navy);
-}
-
-.model-card::after{
-  content:"";
+.unified-badge{
   position:absolute;
-  right:-80px;
-  bottom:-80px;
-  width:260px;
-  height:260px;
-  border:0.5px solid rgba(176,138,74,0.16);
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:150px;
+  height:150px;
   border-radius:50%;
-}
-
-.model-top{
-  display:grid;
-  grid-template-columns:96px 1fr;
-  gap:26px;
-  align-items:center;
-  margin-bottom:28px;
-  position:relative;
-  z-index:2;
-}
-
-.model-icon{
-  width:88px;
-  height:88px;
+  background:
+    radial-gradient(circle at 35% 30%,rgba(255,255,255,0.38),transparent 30%),
+    linear-gradient(135deg,var(--brass-light),var(--brass));
+  border:0.5px solid rgba(243,239,232,0.55);
+  box-shadow:0 22px 60px rgba(14,26,43,0.18);
+  z-index:5;
   display:flex;
   align-items:center;
   justify-content:center;
-}
-
-.model-icon img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-.model-card h3{
-  font-family:var(--serif);
-  font-size:clamp(38px,3.4vw,58px);
-  font-weight:300;
-  line-height:1.02;
-}
-
-.model-card.executive h3{
-  color:var(--ivory);
-}
-
-.model-card.corporate h3{
-  color:var(--navy);
-}
-
-.model-card p{
-  position:relative;
-  z-index:2;
-  font-size:14px;
-  line-height:1.85;
-  margin-bottom:22px;
-}
-
-.model-card.executive p{
-  color:rgba(243,239,232,0.74);
-}
-
-.model-card.corporate p{
-  color:rgba(14,26,43,0.72);
-}
-
-.model-link{
-  position:relative;
-  z-index:2;
-  margin-top:18px;
-  display:inline-flex;
-  color:var(--brass-light);
-  text-decoration:none;
-  font-family:var(--sans);
-  font-size:10px;
-  letter-spacing:0.22em;
-  text-transform:uppercase;
-  font-weight:500;
-}
-
-/* SERVICES */
-.services-section{
-  padding:90px 56px;
-  background:var(--ivory);
-}
-
-.services-heading{
-  max-width:900px;
-  margin:0 auto 48px;
   text-align:center;
+  padding:20px;
 }
 
-.services-heading h2{
+.unified-badge span{
   font-family:var(--serif);
-  font-size:clamp(38px,3.8vw,62px);
+  font-size:24px;
+  line-height:1.05;
+  color:var(--navy-deep);
   font-weight:300;
-  line-height:1.1;
-  color:var(--navy);
-  margin-bottom:18px;
 }
 
-.services-heading p{
-  font-size:14px;
-  line-height:1.85;
-  color:rgba(14,26,43,0.70);
-}
-
-.service-block{
-  max-width:1220px;
-  margin:0 auto 86px;
-}
-
-.service-block:last-child{
-  margin-bottom:0;
-}
-
-.block-title{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:30px;
-  margin-bottom:30px;
-  padding-bottom:18px;
-  border-bottom:0.5px solid rgba(176,138,74,0.30);
-}
-
-.block-title h3{
-  font-family:var(--serif);
-  font-size:clamp(34px,3.3vw,54px);
-  font-weight:300;
-  color:var(--navy);
-}
-
-.block-title p{
-  max-width:520px;
-  font-size:13px;
-  line-height:1.75;
-  color:rgba(14,26,43,0.66);
-}
-
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  border-top:0.5px solid rgba(176,138,74,0.24);
-  border-left:0.5px solid rgba(176,138,74,0.24);
-}
-
-.service-card{
-  min-height:270px;
-  padding:34px 28px 32px;
-  border-right:0.5px solid rgba(176,138,74,0.24);
-  border-bottom:0.5px solid rgba(176,138,74,0.24);
-  background:rgba(248,244,236,0.48);
+.model-card{
+  min-height:760px;
   position:relative;
+  padding:54px 48px;
+  display:flex;
+  flex-direction:column;
   overflow:hidden;
 }
 
-.service-card.dark{
-  background:
-    radial-gradient(circle at 84% 18%,rgba(176,138,74,0.14),transparent 32%),
-    linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
-}
-
-.service-card::after{
+.model-card::before{
   content:"";
   position:absolute;
-  right:-42px;
-  bottom:-42px;
-  width:126px;
-  height:126px;
-  border:0.5px solid rgba(176,138,74,0.14);
-  border-radius:50%;
+  inset:0;
+  pointer-events:none;
 }
 
-.service-icon{
-  width:44px;
-  height:44px;
-  margin-bottom:24px;
-  color:var(--brass);
-}
-
-.service-card.dark .service-icon{
-  color:var(--brass-light);
-}
-
-.service-icon svg{
-  width:44px;
-  height:44px;
-  stroke:currentColor;
-  stroke-width:1.25;
-  fill:none;
-}
-
-.service-card h4{
-  position:relative;
-  z-index:2;
-  font-family:var(--sans);
-  font-size:13px;
-  line-height:1.5;
-  letter-spacing:0.04em;
-  color:var(--navy);
-  margin-bottom:14px;
-  font-weight:500;
-}
-
-.service-card.dark h4{
-  color:var(--ivory);
-}
-
-.service-card p{
-  position:relative;
-  z-index:2;
-  font-size:13px;
-  line-height:1.75;
-  color:rgba(14,26,43,0.68);
-}
-
-.service-card.dark p{
-  color:rgba(243,239,232,0.68);
-}
-
-/* CTA */
-.activities-cta{
-  padding:62px 56px;
+.model-card.dark{
   background:
-    radial-gradient(circle at 84% 40%,rgba(176,138,74,0.12),transparent 32%),
+    radial-gradient(circle at 82% 18%,rgba(176,138,74,0.18),transparent 30%),
     linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  border:0.5px solid rgba(176,138,74,0.32);
   color:var(--ivory);
 }
 
-.cta-inner{
-  max-width:1220px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:38px;
-  align-items:center;
+.model-card.dark::before{
+  background:
+    repeating-linear-gradient(45deg,transparent,transparent 92px,rgba(176,138,74,0.045) 92px,rgba(176,138,74,0.045) 93px);
+  opacity:0.7;
 }
 
-.cta-inner h2{
+.model-card.light{
+  background:
+    radial-gradient(circle at 84% 18%,rgba(176,138,74,0.10),transparent 34%),
+    linear-gradient(135deg,rgba(248,244,236,0.96),rgba(237,230,218,0.74));
+  border:0.5px solid rgba(176,138,74,0.24);
+  color:var(--navy);
+}
+
+.model-card.light::before{
+  background:
+    repeating-linear-gradient(-45deg,transparent,transparent 92px,rgba(176,138,74,0.035) 92px,rgba(176,138,74,0.035) 93px);
+  opacity:0.75;
+}
+
+.model-number{
+  position:relative;
+  z-index:2;
   font-family:var(--serif);
-  font-size:clamp(34px,3.4vw,56px);
-  font-weight:300;
-  line-height:1.1;
-  color:var(--ivory);
+  font-size:18px;
+  color:var(--brass);
+  margin-bottom:34px;
 }
 
-.cta-inner p{
-  margin-top:12px;
+.model-title{
+  position:relative;
+  z-index:2;
+  font-family:var(--serif);
+  font-size:clamp(38px,3.6vw,58px);
+  font-weight:300;
+  line-height:1.02;
+  margin-bottom:20px;
+}
+
+.model-card.dark .model-title{color:var(--ivory)}
+.model-card.light .model-title{color:var(--navy)}
+
+.model-subtitle{
+  position:relative;
+  z-index:2;
   font-size:14px;
   line-height:1.75;
-  color:rgba(243,239,232,0.70);
+  margin-bottom:36px;
+  max-width:460px;
 }
+
+.model-card.dark .model-subtitle{color:rgba(243,239,232,0.66)}
+.model-card.light .model-subtitle{color:var(--greige)}
+
+.service-list{
+  position:relative;
+  z-index:2;
+  list-style:none;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+  margin-bottom:42px;
+}
+
+.service-list li{
+  padding:16px 0;
+  border-bottom:0.5px solid rgba(176,138,74,0.20);
+}
+
+.service-title{
+  display:block;
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  font-weight:500;
+  margin-bottom:7px;
+}
+
+.service-desc{
+  display:block;
+  font-size:12.5px;
+  line-height:1.65;
+  font-weight:300;
+}
+
+.model-card.dark .service-title{color:rgba(243,239,232,0.84)}
+.model-card.dark .service-desc{color:rgba(243,239,232,0.56)}
+
+.model-card.light .service-title{color:rgba(14,26,43,0.82)}
+.model-card.light .service-desc{color:rgba(139,132,124,0.92)}
+
+.model-action{
+  position:relative;
+  z-index:2;
+  margin-top:auto;
+}
+
+/* BENEFITS */
+.benefits-band{
+  background:
+    radial-gradient(circle at 85% 20%,rgba(176,138,74,0.10),transparent 30%),
+    linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  padding:92px 56px;
+  border-top:1px solid rgba(176,138,74,0.18);
+  border-bottom:1px solid rgba(176,138,74,0.18);
+}
+
+.benefits-head{
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:80px;
+  align-items:end;
+  margin-bottom:48px;
+}
+
+.benefits-head .section-label{color:var(--brass-light)}
+.benefits-head .section-headline{
+  color:var(--ivory);
+  font-size:clamp(32px,3.4vw,54px);
+}
+.benefits-head .section-headline em{color:var(--brass-light)}
+
+.benefits-head p{
+  color:rgba(243,239,232,0.58);
+  font-size:14px;
+  line-height:1.9;
+}
+
+.benefits-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:0.5px solid rgba(176,138,74,0.24);
+  border-left:0.5px solid rgba(176,138,74,0.16);
+}
+
+.benefit-item{
+  padding:34px 28px;
+  border-right:0.5px solid rgba(176,138,74,0.16);
+  border-bottom:0.5px solid rgba(176,138,74,0.16);
+}
+
+.benefit-num{
+  font-family:var(--serif);
+  font-size:34px;
+  color:var(--brass-light);
+  font-weight:300;
+  margin-bottom:18px;
+}
+
+.benefit-title{
+  font-family:var(--serif);
+  font-size:25px;
+  color:var(--ivory);
+  font-weight:300;
+  margin-bottom:14px;
+}
+
+.benefit-text{
+  font-size:13px;
+  line-height:1.75;
+  color:rgba(243,239,232,0.58);
+}
+
+/* FINAL CTA */
+.final-cta{
+  padding:94px 56px;
+  background:
+    radial-gradient(circle at 84% 35%,rgba(176,138,74,0.10),transparent 30%),
+    var(--ivory);
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:70px;
+  align-items:center;
+  border-top:0.5px solid rgba(176,138,74,0.18);
+}
+
+.final-cta-text{
+  font-family:var(--serif);
+  font-size:clamp(30px,3.4vw,56px);
+  line-height:1.16;
+  color:var(--navy);
+  font-weight:300;
+}
+
+.final-cta-text em{
+  color:var(--brass);
+  font-style:italic;
+}
+
+.final-cta-action{justify-self:end}
 
 /* FOOTER */
 footer{
   background:#08111F;
-  padding:56px 56px 34px;
-  color:var(--ivory);
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:1.2fr 0.8fr 0.8fr 1fr;
-  gap:56px;
-  max-width:1220px;
-  margin:0 auto 44px;
-}
-
-.footer-logo{
-  font-family:var(--serif);
-  font-size:42px;
-  letter-spacing:0.12em;
-  line-height:0.95;
-  color:var(--ivory);
-  margin-bottom:20px;
-}
-
-.footer-logo span{
-  display:block;
-  font-family:var(--sans);
-  font-size:11px;
-  letter-spacing:0.34em;
-  color:var(--brass-light);
-  margin-top:8px;
-}
-
-.footer-text{
-  font-size:13px;
-  line-height:1.75;
-  color:rgba(243,239,232,0.62);
-  max-width:260px;
-}
-
-.footer-title{
-  font-family:var(--sans);
-  font-size:10px;
-  letter-spacing:0.24em;
-  text-transform:uppercase;
-  color:var(--brass-light);
-  margin-bottom:18px;
-  font-weight:500;
-}
-
-.footer-links{
-  list-style:none;
-}
-
-.footer-links li{
-  margin-bottom:10px;
-}
-
-.footer-links a,
-.footer-contact a{
-  color:rgba(243,239,232,0.66);
-  font-size:13px;
-  text-decoration:none;
-  transition:color 0.2s;
-}
-
-.footer-links a:hover,
-.footer-contact a:hover{
-  color:var(--brass-light);
-}
-
-.footer-contact p{
-  font-size:13px;
-  line-height:1.8;
-  color:rgba(243,239,232,0.66);
-  margin-bottom:12px;
-}
-
-.footer-bottom{
-  max-width:1220px;
-  margin:0 auto;
-  padding-top:24px;
-  border-top:0.5px solid rgba(176,138,74,0.22);
+  padding:40px 56px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  border-top:0.5px solid rgba(176,138,74,0.18);
 }
 
 .footer-copy{
+  font-family:var(--sans);
   font-size:11px;
-  color:rgba(243,239,232,0.30);
+  color:rgba(243,239,232,0.28);
+  font-weight:300;
   letter-spacing:0.08em;
 }
 
-.footer-policy{
-  display:flex;
-  gap:28px;
-}
-
-.footer-policy a{
-  font-size:11px;
-  color:rgba(243,239,232,0.46);
-  text-decoration:none;
+.footer-tagline{
+  font-family:var(--serif);
+  font-size:13px;
+  font-style:italic;
+  color:rgba(176,138,74,0.62);
 }
 
 /* ANIMATION */
@@ -751,25 +625,22 @@ footer{
 }
 
 /* RESPONSIVE */
-@media(max-width:1120px){
-  .services-grid{
-    grid-template-columns:repeat(2,1fr);
+@media(max-width:1150px){
+  .model-wrap{grid-template-columns:1fr}
+
+  .unified-badge{
+    position:relative;
+    left:auto;
+    top:auto;
+    transform:none;
+    margin:0 auto;
+    order:2;
   }
 
-  .model-grid{
-    grid-template-columns:1fr;
-  }
-}
+  .model-card.dark{order:1}
+  .model-card.light{order:3}
 
-@media(max-width:1050px){
-  .intro-grid{
-    grid-template-columns:1fr;
-    gap:42px;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr 1fr;
-  }
+  .benefits-grid{grid-template-columns:1fr 1fr}
 }
 
 @media(max-width:900px){
@@ -778,105 +649,94 @@ footer{
     height:74px;
   }
 
-  .site-logo{
-    height:48px;
-  }
-
-  .logo-image-wrap{
-    height:48px;
-  }
-
-  .nav-links{
-    display:none;
-  }
+  .site-logo{height:48px}
+  .logo-image-wrap{height:48px}
+  .nav-links{display:none}
 
   .activities-hero{
     padding-top:74px;
+    min-height:auto;
   }
 
-  .activities-hero-content{
-    padding:86px 28px 80px;
-    min-height:620px;
+  .hero-photo,
+  .activities-hero::before,
+  .activities-hero::after{
+    inset:74px 0 0 0;
   }
 
-  .activities-hero h1{
-    font-size:46px;
+  .hero-photo{
+    background-position:center right;
   }
 
-  .activities-intro,
-  .model-section,
-  .services-section,
-  .activities-cta{
-    padding-left:28px;
-    padding-right:28px;
+  .hero-content{
+    padding:88px 28px 78px;
+    min-height:560px;
   }
 
-  .intro-copy{
-    padding-left:28px;
+  .model-section{
+    padding:78px 28px 86px;
+  }
+
+  .model-intro,
+  .benefits-head,
+  .final-cta{
+    grid-template-columns:1fr;
+    gap:32px;
   }
 
   .model-card{
-    padding:38px 30px;
+    min-height:auto;
+    padding:44px 30px;
   }
 
-  .model-top{
-    grid-template-columns:80px 1fr;
-    gap:22px;
+  .unified-badge{
+    width:124px;
+    height:124px;
   }
 
-  .model-icon{
-    width:74px;
-    height:74px;
+  .unified-badge span{
+    font-size:21px;
   }
 
-  .block-title{
-    display:block;
+  .benefits-band{
+    padding:78px 28px;
   }
 
-  .block-title p{
-    margin-top:16px;
-  }
-
-  .cta-inner{
+  .benefits-grid{
     grid-template-columns:1fr;
+  }
+
+  .final-cta{
+    padding:74px 28px;
+  }
+
+  .final-cta-action{
+    justify-self:start;
   }
 
   footer{
-    padding:46px 28px 30px;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr;
-    gap:34px;
-  }
-
-  .footer-bottom{
+    padding:32px 28px;
     flex-direction:column;
     align-items:flex-start;
+    gap:12px;
   }
 }
 
-@media(max-width:650px){
-  .activities-hero h1{
-    font-size:40px;
+@media(max-width:600px){
+  .section-headline{font-size:38px}
+
+  .activities-hero .section-headline{
+    font-size:42px;
   }
 
-  .hero-actions{
-    flex-direction:column;
-  }
+  .language-switch{padding:4px 8px}
+  .lang-btn{font-size:10px}
 
-  .btn-primary,
-  .btn-outline,
-  .btn-gold{
-    width:100%;
-  }
+  .model-title{font-size:38px}
 
-  .services-grid{
-    grid-template-columns:1fr;
-  }
-
-  .model-top{
-    grid-template-columns:1fr;
+  .service-title{
+    font-size:10.5px;
+    letter-spacing:0.12em;
   }
 }
 </style>
@@ -905,308 +765,150 @@ footer{
 </nav>
 
 <header class="activities-hero">
-  <div class="activities-hero-content fade-in">
-    <p class="eyebrow" data-i18n="heroEyebrow">Attività</p>
+  <div class="hero-photo" aria-hidden="true"></div>
 
-    <h1 data-i18n="heroTitle">
-      Due livelli operativi per esigenze strategiche e continuità aziendale.
+  <div class="hero-content fade-in">
+    <p class="section-label" data-i18n="heroLabel">Attività</p>
+    <div class="brass-line"></div>
+
+    <h1 class="section-headline" data-i18n="heroTitle">
+      Due livelli di competenza.<br><em>Un’unica direzione strategica.</em>
     </h1>
 
-    <p data-i18n="heroSubtitle">
-      KTS Advisory integra competenze executive e corporate per accompagnare imprese, investitori e famiglie imprenditoriali nelle decisioni complesse e nella gestione continuativa.
+    <p class="hero-text" data-i18n="heroSubtitle">
+      KTS integra advisory strategico per operazioni complesse e servizi corporate continuativi in un unico ecosistema multidisciplinare.
     </p>
-
-    <div class="hero-actions">
-      <a href="#executive" class="btn-gold" data-i18n="heroButtonOne">KTS Executive <span>→</span></a>
-      <a href="#corporate" class="btn-outline" style="color:var(--ivory);border-color:rgba(201,169,110,0.55)" data-i18n="heroButtonTwo">KTS Corporate</a>
-    </div>
   </div>
 </header>
 
-<section class="activities-intro">
-  <div class="intro-grid">
-    <div class="fade-in">
-      <p class="section-kicker" data-i18n="introKicker">Il modello operativo</p>
-      <h2 class="intro-title" data-i18n="introTitle">
-        Advisory strategico e infrastruttura corporate in un’unica regia.
+<section class="model-section">
+  <div class="model-intro fade-in">
+    <div>
+      <p class="section-label" data-i18n="modelLabel">Il Modello KTS</p>
+      <h2 class="section-headline" style="font-size:clamp(32px,3.4vw,54px)" data-i18n="modelTitle">
+        Strategia e operatività.<br><em>Un sistema integrato.</em>
       </h2>
     </div>
 
-    <div class="intro-copy fade-in">
-      <p data-i18n="introP1">
-        KTS opera attraverso due livelli complementari: Executive, dedicato alle operazioni complesse e ad alto valore, e Corporate, pensato per supportare l’impresa con continuità nelle aree legali, finanziarie, societarie e operative.
-      </p>
-
-      <p data-i18n="introP2">
-        Il valore del modello risiede nella capacità di coordinare competenze specialistiche, professionisti senior e strumenti operativi, evitando frammentazione e offrendo al cliente una direzione chiara.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="model-section">
-  <div class="model-heading fade-in">
-    <p class="section-kicker" data-i18n="modelKicker">Executive e Corporate</p>
-    <h2 data-i18n="modelTitle">Due dimensioni. Un unico metodo.</h2>
-    <p data-i18n="modelText">
-      Executive interviene sulle operazioni straordinarie e riservate. Corporate sostiene l’impresa nella gestione continuativa delle attività strategiche e operative.
+    <p data-i18n="modelIntro">
+      Il modello KTS distingue due livelli di intervento complementari: una direzione executive per le operazioni ad alta complessità e una piattaforma corporate per il supporto continuativo all’impresa.
     </p>
   </div>
 
-  <div class="model-grid">
-    <article class="model-card executive fade-in">
-      <div class="model-top">
-        <div class="model-icon">
-          <img src="assets/kts-icon-spirale-aurea.png" alt="">
-        </div>
+  <div class="model-wrap">
 
-        <h3>KTS<br>Executive</h3>
-      </div>
-
-      <p data-i18n="executiveIntro">
-        Il livello élite per operazioni complesse, asset ad alto valore, advisory strategica, operazioni internazionali e progetti che richiedono riservatezza, visione e professionisti di elevata caratura.
+    <article class="model-card dark fade-in">
+      <span class="model-number">01</span>
+      <h3 class="model-title">KTS<br>Executive</h3>
+      <p class="model-subtitle" data-i18n="executiveSubtitle">
+        Advisory strategico per operazioni complesse
       </p>
 
-      <a href="#executive" class="model-link" data-i18n="executiveLink">Scopri Executive →</a>
+      <ul class="service-list">
+        <li><span class="service-title">M&amp;A e operazioni straordinarie</span><span class="service-desc">Supporto nella strutturazione, negoziazione e gestione di operazioni trasformative.</span></li>
+        <li><span class="service-title">Advisory strategica</span><span class="service-desc">Definizione di traiettorie di crescita, posizionamento e architetture operative.</span></li>
+        <li><span class="service-title">Capital advisory</span><span class="service-desc">Assistenza nell’individuazione e strutturazione di capitale a supporto dell’operazione.</span></li>
+        <li><span class="service-title">Operazioni immobiliari</span><span class="service-desc">Advisory su asset real estate, valorizzazioni patrimoniali e strutture dedicate.</span></li>
+        <li><span class="service-title">Operazioni internazionali e commodities</span><span class="service-desc">Coordinamento di operazioni cross-border, joint venture e transazioni su asset strategici.</span></li>
+        <li><span class="service-title">Gestione e valorizzazione di brevetti</span><span class="service-desc">Supporto strategico nella tutela, gestione e valorizzazione economica di proprietà industriale.</span></li>
+        <li><span class="service-title">Servizi notarili internazionali ed escrow account</span><span class="service-desc">Coordinamento di servizi notarili per operazioni internazionali, escrow account, strutture di garanzia e atti funzionali a transazioni complesse e cross-border.</span></li>
+        <li><span class="service-title">Certificazione autenticità opere d’arte</span><span class="service-desc">Supporto alla certificazione dell’autenticità di opere d’arte attraverso sistemi brevettati, tecnologie avanzate di verifica e procedure documentali ad alta affidabilità.</span></li>
+      </ul>
+
+      <div class="model-action">
+        <a href="contatti.html" class="btn-light" data-i18n="executiveButton">Scopri KTS Executive <span>→</span></a>
+      </div>
     </article>
 
-    <article class="model-card corporate fade-in" style="transition-delay:0.12s">
-      <div class="model-top">
-        <div class="model-icon">
-          <img src="assets/kts-icon-ouroboros.png" alt="">
-        </div>
+    <div class="unified-badge fade-in" style="transition-delay:0.12s">
+      <span>Unified<br>Direction</span>
+    </div>
 
-        <h3>KTS<br>Corporate</h3>
-      </div>
-
-      <p data-i18n="corporateIntro">
-        Il livello continuativo per affiancare imprese e professionisti nella contrattualistica, nella compliance, nella finanza, negli atti societari, nelle agevolazioni e nella gestione operativa ricorrente.
+    <article class="model-card light fade-in" style="transition-delay:0.16s">
+      <span class="model-number">02</span>
+      <h3 class="model-title">KTS<br>Corporate</h3>
+      <p class="model-subtitle" data-i18n="corporateSubtitle">
+        Infrastruttura corporate continuativa
       </p>
 
-      <a href="#corporate" class="model-link" data-i18n="corporateLink">Scopri Corporate →</a>
+      <ul class="service-list">
+        <li><span class="service-title">Contrattualistica commerciale nazionale e internazionale</span><span class="service-desc">Redazione, revisione e consulenza su contratti commerciali, accordi di fornitura, distribuzione, appalti e rapporti cross-border.</span></li>
+        <li><span class="service-title">Operazioni straordinarie</span><span class="service-desc">Assistenza in fusioni, acquisizioni e joint venture con due diligence legale coordinata.</span></li>
+        <li><span class="service-title">Export compliance</span><span class="service-desc">Supporto normativo per apertura di branch estere e internazionalizzazione sicura.</span></li>
+        <li><span class="service-title">Mutui &amp; leasing</span><span class="service-desc">Istruttoria per asset industriali, tecnologici e investimenti produttivi.</span></li>
+        <li><span class="service-title">Smobilizzo circolante</span><span class="service-desc">Factoring pro-soluto, anticipo fatture evoluto e strumenti di liquidità aziendale.</span></li>
+        <li><span class="service-title">Bonifica rating</span><span class="service-desc">Monitoraggio Centrale Rischi e interventi mirati per ridurre lo spread bancario.</span></li>
+        <li><span class="service-title">Trading crediti fiscali</span><span class="service-desc">Compravendita di crediti d’imposta sul mercato secondario per abbattere il carico fiscale.</span></li>
+        <li><span class="service-title">Certificati bianchi TEE</span><span class="service-desc">Monetizzazione del risparmio energetico aziendale come asset negoziabile sul mercato GME.</span></li>
+        <li><span class="service-title">Incentivi Transizione 5.0</span><span class="service-desc">Screening e certificazione per crediti d’imposta legati a innovazione digitale ed energetica.</span></li>
+        <li><span class="service-title">Bandi, contributi e finanza agevolata</span><span class="service-desc">Monitoraggio bandi, contributi a fondo perduto, finanziamenti agevolati e strumenti SIMEST.</span></li>
+        <li><span class="service-title">Mediazione e ADR</span><span class="service-desc">Accesso a organismo di mediazione accreditato per liti commerciali rapide, riservate ed efficaci.</span></li>
+        <li><span class="service-title">Servizi notarili nazionali e atti societari</span><span class="service-desc">Coordinamento di servizi notarili per costituzione di società, atti di cessione di crediti, compravendite immobiliari, operazioni societarie e atti funzionali alla gestione d’impresa.</span></li>
+      </ul>
+
+      <div class="model-action">
+        <a href="contatti.html" class="btn-outline" data-i18n="corporateButton">Scopri KTS Corporate <span>→</span></a>
+      </div>
     </article>
+
   </div>
 </section>
 
-<section class="services-section">
-  <div class="services-heading fade-in">
-    <p class="section-kicker" data-i18n="servicesKicker">Aree di attività</p>
-    <h2 data-i18n="servicesTitle">Competenze coordinate per decisioni complesse.</h2>
-    <p data-i18n="servicesText">
-      Le attività KTS sono organizzate per offrire supporto sia nelle operazioni straordinarie sia nelle esigenze corporate continuative.
-    </p>
-  </div>
-
-  <div class="service-block" id="executive">
-    <div class="block-title fade-in">
-      <h3>KTS Executive</h3>
-      <p data-i18n="executiveBlockText">
-        Advisory strategico per operazioni complesse, riservate e ad alto valore, con il coordinamento di professionisti senior e competenze specialistiche.
-      </p>
-    </div>
-
-    <div class="services-grid">
-      <article class="service-card dark fade-in">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><path d="M14 42l16-28 20 36H18"/><path d="M28 42h24"/></svg>
-        </div>
-        <h4 data-i18n="execOneTitle">M&amp;A e operazioni straordinarie</h4>
-        <p data-i18n="execOneText">Supporto strategico nelle operazioni di acquisizione, cessione, aggregazione, riorganizzazione e crescita societaria.</p>
-      </article>
-
-      <article class="service-card dark fade-in" style="transition-delay:0.05s">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20"/><path d="M20 44l12-24 12-6-12 24z"/></svg>
-        </div>
-        <h4 data-i18n="execTwoTitle">Advisory strategica e capital advisory</h4>
-        <p data-i18n="execTwoText">Definizione di percorsi strategici, ricerca di capitali, strutturazione di operazioni e supporto alle decisioni di investimento.</p>
-      </article>
-
-      <article class="service-card dark fade-in" style="transition-delay:0.10s">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><path d="M12 52h40M18 52V22l14-10 14 10v30"/><path d="M26 52V36h12v16"/></svg>
-        </div>
-        <h4 data-i18n="execThreeTitle">Operazioni immobiliari</h4>
-        <p data-i18n="execThreeText">Supporto su asset immobiliari, valorizzazioni, acquisizioni, dismissioni, sviluppo di operazioni e coordinamento dei professionisti coinvolti.</p>
-      </article>
-
-      <article class="service-card dark fade-in" style="transition-delay:0.15s">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20"/><path d="M12 32h40M32 12c6 7 9 14 9 20s-3 13-9 20M32 12c-6 7-9 14-9 20s3 13 9 20"/></svg>
-        </div>
-        <h4 data-i18n="execFourTitle">Operazioni internazionali e commodities</h4>
-        <p data-i18n="execFourText">Regia strategica per operazioni cross-border, asset internazionali, commodities e contesti che richiedono riservatezza e competenze multilivello.</p>
-      </article>
-
-      <article class="service-card dark fade-in" style="transition-delay:0.20s">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><path d="M20 28a12 12 0 1 1 24 0c0 6-4 10-8 13v7h-8v-7c-4-3-8-7-8-13z"/><path d="M26 56h12"/></svg>
-        </div>
-        <h4 data-i18n="execFiveTitle">Brevetti e asset ad alto valore</h4>
-        <p data-i18n="execFiveText">Valorizzazione, protezione, trasferimento e gestione strategica di brevetti, tecnologie, know-how e asset immateriali rilevanti.</p>
-      </article>
-
-      <article class="service-card dark fade-in" style="transition-delay:0.25s">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><path d="M22 16h20v32H22z"/><path d="M18 22h28M18 42h28M28 52h8"/></svg>
-        </div>
-        <h4 data-i18n="execSixTitle">Servizi notarili internazionali ed escrow account</h4>
-        <p data-i18n="execSixText">Coordinamento di servizi notarili per operazioni internazionali, strutture di garanzia, escrow account e atti funzionali a transazioni complesse e cross-border.</p>
-      </article>
-
-      <article class="service-card dark fade-in" style="transition-delay:0.30s">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><path d="M16 48l10-28 12 18 8-10 8 20z"/><path d="M18 52h36"/><circle cx="44" cy="18" r="6"/></svg>
-        </div>
-        <h4 data-i18n="execSevenTitle">Certificazione autenticità opere d’arte</h4>
-        <p data-i18n="execSevenText">Supporto alla certificazione dell’autenticità di opere d’arte tramite sistemi brevettati, tecnologie avanzate di verifica e procedure documentali ad alta affidabilità.</p>
-      </article>
-    </div>
-  </div>
-
-  <div class="service-block" id="corporate">
-    <div class="block-title fade-in">
-      <h3>KTS Corporate</h3>
-      <p data-i18n="corporateBlockText">
-        Infrastruttura continuativa per supportare l’impresa nella gestione ordinaria e strategica, anche tramite convenzione mensile personalizzata.
-      </p>
-    </div>
-
-    <div class="services-grid">
-      <article class="service-card fade-in">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><path d="M18 8h22l8 8v40H18z"/><path d="M40 8v10h10M24 28h18M24 36h18M24 44h12"/></svg>
-        </div>
-        <h4 data-i18n="corpOneTitle">Contrattualistica commerciale nazionale e internazionale</h4>
-        <p data-i18n="corpOneText">Redazione, revisione e consulenza su contratti commerciali, forniture, appalti, distribuzione, partnership e rapporti d’impresa.</p>
-      </article>
-
-      <article class="service-card fade-in" style="transition-delay:0.05s">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><path d="M32 8l18 8v16c0 11-7 19-18 24-11-5-18-13-18-24V16z"/><path d="M24 32l6 6 12-14"/></svg>
-        </div>
-        <h4 data-i18n="corpTwoTitle">Compliance, privacy, export e governance</h4>
-        <p data-i18n="corpTwoText">Supporto per adeguamenti normativi, privacy, GDPR, export compliance, governance societaria e presidio dei processi aziendali.</p>
-      </article>
-
-      <article class="service-card fade-in" style="transition-delay:0.10s">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><path d="M12 50h40M18 44V30M32 44V20M46 44V12"/><path d="M18 30l14-10 14-8"/></svg>
-        </div>
-        <h4 data-i18n="corpThreeTitle">Finanza, rating, mutui e leasing</h4>
-        <p data-i18n="corpThreeText">Affiancamento nell’accesso al credito, rating, istruttorie bancarie, mutui, leasing e strumenti di sostegno finanziario.</p>
-      </article>
-
-      <article class="service-card fade-in" style="transition-delay:0.15s">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><path d="M18 20h28v24H18z"/><path d="M14 26h4M46 26h4M14 38h4M46 38h4M24 32h16"/><path d="M22 18c3-6 17-6 20 0"/></svg>
-        </div>
-        <h4 data-i18n="corpFourTitle">Smobilizzo del circolante</h4>
-        <p data-i18n="corpFourText">Soluzioni per migliorare liquidità e tempi di incasso attraverso factoring, anticipo fatture e strumenti evoluti di gestione del credito.</p>
-      </article>
-
-      <article class="service-card fade-in" style="transition-delay:0.20s">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><path d="M16 18h32v34H16z"/><path d="M16 28h32M24 18v-6M40 18v-6M24 38h16M24 46h10"/></svg>
-        </div>
-        <h4 data-i18n="corpFiveTitle">Bandi, agevolazioni e finanziamenti agevolati</h4>
-        <p data-i18n="corpFiveText">Screening, istruttoria e supporto per bandi, contributi, incentivi, strumenti agevolativi e programmi di sviluppo nazionali ed europei.</p>
-      </article>
-
-      <article class="service-card fade-in" style="transition-delay:0.25s">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><path d="M32 8c10 10 16 20 16 30a16 16 0 0 1-32 0c0-10 6-20 16-30z"/><path d="M24 40c6 2 12 0 16-6"/></svg>
-        </div>
-        <h4 data-i18n="corpSixTitle">Transizione 5.0, crediti fiscali e certificati bianchi</h4>
-        <p data-i18n="corpSixText">Supporto per strumenti energetici e fiscali, crediti d’imposta, certificati bianchi, Transizione 5.0 e opportunità connesse all’efficienza.</p>
-      </article>
-
-      <article class="service-card fade-in" style="transition-delay:0.30s">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20"/><path d="M12 32h40M32 12c6 7 9 14 9 20s-3 13-9 20M32 12c-6 7-9 14-9 20s3 13 9 20"/></svg>
-        </div>
-        <h4 data-i18n="corpSevenTitle">SIMEST e internazionalizzazione</h4>
-        <p data-i18n="corpSevenText">Supporto all’accesso a strumenti SIMEST e percorsi di internazionalizzazione, apertura mercati esteri e sviluppo commerciale fuori dall’Italia.</p>
-      </article>
-
-      <article class="service-card fade-in" style="transition-delay:0.35s">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><path d="M32 10v44M16 22h32M20 22l-8 16h16zM44 22l-8 16h16z"/></svg>
-        </div>
-        <h4 data-i18n="corpEightTitle">Mediazione, ADR e supporto continuativo</h4>
-        <p data-i18n="corpEightText">Gestione stragiudiziale delle controversie, strumenti ADR, tutela delle relazioni commerciali e supporto continuativo alle decisioni aziendali.</p>
-      </article>
-
-      <article class="service-card fade-in" style="transition-delay:0.40s">
-        <div class="service-icon">
-          <svg viewBox="0 0 64 64"><path d="M18 12h28v40H18z"/><path d="M24 22h16M24 30h16M24 38h10"/><path d="M42 48l8 8"/></svg>
-        </div>
-        <h4 data-i18n="corpNineTitle">Servizi notarili nazionali e atti societari</h4>
-        <p data-i18n="corpNineText">Coordinamento di servizi notarili per costituzione di società, atti di cessione di crediti, compravendite immobiliari, operazioni societarie e atti funzionali alla gestione d’impresa.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="activities-cta">
-  <div class="cta-inner fade-in">
+<section class="benefits-band">
+  <div class="benefits-head fade-in">
     <div>
-      <h2 data-i18n="ctaTitle">Dalla singola operazione al presidio continuativo.</h2>
-      <p data-i18n="ctaText">
-        KTS costruisce il perimetro dell’intervento in base agli obiettivi, alla complessità e alle esigenze operative del cliente.
-      </p>
+      <p class="section-label" data-i18n="benefitsLabel">Vantaggi</p>
+      <h2 class="section-headline" data-i18n="benefitsTitle">
+        Un ecosistema.<br><em>Quattro risultati.</em>
+      </h2>
     </div>
 
-    <a href="contatti.html" class="btn-gold" data-i18n="ctaButton">Contattaci <span>→</span></a>
+    <p data-i18n="benefitsIntro">
+      La distinzione tra livello Executive e livello Corporate consente di governare sia le decisioni straordinarie sia la continuità operativa dell’impresa.
+    </p>
+  </div>
+
+  <div class="benefits-grid fade-in" style="transition-delay:0.12s">
+    <div class="benefit-item">
+      <div class="benefit-num">01</div>
+      <h3 class="benefit-title" data-i18n="benefitOneTitle">Visione Unificata</h3>
+      <p class="benefit-text" data-i18n="benefitOneText">Strategia, struttura e operatività vengono coordinate in una direzione coerente.</p>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-num">02</div>
+      <h3 class="benefit-title" data-i18n="benefitTwoTitle">Efficienza e Tempo</h3>
+      <p class="benefit-text" data-i18n="benefitTwoText">Riduzione della frammentazione tra consulenti, processi e livelli decisionali.</p>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-num">03</div>
+      <h3 class="benefit-title" data-i18n="benefitThreeTitle">Protezione e Valore</h3>
+      <p class="benefit-text" data-i18n="benefitThreeText">Ogni scelta è orientata alla protezione dell’impresa e alla creazione di valore.</p>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-num">04</div>
+      <h3 class="benefit-title" data-i18n="benefitFourTitle">Unico Interlocutore</h3>
+      <p class="benefit-text" data-i18n="benefitFourText">Un punto di coordinamento capace di integrare competenze multidisciplinari.</p>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta fade-in">
+  <p class="final-cta-text" data-i18n="finalText">
+    Dalla strategia all’operatività.<br>
+    <em>KTS è il tuo partner per ogni fase del percorso aziendale.</em>
+  </p>
+
+  <div class="final-cta-action">
+    <a href="contatti.html" class="btn-primary" data-i18n="finalButton">Richiedi una consulenza personalizzata <span>→</span></a>
   </div>
 </section>
 
 <footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-logo">KTS<span>ADVISORY</span></div>
-      <p class="footer-text" data-i18n="footerText">
-        Strategia, struttura e continuità per accompagnare imprese, investitori e istituzioni nelle fasi decisive del percorso aziendale.
-      </p>
-    </div>
-
-    <div>
-      <p class="footer-title" data-i18n="footerNavTitle">Navigazione</p>
-      <ul class="footer-links">
-        <li><a href="about.html" data-i18n="footerAbout">Chi siamo</a></li>
-        <li><a href="attivita.html" data-i18n="footerActivities">Attività</a></li>
-        <li><a href="approccio.html" data-i18n="footerApproach">Approccio</a></li>
-        <li><a href="studio.html" data-i18n="footerStudio">Lo Studio</a></li>
-        <li><a href="contatti.html" data-i18n="footerContacts">Contatti</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <p class="footer-title" data-i18n="footerActivitiesTitle">Attività</p>
-      <ul class="footer-links">
-        <li><a href="#executive">KTS Executive</a></li>
-        <li><a href="#corporate">KTS Corporate</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-contact">
-      <p class="footer-title" data-i18n="footerContactTitle">Contatti</p>
-      <p>
-        Via dei Mille, 16<br>
-        80121 Napoli, Italia
-      </p>
-      <p><a href="tel:+390811853526">+39 081 185 35 26</a></p>
-      <p><a href="mailto:info@ktsadvisory.com">info@ktsadvisory.com</a></p>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <span class="footer-copy" data-i18n="footerCopy">© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
-    <div class="footer-policy">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Cookie Policy</a>
-    </div>
-  </div>
+  <span class="footer-copy" data-i18n="footerCopy">© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
+  <span class="footer-tagline" data-i18n="footerTagline">Struttura. Visione. Risultato.</span>
 </footer>
 
 <script>
@@ -1227,79 +929,37 @@ const translations = {
     navStudio: "Lo Studio",
     navContacts: "Contatti",
 
-    heroEyebrow: "Attività",
-    heroTitle: "Due livelli operativi per esigenze strategiche e continuità aziendale.",
-    heroSubtitle: "KTS Advisory integra competenze executive e corporate per accompagnare imprese, investitori e famiglie imprenditoriali nelle decisioni complesse e nella gestione continuativa.",
-    heroButtonOne: "KTS Executive <span>→</span>",
-    heroButtonTwo: "KTS Corporate",
+    heroLabel: "Attività",
+    heroTitle: "Due livelli di competenza.<br><em>Un’unica direzione strategica.</em>",
+    heroSubtitle: "KTS integra advisory strategico per operazioni complesse e servizi corporate continuativi in un unico ecosistema multidisciplinare.",
 
-    introKicker: "Il modello operativo",
-    introTitle: "Advisory strategico e infrastruttura corporate in un’unica regia.",
-    introP1: "KTS opera attraverso due livelli complementari: Executive, dedicato alle operazioni complesse e ad alto valore, e Corporate, pensato per supportare l’impresa con continuità nelle aree legali, finanziarie, societarie e operative.",
-    introP2: "Il valore del modello risiede nella capacità di coordinare competenze specialistiche, professionisti senior e strumenti operativi, evitando frammentazione e offrendo al cliente una direzione chiara.",
+    modelLabel: "Il Modello KTS",
+    modelTitle: "Strategia e operatività.<br><em>Un sistema integrato.</em>",
+    modelIntro: "Il modello KTS distingue due livelli di intervento complementari: una direzione executive per le operazioni ad alta complessità e una piattaforma corporate per il supporto continuativo all’impresa.",
 
-    modelKicker: "Executive e Corporate",
-    modelTitle: "Due dimensioni. Un unico metodo.",
-    modelText: "Executive interviene sulle operazioni straordinarie e riservate. Corporate sostiene l’impresa nella gestione continuativa delle attività strategiche e operative.",
-    executiveIntro: "Il livello élite per operazioni complesse, asset ad alto valore, advisory strategica, operazioni internazionali e progetti che richiedono riservatezza, visione e professionisti di elevata caratura.",
-    corporateIntro: "Il livello continuativo per affiancare imprese e professionisti nella contrattualistica, nella compliance, nella finanza, negli atti societari, nelle agevolazioni e nella gestione operativa ricorrente.",
-    executiveLink: "Scopri Executive →",
-    corporateLink: "Scopri Corporate →",
+    executiveSubtitle: "Advisory strategico per operazioni complesse",
+    corporateSubtitle: "Infrastruttura corporate continuativa",
+    executiveButton: "Scopri KTS Executive <span>→</span>",
+    corporateButton: "Scopri KTS Corporate <span>→</span>",
 
-    servicesKicker: "Aree di attività",
-    servicesTitle: "Competenze coordinate per decisioni complesse.",
-    servicesText: "Le attività KTS sono organizzate per offrire supporto sia nelle operazioni straordinarie sia nelle esigenze corporate continuative.",
+    benefitsLabel: "Vantaggi",
+    benefitsTitle: "Un ecosistema.<br><em>Quattro risultati.</em>",
+    benefitsIntro: "La distinzione tra livello Executive e livello Corporate consente di governare sia le decisioni straordinarie sia la continuità operativa dell’impresa.",
 
-    executiveBlockText: "Advisory strategico per operazioni complesse, riservate e ad alto valore, con il coordinamento di professionisti senior e competenze specialistiche.",
-    execOneTitle: "M&A e operazioni straordinarie",
-    execOneText: "Supporto strategico nelle operazioni di acquisizione, cessione, aggregazione, riorganizzazione e crescita societaria.",
-    execTwoTitle: "Advisory strategica e capital advisory",
-    execTwoText: "Definizione di percorsi strategici, ricerca di capitali, strutturazione di operazioni e supporto alle decisioni di investimento.",
-    execThreeTitle: "Operazioni immobiliari",
-    execThreeText: "Supporto su asset immobiliari, valorizzazioni, acquisizioni, dismissioni, sviluppo di operazioni e coordinamento dei professionisti coinvolti.",
-    execFourTitle: "Operazioni internazionali e commodities",
-    execFourText: "Regia strategica per operazioni cross-border, asset internazionali, commodities e contesti che richiedono riservatezza e competenze multilivello.",
-    execFiveTitle: "Brevetti e asset ad alto valore",
-    execFiveText: "Valorizzazione, protezione, trasferimento e gestione strategica di brevetti, tecnologie, know-how e asset immateriali rilevanti.",
-    execSixTitle: "Servizi notarili internazionali ed escrow account",
-    execSixText: "Coordinamento di servizi notarili per operazioni internazionali, strutture di garanzia, escrow account e atti funzionali a transazioni complesse e cross-border.",
-    execSevenTitle: "Certificazione autenticità opere d’arte",
-    execSevenText: "Supporto alla certificazione dell’autenticità di opere d’arte tramite sistemi brevettati, tecnologie avanzate di verifica e procedure documentali ad alta affidabilità.",
+    benefitOneTitle: "Visione Unificata",
+    benefitOneText: "Strategia, struttura e operatività vengono coordinate in una direzione coerente.",
+    benefitTwoTitle: "Efficienza e Tempo",
+    benefitTwoText: "Riduzione della frammentazione tra consulenti, processi e livelli decisionali.",
+    benefitThreeTitle: "Protezione e Valore",
+    benefitThreeText: "Ogni scelta è orientata alla protezione dell’impresa e alla creazione di valore.",
+    benefitFourTitle: "Unico Interlocutore",
+    benefitFourText: "Un punto di coordinamento capace di integrare competenze multidisciplinari.",
 
-    corporateBlockText: "Infrastruttura continuativa per supportare l’impresa nella gestione ordinaria e strategica, anche tramite convenzione mensile personalizzata.",
-    corpOneTitle: "Contrattualistica commerciale nazionale e internazionale",
-    corpOneText: "Redazione, revisione e consulenza su contratti commerciali, forniture, appalti, distribuzione, partnership e rapporti d’impresa.",
-    corpTwoTitle: "Compliance, privacy, export e governance",
-    corpTwoText: "Supporto per adeguamenti normativi, privacy, GDPR, export compliance, governance societaria e presidio dei processi aziendali.",
-    corpThreeTitle: "Finanza, rating, mutui e leasing",
-    corpThreeText: "Affiancamento nell’accesso al credito, rating, istruttorie bancarie, mutui, leasing e strumenti di sostegno finanziario.",
-    corpFourTitle: "Smobilizzo del circolante",
-    corpFourText: "Soluzioni per migliorare liquidità e tempi di incasso attraverso factoring, anticipo fatture e strumenti evoluti di gestione del credito.",
-    corpFiveTitle: "Bandi, agevolazioni e finanziamenti agevolati",
-    corpFiveText: "Screening, istruttoria e supporto per bandi, contributi, incentivi, strumenti agevolativi e programmi di sviluppo nazionali ed europei.",
-    corpSixTitle: "Transizione 5.0, crediti fiscali e certificati bianchi",
-    corpSixText: "Supporto per strumenti energetici e fiscali, crediti d’imposta, certificati bianchi, Transizione 5.0 e opportunità connesse all’efficienza.",
-    corpSevenTitle: "SIMEST e internazionalizzazione",
-    corpSevenText: "Supporto all’accesso a strumenti SIMEST e percorsi di internazionalizzazione, apertura mercati esteri e sviluppo commerciale fuori dall’Italia.",
-    corpEightTitle: "Mediazione, ADR e supporto continuativo",
-    corpEightText: "Gestione stragiudiziale delle controversie, strumenti ADR, tutela delle relazioni commerciali e supporto continuativo alle decisioni aziendali.",
-    corpNineTitle: "Servizi notarili nazionali e atti societari",
-    corpNineText: "Coordinamento di servizi notarili per costituzione di società, atti di cessione di crediti, compravendite immobiliari, operazioni societarie e atti funzionali alla gestione d’impresa.",
+    finalText: "Dalla strategia all’operatività.<br><em>KTS è il tuo partner per ogni fase del percorso aziendale.</em>",
+    finalButton: "Richiedi una consulenza personalizzata <span>→</span>",
 
-    ctaTitle: "Dalla singola operazione al presidio continuativo.",
-    ctaText: "KTS costruisce il perimetro dell’intervento in base agli obiettivi, alla complessità e alle esigenze operative del cliente.",
-    ctaButton: "Contattaci <span>→</span>",
-
-    footerText: "Strategia, struttura e continuità per accompagnare imprese, investitori e istituzioni nelle fasi decisive del percorso aziendale.",
-    footerNavTitle: "Navigazione",
-    footerAbout: "Chi siamo",
-    footerActivities: "Attività",
-    footerApproach: "Approccio",
-    footerStudio: "Lo Studio",
-    footerContacts: "Contatti",
-    footerActivitiesTitle: "Attività",
-    footerContactTitle: "Contatti",
-    footerCopy: "© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati."
+    footerCopy: "© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.",
+    footerTagline: "Struttura. Visione. Risultato."
   },
 
   en: {
@@ -1309,79 +969,37 @@ const translations = {
     navStudio: "The Firm",
     navContacts: "Contacts",
 
-    heroEyebrow: "Services",
-    heroTitle: "Two operational levels for strategic needs and business continuity.",
-    heroSubtitle: "KTS Advisory integrates executive and corporate expertise to support companies, investors and entrepreneurial families in complex decisions and ongoing management.",
-    heroButtonOne: "KTS Executive <span>→</span>",
-    heroButtonTwo: "KTS Corporate",
+    heroLabel: "Services",
+    heroTitle: "Two levels of expertise.<br><em>One strategic direction.</em>",
+    heroSubtitle: "KTS integrates strategic advisory for complex transactions and ongoing corporate services within a single multidisciplinary ecosystem.",
 
-    introKicker: "Operating model",
-    introTitle: "Strategic advisory and corporate infrastructure under one direction.",
-    introP1: "KTS operates through two complementary levels: Executive, dedicated to complex and high-value transactions, and Corporate, designed to support companies continuously in legal, financial, corporate and operational areas.",
-    introP2: "The value of the model lies in coordinating specialist expertise, senior professionals and operational tools, avoiding fragmentation and giving the client clear direction.",
+    modelLabel: "The KTS Model",
+    modelTitle: "Strategy and operations.<br><em>An integrated system.</em>",
+    modelIntro: "The KTS model distinguishes two complementary levels of intervention: executive direction for high-complexity transactions and a corporate platform for ongoing business support.",
 
-    modelKicker: "Executive and Corporate",
-    modelTitle: "Two dimensions. One method.",
-    modelText: "Executive operates on extraordinary and confidential transactions. Corporate supports the company in the ongoing management of strategic and operational activities.",
-    executiveIntro: "The elite level for complex transactions, high-value assets, strategic advisory, international operations and projects requiring confidentiality, vision and high-calibre professionals.",
-    corporateIntro: "The ongoing level to support companies and professionals in contracts, compliance, finance, corporate deeds, incentives and recurring operational management.",
-    executiveLink: "Discover Executive →",
-    corporateLink: "Discover Corporate →",
+    executiveSubtitle: "Strategic advisory for complex transactions",
+    corporateSubtitle: "Ongoing corporate infrastructure",
+    executiveButton: "Discover KTS Executive <span>→</span>",
+    corporateButton: "Discover KTS Corporate <span>→</span>",
 
-    servicesKicker: "Service areas",
-    servicesTitle: "Coordinated expertise for complex decisions.",
-    servicesText: "KTS activities are organised to provide support for both extraordinary transactions and ongoing corporate needs.",
+    benefitsLabel: "Advantages",
+    benefitsTitle: "One ecosystem.<br><em>Four outcomes.</em>",
+    benefitsIntro: "The distinction between Executive and Corporate levels allows both extraordinary decisions and business continuity to be governed coherently.",
 
-    executiveBlockText: "Strategic advisory for complex, confidential and high-value transactions, coordinating senior professionals and specialist expertise.",
-    execOneTitle: "M&A and extraordinary transactions",
-    execOneText: "Strategic support for acquisitions, disposals, aggregations, reorganisations and corporate growth transactions.",
-    execTwoTitle: "Strategic advisory and capital advisory",
-    execTwoText: "Definition of strategic paths, capital search, transaction structuring and support for investment decisions.",
-    execThreeTitle: "Real estate transactions",
-    execThreeText: "Support for real estate assets, valuations, acquisitions, disposals, development transactions and coordination of involved professionals.",
-    execFourTitle: "International transactions and commodities",
-    execFourText: "Strategic direction for cross-border transactions, international assets, commodities and contexts requiring confidentiality and multi-level expertise.",
-    execFiveTitle: "Patents and high-value assets",
-    execFiveText: "Enhancement, protection, transfer and strategic management of patents, technologies, know-how and relevant intangible assets.",
-    execSixTitle: "International notarial services and escrow accounts",
-    execSixText: "Coordination of notarial services for international transactions, guarantee structures, escrow accounts and deeds supporting complex cross-border transactions.",
-    execSevenTitle: "Art authenticity certification",
-    execSevenText: "Support for the certification of artwork authenticity through patented systems, advanced verification technologies and highly reliable documentation procedures.",
+    benefitOneTitle: "Unified Vision",
+    benefitOneText: "Strategy, structure and operations are coordinated within a coherent direction.",
+    benefitTwoTitle: "Efficiency and Time",
+    benefitTwoText: "Reducing fragmentation between advisors, processes and decision-making levels.",
+    benefitThreeTitle: "Protection and Value",
+    benefitThreeText: "Every decision is oriented towards business protection and value creation.",
+    benefitFourTitle: "Single Counterpart",
+    benefitFourText: "One coordination point capable of integrating multidisciplinary expertise.",
 
-    corporateBlockText: "Ongoing infrastructure to support the company in ordinary and strategic management, including through a personalised monthly agreement.",
-    corpOneTitle: "National and international commercial contracts",
-    corpOneText: "Drafting, review and consulting on commercial contracts, supplies, procurement, distribution, partnerships and business relationships.",
-    corpTwoTitle: "Compliance, privacy, export and governance",
-    corpTwoText: "Support for regulatory compliance, privacy, GDPR, export compliance, corporate governance and business process oversight.",
-    corpThreeTitle: "Finance, rating, mortgages and leasing",
-    corpThreeText: "Support for access to credit, rating, bank applications, mortgages, leasing and financial support instruments.",
-    corpFourTitle: "Working-capital solutions",
-    corpFourText: "Solutions to improve liquidity and collection times through factoring, invoice advances and advanced credit management tools.",
-    corpFiveTitle: "Grants, incentives and subsidised finance",
-    corpFiveText: "Screening, application and support for grants, contributions, incentives, subsidised tools and national or European development programmes.",
-    corpSixTitle: "Transition 5.0, tax credits and white certificates",
-    corpSixText: "Support for energy and tax instruments, tax credits, white certificates, Transition 5.0 and opportunities linked to efficiency.",
-    corpSevenTitle: "SIMEST and internationalisation",
-    corpSevenText: "Support for access to SIMEST tools and internationalisation paths, opening foreign markets and commercial development outside Italy.",
-    corpEightTitle: "Mediation, ADR and ongoing support",
-    corpEightText: "Out-of-court dispute management, ADR tools, protection of commercial relationships and ongoing support for business decisions.",
-    corpNineTitle: "National notarial services and corporate deeds",
-    corpNineText: "Coordination of notarial services for company incorporation, credit assignment deeds, real estate purchases, corporate transactions and deeds supporting business management.",
+    finalText: "From strategy to operations.<br><em>KTS is your partner for every phase of the business journey.</em>",
+    finalButton: "Request a personalised consultation <span>→</span>",
 
-    ctaTitle: "From single transaction to ongoing support.",
-    ctaText: "KTS defines the intervention perimeter according to the client’s objectives, complexity and operational needs.",
-    ctaButton: "Contact us <span>→</span>",
-
-    footerText: "Strategy, structure and continuity to support companies, investors and institutions in decisive phases of the business journey.",
-    footerNavTitle: "Navigation",
-    footerAbout: "About us",
-    footerActivities: "Services",
-    footerApproach: "Approach",
-    footerStudio: "The Firm",
-    footerContacts: "Contacts",
-    footerActivitiesTitle: "Services",
-    footerContactTitle: "Contacts",
-    footerCopy: "© 2025 KTS Advisory S.r.l. — All rights reserved."
+    footerCopy: "© 2025 KTS Advisory S.r.l. — All rights reserved.",
+    footerTagline: "Structure. Vision. Outcome."
   }
 };
 
