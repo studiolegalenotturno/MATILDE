@@ -48,9 +48,9 @@ nav{
   justify-content:space-between;
   padding:0 56px;
   height:76px;
-  background:rgba(8,17,31,0.92);
+  background:rgba(243,239,232,0.88);
   backdrop-filter:blur(14px);
-  border-bottom:0.5px solid rgba(176,138,74,0.22);
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
 }
 
 .logo-wrap{
@@ -79,26 +79,26 @@ nav{
   font-size:11px;
   letter-spacing:0.18em;
   text-transform:uppercase;
-  color:var(--ivory);
+  color:var(--navy);
   text-decoration:none;
   font-weight:500;
-  opacity:0.72;
+  opacity:0.68;
   transition:opacity 0.2s,color 0.2s;
 }
 
 .nav-links a:hover,
 .nav-links a.active{
   opacity:1;
-  color:var(--brass-light);
+  color:var(--brass);
 }
 
 .language-switch{
   display:flex;
   align-items:center;
   gap:6px;
-  border:0.5px solid rgba(176,138,74,0.48);
+  border:0.5px solid rgba(176,138,74,0.45);
   padding:5px 10px;
-  background:rgba(8,17,31,0.28);
+  background:rgba(243,239,232,0.35);
 }
 
 .lang-btn{
@@ -107,19 +107,19 @@ nav{
   font-family:var(--sans);
   font-size:11px;
   letter-spacing:0.14em;
-  color:rgba(243,239,232,0.58);
+  color:var(--greige);
   cursor:pointer;
   font-weight:500;
   transition:color 0.2s;
 }
 
 .lang-btn.active,
-.lang-btn:hover{color:var(--brass-light)}
+.lang-btn:hover{color:var(--brass)}
 
 .lang-separator{
   font-family:var(--sans);
   font-size:10px;
-  color:rgba(243,239,232,0.35);
+  color:rgba(139,132,124,0.45);
 }
 
 /* SHARED */
@@ -224,7 +224,7 @@ nav{
   background-image:url("assets/lavora-con-noi-hero.jpg?v=1");
   background-size:cover;
   background-position:center right;
-  opacity:0.96;
+  opacity:1;
 }
 
 .hero-photo::before{
@@ -233,10 +233,10 @@ nav{
   inset:0;
   background:
     linear-gradient(90deg,
-      rgba(8,17,31,0.98) 0%,
-      rgba(8,17,31,0.92) 30%,
-      rgba(8,17,31,0.70) 50%,
-      rgba(8,17,31,0.28) 100%
+      rgba(8,17,31,0.86) 0%,
+      rgba(8,17,31,0.72) 30%,
+      rgba(8,17,31,0.46) 54%,
+      rgba(8,17,31,0.10) 100%
     );
 }
 
@@ -248,10 +248,10 @@ nav{
     repeating-linear-gradient(45deg,
       transparent,
       transparent 112px,
-      rgba(176,138,74,0.035) 112px,
-      rgba(176,138,74,0.035) 113px
+      rgba(176,138,74,0.030) 112px,
+      rgba(176,138,74,0.030) 113px
     );
-  opacity:0.65;
+  opacity:0.42;
 }
 
 .hero-content{
@@ -290,7 +290,7 @@ nav{
   max-width:690px;
   font-size:15px;
   line-height:1.9;
-  color:rgba(243,239,232,0.74);
+  color:rgba(243,239,232,0.78);
 }
 
 /* PARTNER */
@@ -303,12 +303,14 @@ nav{
   max-width:1220px;
   margin:0 auto;
   display:grid;
-  grid-template-columns:130px 1fr 0.95fr;
-  gap:46px;
-  align-items:center;
-  padding:42px;
+  grid-template-columns:110px 1fr;
+  gap:42px;
+  align-items:start;
+  padding:54px 58px;
   border:0.5px solid rgba(176,138,74,0.26);
-  background:rgba(248,244,236,0.74);
+  background:
+    radial-gradient(circle at 92% 18%,rgba(176,138,74,0.08),transparent 34%),
+    rgba(248,244,236,0.74);
 }
 
 .circle-icon{
@@ -337,53 +339,25 @@ nav{
   fill:none;
 }
 
+.partner-text{
+  max-width:980px;
+}
+
 .partner-text h2{
   font-family:var(--serif);
-  font-size:clamp(34px,3.2vw,54px);
+  font-size:clamp(38px,4vw,64px);
   line-height:1.06;
   color:var(--navy);
   font-weight:300;
-  margin-bottom:16px;
+  margin-bottom:20px;
 }
 
 .partner-text p{
-  font-size:14px;
-  line-height:1.85;
+  font-size:15px;
+  line-height:1.9;
   color:rgba(14,26,43,0.72);
-  margin-bottom:12px;
-}
-
-.partner-image{
-  min-height:230px;
-  border:0.5px solid rgba(176,138,74,0.20);
-  background:
-    linear-gradient(90deg,rgba(8,17,31,0.20),rgba(8,17,31,0.78)),
-    radial-gradient(circle at 72% 32%,rgba(176,138,74,0.20),transparent 28%),
-    linear-gradient(135deg,#263346,#08111F);
-  position:relative;
-  overflow:hidden;
-}
-
-.partner-image::before{
-  content:"KTS";
-  position:absolute;
-  right:38px;
-  top:54px;
-  font-family:var(--serif);
-  font-size:78px;
-  letter-spacing:0.10em;
-  color:rgba(243,239,232,0.60);
-}
-
-.partner-image::after{
-  content:"ADVISORY";
-  position:absolute;
-  right:44px;
-  top:136px;
-  font-family:var(--sans);
-  font-size:12px;
-  letter-spacing:0.40em;
-  color:rgba(201,169,110,0.70);
+  margin-bottom:14px;
+  max-width:880px;
 }
 
 /* COLLAB INTRO */
@@ -801,10 +775,6 @@ footer{
     grid-template-columns:90px 1fr;
   }
 
-  .partner-image{
-    grid-column:1 / -1;
-  }
-
   .services-grid{
     grid-template-columns:repeat(3,1fr);
   }
@@ -960,8 +930,6 @@ footer{
         Il Partner può essere inserito nel network professionale KTS e partecipare alle attività della struttura secondo modalità definite caso per caso.
       </p>
     </div>
-
-    <div class="partner-image" aria-hidden="true"></div>
   </div>
 </section>
 
