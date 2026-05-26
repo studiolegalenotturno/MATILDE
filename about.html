@@ -124,6 +124,87 @@ nav{
   color:rgba(139,132,124,0.45);
 }
 
+/* MOBILE MENU */
+.mobile-menu-toggle{
+  display:none;
+  width:42px;
+  height:42px;
+  border:0.5px solid rgba(176,138,74,0.45);
+  background:rgba(243,239,232,0.42);
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  z-index:130;
+}
+
+.mobile-menu-toggle span{
+  width:19px;
+  height:1px;
+  background:var(--navy);
+  transition:transform 0.25s ease,opacity 0.25s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1){
+  transform:translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2){
+  opacity:0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3){
+  transform:translateY(-6px) rotate(-45deg);
+}
+
+.mobile-menu{
+  position:fixed;
+  top:74px;
+  left:0;
+  right:0;
+  z-index:99;
+  background:rgba(243,239,232,0.98);
+  backdrop-filter:blur(18px);
+  border-bottom:0.5px solid rgba(176,138,74,0.22);
+  padding:26px 28px 30px;
+  display:none;
+  flex-direction:column;
+  gap:0;
+  box-shadow:0 24px 50px rgba(14,26,43,0.12);
+}
+
+.mobile-menu.open{
+  display:flex;
+}
+
+.mobile-menu a{
+  font-family:var(--sans);
+  font-size:12px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--navy);
+  text-decoration:none;
+  font-weight:500;
+  padding:16px 0;
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
+
+.mobile-menu a.active{
+  color:var(--brass);
+}
+
+.mobile-menu-language{
+  margin-top:22px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.mobile-menu-language .lang-btn{
+  font-size:12px;
+}
+
 /* BUTTONS */
 .btn-primary,
 .btn-outline,
@@ -684,9 +765,14 @@ footer{
 }
 
 @media(max-width:900px){
+  body.menu-open{
+    overflow:hidden;
+  }
+
   nav{
     padding:0 24px;
     height:74px;
+    z-index:120;
   }
 
   .site-logo{
@@ -697,12 +783,18 @@ footer{
     height:48px;
   }
 
-  .nav-links{
+  .nav-links,
+  nav > .language-switch{
     display:none;
+  }
+
+  .mobile-menu-toggle{
+    display:flex;
   }
 
   .about-hero{
     padding-top:74px;
+    min-height:auto;
   }
 
   .about-hero-bg,
@@ -711,13 +803,23 @@ footer{
     inset:74px 0 0 0;
   }
 
+  .about-hero-bg{
+    background-position:center right;
+  }
+
   .about-hero-content{
-    padding:86px 28px 80px;
+    padding:92px 28px 72px;
     min-height:620px;
   }
 
   .about-hero h1{
     font-size:46px;
+    line-height:1.05;
+  }
+
+  .about-hero p{
+    font-size:14px;
+    line-height:1.85;
   }
 
   .about-intro,
@@ -727,8 +829,13 @@ footer{
     padding-right:28px;
   }
 
+  .about-intro{
+    padding-top:70px;
+    padding-bottom:70px;
+  }
+
   .intro-copy{
-    padding-left:28px;
+    padding-left:24px;
   }
 
   .model-box{
@@ -744,6 +851,11 @@ footer{
   .model-icon{
     width:78px;
     height:78px;
+  }
+
+  .values-section{
+    padding-top:72px;
+    padding-bottom:78px;
   }
 
   footer{
@@ -762,18 +874,66 @@ footer{
 }
 
 @media(max-width:600px){
+  nav{
+    padding:0 18px;
+  }
+
+  .site-logo{
+    height:44px;
+  }
+
+  .logo-image-wrap{
+    height:44px;
+  }
+
+  .mobile-menu{
+    padding:22px 22px 28px;
+  }
+
+  .about-hero-content{
+    padding:82px 22px 66px;
+    min-height:590px;
+  }
+
   .about-hero h1{
-    font-size:40px;
+    font-size:38px;
+  }
+
+  .about-hero p{
+    margin-top:24px;
   }
 
   .hero-actions{
     flex-direction:column;
+    gap:12px;
   }
 
   .btn-primary,
   .btn-outline,
   .btn-gold{
     width:100%;
+    min-height:48px;
+    text-align:center;
+  }
+
+  .about-intro,
+  .about-model,
+  .values-section{
+    padding-left:22px;
+    padding-right:22px;
+  }
+
+  .intro-title,
+  .model-heading h2,
+  .values-heading h2{
+    font-size:34px;
+  }
+
+  .intro-copy{
+    border-left:none;
+    padding-left:0;
+    padding-top:24px;
+    border-top:0.5px solid rgba(176,138,74,0.28);
   }
 
   .values-grid{
@@ -787,6 +947,23 @@ footer{
   .model-icon{
     width:86px;
     height:86px;
+  }
+
+  .model-box{
+    padding:34px 24px;
+  }
+
+  .value-card{
+    padding:34px 24px;
+  }
+
+  .footer-logo{
+    font-size:36px;
+  }
+
+  .footer-policy{
+    flex-direction:column;
+    gap:10px;
   }
 }
 </style>
@@ -813,7 +990,28 @@ footer{
     <span class="lang-separator">/</span>
     <button class="lang-btn" data-lang-switch="en">EN</button>
   </div>
+
+  <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Apri menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="about.html" class="active" data-i18n="navAbout">Chi siamo</a>
+  <a href="attivita.html" data-i18n="navActivities">Attività</a>
+  <a href="approccio.html" data-i18n="navApproach">Approccio</a>
+  <a href="studio.html" data-i18n="navStudio">Lo Studio</a>
+  <a href="lavora-con-noi.html" data-i18n="navWork">Lavora con noi</a>
+  <a href="contatti.html" data-i18n="navContacts">Contatti</a>
+
+  <div class="mobile-menu-language">
+    <button class="lang-btn active" data-lang-switch="it">IT</button>
+    <span class="lang-separator">/</span>
+    <button class="lang-btn" data-lang-switch="en">EN</button>
+  </div>
+</div>
 
 <header class="about-hero">
   <div class="about-hero-bg" aria-hidden="true"></div>
@@ -984,207 +1182,4 @@ footer{
         <li><a href="approccio.html" data-i18n="footerApproach">Approccio</a></li>
         <li><a href="studio.html" data-i18n="footerStudio">Lo Studio</a></li>
         <li><a href="lavora-con-noi.html" data-i18n="footerWork">Lavora con noi</a></li>
-        <li><a href="contatti.html" data-i18n="footerContacts">Contatti</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <p class="footer-title" data-i18n="footerActivitiesTitle">Attività</p>
-      <ul class="footer-links">
-        <li><a href="attivita.html">KTS Executive</a></li>
-        <li><a href="approccio.html">KTS Corporate</a></li>
-        <li><a href="lavora-con-noi.html">Collaborazioni</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-contact">
-      <p class="footer-title" data-i18n="footerContactTitle">Contatti</p>
-      <p>
-        Via dei Mille, 16<br>
-        80121 Napoli, Italia
-      </p>
-      <p><a href="tel:+390811853526">+39 081 185 35 26</a></p>
-      <p><a href="mailto:info@ktsadvisory.com">info@ktsadvisory.com</a></p>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <span class="footer-copy" data-i18n="footerCopy">© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
-    <div class="footer-policy">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Cookie Policy</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-const obs = new IntersectionObserver(
-  entries => entries.forEach(entry => {
-    if(entry.isIntersecting) entry.target.classList.add('visible');
-  }),
-  {threshold:0.1}
-);
-
-document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-
-const translations = {
-  it: {
-    navAbout: "Chi siamo",
-    navActivities: "Attività",
-    navApproach: "Approccio",
-    navStudio: "Lo Studio",
-    navWork: "Lavora con noi",
-    navContacts: "Contatti",
-
-    heroEyebrow: "Chi siamo",
-    heroTitle: "Un ecosistema multidisciplinare per imprese, investitori e operazioni complesse.",
-    heroSubtitle: "KTS nasce per integrare visione strategica, competenze professionali e supporto corporate continuativo in un unico modello operativo.",
-    heroButtonOne: "Scopri il modello KTS <span>→</span>",
-    heroButtonTwo: "Il nostro network",
-
-    introKicker: "Chi siamo oggi",
-    introTitle: "Non un singolo studio. Una piattaforma di competenze coordinate.",
-    introP1: "KTS Advisory è un ecosistema professionale nato per affiancare imprese, investitori, famiglie imprenditoriali e organizzazioni nelle fasi in cui la complessità richiede metodo, visione e capacità di esecuzione.",
-    introP2: "Il nostro lavoro non si limita alla consulenza specialistica: coordiniamo competenze legali, finanziarie, fiscali, societarie, strategiche e operative, costruendo percorsi integrati e coerenti con gli obiettivi del cliente.",
-    introP3: "La forza di KTS risiede nella capacità di collegare il livello strategico delle grandi operazioni con il supporto corporate continuativo necessario per trasformare le decisioni in risultati concreti.",
-
-    modelKicker: "Il nostro modello",
-    modelTitle: "Due livelli di competenza. Un’unica direzione.",
-    modelText: "KTS opera attraverso due dimensioni complementari: Executive per le operazioni complesse e Corporate per l’infrastruttura continuativa a supporto della crescita.",
-
-    executiveSubtitle: "Advisory strategico per operazioni complesse.",
-    executiveOne: "M&A e operazioni straordinarie",
-    executiveTwo: "Advisory strategica e capital advisory",
-    executiveThree: "Operazioni immobiliari e internazionali",
-    executiveFour: "Commodities, brevetti e asset ad alto valore",
-    executiveFive: "Architettura legale e societaria per operazioni nazionali e internazionali",
-    executiveSix: "Coordinamento di competenze specialistiche in contesti riservati e complessi",
-
-    corporateSubtitle: "Infrastruttura corporate continuativa.",
-    corporateOne: "Contrattualistica commerciale nazionale e internazionale",
-    corporateTwo: "Compliance, privacy, export e governance",
-    corporateThree: "Finanza, rating, mutui, leasing e smobilizzo del circolante",
-    corporateFour: "Bandi, agevolazioni, Transizione 5.0 e fondi SIMEST",
-    corporateFive: "Crediti fiscali, certificati bianchi e strumenti energetici",
-    corporateSix: "Mediazione, ADR e supporto continuativo alle decisioni aziendali",
-
-    valuesKicker: "La nostra identità",
-    valuesTitle: "Principi operativi, non dichiarazioni astratte.",
-    valuesText: "Ogni intervento KTS nasce da un equilibrio tra visione, metodo, riservatezza e continuità.",
-    valueOneTitle: "Strategia",
-    valueOneText: "Analizziamo obiettivi, rischi e opportunità prima di costruire qualsiasi percorso operativo.",
-    valueTwoTitle: "Integrazione",
-    valueTwoText: "Coordiniamo competenze diverse per evitare frammentazione, dispersione e duplicazioni.",
-    valueThreeTitle: "Riservatezza",
-    valueThreeText: "Operiamo con discrezione in contesti delicati, tutelando informazioni, relazioni e reputazione.",
-    valueFourTitle: "Continuità",
-    valueFourText: "Affianchiamo il cliente non solo nella scelta, ma anche nell’esecuzione e nel monitoraggio.",
-
-    footerText: "Strategia, struttura e continuità per accompagnare imprese, investitori e istituzioni nelle fasi decisive del percorso aziendale.",
-    footerNavTitle: "Navigazione",
-    footerAbout: "Chi siamo",
-    footerActivities: "Attività",
-    footerApproach: "Approccio",
-    footerStudio: "Lo Studio",
-    footerWork: "Lavora con noi",
-    footerContacts: "Contatti",
-    footerActivitiesTitle: "Attività",
-    footerContactTitle: "Contatti",
-    footerCopy: "© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati."
-  },
-
-  en: {
-    navAbout: "About us",
-    navActivities: "Services",
-    navApproach: "Approach",
-    navStudio: "The Firm",
-    navWork: "Work with us",
-    navContacts: "Contacts",
-
-    heroEyebrow: "About us",
-    heroTitle: "A multidisciplinary ecosystem for companies, investors and complex transactions.",
-    heroSubtitle: "KTS was created to integrate strategic vision, professional expertise and ongoing corporate support into a single operating model.",
-    heroButtonOne: "Discover the KTS model <span>→</span>",
-    heroButtonTwo: "Our network",
-
-    introKicker: "Who we are today",
-    introTitle: "Not a single firm. A platform of coordinated expertise.",
-    introP1: "KTS Advisory is a professional ecosystem designed to support companies, investors, entrepreneurial families and organisations when complexity requires method, vision and execution capability.",
-    introP2: "Our work goes beyond specialist consulting: we coordinate legal, financial, tax, corporate, strategic and operational expertise, building integrated paths aligned with the client’s objectives.",
-    introP3: "The strength of KTS lies in connecting the strategic level of major transactions with the ongoing corporate support needed to turn decisions into concrete results.",
-
-    modelKicker: "Our model",
-    modelTitle: "Two levels of expertise. One direction.",
-    modelText: "KTS operates through two complementary dimensions: Executive for complex transactions and Corporate for ongoing infrastructure supporting growth.",
-
-    executiveSubtitle: "Strategic advisory for complex transactions.",
-    executiveOne: "M&A and extraordinary transactions",
-    executiveTwo: "Strategic advisory and capital advisory",
-    executiveThree: "Real estate and international transactions",
-    executiveFour: "Commodities, patents and high-value assets",
-    executiveFive: "Legal and corporate architecture for national and international transactions",
-    executiveSix: "Coordination of specialist expertise in confidential and complex contexts",
-
-    corporateSubtitle: "Ongoing corporate infrastructure.",
-    corporateOne: "National and international commercial contracts",
-    corporateTwo: "Compliance, privacy, export and governance",
-    corporateThree: "Finance, rating, mortgages, leasing and working-capital solutions",
-    corporateFour: "Grants, incentives, Transition 5.0 and SIMEST funds",
-    corporateFive: "Tax credits, white certificates and energy instruments",
-    corporateSix: "Mediation, ADR and ongoing support for business decisions",
-
-    valuesKicker: "Our identity",
-    valuesTitle: "Operating principles, not abstract statements.",
-    valuesText: "Each KTS intervention is based on a balance between vision, method, confidentiality and continuity.",
-    valueOneTitle: "Strategy",
-    valueOneText: "We analyse objectives, risks and opportunities before building any operational path.",
-    valueTwoTitle: "Integration",
-    valueTwoText: "We coordinate different areas of expertise to avoid fragmentation, dispersion and duplication.",
-    valueThreeTitle: "Confidentiality",
-    valueThreeText: "We operate discreetly in sensitive contexts, protecting information, relationships and reputation.",
-    valueFourTitle: "Continuity",
-    valueFourText: "We support the client not only in decision-making, but also in execution and monitoring.",
-
-    footerText: "Strategy, structure and continuity to support companies, investors and institutions in decisive phases of the business journey.",
-    footerNavTitle: "Navigation",
-    footerAbout: "About us",
-    footerActivities: "Services",
-    footerApproach: "Approach",
-    footerStudio: "The Firm",
-    footerWork: "Work with us",
-    footerContacts: "Contacts",
-    footerActivitiesTitle: "Services",
-    footerContactTitle: "Contacts",
-    footerCopy: "© 2025 KTS Advisory S.r.l. — All rights reserved."
-  }
-};
-
-function setLanguage(lang){
-  document.documentElement.lang = lang;
-
-  document.querySelectorAll("[data-i18n]").forEach(element => {
-    const key = element.getAttribute("data-i18n");
-    if(translations[lang] && translations[lang][key]){
-      element.innerHTML = translations[lang][key];
-    }
-  });
-
-  document.querySelectorAll("[data-lang-switch]").forEach(button => {
-    button.classList.toggle("active", button.getAttribute("data-lang-switch") === lang);
-  });
-
-  localStorage.setItem("siteLanguage", lang);
-}
-
-document.querySelectorAll("[data-lang-switch]").forEach(button => {
-  button.addEventListener("click", () => {
-    setLanguage(button.getAttribute("data-lang-switch"));
-  });
-});
-
-const savedLanguage = localStorage.getItem("siteLanguage") || "it";
-setLanguage(savedLanguage);
-</script>
-
-</body>
-</html>
+        <
