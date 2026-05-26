@@ -40,7 +40,7 @@ nav{
   top:0;
   left:0;
   right:0;
-  z-index:100;
+  z-index:120;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -122,6 +122,87 @@ nav{
   font-family:var(--sans);
   font-size:10px;
   color:rgba(139,132,124,0.45);
+}
+
+/* MOBILE MENU */
+.mobile-menu-toggle{
+  display:none;
+  width:42px;
+  height:42px;
+  border:0.5px solid rgba(176,138,74,0.45);
+  background:rgba(243,239,232,0.42);
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  z-index:130;
+}
+
+.mobile-menu-toggle span{
+  width:19px;
+  height:1px;
+  background:var(--navy);
+  transition:transform 0.25s ease,opacity 0.25s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1){
+  transform:translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2){
+  opacity:0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3){
+  transform:translateY(-6px) rotate(-45deg);
+}
+
+.mobile-menu{
+  position:fixed;
+  top:74px;
+  left:0;
+  right:0;
+  z-index:110;
+  background:rgba(243,239,232,0.98);
+  backdrop-filter:blur(18px);
+  border-bottom:0.5px solid rgba(176,138,74,0.22);
+  padding:26px 28px 30px;
+  display:none;
+  flex-direction:column;
+  gap:0;
+  box-shadow:0 24px 50px rgba(14,26,43,0.12);
+}
+
+.mobile-menu.open{
+  display:flex;
+}
+
+.mobile-menu a{
+  font-family:var(--sans);
+  font-size:12px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--navy);
+  text-decoration:none;
+  font-weight:500;
+  padding:16px 0;
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
+
+.mobile-menu a.active{
+  color:var(--brass);
+}
+
+.mobile-menu-language{
+  margin-top:22px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.mobile-menu-language .lang-btn{
+  font-size:12px;
 }
 
 /* SHARED */
@@ -639,6 +720,10 @@ footer{
 }
 
 @media(max-width:900px){
+  body.menu-open{
+    overflow:hidden;
+  }
+
   nav{
     padding:0 24px;
     height:74px;
@@ -652,8 +737,13 @@ footer{
     height:48px;
   }
 
-  .nav-links{
+  .nav-links,
+  nav > .language-switch{
     display:none;
+  }
+
+  .mobile-menu-toggle{
+    display:flex;
   }
 
   .page-hero{
@@ -671,7 +761,7 @@ footer{
   }
 
   .hero-left{
-    padding:80px 28px 42px;
+    padding:82px 28px 44px;
   }
 
   .hero-right{
@@ -722,8 +812,33 @@ footer{
 }
 
 @media(max-width:600px){
+  nav{
+    padding:0 18px;
+  }
+
+  .site-logo{
+    height:44px;
+  }
+
+  .logo-image-wrap{
+    height:44px;
+  }
+
+  .mobile-menu{
+    padding:22px 22px 28px;
+  }
+
   .section-headline{
     font-size:38px;
+  }
+
+  .hero-left{
+    padding:78px 22px 40px;
+  }
+
+  .hero-left p.hero-text{
+    font-size:14px;
+    line-height:1.85;
   }
 
   .language-switch{
@@ -736,6 +851,15 @@ footer{
 
   .form-grid{
     grid-template-columns:1fr;
+  }
+
+  .contact-column{
+    padding:48px 22px;
+  }
+
+  .info-item{
+    grid-template-columns:34px 1fr;
+    gap:18px;
   }
 
   .label-napoli{
@@ -752,6 +876,19 @@ footer{
 
   .google-map{
     height:260px;
+  }
+
+  .btn-primary,
+  .btn-outline-dark{
+    width:100%;
+    justify-content:center;
+    min-height:48px;
+    text-align:center;
+  }
+
+  .dark-cta-text{
+    padding-left:22px;
+    font-size:30px;
   }
 }
 </style>
@@ -778,7 +915,28 @@ footer{
     <span class="lang-separator">/</span>
     <button class="lang-btn" data-lang-switch="en">EN</button>
   </div>
+
+  <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Apri menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="about.html" data-i18n="navAbout">Chi siamo</a>
+  <a href="attivita.html" data-i18n="navActivities">Attività</a>
+  <a href="approccio.html" data-i18n="navApproach">Approccio</a>
+  <a href="studio.html" data-i18n="navStudio">Lo Studio</a>
+  <a href="lavora-con-noi.html" data-i18n="navWork">Lavora con noi</a>
+  <a href="contatti.html" class="active" data-i18n="navContacts">Contatti</a>
+
+  <div class="mobile-menu-language">
+    <button class="lang-btn active" data-lang-switch="it">IT</button>
+    <span class="lang-separator">/</span>
+    <button class="lang-btn" data-lang-switch="en">EN</button>
+  </div>
+</div>
 
 <div class="page-hero">
   <div class="hero-left fade-in">
@@ -1057,6 +1215,27 @@ document.querySelectorAll("[data-lang-switch]").forEach(button => {
     setLanguage(button.getAttribute("data-lang-switch"));
   });
 });
+
+const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+
+if(mobileMenuToggle && mobileMenu){
+  mobileMenuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("open");
+    mobileMenuToggle.classList.toggle("active", isOpen);
+    mobileMenuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    document.body.classList.toggle("menu-open", isOpen);
+  });
+
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      mobileMenuToggle.classList.remove("active");
+      mobileMenuToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    });
+  });
+}
 
 const savedLanguage = localStorage.getItem("siteLanguage") || "it";
 setLanguage(savedLanguage);
