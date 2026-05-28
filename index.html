@@ -266,6 +266,55 @@ nav{
   flex-wrap:wrap;
 }
 
+.hero-kicker{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:22px;
+  font-weight:500;
+}
+
+.hero-pillars{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  max-width:720px;
+}
+
+.hero-pillar{
+  border-top:0.5px solid rgba(176,138,74,0.32);
+  padding-top:18px;
+}
+
+.hero-pillar-icon{
+  display:block;
+  font-size:28px;
+  line-height:1;
+  color:var(--brass);
+  margin-bottom:14px;
+}
+
+.hero-pillar strong{
+  display:block;
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--navy);
+  margin-bottom:9px;
+  font-weight:500;
+}
+
+.hero-pillar p{
+  margin:0;
+  font-size:12.5px;
+  line-height:1.6;
+  color:rgba(14,26,43,0.72);
+}
+
 /* MODEL */
 .model-home{
   padding:80px 56px 94px;
@@ -300,6 +349,40 @@ nav{
   gap:34px;
   max-width:1260px;
   margin:0 auto;
+}
+
+.model-cards-three{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.model-cards-three .model-card{
+  min-height:520px;
+}
+
+.model-card.network{
+  background:
+    radial-gradient(circle at 84% 18%,rgba(176,138,74,0.08),transparent 34%),
+    linear-gradient(135deg,rgba(248,244,236,0.98),rgba(237,230,218,0.76));
+  border:0.5px solid rgba(176,138,74,0.28);
+  color:var(--navy);
+}
+
+.model-card.network::before{
+  background:
+    repeating-linear-gradient(-45deg,transparent,transparent 92px,rgba(176,138,74,0.035) 92px,rgba(176,138,74,0.035) 93px);
+  opacity:0.7;
+}
+
+.network h3{
+  color:var(--navy);
+}
+
+.network .model-subtitle{
+  color:var(--greige);
+}
+
+.network .model-list li{
+  color:rgba(14,26,43,0.78);
 }
 
 .model-card{
@@ -751,7 +834,8 @@ footer{
 
 /* RESPONSIVE */
 @media(max-width:1050px){
-  .model-cards{
+  .model-cards,
+  .model-cards-three{
     grid-template-columns:1fr;
   }
 
@@ -795,6 +879,12 @@ footer{
 
   .hero h1{
     font-size:48px;
+  }
+
+  .hero-pillars{
+    grid-template-columns:1fr;
+    gap:18px;
+    max-width:560px;
   }
 
   .model-home{
@@ -850,7 +940,11 @@ footer{
 
 @media(max-width:600px){
   .hero h1{
-    font-size:42px;
+    font-size:40px;
+  }
+
+  .hero-pillars{
+    margin-top:28px;
   }
 
   .hero-actions{
@@ -906,62 +1000,54 @@ footer{
   <div class="hero-bg" aria-hidden="true"></div>
 
   <div class="hero-content fade-in">
+    <p class="hero-kicker" data-i18n="heroKicker">Competenze integrate. Valore concreto.</p>
+
     <h1 data-i18n="heroTitle">
-      Advisory integrata per<br>
-      imprese, professionisti<br>
-      e operazioni complesse.
+      Consulenza integrata per imprese, professionisti e operazioni complesse.
     </h1>
 
     <p data-i18n="heroSubtitle">
-      KTS Advisory affianca imprese, imprenditori e professionisti nella gestione ordinaria dell’attività aziendale e nella strutturazione di operazioni tecnicamente complesse di rilievo nazionale e internazionale.
+      KTS Advisory è un network multidisciplinare che affianca imprese, imprenditori, professionisti e famiglie imprenditoriali nella gestione ordinaria dell’attività aziendale e nella strutturazione di operazioni complesse di rilievo nazionale e internazionale.
     </p>
 
+    <div class="hero-pillars">
+      <div class="hero-pillar">
+        <span class="hero-pillar-icon">◎</span>
+        <strong data-i18n="pillarOneTitle">Per chi</strong>
+        <p data-i18n="pillarOneText">Imprese, imprenditori, professionisti e famiglie imprenditoriali.</p>
+      </div>
+
+      <div class="hero-pillar">
+        <span class="hero-pillar-icon">▦</span>
+        <strong data-i18n="pillarTwoTitle">Cosa facciamo</strong>
+        <p data-i18n="pillarTwoText">Gestione ordinaria e operazioni complesse societarie, fiscali, legali, finanziarie e patrimoniali.</p>
+      </div>
+
+      <div class="hero-pillar">
+        <span class="hero-pillar-icon">◇</span>
+        <strong data-i18n="pillarThreeTitle">Dove operiamo</strong>
+        <p data-i18n="pillarThreeText">In Italia e all’estero, con un network di relazioni nazionali e internazionali.</p>
+      </div>
+    </div>
+
     <div class="hero-actions">
-      <a href="attivita.html" class="btn-primary" data-i18n="heroButtonOne">Scopri il modello <span>→</span></a>
-      <a href="contatti.html" class="btn-outline" data-i18n="heroButtonTwo">Contattaci</a>
+      <a href="attivita.html" class="btn-primary" data-i18n="heroButtonOne">Scopri i servizi KTS <span>→</span></a>
+      <a href="lavora-con-noi.html" class="btn-outline" data-i18n="heroButtonTwo">Lavora con noi</a>
     </div>
   </div>
 </header>
 
 <section class="model-home">
   <div class="model-heading fade-in">
-    <h2 data-i18n="modelHeading">Il Modello KTS</h2>
+    <p class="runner-label" data-i18n="modelLabel">Chi siamo e cosa facciamo</p>
+    <h2 data-i18n="modelHeading">Un unico ecosistema per gestione aziendale e operazioni straordinarie.</h2>
     <p data-i18n="modelIntro">
-      Due livelli di competenza, un’unica direzione strategica. Executive per le operazioni complesse, Corporate per il supporto continuativo.
+      KTS integra competenze tecniche, strategiche e operative attraverso un network multidisciplinare di partner, avvocati, commercialisti e consulenti altamente specializzati.
     </p>
   </div>
 
-  <div class="model-cards">
+  <div class="model-cards model-cards-three">
     <article class="model-card executive fade-in">
-      <div class="model-card-inner">
-        <div class="model-top">
-          <div class="symbol" aria-hidden="true">
-            <img src="assets/kts-icon-spirale-aurea.png" alt="">
-          </div>
-
-          <h3>KTS<br>Executive</h3>
-        </div>
-
-        <p class="model-subtitle" data-i18n="executiveSubtitle">
-          Advisory strategico per operazioni complesse
-        </p>
-
-        <ul class="model-list">
-          <li data-i18n="executiveOne">M&amp;A e operazioni straordinarie</li>
-          <li data-i18n="executiveTwo">Advisory strategica</li>
-          <li data-i18n="executiveThree">Capital advisory</li>
-          <li data-i18n="executiveFour">Operazioni immobiliari</li>
-          <li data-i18n="executiveFive">Operazioni internazionali e commodities</li>
-          <li data-i18n="executiveSix">Gestione e valorizzazione di brevetti</li>
-        </ul>
-
-        <div class="model-action">
-          <a href="attivita.html" class="btn-gold" data-i18n="executiveButton">Scopri KTS Executive <span>→</span></a>
-        </div>
-      </div>
-    </article>
-
-    <article class="model-card corporate fade-in" style="transition-delay:0.12s">
       <div class="model-card-inner">
         <div class="model-top">
           <div class="symbol" aria-hidden="true">
@@ -972,20 +1058,78 @@ footer{
         </div>
 
         <p class="model-subtitle" data-i18n="corporateSubtitle">
-          Infrastruttura corporate continuativa
+          Supportiamo aziende e professionisti nelle esigenze ricorrenti della vita d’impresa.
         </p>
 
         <ul class="model-list">
-          <li data-i18n="corporateOne">Contrattualistica commerciale nazionale e internazionale</li>
-          <li data-i18n="corporateTwo">Compliance, privacy ed export</li>
-          <li data-i18n="corporateThree">Finanza, rating e credito</li>
-          <li data-i18n="corporateFour">Bandi, agevolazioni e incentivi</li>
-          <li data-i18n="corporateFive">Crediti fiscali e strumenti energetici</li>
-          <li data-i18n="corporateSix">Mediazione e supporto continuativo</li>
+          <li data-i18n="corporateOne">Contrattualistica e operazioni societarie</li>
+          <li data-i18n="corporateTwo">Fiscalità e adempimenti</li>
+          <li data-i18n="corporateThree">Finanza, rating e accesso al credito</li>
+          <li data-i18n="corporateFour">Compliance e gestione societaria</li>
+          <li data-i18n="corporateFive">Bandi, agevolazioni e finanza agevolata</li>
+          <li data-i18n="corporateSix">Mediazione e operazioni notarili</li>
         </ul>
 
         <div class="model-action">
-          <a href="attivita.html" class="btn-outline" data-i18n="corporateButton">Scopri KTS Corporate <span>→</span></a>
+          <a href="attivita.html" class="btn-gold" data-i18n="corporateButton">Scopri KTS Corporate <span>→</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="model-card corporate fade-in" style="transition-delay:0.12s">
+      <div class="model-card-inner">
+        <div class="model-top">
+          <div class="symbol" aria-hidden="true">
+            <img src="assets/kts-icon-spirale-aurea.png" alt="">
+          </div>
+
+          <h3>KTS<br>Executive</h3>
+        </div>
+
+        <p class="model-subtitle" data-i18n="executiveSubtitle">
+          Coordiniamo operazioni straordinarie e ad alto valore.
+        </p>
+
+        <ul class="model-list">
+          <li data-i18n="executiveOne">M&amp;A e operazioni societarie complesse</li>
+          <li data-i18n="executiveTwo">Advisory strategica e capital advisory</li>
+          <li data-i18n="executiveThree">Operazioni immobiliari e real estate</li>
+          <li data-i18n="executiveFour">Brevetti, IP e valorizzazione di asset</li>
+          <li data-i18n="executiveFive">Commodities e operazioni internazionali</li>
+          <li data-i18n="executiveSix">Progetti riservati e special situations</li>
+        </ul>
+
+        <div class="model-action">
+          <a href="attivita.html" class="btn-outline" data-i18n="executiveButton">Scopri KTS Executive <span>→</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="model-card network fade-in" style="transition-delay:0.24s">
+      <div class="model-card-inner">
+        <div class="model-top">
+          <div class="symbol" aria-hidden="true">
+            <img src="assets/kts-icon-spirale-aurea.png" alt="">
+          </div>
+
+          <h3>Il nostro<br>network</h3>
+        </div>
+
+        <p class="model-subtitle" data-i18n="networkSubtitle">
+          La forza di KTS è l’integrazione di competenze multidisciplinari e relazioni costruite nel tempo.
+        </p>
+
+        <ul class="model-list">
+          <li data-i18n="networkOne">Partner e professionisti specializzati</li>
+          <li data-i18n="networkTwo">Avvocati, commercialisti e consulenti</li>
+          <li data-i18n="networkThree">Relazioni professionali e imprenditoriali</li>
+          <li data-i18n="networkFour">Connessioni istituzionali e operative</li>
+          <li data-i18n="networkFive">Coordinamento di professionalità diverse</li>
+          <li data-i18n="networkSix">Soluzioni su misura ad alto valore aggiunto</li>
+        </ul>
+
+        <div class="model-action">
+          <a href="studio.html" class="btn-outline" data-i18n="networkButton">Scopri il network <span>→</span></a>
         </div>
       </div>
     </article>
@@ -1004,20 +1148,17 @@ footer{
 
   <div class="kts-runner-wrap" aria-label="Partner KTS">
     <div class="kts-runner-track">
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Studio Legale Notturno</div><span class="kts-partner-role">Partner</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Studio Legale Scalzone</div><span class="kts-partner-role">Partner</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Dott. Ferraro Salvatore</div><span class="kts-partner-role">Partner</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Studio Legale Musella</div><span class="kts-partner-role">Partner</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Dott. Tranchini Salvatore</div><span class="kts-partner-role">Partner</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Dott. Cremonesi Alessandro</div><span class="kts-partner-role">Partner</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Swiss Vis</div><span class="kts-partner-role">Partner</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Studio Legale Notturno</div><span class="kts-partner-role">Partner</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Studio Legale Scalzone</div><span class="kts-partner-role">Partner</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Dott. Ferraro Salvatore</div><span class="kts-partner-role">Partner</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Studio Legale Musella</div><span class="kts-partner-role">Partner</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Dott. Tranchini Salvatore</div><span class="kts-partner-role">Partner</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Dott. Cremonesi Alessandro</div><span class="kts-partner-role">Partner</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Swiss Vis</div><span class="kts-partner-role">Partner</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">Gesu</div><span class="kts-partner-role">Partner</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">Giuseppe</div><span class="kts-partner-role">Partner</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">Maria</div><span class="kts-partner-role">Partner</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">Il Bue</div><span class="kts-partner-role">Partner</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">L’Asinello</div><span class="kts-partner-role">Partner</span></div></div>
+
+      <div class="kts-partner-card"><div><div class="kts-partner-name">Gesu</div><span class="kts-partner-role">Partner</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">Giuseppe</div><span class="kts-partner-role">Partner</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">Maria</div><span class="kts-partner-role">Partner</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">Il Bue</div><span class="kts-partner-role">Partner</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">L’Asinello</div><span class="kts-partner-role">Partner</span></div></div>
     </div>
   </div>
 </section>
@@ -1034,17 +1175,17 @@ footer{
 
   <div class="kts-runner-wrap" aria-label="Clienti KTS">
     <div class="kts-runner-track">
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Clienti</div><span class="kts-partner-role">Cliente</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Clienti</div><span class="kts-partner-role">Cliente</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Clienti</div><span class="kts-partner-role">Cliente</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">NOI</div><span class="kts-partner-role">Cliente</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">NOI STESSI</div><span class="kts-partner-role">Cliente</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">NOI MEDESIMI</div><span class="kts-partner-role">Cliente</span></div></div>
 
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Clienti</div><span class="kts-partner-role">Cliente</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Clienti</div><span class="kts-partner-role">Cliente</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Clienti</div><span class="kts-partner-role">Cliente</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">NOI</div><span class="kts-partner-role">Cliente</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">NOI STESSI</div><span class="kts-partner-role">Cliente</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">NOI MEDESIMI</div><span class="kts-partner-role">Cliente</span></div></div>
 
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Clienti</div><span class="kts-partner-role">Cliente</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Clienti</div><span class="kts-partner-role">Cliente</span></div></div>
-      <div class="kts-partner-card"><div><div class="kts-partner-name">Clienti</div><span class="kts-partner-role">Cliente</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">NOI</div><span class="kts-partner-role">Cliente</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">NOI STESSI</div><span class="kts-partner-role">Cliente</span></div></div>
+      <div class="kts-partner-card"><div><div class="kts-partner-name">NOI MEDESIMI</div><span class="kts-partner-role">Cliente</span></div></div>
     </div>
   </div>
 </section>
@@ -1118,30 +1259,46 @@ const translations = {
     navWork: "Lavora con noi",
     navContacts: "Contatti",
 
-    heroTitle: "Advisory integrata per<br>imprese, professionisti<br>e operazioni complesse.",
-    heroSubtitle: "KTS Advisory affianca imprese, imprenditori e professionisti nella gestione ordinaria dell’attività aziendale e nella strutturazione di operazioni tecnicamente complesse di rilievo nazionale e internazionale.",
-    heroButtonOne: "Scopri il modello <span>→</span>",
-    heroButtonTwo: "Contattaci",
+    heroKicker: "Competenze integrate. Valore concreto.",
+    heroTitle: "Consulenza integrata per imprese, professionisti e operazioni complesse.",
+    heroSubtitle: "KTS Advisory è un network multidisciplinare che affianca imprese, imprenditori, professionisti e famiglie imprenditoriali nella gestione ordinaria dell’attività aziendale e nella strutturazione di operazioni complesse di rilievo nazionale e internazionale.",
+    pillarOneTitle: "Per chi",
+    pillarOneText: "Imprese, imprenditori, professionisti e famiglie imprenditoriali.",
+    pillarTwoTitle: "Cosa facciamo",
+    pillarTwoText: "Gestione ordinaria e operazioni complesse societarie, fiscali, legali, finanziarie e patrimoniali.",
+    pillarThreeTitle: "Dove operiamo",
+    pillarThreeText: "In Italia e all’estero, con un network di relazioni nazionali e internazionali.",
+    heroButtonOne: "Scopri i servizi KTS <span>→</span>",
+    heroButtonTwo: "Lavora con noi",
 
-    modelHeading: "Il Modello KTS",
-    modelIntro: "Due livelli di competenza, un’unica direzione strategica. Executive per le operazioni complesse, Corporate per il supporto continuativo.",
-    executiveSubtitle: "Advisory strategico per operazioni complesse",
-    executiveOne: "M&A e operazioni straordinarie",
-    executiveTwo: "Advisory strategica",
-    executiveThree: "Capital advisory",
-    executiveFour: "Operazioni immobiliari",
-    executiveFive: "Operazioni internazionali e commodities",
-    executiveSix: "Gestione e valorizzazione di brevetti",
+    modelLabel: "Chi siamo e cosa facciamo",
+    modelHeading: "Un unico ecosistema per gestione aziendale e operazioni straordinarie.",
+    modelIntro: "KTS integra competenze tecniche, strategiche e operative attraverso un network multidisciplinare di partner, avvocati, commercialisti e consulenti altamente specializzati.",
+    executiveSubtitle: "Coordiniamo operazioni straordinarie e ad alto valore.",
+    executiveOne: "M&A e operazioni societarie complesse",
+    executiveTwo: "Advisory strategica e capital advisory",
+    executiveThree: "Operazioni immobiliari e real estate",
+    executiveFour: "Brevetti, IP e valorizzazione di asset",
+    executiveFive: "Commodities e operazioni internazionali",
+    executiveSix: "Progetti riservati e special situations",
     executiveButton: "Scopri KTS Executive <span>→</span>",
 
-    corporateSubtitle: "Infrastruttura corporate continuativa",
-    corporateOne: "Contrattualistica commerciale nazionale e internazionale",
-    corporateTwo: "Compliance, privacy ed export",
-    corporateThree: "Finanza, rating e credito",
-    corporateFour: "Bandi, agevolazioni e incentivi",
-    corporateFive: "Crediti fiscali e strumenti energetici",
-    corporateSix: "Mediazione e supporto continuativo",
+    corporateSubtitle: "Supportiamo aziende e professionisti nelle esigenze ricorrenti della vita d’impresa.",
+    corporateOne: "Contrattualistica e operazioni societarie",
+    corporateTwo: "Fiscalità e adempimenti",
+    corporateThree: "Finanza, rating e accesso al credito",
+    corporateFour: "Compliance e gestione societaria",
+    corporateFive: "Bandi, agevolazioni e finanza agevolata",
+    corporateSix: "Mediazione e operazioni notarili",
     corporateButton: "Scopri KTS Corporate <span>→</span>",
+    networkSubtitle: "La forza di KTS è l’integrazione di competenze multidisciplinari e relazioni costruite nel tempo.",
+    networkOne: "Partner e professionisti specializzati",
+    networkTwo: "Avvocati, commercialisti e consulenti",
+    networkThree: "Relazioni professionali e imprenditoriali",
+    networkFour: "Connessioni istituzionali e operative",
+    networkFive: "Coordinamento di professionalità diverse",
+    networkSix: "Soluzioni su misura ad alto valore aggiunto",
+    networkButton: "Scopri il network <span>→</span>",
 
     footerText: "Strategia, struttura e continuità per accompagnare imprese, investitori e istituzioni nelle fasi decisive del percorso aziendale.",
     footerNavTitle: "Navigazione",
@@ -1164,30 +1321,46 @@ const translations = {
     navWork: "Work with us",
     navContacts: "Contacts",
 
-    heroTitle: "Integrated advisory for<br>companies, professionals<br>and complex transactions.",
-    heroSubtitle: "KTS Advisory supports companies, entrepreneurs and professionals in the ordinary management of business activities and in the structuring of technically complex transactions of national and international relevance.",
-    heroButtonOne: "Discover the model <span>→</span>",
-    heroButtonTwo: "Contact us",
+    heroKicker: "Integrated expertise. Concrete value.",
+    heroTitle: "Integrated consulting for companies, professionals and complex transactions.",
+    heroSubtitle: "KTS Advisory is a multidisciplinary network supporting companies, entrepreneurs, professionals and entrepreneurial families in ordinary business management and in the structuring of complex national and international transactions.",
+    pillarOneTitle: "Who we support",
+    pillarOneText: "Companies, entrepreneurs, professionals and entrepreneurial families.",
+    pillarTwoTitle: "What we do",
+    pillarTwoText: "Ordinary management and complex corporate, tax, legal, financial and asset-related transactions.",
+    pillarThreeTitle: "Where we operate",
+    pillarThreeText: "In Italy and abroad, through a network of national and international relationships.",
+    heroButtonOne: "Discover KTS services <span>→</span>",
+    heroButtonTwo: "Work with us",
 
-    modelHeading: "The KTS Model",
-    modelIntro: "Two levels of expertise, one strategic direction. Executive for complex transactions, Corporate for ongoing support.",
-    executiveSubtitle: "Strategic advisory for complex transactions",
-    executiveOne: "M&A and extraordinary transactions",
-    executiveTwo: "Strategic advisory",
-    executiveThree: "Capital advisory",
-    executiveFour: "Real estate transactions",
-    executiveFive: "International transactions and commodities",
-    executiveSix: "Patent management and enhancement",
+    modelLabel: "Who we are and what we do",
+    modelHeading: "One ecosystem for business management and extraordinary transactions.",
+    modelIntro: "KTS integrates technical, strategic and operational expertise through a multidisciplinary network of partners, lawyers, accountants and highly specialised consultants.",
+    executiveSubtitle: "We coordinate extraordinary and high-value transactions.",
+    executiveOne: "M&A and complex corporate transactions",
+    executiveTwo: "Strategic advisory and capital advisory",
+    executiveThree: "Real estate transactions and property assets",
+    executiveFour: "Patents, IP and asset enhancement",
+    executiveFive: "Commodities and international transactions",
+    executiveSix: "Confidential projects and special situations",
     executiveButton: "Discover KTS Executive <span>→</span>",
 
-    corporateSubtitle: "Ongoing corporate infrastructure",
-    corporateOne: "National and international commercial contracts",
-    corporateTwo: "Compliance, privacy and export",
-    corporateThree: "Finance, rating and credit",
-    corporateFour: "Grants, incentives and subsidised finance",
-    corporateFive: "Tax credits and energy instruments",
-    corporateSix: "Mediation and ongoing support",
+    corporateSubtitle: "We support companies and professionals in recurring business needs.",
+    corporateOne: "Contracts and corporate transactions",
+    corporateTwo: "Tax and recurring compliance",
+    corporateThree: "Finance, rating and access to credit",
+    corporateFour: "Compliance and corporate management",
+    corporateFive: "Grants, incentives and subsidised finance",
+    corporateSix: "Mediation and notarial transactions",
     corporateButton: "Discover KTS Corporate <span>→</span>",
+    networkSubtitle: "KTS strength lies in the integration of multidisciplinary expertise and long-standing relationships.",
+    networkOne: "Partners and specialised professionals",
+    networkTwo: "Lawyers, accountants and consultants",
+    networkThree: "Professional and entrepreneurial relationships",
+    networkFour: "Institutional and operational connections",
+    networkFive: "Coordination of different professionals",
+    networkSix: "Tailored high value-added solutions",
+    networkButton: "Discover the network <span>→</span>",
 
     footerText: "Strategy, structure and continuity to support companies, investors and institutions in decisive phases of the business journey.",
     footerNavTitle: "Navigation",
