@@ -691,6 +691,24 @@ footer{
   color:rgba(176,138,74,0.62);
 }
 
+
+.footer-policy{
+  display:flex;
+  gap:28px;
+}
+
+.footer-policy a{
+  font-size:11px;
+  color:rgba(243,239,232,0.46);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.footer-policy a:hover{
+  color:var(--brass-light);
+}
+
+
 /* ANIMATION */
 .fade-in{
   opacity:0;
@@ -889,6 +907,11 @@ footer{
   .dark-cta-text{
     padding-left:22px;
     font-size:30px;
+  }
+
+  .footer-policy{
+    flex-direction:column;
+    gap:10px;
   }
 }
 </style>
@@ -1103,6 +1126,10 @@ footer{
 
 <footer>
   <span class="footer-copy" data-i18n="footerCopy">© 2026 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
+  <div class="footer-policy">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="cookie-policy.html">Cookie Policy</a>
+  </div>
   <span class="footer-tagline" data-i18n="footerTagline">Struttura. Visione. Risultato.</span>
 </footer>
 
