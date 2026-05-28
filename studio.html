@@ -384,6 +384,55 @@ nav{
   max-width:620px;
 }
 
+
+.team-category{
+  max-width:1220px;
+  margin:0 auto 34px;
+}
+
+.team-category + .team-category{
+  margin-top:58px;
+}
+
+.team-category-head{
+  margin-bottom:24px;
+  padding-bottom:18px;
+  border-bottom:0.5px solid rgba(176,138,74,0.28);
+}
+
+.team-category-head h3{
+  font-family:var(--serif);
+  font-size:clamp(30px,3vw,48px);
+  font-weight:300;
+  line-height:1.08;
+  color:var(--navy);
+  margin-bottom:8px;
+}
+
+.team-category-head p{
+  font-size:13px;
+  line-height:1.7;
+  color:rgba(14,26,43,0.62);
+  max-width:720px;
+}
+
+.prof-photo.placeholder{
+  background:
+    radial-gradient(circle at 78% 18%,rgba(176,138,74,0.18),transparent 34%),
+    linear-gradient(135deg,#0E1A2B 0%,#08111F 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.prof-placeholder-initials{
+  font-family:var(--serif);
+  font-size:46px;
+  line-height:1;
+  color:var(--brass-light);
+  letter-spacing:0.04em;
+}
+
 .professionals-grid{
   max-width:1220px;
   margin:0 auto;
@@ -813,61 +862,107 @@ footer{
     </p>
   </div>
 
-  <div class="professionals-grid">
 
-    <article class="prof-card fade-in">
-      <div class="prof-photo">
-        <img src="assets/foto-avv-notturno.jpeg" alt="Giovanni Battista Notturno">
-      </div>
-      <div class="prof-content">
-        <h3 class="prof-name">Avv. Giovanni Battista<br>Notturno</h3>
-        <p class="prof-role">Partner</p>
-        <p class="prof-desc">
-          Specialista in finanza straordinaria e operazioni di M&amp;A. Supporta imprese e investitori nella definizione di strategie di crescita e nella gestione di operazioni complesse.
-        </p>
-      </div>
-    </article>
+  <div class="team-category">
+    <div class="team-category-head fade-in">
+      <h3>Soci fondatori</h3>
+      <p>Il nucleo fondativo di KTS Advisory, composto dai professionisti che guidano la struttura, il metodo operativo e lo sviluppo del network.</p>
+    </div>
 
-    <article class="prof-card fade-in" style="transition-delay:0.08s">
-      <div class="prof-photo">
-        <img src="assets/foto-avv-scalzone.jpg" alt="Alessandro Scalzone">
-      </div>
-      <div class="prof-content">
-        <h3 class="prof-name">Avv. Alessandro<br>Scalzone</h3>
-        <p class="prof-role">Partner</p>
-        <p class="prof-desc">
-          Esperto in diritto civile e commerciale, contrattualistica d’impresa e contenzioso. Si occupa di operazioni straordinarie e governance societaria.
-        </p>
-      </div>
-    </article>
+    <div class="professionals-grid founders-grid">
 
-    <article class="prof-card fade-in" style="transition-delay:0.16s">
-      <div class="prof-photo">
-        <img src="assets/foto-salvatore-ferraro.jpg" alt="Salvatore Ferraro">
-      </div>
-      <div class="prof-content">
-        <h3 class="prof-name">Dott. Salvatore<br>Ferraro</h3>
-        <p class="prof-role">Tax &amp; Corporate Advisor</p>
-        <p class="prof-desc">
-          Specialista in fiscalità nazionale e internazionale, pianificazione fiscale e consulenza societaria. Supporta aziende e gruppi nella gestione di questioni tributarie complesse.
-        </p>
-      </div>
-    </article>
+      <article class="prof-card fade-in">
+        <div class="prof-photo">
+          <img src="assets/foto-avv-notturno.jpeg" alt="Giovanni Battista Notturno">
+        </div>
+        <div class="prof-content">
+          <h3 class="prof-name">Avv. Giovanni Battista<br>Notturno</h3>
+          <p class="prof-role">Socio fondatore</p>
+          <p class="prof-desc">
+            Specialista in finanza straordinaria e operazioni di M&amp;A. Supporta imprese e investitori nella definizione di strategie di crescita e nella gestione di operazioni complesse.
+          </p>
+        </div>
+      </article>
 
-    <article class="prof-card fade-in" style="transition-delay:0.24s">
-      <div class="prof-photo">
-        <img src="assets/musella.jpg" alt="Avv. Musella">
-      </div>
-      <div class="prof-content">
-        <h3 class="prof-name">Avv.<br>Musella</h3>
-        <p class="prof-role">Mediazione Civile e Commerciale</p>
-        <p class="prof-desc">
-          Avvocato civilista esperto in mediazione civile e commerciale. Socio fondatore dell’Organismo di Mediazione De Jure Conciliando S.r.l. e responsabile delle procedure di mediazione, con oltre dieci anni di esperienza e più di 2.000 procedure gestite. Consulente legale per imprese e privati interessati a investimenti all’estero.
-        </p>
-      </div>
-    </article>
+      <article class="prof-card fade-in" style="transition-delay:0.08s">
+        <div class="prof-photo">
+          <img src="assets/foto-avv-scalzone.jpg" alt="Alessandro Scalzone">
+        </div>
+        <div class="prof-content">
+          <h3 class="prof-name">Avv. Alessandro<br>Scalzone</h3>
+          <p class="prof-role">Socio fondatore</p>
+          <p class="prof-desc">
+            L'Avv. Alessandro Scalzone è avvocato specializzato in operazioni straordinarie e M&amp;A cross-border, strutturazione di fondi alternativi e compliance AML/CTF, di cui cura policy, procedure e reportistica regolatoria. Ricopre incarichi di MLRO e Compliance Officer presso entità regolate in più giurisdizioni europee. Assiste imprese, fondi e investitori istituzionali nella contrattualistica d'impresa internazionale, nei rapporti con le autorità di vigilanza.
+          </p>
+        </div>
+      </article>
 
+      <article class="prof-card fade-in" style="transition-delay:0.16s">
+        <div class="prof-photo">
+          <img src="assets/foto-salvatore-ferraro.jpg" alt="Salvatore Ferraro">
+        </div>
+        <div class="prof-content">
+          <h3 class="prof-name">Dott. Salvatore<br>Ferraro</h3>
+          <p class="prof-role">Socio fondatore</p>
+          <p class="prof-desc">
+            Specialista in fiscalità nazionale e internazionale, pianificazione fiscale e consulenza societaria. Supporta aziende e gruppi nella gestione di questioni tributarie complesse.
+          </p>
+        </div>
+      </article>
+
+    </div>
   </div>
+
+  <div class="team-category">
+    <div class="team-category-head fade-in">
+      <h3>Partner</h3>
+      <p>Professionisti e consulenti selezionati che integrano le competenze del network KTS nelle diverse aree operative e specialistiche.</p>
+    </div>
+
+    <div class="professionals-grid partners-grid">
+
+      <article class="prof-card fade-in">
+        <div class="prof-photo">
+          <img src="assets/musella.jpg" alt="Avv. Musella">
+        </div>
+        <div class="prof-content">
+          <h3 class="prof-name">Avv.<br>Musella</h3>
+          <p class="prof-role">Partner — Mediazione Civile e Commerciale</p>
+          <p class="prof-desc">
+            Avvocato civilista esperto in mediazione civile e commerciale. Socio fondatore dell’Organismo di Mediazione De Jure Conciliando S.r.l. e responsabile delle procedure di mediazione, con oltre dieci anni di esperienza e più di 2.000 procedure gestite. Consulente legale per imprese e privati interessati a investimenti all’estero.
+          </p>
+        </div>
+      </article>
+
+      <article class="prof-card fade-in" style="transition-delay:0.08s">
+        <div class="prof-photo placeholder" aria-hidden="true">
+          <span class="prof-placeholder-initials">AC</span>
+        </div>
+        <div class="prof-content">
+          <h3 class="prof-name">Dott. Alessandro<br>Cremonesi</h3>
+          <p class="prof-role">Partner — Consulente U. fiscale</p>
+          <p class="prof-desc">
+            Consulente U. fiscale. Supporta il network KTS nelle attività di consulenza fiscale e nell’analisi delle esigenze tributarie connesse alla gestione ordinaria e alle operazioni aziendali.
+          </p>
+        </div>
+      </article>
+
+      <article class="prof-card fade-in" style="transition-delay:0.16s">
+        <div class="prof-photo placeholder" aria-hidden="true">
+          <span class="prof-placeholder-initials">GC</span>
+        </div>
+        <div class="prof-content">
+          <h3 class="prof-name">Dott. Guido<br>Costante</h3>
+          <p class="prof-role">Partner</p>
+          <p class="prof-desc">
+            Descrizione professionale in aggiornamento.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
 </section>
 
 <section class="value-band">
@@ -936,7 +1031,7 @@ footer{
   </div>
 
   <div class="footer-bottom">
-    <span class="footer-copy" data-i18n="footerCopy">© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
+    <span class="footer-copy" data-i18n="footerCopy">© 2026 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
     <div class="footer-policy">
       <a href="#">Privacy Policy</a>
       <a href="#">Cookie Policy</a>
@@ -985,7 +1080,7 @@ const translations = {
     footerContacts: "Contatti",
     footerActivitiesTitle: "Attività",
     footerContactTitle: "Contatti",
-    footerCopy: "© 2025 KTS Advisory S.r.l. — Tutti i diritti riservati."
+    footerCopy: "© 2026 KTS Advisory S.r.l. — Tutti i diritti riservati."
   },
 
   en: {
@@ -1018,7 +1113,7 @@ const translations = {
     footerContacts: "Contacts",
     footerActivitiesTitle: "Services",
     footerContactTitle: "Contacts",
-    footerCopy: "© 2025 KTS Advisory S.r.l. — All rights reserved."
+    footerCopy: "© 2026 KTS Advisory S.r.l. — All rights reserved."
   }
 };
 
