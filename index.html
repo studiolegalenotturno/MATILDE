@@ -605,7 +605,7 @@ nav{
 }
 
 
-/* ALFA ECOSYSTEM DIAGRAM */
+/* ALFA ECOSYSTEM DIAGRAM — SVG LINES VERSION */
 .alfa-ecosystem{
   padding:88px 56px 94px;
   background:
@@ -641,18 +641,34 @@ nav{
 }
 
 .alfa-diagram{
-  max-width:1120px;
-  min-height:650px;
-  margin:0 auto;
   position:relative;
+  width:100%;
+  max-width:1120px;
+  height:760px;
+  margin:0 auto;
+}
+
+.alfa-svg-lines{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:1;
+  pointer-events:none;
+}
+
+.alfa-svg-lines line{
+  stroke:rgba(176,138,74,0.50);
+  stroke-width:1.35;
+  vector-effect:non-scaling-stroke;
 }
 
 .alfa-center{
   position:absolute;
   left:50%;
   top:50%;
-  width:230px;
-  height:230px;
+  width:240px;
+  height:240px;
   transform:translate(-50%,-50%);
   border-radius:50%;
   background:
@@ -667,7 +683,7 @@ nav{
   align-items:center;
   justify-content:center;
   text-align:center;
-  z-index:5;
+  z-index:3;
 }
 
 .alfa-center .alfa-letter{
@@ -698,123 +714,23 @@ nav{
 
 .alfa-node{
   position:absolute;
-  width:170px;
-  height:170px;
-  border-radius:50%;
-  border:0.5px solid rgba(176,138,74,0.48);
-  background:rgba(248,244,236,0.78);
+  width:190px;
+  min-height:170px;
+  border-radius:28px;
+  border:0.5px solid rgba(176,138,74,0.44);
+  background:rgba(248,244,236,0.88);
+  box-shadow:0 18px 42px rgba(14,26,43,0.055);
+  padding:20px 18px;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:18px;
-  box-shadow:0 18px 42px rgba(14,26,43,0.055);
-  z-index:4;
-}
-
-.alfa-node::after{
-  content:"";
-  position:absolute;
-  width:78px;
-  height:1px;
-  background:rgba(176,138,74,0.48);
-  transform-origin:center;
-  z-index:-1;
-}
-
-.alfa-node.top{
-  left:50%;
-  top:4%;
-  transform:translateX(-50%);
-}
-
-.alfa-node.top::after{
-  left:50%;
-  top:100%;
-  transform:translateX(-50%) rotate(90deg);
-}
-
-.alfa-node.top-right{
-  right:14%;
-  top:16%;
-}
-
-.alfa-node.top-right::after{
-  right:92%;
-  top:72%;
-  transform:rotate(135deg);
-}
-
-.alfa-node.right{
-  right:4%;
-  top:50%;
-  transform:translateY(-50%);
-}
-
-.alfa-node.right::after{
-  right:100%;
-  top:50%;
-}
-
-.alfa-node.bottom-right{
-  right:14%;
-  bottom:16%;
-}
-
-.alfa-node.bottom-right::after{
-  right:92%;
-  bottom:72%;
-  transform:rotate(-135deg);
-}
-
-.alfa-node.bottom{
-  left:50%;
-  bottom:4%;
-  transform:translateX(-50%);
-}
-
-.alfa-node.bottom::after{
-  left:50%;
-  bottom:100%;
-  transform:translateX(-50%) rotate(90deg);
-}
-
-.alfa-node.bottom-left{
-  left:14%;
-  bottom:16%;
-}
-
-.alfa-node.bottom-left::after{
-  left:92%;
-  bottom:72%;
-  transform:rotate(135deg);
-}
-
-.alfa-node.left{
-  left:4%;
-  top:50%;
-  transform:translateY(-50%);
-}
-
-.alfa-node.left::after{
-  left:100%;
-  top:50%;
-}
-
-.alfa-node.top-left{
-  left:14%;
-  top:16%;
-}
-
-.alfa-node.top-left::after{
-  left:92%;
-  top:72%;
-  transform:rotate(-135deg);
+  z-index:2;
 }
 
 .alfa-icon{
-  font-size:30px;
+  font-size:28px;
   color:var(--brass);
   line-height:1;
   margin-bottom:12px;
@@ -823,7 +739,7 @@ nav{
 .alfa-node h3{
   font-family:var(--sans);
   font-size:11px;
-  letter-spacing:0.13em;
+  letter-spacing:0.12em;
   text-transform:uppercase;
   color:var(--navy);
   font-weight:500;
@@ -833,13 +749,57 @@ nav{
 
 .alfa-node p{
   font-size:11.5px;
-  line-height:1.48;
+  line-height:1.5;
   color:rgba(14,26,43,0.68);
+}
+
+.alfa-node.top{
+  left:50%;
+  top:24px;
+  transform:translateX(-50%);
+}
+
+.alfa-node.top-right{
+  right:120px;
+  top:90px;
+}
+
+.alfa-node.right{
+  right:32px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.alfa-node.bottom-right{
+  right:120px;
+  bottom:90px;
+}
+
+.alfa-node.bottom{
+  left:50%;
+  bottom:24px;
+  transform:translateX(-50%);
+}
+
+.alfa-node.bottom-left{
+  left:120px;
+  bottom:90px;
+}
+
+.alfa-node.left{
+  left:32px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.alfa-node.top-left{
+  left:120px;
+  top:90px;
 }
 
 .alfa-footer-text{
   max-width:860px;
-  margin:22px auto 0;
+  margin:26px auto 0;
   text-align:center;
   border-top:0.5px solid rgba(176,138,74,0.28);
   padding-top:22px;
@@ -1385,7 +1345,45 @@ footer{
   }
 }
 
+
 /* MOBILE HARD FIXES */
+@media(max-width:1050px){
+  .alfa-diagram{
+    height:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    max-width:760px;
+  }
+
+  .alfa-svg-lines{
+    display:none;
+  }
+
+  .alfa-center,
+  .alfa-node{
+    position:relative;
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    bottom:auto !important;
+    transform:none !important;
+    width:100%;
+    height:auto;
+  }
+
+  .alfa-center{
+    grid-column:1 / -1;
+    min-height:210px;
+    border-radius:30px;
+  }
+
+  .alfa-node{
+    min-height:160px;
+    border-radius:24px;
+  }
+}
+
 @media(max-width:900px){
   nav{
     z-index:9999 !important;
@@ -1410,43 +1408,6 @@ footer{
 
   .hero-content{
     max-width:100%;
-  }
-
-  .alfa-diagram{
-    max-width:680px;
-    min-height:auto !important;
-    margin:0 auto;
-    display:grid !important;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-  }
-
-  .alfa-center,
-  .alfa-node{
-    position:relative !important;
-    left:auto !important;
-    right:auto !important;
-    top:auto !important;
-    bottom:auto !important;
-    transform:none !important;
-    width:100% !important;
-    height:auto !important;
-  }
-
-  .alfa-center{
-    grid-column:1 / -1;
-    min-height:190px;
-    border-radius:28px;
-  }
-
-  .alfa-node{
-    min-height:155px;
-    border-radius:22px;
-    padding:22px 18px;
-  }
-
-  .alfa-node::after{
-    display:none !important;
   }
 }
 
@@ -1486,7 +1447,7 @@ footer{
   }
 
   .alfa-diagram{
-    display:flex !important;
+    display:flex;
     flex-direction:column;
     gap:14px;
   }
@@ -1697,6 +1658,7 @@ footer{
 </section>
 
 
+
 <section class="alfa-ecosystem">
   <div class="alfa-heading fade-in">
     <p class="runner-label" data-i18n="alfaLabel">Esempio operativo</p>
@@ -1707,6 +1669,18 @@ footer{
   </div>
 
   <div class="alfa-diagram fade-in" style="transition-delay:0.10s">
+
+    <svg class="alfa-svg-lines" viewBox="0 0 1120 760" preserveAspectRatio="none" aria-hidden="true">
+      <line x1="560" y1="260" x2="560" y2="195"></line>
+      <line x1="645" y1="295" x2="810" y2="190"></line>
+      <line x1="680" y1="380" x2="898" y2="380"></line>
+      <line x1="645" y1="465" x2="810" y2="570"></line>
+      <line x1="560" y1="500" x2="560" y2="565"></line>
+      <line x1="475" y1="465" x2="310" y2="570"></line>
+      <line x1="440" y1="380" x2="222" y2="380"></line>
+      <line x1="475" y1="295" x2="310" y2="190"></line>
+    </svg>
+
     <div class="alfa-center">
       <div class="alfa-letter">A</div>
       <strong data-i18n="alfaCenter">Società<br>ALFA</strong>
@@ -1752,7 +1726,7 @@ footer{
     <article class="alfa-node left">
       <div class="alfa-icon">⌁</div>
       <h3 data-i18n="alfaNodeGrowthTitle">Crescita & M&A</h3>
-      <p data-i18n="alfaNodeGrowthText">Joint venture, M&A, operazioni straordinarie e sviluppo strategico.</p>
+      <p data-i18n="alfaNodeGrowthText">Joint venture, M&amp;A, operazioni straordinarie e sviluppo strategico.</p>
     </article>
 
     <article class="alfa-node top-left">
