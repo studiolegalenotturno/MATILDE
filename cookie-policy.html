@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Policy | KTS Advisory</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ivory:#F3EFE8;
+  --ivory-light:#F8F4EC;
+  --carbon:#0E1A2B;
+  --navy:#0E1A2B;
+  --navy-deep:#08111F;
+  --brass:#B08A4A;
+  --brass-light:#C9A96E;
+  --greige:#8B847C;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',sans-serif;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--ivory);
+  color:var(--carbon);
+  font-family:var(--sans);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:120;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 56px;
+  height:76px;
+  background:rgba(243,239,232,0.88);
+  backdrop-filter:blur(14px);
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
+
+.logo-wrap{display:flex;align-items:center;text-decoration:none}
+.logo-image-wrap{height:52px}
+
+.site-logo{
+  height:52px;
+  width:auto;
+  display:block;
+  object-fit:contain;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  list-style:none;
+}
+
+.nav-links a{
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--navy);
+  text-decoration:none;
+  font-weight:500;
+  opacity:0.68;
+  transition:opacity 0.2s,color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  opacity:1;
+  color:var(--brass);
+}
+
+.mobile-menu-toggle{
+  display:none;
+  width:42px;
+  height:42px;
+  border:0.5px solid rgba(176,138,74,0.45);
+  background:rgba(243,239,232,0.42);
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  z-index:130;
+}
+
+.mobile-menu-toggle span{
+  width:19px;
+  height:1px;
+  background:var(--navy);
+  transition:transform 0.25s ease,opacity 0.25s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.mobile-menu-toggle.active span:nth-child(2){opacity:0}
+.mobile-menu-toggle.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+.mobile-menu{
+  position:fixed;
+  top:74px;
+  left:0;
+  right:0;
+  z-index:110;
+  background:rgba(243,239,232,0.98);
+  backdrop-filter:blur(18px);
+  border-bottom:0.5px solid rgba(176,138,74,0.22);
+  padding:26px 28px 30px;
+  display:none;
+  flex-direction:column;
+  gap:0;
+  box-shadow:0 24px 50px rgba(14,26,43,0.12);
+}
+
+.mobile-menu.open{display:flex}
+
+.mobile-menu a{
+  font-family:var(--sans);
+  font-size:12px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--navy);
+  text-decoration:none;
+  font-weight:500;
+  padding:16px 0;
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
+
+.policy-hero{
+  padding:150px 56px 72px;
+  background:
+    radial-gradient(circle at 86% 28%,rgba(176,138,74,0.10),transparent 32%),
+    linear-gradient(135deg,#F8F4EC 0%,#F3EFE8 100%);
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
+
+.policy-hero-inner{
+  max-width:1220px;
+  margin:0 auto;
+}
+
+.section-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:24px;
+  font-weight:500;
+}
+
+.brass-line{
+  width:32px;
+  height:1px;
+  background:var(--brass);
+  margin-bottom:32px;
+}
+
+.policy-hero h1{
+  font-family:var(--serif);
+  font-size:clamp(42px,5vw,78px);
+  font-weight:300;
+  line-height:1.04;
+  color:var(--navy);
+  max-width:900px;
+}
+
+.policy-hero p{
+  margin-top:26px;
+  max-width:760px;
+  font-size:15px;
+  line-height:1.85;
+  color:rgba(14,26,43,0.70);
+}
+
+.policy-content{
+  padding:76px 56px 88px;
+}
+
+.policy-document{
+  max-width:1040px;
+  margin:0 auto;
+  padding:58px 64px;
+  background:rgba(248,244,236,0.72);
+  border:0.5px solid rgba(176,138,74,0.24);
+  box-shadow:0 18px 38px rgba(14,26,43,0.055);
+}
+
+.policy-document h1{
+  font-family:var(--serif);
+  font-size:38px;
+  font-weight:300;
+  color:var(--navy);
+  line-height:1.1;
+  margin-bottom:10px;
+}
+
+.policy-document .doc-main-title{
+  font-family:var(--serif);
+  font-size:28px;
+  font-weight:300;
+  color:var(--navy);
+  line-height:1.18;
+  margin:22px 0 8px;
+}
+
+.policy-document .subtitle{
+  font-size:13px;
+  color:var(--brass);
+  letter-spacing:0.04em;
+  margin-bottom:24px;
+}
+
+.policy-document h2{
+  font-family:var(--serif);
+  font-size:30px;
+  font-weight:300;
+  color:var(--navy);
+  line-height:1.15;
+  margin:34px 0 14px;
+  padding-top:18px;
+  border-top:0.5px solid rgba(176,138,74,0.20);
+}
+
+.policy-document p{
+  font-size:14px;
+  line-height:1.86;
+  color:rgba(14,26,43,0.76);
+  margin-bottom:14px;
+}
+
+.policy-document .bullet{
+  padding-left:18px;
+  text-indent:-12px;
+}
+
+.policy-document .meta-line{
+  color:var(--brass);
+  font-weight:500;
+  margin-top:16px;
+}
+
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
+  margin:22px 0 26px;
+  border:0.5px solid rgba(176,138,74,0.24);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:720px;
+  background:rgba(243,239,232,0.50);
+}
+
+th,td{
+  border:0.5px solid rgba(176,138,74,0.20);
+  padding:13px 14px;
+  text-align:left;
+  vertical-align:top;
+  font-size:12.2px;
+  line-height:1.55;
+  color:rgba(14,26,43,0.74);
+}
+
+th{
+  font-weight:500;
+  color:var(--navy);
+  background:rgba(176,138,74,0.12);
+}
+
+footer{
+  background:#08111F;
+  padding:40px 56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:0.5px solid rgba(176,138,74,0.18);
+}
+
+.footer-copy{
+  font-family:var(--sans);
+  font-size:11px;
+  color:rgba(243,239,232,0.28);
+  font-weight:300;
+  letter-spacing:0.08em;
+}
+
+.footer-policy{
+  display:flex;
+  gap:28px;
+}
+
+.footer-policy a{
+  font-size:11px;
+  color:rgba(243,239,232,0.46);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.footer-policy a:hover{color:var(--brass-light)}
+
+@media(max-width:900px){
+  body.menu-open{overflow:hidden}
+
+  nav{
+    padding:0 24px;
+    height:74px;
+    z-index:9999;
+  }
+
+  .site-logo{height:48px}
+  .logo-image-wrap{height:48px}
+
+  .nav-links{
+    display:none;
+  }
+
+  .mobile-menu-toggle{
+    display:flex;
+    flex-shrink:0;
+    position:relative;
+    margin-left:auto;
+    z-index:10001;
+  }
+
+  .mobile-menu{z-index:9998}
+
+  .policy-hero{
+    padding:128px 28px 62px;
+  }
+
+  .policy-content{
+    padding:56px 28px 70px;
+  }
+
+  .policy-document{
+    padding:42px 30px;
+  }
+
+  footer{
+    padding:32px 28px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+  }
+}
+
+@media(max-width:620px){
+  nav{padding:0 18px}
+  .site-logo{height:44px}
+  .logo-image-wrap{height:44px}
+  .mobile-menu{padding:22px 22px 28px}
+
+  .policy-hero{
+    padding:118px 22px 54px;
+  }
+
+  .policy-hero h1{
+    font-size:40px;
+  }
+
+  .policy-content{
+    padding:42px 22px 58px;
+  }
+
+  .policy-document{
+    padding:32px 22px;
+  }
+
+  .policy-document h1{
+    font-size:32px;
+  }
+
+  .policy-document h2{
+    font-size:26px;
+  }
+
+  .footer-policy{
+    flex-direction:column;
+    gap:10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html" class="logo-wrap logo-image-wrap">
+    <img src="assets/kts-advisory-logo-web.png?v=15" alt="KTS Advisory" class="site-logo">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="about.html">Chi siamo</a></li>
+    <li><a href="attivita.html">Attività</a></li>
+    <li><a href="approccio.html">Approccio</a></li>
+    <li><a href="studio.html">Lo Studio</a></li>
+    <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+    <li><a href="contatti.html">Contatti</a></li>
+  </ul>
+
+  <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Apri menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="about.html">Chi siamo</a>
+  <a href="attivita.html">Attività</a>
+  <a href="approccio.html">Approccio</a>
+  <a href="studio.html">Lo Studio</a>
+  <a href="lavora-con-noi.html">Lavora con noi</a>
+  <a href="contatti.html">Contatti</a>
+</div>
+
+<header class="policy-hero">
+  <div class="policy-hero-inner">
+    <p class="section-label">Cookie Policy</p>
+    <div class="brass-line"></div>
+    <h1>Cookie Policy</h1>
+    <p>Documento informativo pubblicato per gli utenti del sito www.ktsadvisory.it.</p>
+  </div>
+</header>
+
+<main class="policy-content">
+  <article class="policy-document">
+    <h2 class="doc-main-title">INFORMATIVA SULL&#x27;USO DEI COOKIE</h2>
+<p class="subtitle">(Cookie Policy — Sito www.ktsadvisory.it)</p>
+<p>Resa ai sensi dell&#x27;art. 13 GDPR, dell&#x27;art. 122 del Codice Privacy e delle &quot;Linee guida cookie e altri strumenti di tracciamento&quot; del Garante per la Protezione dei Dati Personali del 10 giugno 2021 (provv. n. 231)</p>
+<p>La presente Cookie Policy descrive le tipologie di cookie e di tecnologie analoghe utilizzate sul sito www.ktsadvisory.it (di seguito, il &quot;Sito&quot;), nonché le modalità con cui l&#x27;utente può gestire le proprie preferenze in materia.</p>
+<p>La Cookie Policy costituisce parte integrante della Privacy Policy del Sito, alla quale si rinvia per quanto non espressamente disciplinato di seguito (in particolare per quanto concerne i diritti dell&#x27;interessato, le modalità di trattamento e la conservazione dei dati personali).</p>
+<h2>1. Titolare del trattamento</h2>
+<p>Il Titolare del trattamento dei dati raccolti tramite cookie installati direttamente dal Sito è:</p>
+<p>KTS Advisory S.r.l.</p>
+<p>Sede legale: Via dei Mille n. 16, 80121 Napoli (NA), Italia</p>
+<p>E-mail: info@ktsadvisory.it</p>
+<p>Telefono: +39 081 185 35 26</p>
+<h2>2. Cosa sono i cookie e tecnologie analoghe</h2>
+<p>I cookie sono piccoli file di testo che i siti visitati dall&#x27;utente inviano al terminale dell&#x27;utente (computer, smartphone, tablet) dove vengono memorizzati per essere ritrasmessi agli stessi siti in occasione di visite successive. I cookie consentono il funzionamento del sito, la memorizzazione delle preferenze dell&#x27;utente e l&#x27;acquisizione di informazioni statistiche o di profilazione.</p>
+<p>Le &quot;tecnologie analoghe&quot; comprendono ogni strumento (web beacon, pixel, tag, SDK, fingerprinting attivo o passivo) che memorizzi o consenta l&#x27;accesso a informazioni nel dispositivo dell&#x27;utente. La presente informativa si applica indistintamente a tutte tali tecnologie.</p>
+<h2>3. Tipologie di cookie utilizzati</h2>
+<p>In conformità alle Linee guida del Garante per la Protezione dei Dati Personali del 10 giugno 2021, i cookie si distinguono nelle seguenti categorie:</p>
+<p>3.1 Cookie tecnici</p>
+<p>I cookie tecnici sono quelli utilizzati al solo fine di effettuare la trasmissione di una comunicazione su una rete di comunicazione elettronica, o nella misura strettamente necessaria al fornitore di un servizio della società dell&#x27;informazione esplicitamente richiesto dall&#x27;utente a erogare tale servizio (art. 122 del Codice Privacy).</p>
+<p>Tali cookie non richiedono il consenso preventivo dell&#x27;utente e si distinguono in:</p>
+<p>cookie di navigazione o sessione: garantiscono la normale navigazione e fruizione del Sito;</p>
+<p>cookie di funzionalità: permettono all&#x27;utente la navigazione in funzione di criteri selezionati (ad es. la lingua) al fine di migliorare il servizio reso;</p>
+<p>cookie analitici di prima parte anonimizzati: ove utilizzati, sono assimilati ai cookie tecnici purché adottate idonee misure di mascheramento dell&#x27;indirizzo IP e di limitazione dell&#x27;incrocio con altri dati.</p>
+<p>3.2 Cookie di profilazione</p>
+<p>I cookie di profilazione sono volti a creare profili relativi all&#x27;utente e a inviare messaggi pubblicitari in linea con le preferenze manifestate nell&#x27;ambito della navigazione. Tali cookie possono essere installati solo previo consenso libero, specifico, informato e inequivocabile dell&#x27;utente, prestato mediante azione positiva.</p>
+<p>Il Sito non utilizza cookie di profilazione, di marketing o di pubblicità comportamentale.</p>
+<p>3.3 Cookie di terze parti</p>
+<p>Si tratta di cookie installati da soggetti diversi dal Titolare, ai quali è demandata la titolarità del trattamento. Per tali cookie il Titolare del Sito assume la posizione di mero intermediario tecnico e l&#x27;utente può prendere visione delle relative informative e gestire le preferenze direttamente sui siti dei rispettivi titolari, ai link indicati nel successivo paragrafo 5.</p>
+<h2>4. Elenco dei cookie utilizzati dal Sito</h2>
+<p>Di seguito si riporta l&#x27;elenco dettagliato dei cookie installati dal Sito, con indicazione della finalità, del fornitore, della durata e della tipologia.</p>
+<p>4.1 Cookie tecnici (prima parte)</p>
+<p>Tali cookie non richiedono il consenso dell&#x27;utente. Il loro utilizzo è effettuato sulla base dell&#x27;art. 122 del Codice Privacy.</p>
+<div class="table-wrap"><table><tr><th>Nome</th><th>Titolare / Fornitore</th><th>Finalità</th><th>Durata</th><th>Tipologia</th></tr><tr><td>PHPSESSID / cookie di sessione</td><td>KTS Advisory S.r.l. (prima parte)</td><td>Conservazione dello stato di navigazione tra le pagine del Sito</td><td>Sessione (eliminato alla chiusura del browser)</td><td>Tecnico — di sessione</td></tr><tr><td>lang / preferenze lingua</td><td>KTS Advisory S.r.l. (prima parte)</td><td>Memorizzazione della lingua selezionata (IT / EN)</td><td>Massimo 12 mesi</td><td>Tecnico — di funzionalità</td></tr><tr><td>cookie_consent / consenso</td><td>KTS Advisory S.r.l. (prima parte)</td><td>Memorizzazione delle preferenze espresse dall&#x27;utente sui cookie</td><td>Massimo 6 mesi</td><td>Tecnico — di funzionalità</td></tr></table></div>
+<p>Nota: l&#x27;elenco riflette i cookie tecnici tipicamente installati dalla piattaforma su cui è realizzato il Sito. Gli identificativi precisi possono variare in funzione di aggiornamenti tecnici.</p>
+<p>4.2 Cookie di terze parti</p>
+<p>Il Sito incorpora nella pagina &quot;Contatti&quot; un servizio di mappa interattiva fornito da Google. L&#x27;attivazione di tale servizio può comportare l&#x27;installazione di cookie da parte del fornitore terzo.</p>
+<div class="table-wrap"><table><tr><th>Servizio</th><th>Fornitore</th><th>Finalità</th><th>Durata</th><th>Tipologia</th></tr><tr><td>Google Maps (mappa pagina Contatti)</td><td>Google Ireland Ltd. — Gordon House, Barrow Street, Dublino 4, Irlanda</td><td>Visualizzazione della mappa interattiva con indicazione della sede del Titolare</td><td>Variabile (fino a 24 mesi)</td><td>Terza parte — non tecnico (subordinato a consenso)</td></tr></table></div>
+<p>L&#x27;installazione dei cookie di Google Maps richiede il consenso preventivo dell&#x27;utente, che può essere prestato attraverso il banner presentato al primo accesso o successivamente modificato secondo le modalità indicate al paragrafo 6.</p>
+<h2>5. Informative dei terzi</h2>
+<p>Per ulteriori informazioni sui cookie installati dai terzi, sulle finalità del trattamento e per esercitare i propri diritti nei confronti dei rispettivi titolari, si rinvia ai seguenti link:</p>
+<p>Google (Maps, Fonts e servizi correlati) — Informativa: https://policies.google.com/privacy</p>
+<p>Google — Tecnologie utilizzate: https://policies.google.com/technologies/cookies</p>
+<p>Google — Gestione delle preferenze: https://adssettings.google.com</p>
+<h2>6. Gestione delle preferenze e revoca del consenso</h2>
+<p>L&#x27;utente può in ogni momento prestare, modificare o revocare il proprio consenso all&#x27;installazione dei cookie diversi da quelli tecnici, attraverso una delle seguenti modalità:</p>
+<p>6.1 Tramite il banner cookie</p>
+<p>Al primo accesso al Sito viene presentato all&#x27;utente un banner contenente un&#x27;informativa breve e i pulsanti per: (i) accettare tutti i cookie; (ii) rifiutare tutti i cookie non tecnici; (iii) personalizzare le preferenze. La chiusura del banner mediante apposita selezione di un comando di scorrimento o di click su contenuti diversi dal banner non equivale a prestazione di consenso, in conformità al provv. del Garante n. 231/2021.</p>
+<p>L&#x27;utente può rivedere e modificare in qualunque momento le proprie scelte cliccando sul comando &quot;Gestisci cookie&quot; disponibile in calce a ogni pagina del Sito.</p>
+<p>6.2 Tramite le impostazioni del browser</p>
+<p>L&#x27;utente può gestire l&#x27;installazione e la cancellazione dei cookie anche attraverso le impostazioni del proprio browser. Si segnala che la disabilitazione totale dei cookie tecnici potrebbe compromettere il corretto funzionamento del Sito. Di seguito i link alle istruzioni per i principali browser:</p>
+<p>Google Chrome: https://support.google.com/chrome/answer/95647</p>
+<p>Mozilla Firefox: https://support.mozilla.org/it/kb/Gestione%20dei%20cookie</p>
+<p>Apple Safari: https://support.apple.com/it-it/guide/safari/sfri11471/mac</p>
+<p>Microsoft Edge: https://support.microsoft.com/it-it/microsoft-edge</p>
+<p>Opera: https://help.opera.com/en/latest/web-preferences/</p>
+<p>6.3 Effetti della revoca</p>
+<p>La revoca del consenso non pregiudica la liceità del trattamento effettuato in base al consenso prima della revoca medesima, ai sensi dell&#x27;art. 7, par. 3, GDPR. Le scelte effettuate dall&#x27;utente con riferimento ai cookie potranno essere riproposte in caso di cambiamenti sostanziali delle condizioni di trattamento, di nuove tipologie di cookie o di modifiche tecniche, e comunque a distanza di almeno sei mesi dalla precedente presentazione del banner, in conformità al punto 7.3 delle Linee guida del Garante n. 231/2021.</p>
+<h2>7. Trasferimento dei dati al di fuori dell&#x27;UE</h2>
+<p>L&#x27;utilizzo di servizi di terze parti, in particolare Google Maps, può comportare il trasferimento di dati personali (in particolare l&#x27;indirizzo IP) verso Paesi terzi rispetto allo Spazio Economico Europeo, ivi inclusi gli Stati Uniti d&#x27;America. Tali trasferimenti avvengono in presenza delle garanzie previste dagli artt. 44 ss. GDPR (decisione di adeguatezza nell&#x27;ambito del Data Privacy Framework e/o clausole contrattuali tipo).</p>
+<p>Per maggiori informazioni si rinvia al paragrafo 7 della Privacy Policy.</p>
+<h2>8. Diritti dell&#x27;interessato</h2>
+<p>L&#x27;utente può esercitare in ogni momento i diritti riconosciuti dagli artt. 15-22 GDPR, come descritti nella Privacy Policy, scrivendo al Titolare ai recapiti indicati al paragrafo 1. È inoltre fatto salvo il diritto di proporre reclamo all&#x27;Autorità Garante per la Protezione dei Dati Personali (Piazza Venezia 11, 00187 Roma — www.garanteprivacy.it).</p>
+<h2>9. Modifiche alla presente Cookie Policy</h2>
+<p>Il Titolare si riserva di modificare e aggiornare la presente Cookie Policy a fronte di evoluzioni normative, regolamentari, tecniche o organizzative. Le modifiche saranno tempestivamente pubblicate sul Sito; in caso di modifiche sostanziali, il consenso ai cookie sarà nuovamente richiesto all&#x27;utente. È onere dell&#x27;utente verificare periodicamente la versione vigente.</p>
+<p class="meta-line">Ultimo aggiornamento: 28 maggio 2026</p>
+<p class="meta-line">Versione: 1.0</p>
+  </article>
+</main>
+
+<footer>
+  <span class="footer-copy">© 2026 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
+  <div class="footer-policy">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="cookie-policy.html">Cookie Policy</a>
+  </div>
+</footer>
+
+<script>
+const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+
+if(mobileMenuToggle && mobileMenu){
+  mobileMenuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("open");
+    mobileMenuToggle.classList.toggle("active", isOpen);
+    mobileMenuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    document.body.classList.toggle("menu-open", isOpen);
+  });
+
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      mobileMenuToggle.classList.remove("active");
+      mobileMenuToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    });
+  });
+}
+</script>
+
+</body>
+</html>

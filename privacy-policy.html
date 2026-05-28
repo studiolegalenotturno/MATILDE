@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | KTS Advisory</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ivory:#F3EFE8;
+  --ivory-light:#F8F4EC;
+  --carbon:#0E1A2B;
+  --navy:#0E1A2B;
+  --navy-deep:#08111F;
+  --brass:#B08A4A;
+  --brass-light:#C9A96E;
+  --greige:#8B847C;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',sans-serif;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--ivory);
+  color:var(--carbon);
+  font-family:var(--sans);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:120;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 56px;
+  height:76px;
+  background:rgba(243,239,232,0.88);
+  backdrop-filter:blur(14px);
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
+
+.logo-wrap{display:flex;align-items:center;text-decoration:none}
+.logo-image-wrap{height:52px}
+
+.site-logo{
+  height:52px;
+  width:auto;
+  display:block;
+  object-fit:contain;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  list-style:none;
+}
+
+.nav-links a{
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--navy);
+  text-decoration:none;
+  font-weight:500;
+  opacity:0.68;
+  transition:opacity 0.2s,color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  opacity:1;
+  color:var(--brass);
+}
+
+.mobile-menu-toggle{
+  display:none;
+  width:42px;
+  height:42px;
+  border:0.5px solid rgba(176,138,74,0.45);
+  background:rgba(243,239,232,0.42);
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  z-index:130;
+}
+
+.mobile-menu-toggle span{
+  width:19px;
+  height:1px;
+  background:var(--navy);
+  transition:transform 0.25s ease,opacity 0.25s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.mobile-menu-toggle.active span:nth-child(2){opacity:0}
+.mobile-menu-toggle.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+.mobile-menu{
+  position:fixed;
+  top:74px;
+  left:0;
+  right:0;
+  z-index:110;
+  background:rgba(243,239,232,0.98);
+  backdrop-filter:blur(18px);
+  border-bottom:0.5px solid rgba(176,138,74,0.22);
+  padding:26px 28px 30px;
+  display:none;
+  flex-direction:column;
+  gap:0;
+  box-shadow:0 24px 50px rgba(14,26,43,0.12);
+}
+
+.mobile-menu.open{display:flex}
+
+.mobile-menu a{
+  font-family:var(--sans);
+  font-size:12px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--navy);
+  text-decoration:none;
+  font-weight:500;
+  padding:16px 0;
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
+
+.policy-hero{
+  padding:150px 56px 72px;
+  background:
+    radial-gradient(circle at 86% 28%,rgba(176,138,74,0.10),transparent 32%),
+    linear-gradient(135deg,#F8F4EC 0%,#F3EFE8 100%);
+  border-bottom:0.5px solid rgba(176,138,74,0.18);
+}
+
+.policy-hero-inner{
+  max-width:1220px;
+  margin:0 auto;
+}
+
+.section-label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:24px;
+  font-weight:500;
+}
+
+.brass-line{
+  width:32px;
+  height:1px;
+  background:var(--brass);
+  margin-bottom:32px;
+}
+
+.policy-hero h1{
+  font-family:var(--serif);
+  font-size:clamp(42px,5vw,78px);
+  font-weight:300;
+  line-height:1.04;
+  color:var(--navy);
+  max-width:900px;
+}
+
+.policy-hero p{
+  margin-top:26px;
+  max-width:760px;
+  font-size:15px;
+  line-height:1.85;
+  color:rgba(14,26,43,0.70);
+}
+
+.policy-content{
+  padding:76px 56px 88px;
+}
+
+.policy-document{
+  max-width:1040px;
+  margin:0 auto;
+  padding:58px 64px;
+  background:rgba(248,244,236,0.72);
+  border:0.5px solid rgba(176,138,74,0.24);
+  box-shadow:0 18px 38px rgba(14,26,43,0.055);
+}
+
+.policy-document h1{
+  font-family:var(--serif);
+  font-size:38px;
+  font-weight:300;
+  color:var(--navy);
+  line-height:1.1;
+  margin-bottom:10px;
+}
+
+.policy-document .doc-main-title{
+  font-family:var(--serif);
+  font-size:28px;
+  font-weight:300;
+  color:var(--navy);
+  line-height:1.18;
+  margin:22px 0 8px;
+}
+
+.policy-document .subtitle{
+  font-size:13px;
+  color:var(--brass);
+  letter-spacing:0.04em;
+  margin-bottom:24px;
+}
+
+.policy-document h2{
+  font-family:var(--serif);
+  font-size:30px;
+  font-weight:300;
+  color:var(--navy);
+  line-height:1.15;
+  margin:34px 0 14px;
+  padding-top:18px;
+  border-top:0.5px solid rgba(176,138,74,0.20);
+}
+
+.policy-document p{
+  font-size:14px;
+  line-height:1.86;
+  color:rgba(14,26,43,0.76);
+  margin-bottom:14px;
+}
+
+.policy-document .bullet{
+  padding-left:18px;
+  text-indent:-12px;
+}
+
+.policy-document .meta-line{
+  color:var(--brass);
+  font-weight:500;
+  margin-top:16px;
+}
+
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
+  margin:22px 0 26px;
+  border:0.5px solid rgba(176,138,74,0.24);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:720px;
+  background:rgba(243,239,232,0.50);
+}
+
+th,td{
+  border:0.5px solid rgba(176,138,74,0.20);
+  padding:13px 14px;
+  text-align:left;
+  vertical-align:top;
+  font-size:12.2px;
+  line-height:1.55;
+  color:rgba(14,26,43,0.74);
+}
+
+th{
+  font-weight:500;
+  color:var(--navy);
+  background:rgba(176,138,74,0.12);
+}
+
+footer{
+  background:#08111F;
+  padding:40px 56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:0.5px solid rgba(176,138,74,0.18);
+}
+
+.footer-copy{
+  font-family:var(--sans);
+  font-size:11px;
+  color:rgba(243,239,232,0.28);
+  font-weight:300;
+  letter-spacing:0.08em;
+}
+
+.footer-policy{
+  display:flex;
+  gap:28px;
+}
+
+.footer-policy a{
+  font-size:11px;
+  color:rgba(243,239,232,0.46);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.footer-policy a:hover{color:var(--brass-light)}
+
+@media(max-width:900px){
+  body.menu-open{overflow:hidden}
+
+  nav{
+    padding:0 24px;
+    height:74px;
+    z-index:9999;
+  }
+
+  .site-logo{height:48px}
+  .logo-image-wrap{height:48px}
+
+  .nav-links{
+    display:none;
+  }
+
+  .mobile-menu-toggle{
+    display:flex;
+    flex-shrink:0;
+    position:relative;
+    margin-left:auto;
+    z-index:10001;
+  }
+
+  .mobile-menu{z-index:9998}
+
+  .policy-hero{
+    padding:128px 28px 62px;
+  }
+
+  .policy-content{
+    padding:56px 28px 70px;
+  }
+
+  .policy-document{
+    padding:42px 30px;
+  }
+
+  footer{
+    padding:32px 28px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+  }
+}
+
+@media(max-width:620px){
+  nav{padding:0 18px}
+  .site-logo{height:44px}
+  .logo-image-wrap{height:44px}
+  .mobile-menu{padding:22px 22px 28px}
+
+  .policy-hero{
+    padding:118px 22px 54px;
+  }
+
+  .policy-hero h1{
+    font-size:40px;
+  }
+
+  .policy-content{
+    padding:42px 22px 58px;
+  }
+
+  .policy-document{
+    padding:32px 22px;
+  }
+
+  .policy-document h1{
+    font-size:32px;
+  }
+
+  .policy-document h2{
+    font-size:26px;
+  }
+
+  .footer-policy{
+    flex-direction:column;
+    gap:10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html" class="logo-wrap logo-image-wrap">
+    <img src="assets/kts-advisory-logo-web.png?v=15" alt="KTS Advisory" class="site-logo">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="about.html">Chi siamo</a></li>
+    <li><a href="attivita.html">Attività</a></li>
+    <li><a href="approccio.html">Approccio</a></li>
+    <li><a href="studio.html">Lo Studio</a></li>
+    <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+    <li><a href="contatti.html">Contatti</a></li>
+  </ul>
+
+  <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Apri menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="about.html">Chi siamo</a>
+  <a href="attivita.html">Attività</a>
+  <a href="approccio.html">Approccio</a>
+  <a href="studio.html">Lo Studio</a>
+  <a href="lavora-con-noi.html">Lavora con noi</a>
+  <a href="contatti.html">Contatti</a>
+</div>
+
+<header class="policy-hero">
+  <div class="policy-hero-inner">
+    <p class="section-label">Privacy Policy</p>
+    <div class="brass-line"></div>
+    <h1>Privacy Policy</h1>
+    <p>Documento informativo pubblicato per gli utenti del sito www.ktsadvisory.it.</p>
+  </div>
+</header>
+
+<main class="policy-content">
+  <article class="policy-document">
+    <h1>INFORMATIVA SUL TRATTAMENTO DEI DATI PERSONALI</h1>
+<p class="subtitle">(Privacy Policy — Sito www.ktsadvisory.it)</p>
+<p>Resa ai sensi dell&#x27;art. 13 del Regolamento (UE) 2016/679</p>
+<p>La presente informativa è resa ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 del Parlamento Europeo e del Consiglio del 27 aprile 2016 relativo alla protezione delle persone fisiche con riguardo al trattamento dei dati personali (di seguito, il &quot;GDPR&quot;), nonché del D.Lgs. 30 giugno 2003 n. 196, come modificato dal D.Lgs. 10 agosto 2018 n. 101 (di seguito, il &quot;Codice Privacy&quot;), in favore degli utenti che interagiscono con il sito web www.ktsadvisory.it (di seguito, il &quot;Sito&quot;).</p>
+<p>L&#x27;informativa è fornita esclusivamente per il Sito sopra indicato e non si estende ad altri siti web eventualmente consultati dall&#x27;utente tramite link in esso contenuti.</p>
+<h2>1. Titolare del trattamento</h2>
+<p>Il Titolare del trattamento dei dati personali è:</p>
+<p>KTS Advisory S.r.l.</p>
+<p>Sede legale: Via dei Mille n. 16, 80121 Napoli (NA), Italia</p>
+<p>E-mail: info@ktsadvisory.it — segreteria@ktsadvisory.it</p>
+<p>Telefono: +39 081 185 35 26</p>
+<p>(di seguito, anche il &quot;Titolare&quot;).</p>
+<h2>2. Responsabile della Protezione dei Dati (DPO)</h2>
+<p>Il Titolare non è soggetto all&#x27;obbligo di nomina del Responsabile della Protezione dei Dati ai sensi dell&#x27;art. 37 GDPR. Eventuali quesiti in materia di protezione dei dati personali possono essere indirizzati al Titolare ai recapiti indicati al precedente paragrafo 1.</p>
+<h2>3. Tipologie di dati trattati, finalità e base giuridica</h2>
+<p>Il Titolare tratta esclusivamente i dati personali strettamente necessari al perseguimento delle finalità di seguito indicate, in conformità ai principi di liceità, correttezza, trasparenza, minimizzazione e limitazione delle finalità di cui all&#x27;art. 5 GDPR.</p>
+<p>Le categorie di dati personali trattati, le relative finalità e le basi giuridiche sono riportate nella tabella che segue:</p>
+<div class="table-wrap"><table><tr><th>Categoria di dati</th><th>Finalità del trattamento</th><th>Base giuridica (art. 6 GDPR)</th></tr><tr><td>Dati di contatto (nome, cognome, e-mail, telefono) forniti spontaneamente tramite e-mail agli indirizzi pubblicati sul Sito</td><td>Riscontro alle richieste di contatto e di informazioni; gestione della corrispondenza professionale</td><td>Art. 6, par. 1, lett. b) — esecuzione di misure precontrattuali su richiesta dell&#x27;interessato</td></tr><tr><td>Dati professionali e curriculari (CV, profilo, mercato di riferimento, portafoglio clienti) trasmessi per candidatura come Partner o Collaboratore</td><td>Valutazione delle candidature alla qualifica di Partner KTS o di Collaboratore esterno</td><td>Art. 6, par. 1, lett. b) — misure precontrattuali; art. 111-bis D.Lgs. 196/2003</td></tr><tr><td>Dati di navigazione (indirizzo IP, log di sistema, user-agent, pagine visitate, data e ora di accesso)</td><td>Funzionamento tecnico del Sito, sicurezza informatica, diagnostica, prevenzione di abusi e frodi</td><td>Art. 6, par. 1, lett. f) — legittimo interesse del Titolare alla corretta gestione e sicurezza del Sito</td></tr><tr><td>Dati identificativi di clienti e controparti, eventualmente acquisiti nell&#x27;ambito del rapporto professionale instaurato a seguito del contatto</td><td>Esecuzione dell&#x27;incarico professionale; adempimenti contabili, fiscali, antiriciclaggio (D.Lgs. 231/2007) e di legge</td><td>Art. 6, par. 1, lett. b), c) — esecuzione del contratto e obblighi di legge</td></tr><tr><td>Cookie tecnici e dati di terze parti (Google Maps)</td><td>Visualizzazione della mappa nella pagina Contatti; corretto funzionamento del Sito</td><td>Art. 6, par. 1, lett. f) — legittimo interesse / consenso per cookie non tecnici (v. Cookie Policy)</td></tr></table></div>
+<p>Il Sito non utilizza moduli di contatto (form) per la raccolta diretta di dati personali: l&#x27;invio del messaggio dall&#x27;apposita sezione &quot;Contatti&quot; avviene tramite apertura del client di posta elettronica dell&#x27;utente, il quale comunica liberamente al Titolare i dati ritenuti necessari.</p>
+<p>Il Sito non effettua attività di profilazione, marketing diretto, newsletter o invio di comunicazioni promozionali automatizzate.</p>
+<h2>4. Natura del conferimento dei dati</h2>
+<p>Il conferimento dei dati di navigazione è necessario per il funzionamento tecnico del Sito e avviene automaticamente in conseguenza dell&#x27;utilizzo dei protocolli di comunicazione di Internet.</p>
+<p>Il conferimento dei dati di contatto e dei dati professionali (per candidature e proposte di collaborazione) è facoltativo; il mancato conferimento comporta tuttavia l&#x27;impossibilità per il Titolare di dar seguito alle richieste dell&#x27;interessato.</p>
+<h2>5. Modalità del trattamento</h2>
+<p>I dati personali sono trattati con strumenti informatici e telematici, nonché in formato cartaceo, secondo logiche strettamente correlate alle finalità indicate. Il Titolare adotta misure tecniche e organizzative adeguate ai sensi degli artt. 24, 25 e 32 GDPR per garantire la riservatezza, l&#x27;integrità, la disponibilità e la resilienza dei dati, prevenendo accessi non autorizzati, perdite accidentali, distruzione o diffusione.</p>
+<p>I dati sono trattati esclusivamente da personale autorizzato e debitamente istruito ai sensi dell&#x27;art. 29 GDPR e dell&#x27;art. 2-quaterdecies del Codice Privacy.</p>
+<h2>6. Destinatari dei dati e categorie di soggetti autorizzati</h2>
+<p>Nei limiti pertinenti alle finalità indicate al paragrafo 3, i dati personali potranno essere comunicati a:</p>
+<p>personale del Titolare autorizzato al trattamento;</p>
+<p>professionisti appartenenti al network KTS (avvocati, commercialisti, consulenti, partner) ove necessario per l&#x27;esecuzione dell&#x27;incarico o per la valutazione della candidatura;</p>
+<p>fornitori di servizi tecnici (hosting, manutenzione del Sito, posta elettronica, sicurezza informatica), nominati Responsabili del trattamento ai sensi dell&#x27;art. 28 GDPR;</p>
+<p>consulenti legali, fiscali e contabili del Titolare;</p>
+<p>Autorità giudiziarie, amministrative e di vigilanza, ove previsto da obblighi di legge o da provvedimenti di tali Autorità.</p>
+<p>I dati non sono oggetto di diffusione e non sono comunicati a terzi per finalità di marketing.</p>
+<h2>7. Trasferimento dei dati al di fuori dello Spazio Economico Europeo</h2>
+<p>I dati personali sono di norma trattati all&#x27;interno dell&#x27;Unione Europea. Qualora, in ragione dell&#x27;utilizzo di servizi di terze parti (in particolare Google Maps, fornito da Google LLC), si renda necessario un trasferimento dei dati verso Paesi terzi, il Titolare assicura che lo stesso avvenga in presenza di una delle garanzie previste dagli artt. 44 e seguenti del GDPR, tra cui:</p>
+<p>decisione di adeguatezza della Commissione europea (incluso, per i trasferimenti verso gli Stati Uniti d&#x27;America, il Data Privacy Framework di cui alla decisione di esecuzione (UE) 2023/1795);</p>
+<p>clausole contrattuali tipo adottate dalla Commissione europea ai sensi dell&#x27;art. 46, par. 2, lett. c), GDPR;</p>
+<p>misure tecniche e organizzative supplementari, ove necessarie all&#x27;esito di un Transfer Impact Assessment.</p>
+<p>L&#x27;interessato può ottenere informazioni dettagliate sulle garanzie adottate rivolgendosi al Titolare ai recapiti di cui al paragrafo 1.</p>
+<h2>8. Periodo di conservazione</h2>
+<p>I dati personali sono conservati per il tempo strettamente necessario al perseguimento delle finalità per le quali sono stati raccolti, nel rispetto del principio di limitazione della conservazione di cui all&#x27;art. 5, par. 1, lett. e), GDPR. In particolare:</p>
+<p>dati di contatto e di corrispondenza: per il tempo necessario alla gestione della richiesta e, in caso di mancato seguito, per un periodo non superiore a 24 mesi dall&#x27;ultima comunicazione;</p>
+<p>dati di candidatura (Partner/Collaboratori): per il tempo necessario alla valutazione e, in caso di esito negativo, per un periodo non superiore a 24 mesi, salvo diversa indicazione dell&#x27;interessato;</p>
+<p>dati relativi all&#x27;incarico professionale: per la durata del rapporto e, successivamente, per il tempo previsto dalla normativa fiscale, civilistica, antiriciclaggio (art. 31 D.Lgs. 231/2007) e dalle norme deontologiche applicabili (di norma, dieci anni);</p>
+<p>log di navigazione: per un periodo non superiore a 12 mesi, salvo conservazione per esigenze di sicurezza informatica o per ottemperare a obblighi di legge;</p>
+<p>cookie: secondo le durate indicate nella Cookie Policy.</p>
+<h2>9. Diritti dell&#x27;interessato</h2>
+<p>L&#x27;interessato può esercitare in ogni momento i diritti riconosciuti dagli artt. 15-22 GDPR, di seguito sintetizzati:</p>
+<div class="table-wrap"><table><tr><th>Diritto</th><th>Contenuto</th></tr><tr><td>Accesso (art. 15)</td><td>Ottenere conferma dell&#x27;esistenza del trattamento e ricevere copia dei dati personali</td></tr><tr><td>Rettifica (art. 16)</td><td>Correggere dati inesatti o integrare dati incompleti</td></tr><tr><td>Cancellazione (art. 17)</td><td>Ottenere la cancellazione dei dati nei casi previsti dalla normativa</td></tr><tr><td>Limitazione (art. 18)</td><td>Ottenere la limitazione del trattamento nei casi previsti</td></tr><tr><td>Portabilità (art. 20)</td><td>Ricevere in formato strutturato e leggibile i dati forniti e trasmetterli ad altro titolare</td></tr><tr><td>Opposizione (art. 21)</td><td>Opporsi al trattamento basato su legittimo interesse per motivi legati alla situazione particolare dell&#x27;interessato</td></tr><tr><td>Revoca del consenso (art. 7)</td><td>Revocare in ogni momento il consenso prestato, senza pregiudicare la liceità del trattamento basato sul consenso prima della revoca</td></tr><tr><td>Reclamo (art. 77)</td><td>Proporre reclamo all&#x27;Autorità Garante per la Protezione dei Dati Personali (Piazza Venezia 11, 00187 Roma — www.garanteprivacy.it)</td></tr></table></div>
+<p>I diritti possono essere esercitati gratuitamente inoltrando richiesta scritta al Titolare ai recapiti indicati al paragrafo 1. Il Titolare fornirà riscontro nei termini di cui all&#x27;art. 12, par. 3, GDPR (di norma entro un mese, prorogabile di ulteriori due mesi in caso di particolare complessità).</p>
+<h2>10. Trattamento di dati di minori</h2>
+<p>Il Sito non è destinato a minori di età. Il Titolare non raccoglie consapevolmente dati personali di soggetti minori di anni quattordici (art. 2-quinquies del Codice Privacy). Qualora il Titolare venisse a conoscenza del trattamento di dati riferiti a minori avvenuto in assenza del necessario consenso, provvederà tempestivamente alla cancellazione.</p>
+<h2>11. Processo decisionale automatizzato</h2>
+<p>Il Titolare non effettua alcun processo decisionale automatizzato, ivi inclusa la profilazione, ai sensi dell&#x27;art. 22 GDPR.</p>
+<h2>12. Cookie e tecnologie analoghe</h2>
+<p>Per le informazioni relative all&#x27;utilizzo di cookie e tecnologie analoghe da parte del Sito si rinvia alla Cookie Policy, accessibile in calce a ogni pagina del Sito e disponibile al seguente link: www.ktsadvisory.it/cookie-policy.</p>
+<h2>13. Modifiche alla presente informativa</h2>
+<p>Il Titolare si riserva il diritto di modificare e aggiornare in qualsiasi momento la presente informativa, in particolare per adeguarla a sopravvenute modifiche normative o regolamentari. Le versioni aggiornate saranno pubblicate sul Sito e, ove necessario, comunicate agli interessati. È onere dell&#x27;utente verificare periodicamente la versione vigente.</p>
+<p class="meta-line">Ultimo aggiornamento: 28 maggio 2026</p>
+<p class="meta-line">Versione: 1.0</p>
+  </article>
+</main>
+
+<footer>
+  <span class="footer-copy">© 2026 KTS Advisory S.r.l. — Tutti i diritti riservati.</span>
+  <div class="footer-policy">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="cookie-policy.html">Cookie Policy</a>
+  </div>
+</footer>
+
+<script>
+const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+
+if(mobileMenuToggle && mobileMenu){
+  mobileMenuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("open");
+    mobileMenuToggle.classList.toggle("active", isOpen);
+    mobileMenuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    document.body.classList.toggle("menu-open", isOpen);
+  });
+
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      mobileMenuToggle.classList.remove("active");
+      mobileMenuToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    });
+  });
+}
+</script>
+
+</body>
+</html>
