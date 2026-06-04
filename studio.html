@@ -458,16 +458,22 @@ nav{
 
 .prof-photo{
   height:222px;
-  background:rgba(14,26,43,0.08);
+  background:
+    radial-gradient(circle at 78% 18%,rgba(176,138,74,0.10),transparent 34%),
+    rgba(14,26,43,0.08);
   overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .prof-photo img{
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit:contain;
+  object-position:center center;
   display:block;
-  filter:saturate(0.92) contrast(1.02);
+  filter:saturate(0.94) contrast(1.02);
 }
 
 .prof-content{
@@ -863,7 +869,7 @@ footer{
     </div>
 
     <p data-i18n="professionalsIntro">
-      Un network di professionisti con competenze complementari ed esperienza consolidata, coordinato per offrire al cliente una direzione chiara e multidisciplinare.
+      Una struttura di soci fondatori e partner con competenze complementari ed esperienza consolidata, coordinata da KTS per offrire al cliente una direzione chiara e multidisciplinare.
     </p>
   </div>
 
@@ -871,14 +877,14 @@ footer{
   <div class="team-category">
     <div class="team-category-head fade-in">
       <h3>Soci fondatori</h3>
-      <p>Il nucleo fondativo di KTS Advisory, composto dai professionisti che guidano la struttura, il metodo operativo e lo sviluppo del network.</p>
+      <p>Il nucleo fondativo di KTS Advisory, composto dai professionisti che guidano la struttura, il metodo operativo e lo sviluppo della società.</p>
     </div>
 
     <div class="professionals-grid founders-grid">
 
       <article class="prof-card fade-in">
         <div class="prof-photo">
-          <img src="assets/foto-avv-notturno.jpeg" alt="Giovanni Battista Notturno">
+          <img src="assets/foto-avv-notturno.jpeg?v=2" alt="Giovanni Battista Notturno">
         </div>
         <div class="prof-content">
           <h3 class="prof-name">Avv. Giovanni Battista<br>Notturno</h3>
@@ -904,13 +910,15 @@ footer{
 
       <article class="prof-card fade-in" style="transition-delay:0.16s">
         <div class="prof-photo">
-          <img src="assets/foto-salvatore-ferraro.jpg" alt="Salvatore Ferraro">
+          <img src="assets/foto-salvatore-ferraro.jpg?v=2" alt="Salvatore Ferraro">
         </div>
         <div class="prof-content">
           <h3 class="prof-name">Dott. Salvatore<br>Ferraro</h3>
           <p class="prof-role">Socio fondatore</p>
           <p class="prof-desc">
-            Specialista in fiscalità nazionale e internazionale, pianificazione fiscale e consulenza societaria. Supporta aziende e gruppi nella gestione di questioni tributarie complesse.
+            Con una laurea in Economia e un solido passato da imprenditore, affianco le realtà produttive nella loro strutturazione. Ho maturato una lunga esperienza nell'amministrazione di consorzi, facendo della gestione dei contatti e dei contratti con la Pubblica Amministrazione il mio principale punto di forza.
+            <br><br>
+            Appassionato di associazionismo ed esperto in pubbliche relazioni, oggi metto il mio network a disposizione del tuo business. Aiuto le imprese ad ampliare la propria rete commerciale, creando connessioni strategiche di valore e potenziando le sinergie con enti, istituti e partner per generare nuove e concrete opportunità di crescita.
           </p>
         </div>
       </article>
@@ -921,7 +929,7 @@ footer{
   <div class="team-category">
     <div class="team-category-head fade-in">
       <h3>Partner</h3>
-      <p>Professionisti e consulenti selezionati che integrano le competenze del network KTS nelle diverse aree operative e specialistiche.</p>
+      <p>Professionisti e consulenti selezionati che integrano stabilmente le competenze di KTS nelle diverse aree operative e specialistiche.</p>
     </div>
 
     <div class="professionals-grid partners-grid">
@@ -966,14 +974,14 @@ footer{
       </article>
 
       <article class="prof-card fade-in" style="transition-delay:0.24s">
-        <div class="prof-photo placeholder" aria-hidden="true">
-          <span class="prof-placeholder-initials">MB</span>
+        <div class="prof-photo">
+          <img src="assets/foto-massimiliano-baioni.jpg?v=2" alt="Dott. Massimiliano Baioni">
         </div>
         <div class="prof-content">
           <h3 class="prof-name">Dott. Massimiliano<br>Baioni</h3>
-          <p class="prof-role">Partner — Swiss Vis</p>
+          <p class="prof-role">Partner — SwissVis</p>
           <p class="prof-desc">
-            Partner Swiss Vis. Supporta il network KTS nelle attività di collegamento professionale e operativo con l’ecosistema Swiss Vis e nelle opportunità di sviluppo connesse a relazioni, progettualità e operazioni di carattere nazionale e internazionale.
+            Imprenditore, con esperienza nel settore assicurativo e nell’export/internazionalizzazione. General Manager di SwissVis, società di consulenza aziendale internazionale.
           </p>
         </div>
       </article>
@@ -1083,7 +1091,7 @@ const translations = {
 
     professionalsLabel: "Professionisti",
     professionalsTitle: "Il nostro team",
-    professionalsIntro: "Un network di professionisti con competenze complementari ed esperienza consolidata, coordinato per offrire al cliente una direzione chiara e multidisciplinare.",
+    professionalsIntro: "Una struttura di soci fondatori e partner con competenze complementari ed esperienza consolidata, coordinata da KTS per offrire al cliente una direzione chiara e multidisciplinare.",
 
     valueTitle: "Parliamo del tuo progetto",
     valueText: "Il nostro team è a disposizione per ascoltare le tue esigenze e costruire insieme la soluzione più adatta.",
@@ -1116,7 +1124,7 @@ const translations = {
 
     professionalsLabel: "Professionals",
     professionalsTitle: "Our team",
-    professionalsIntro: "A network of professionals with complementary skills and consolidated experience, coordinated to provide clients with clear and multidisciplinary direction.",
+    professionalsIntro: "A structure of founders and partners with complementary skills and consolidated experience, coordinated by KTS to provide clients with clear and multidisciplinary direction.",
 
     valueTitle: "Let’s discuss your project",
     valueText: "Our team is available to listen to your needs and build the most suitable solution together.",
