@@ -508,6 +508,124 @@ nav{
   color:rgba(14,26,43,0.70);
 }
 
+
+/* COMPANY PARTNERS */
+.company-partners-grid{
+  max-width:1220px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+
+.company-card{
+  background:rgba(248,244,236,0.78);
+  border:0.5px solid rgba(176,138,74,0.26);
+  box-shadow:0 18px 38px rgba(14,26,43,0.055);
+  overflow:hidden;
+  min-height:390px;
+  display:flex;
+  flex-direction:column;
+}
+
+.company-logo-box{
+  height:190px;
+  background:#FFFFFF;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:34px;
+  border-bottom:0.5px solid rgba(176,138,74,0.22);
+}
+
+.company-logo-box img{
+  max-width:100%;
+  max-height:125px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+}
+
+.company-content{
+  padding:26px 28px 28px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.company-name{
+  font-family:var(--serif);
+  font-size:32px;
+  line-height:1.05;
+  color:var(--navy);
+  font-weight:300;
+  margin-bottom:10px;
+}
+
+.company-role{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--brass);
+  font-weight:500;
+  margin-bottom:18px;
+  padding-bottom:14px;
+  border-bottom:0.5px solid rgba(176,138,74,0.36);
+}
+
+.company-desc{
+  font-size:13px;
+  line-height:1.72;
+  color:rgba(14,26,43,0.70);
+}
+
+.company-link{
+  margin-top:auto;
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--navy);
+  text-decoration:none;
+  border:0.5px solid rgba(176,138,74,0.55);
+  padding:12px 18px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:max-content;
+  transition:background 0.25s,color 0.25s,border-color 0.25s;
+}
+
+.company-link:hover{
+  background:var(--navy);
+  color:var(--ivory);
+  border-color:var(--navy);
+}
+
+@media(max-width:900px){
+  .company-partners-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:620px){
+  .company-logo-box{
+    height:170px;
+    padding:28px;
+  }
+
+  .company-name{
+    font-size:29px;
+  }
+
+  .company-link{
+    width:100%;
+  }
+}
+
 /* VALUE BAND */
 .value-band{
   padding:54px 56px;
@@ -989,6 +1107,50 @@ footer{
     </div>
   </div>
 
+
+
+  <div class="team-category">
+    <div class="team-category-head fade-in">
+      <h3>Partner società</h3>
+      <p>Società, studi e strutture specializzate che collaborano stabilmente con KTS Advisory, integrando competenze operative, tecniche e consulenziali in specifiche aree di attività.</p>
+    </div>
+
+    <div class="company-partners-grid">
+
+      <article class="company-card fade-in">
+        <div class="company-logo-box">
+          <img src="assets/logo-swissvis.png?v=1" alt="SwissVis">
+        </div>
+        <div class="company-content">
+          <h3 class="company-name">SwissVis</h3>
+          <p class="company-role">Partner società — Consulenza aziendale internazionale</p>
+          <p class="company-desc">
+            Società di consulenza aziendale internazionale specializzata nello sviluppo di progetti, relazioni e opportunità operative sui mercati esteri. Collabora con KTS nell’ambito dei processi di internazionalizzazione, export, sviluppo commerciale e costruzione di partnership strategiche.
+          </p>
+          <a href="https://swissvis.com/" target="_blank" rel="noopener noreferrer" class="company-link">
+            Visita il sito <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="company-card fade-in" style="transition-delay:0.08s">
+        <div class="company-logo-box">
+          <img src="assets/logo-dejure-conciliando.jpeg?v=1" alt="De Jure Conciliando">
+        </div>
+        <div class="company-content">
+          <h3 class="company-name">De Jure Conciliando</h3>
+          <p class="company-role">Partner società — Mediazione civile e commerciale</p>
+          <p class="company-desc">
+            Organismo di mediazione civile e commerciale che supporta imprese, professionisti e privati nella gestione stragiudiziale delle controversie. Collabora con KTS per offrire soluzioni rapide, riservate ed efficaci nei percorsi di mediazione e ADR.
+          </p>
+          <a href="https://www.dejureconciliando.it" target="_blank" rel="noopener noreferrer" class="company-link">
+            Visita il sito <span>→</span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
 
 </section>
 
