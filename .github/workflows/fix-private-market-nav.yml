@@ -1,0 +1,46 @@
+name: Fix Private Market nav color
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fix-private-market-nav.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Uniforma la voce Private Market
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          replacements = {
+              '<a href="private-market.html" style="color:var(--brass);opacity:1">KTS Private Market</a>': '<a href="private-market.html">KTS Private Market</a>',
+              '<a href="private-market.html" style="color:var(--brass)">KTS Private Market</a>': '<a href="private-market.html">KTS Private Market</a>',
+          }
+          changed = []
+          for p in Path('.').glob('*.html'):
+              text = p.read_text(encoding='utf-8')
+              new = text
+              for old, repl in replacements.items():
+                  new = new.replace(old, repl)
+              if new != text:
+                  p.write_text(new, encoding='utf-8')
+                  changed.append(str(p))
+          print('Changed:', ', '.join(changed) if changed else 'none')
+          PY
+      - name: Commit modifiche
+        run: |
+          if git diff --quiet; then
+            echo "Nessuna modifica necessaria"
+            exit 0
+          fi
+          git config user.name "studiolegalenotturno"
+          git config user.email "studiolegalenotturno@gmail.com"
+          git add '*.html'
+          git commit -m "Uniforma colore KTS Private Market nel menu"
+          git push
