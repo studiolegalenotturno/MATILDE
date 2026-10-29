@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/candidati",
+      "destination": "https://kts-linked-in-desk.vercel.app/partner",
+      "permanent": false
+    },
+    {
+      "source": "/candidati/",
+      "destination": "https://kts-linked-in-desk.vercel.app/partner",
+      "permanent": false
+    }
+  ]
+}
