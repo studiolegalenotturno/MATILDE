@@ -10,6 +10,17 @@
       "source": "/candidati/",
       "destination": "https://kts-linked-in-desk.vercel.app/partner",
       "permanent": false
+    },
+    {
+      "source": "/partner",
+      "destination": "https://kts-linked-in-desk.vercel.app/partner",
+      "permanent": false
+    },
+    {
+      "source": "/partner/",
+      "destination": "https://kts-linked-in-desk.vercel.app/partner",
+      "permanent": false
     }
   ]
 }
+

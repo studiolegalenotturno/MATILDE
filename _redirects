@@ -2,3 +2,6 @@
 # Vercel uses vercel.json; these rules support hosts that read _redirects.
 /candidati https://kts-linked-in-desk.vercel.app/partner 302
 /candidati/ https://kts-linked-in-desk.vercel.app/partner 302
+/partner https://kts-linked-in-desk.vercel.app/partner 302
+/partner/ https://kts-linked-in-desk.vercel.app/partner 302
+
