@@ -3,22 +3,22 @@
   "redirects": [
     {
       "source": "/candidati",
-      "destination": "https://kts-linked-in-desk.vercel.app/partner",
+      "destination": "https://partner.ktsadvisory.it/partner",
       "permanent": false
     },
     {
       "source": "/candidati/",
-      "destination": "https://kts-linked-in-desk.vercel.app/partner",
+      "destination": "https://partner.ktsadvisory.it/partner",
       "permanent": false
     },
     {
       "source": "/partner",
-      "destination": "https://kts-linked-in-desk.vercel.app/partner",
+      "destination": "https://partner.ktsadvisory.it/partner",
       "permanent": false
     },
     {
       "source": "/partner/",
-      "destination": "https://kts-linked-in-desk.vercel.app/partner",
+      "destination": "https://partner.ktsadvisory.it/partner",
       "permanent": false
     }
   ]

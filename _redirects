@@ -1,7 +1,7 @@
 # KTS Advisory - candidatura pubblica al network
 # Vercel uses vercel.json; these rules support hosts that read _redirects.
-/candidati https://kts-linked-in-desk.vercel.app/partner 302
-/candidati/ https://kts-linked-in-desk.vercel.app/partner 302
-/partner https://kts-linked-in-desk.vercel.app/partner 302
-/partner/ https://kts-linked-in-desk.vercel.app/partner 302
+/candidati https://partner.ktsadvisory.it/partner 302
+/candidati/ https://partner.ktsadvisory.it/partner 302
+/partner https://partner.ktsadvisory.it/partner 302
+/partner/ https://partner.ktsadvisory.it/partner 302
 
