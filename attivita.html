@@ -966,7 +966,7 @@ footer{
     </article>
 
   </div>
-  <p class="service-regulated-note">Le attività soggette a riserva legale, professionale o autorizzativa sono svolte esclusivamente dai soggetti abilitati effettivamente incaricati. KTS Advisory coordina il progetto e non dichiara di essere intermediario finanziario, mediatore creditizio, impresa assicurativa o organismo di mediazione.</p>
+  <p class="service-regulated-note" data-i18n="regulatedNote">Le attività soggette a riserva legale, professionale o autorizzativa sono svolte esclusivamente dai soggetti abilitati effettivamente incaricati. KTS Advisory coordina il progetto e non dichiara di essere intermediario finanziario, mediatore creditizio, impresa assicurativa o organismo di mediazione.</p>
 </section>
 
 <section class="benefits-band">
@@ -1040,8 +1040,12 @@ const obs = new IntersectionObserver(
 
 document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
+const serviceTextsEn = [{"title":"M&A and extraordinary transactions","desc":"Assistance with structuring, negotiating and managing major corporate transactions."},{"title":"Strategic advisory","desc":"Development of growth strategies, positioning and operating structures."},{"title":"Capital advisory","desc":"Assistance in identifying and structuring capital solutions in support of transactions."},{"title":"Real estate transactions","desc":"Advisory on property assets, portfolio enhancement and dedicated transaction structures."},{"title":"International transactions and commodities","desc":"Coordination of cross-border transactions, joint ventures and transactions involving strategic assets."},{"title":"Patent management and enhancement","desc":"Strategic support for protecting, managing and commercialising industrial property."},{"title":"International notarial and escrow services","desc":"Coordination with notaries and authorised providers for international acts, escrow arrangements and security structures, subject to applicable law."},{"title":"Artwork authenticity assessment","desc":"Coordination of technical and documentary authenticity checks performed by qualified specialists using methods appropriate to each engagement."},{"title":"Domestic and international commercial contracts","desc":"Drafting, review and advisory on commercial, supply, distribution and cross-border agreements."},{"title":"Extraordinary corporate transactions","desc":"Support for mergers, acquisitions and joint ventures, including coordinated legal due diligence."},{"title":"Export compliance","desc":"Regulatory support for overseas establishments and compliant international expansion."},{"title":"Mortgages and leasing","desc":"Documentary preparation and coordination with authorised financial intermediaries, without directly performing regulated intermediation."},{"title":"Working-capital solutions","desc":"Needs assessment and documentary support for factoring and invoice advances, assessed with authorised intermediaries."},{"title":"Credit profile review","desc":"Review of credit data, identification of anomalies and assistance with remediation, without guaranteeing improved credit ratings or bank terms."},{"title":"Tax-credit advisory","desc":"Preliminary review of tax credits and potential assignment or use, subject to applicable law and necessary verification."},{"title":"White certificates (TEE)","desc":"Preliminary eligibility assessment for energy-efficiency certificates and coordination with authorised participants."},{"title":"Transition 5.0 incentives","desc":"Preliminary eligibility review and coordination of regulated professional or certification work where required."},{"title":"Grants and subsidised finance","desc":"Monitoring of grants, non-repayable contributions, subsidised financing and SIMEST programmes."},{"title":"Mediation and ADR","desc":"Orientation and coordination with registered mediation bodies; proceedings are handled by appropriately authorised parties."},{"title":"Domestic notarial and corporate acts","desc":"Coordination with notaries for company formations, credit assignments, property transfers and corporate transactions."}];
+const serviceOriginalsIt = Array.from(document.querySelectorAll('.service-list li')).map(li=>({title:li.querySelector('.service-title').textContent,desc:li.querySelector('.service-desc').textContent}));
+
 const translations = {
   it: {
+    regulatedNote: "Le attività soggette a riserva legale, professionale o autorizzativa sono svolte esclusivamente dai soggetti abilitati effettivamente incaricati. KTS Advisory coordina il progetto e non dichiara di essere intermediario finanziario, mediatore creditizio, impresa assicurativa o organismo di mediazione.",
     navAbout: "Chi siamo",
     navActivities: "Attività",
     navApproach: "Approccio",
@@ -1083,6 +1087,7 @@ const translations = {
   },
 
   en: {
+    regulatedNote: "Activities subject to professional, statutory or regulatory restrictions are performed only by the authorised professionals or entities actually appointed. KTS Advisory coordinates the project and does not claim to be a financial intermediary, credit broker, insurer or registered mediation body.",
     navAbout: "About us",
     navActivities: "Services",
     navApproach: "Approach",
@@ -1131,6 +1136,14 @@ function setLanguage(lang){
     const key = element.getAttribute("data-i18n");
     if(translations[lang] && translations[lang][key]){
       element.innerHTML = translations[lang][key];
+    }
+  });
+
+  Array.from(document.querySelectorAll(".service-list li")).forEach((li,index)=>{
+    const values = lang==="en" ? serviceTextsEn[index] : serviceOriginalsIt[index];
+    if(values) {
+      li.querySelector(".service-title").textContent=values.title;
+      li.querySelector(".service-desc").textContent=values.desc;
     }
   });
 
