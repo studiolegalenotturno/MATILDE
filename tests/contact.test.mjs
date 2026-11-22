@@ -81,7 +81,7 @@ test("site has metadata, consent resources and no broken local HTML links",()=>{
     assert.match(html,/assets\/kts-cookie-consent\.js/);
     assert.match(html,/assets\/kts-cookie-consent\.css/);
     for(const match of html.matchAll(/href=["']([^"']+\.html)(?:[?#][^"']*)?["']/g))
-      assert.ok(set.has(match[1]),page+" -> "+match[1]);
+      if(!/^https?:\/\//.test(match[1])) assert.ok(set.has(match[1]),page+" -> "+match[1]);
   }
   const contatti=fs.readFileSync("contatti.html","utf8");
   assert.doesNotMatch(contatti,/<iframe\b[^>]*\ssrc\s*=/i);
