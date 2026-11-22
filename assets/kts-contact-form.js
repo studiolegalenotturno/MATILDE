@@ -37,6 +37,7 @@
     const button=form.querySelector('button[type="submit"]');
     const status=document.getElementById("kts-form-status");
     const fallback=document.getElementById("kts-form-fallback");
+    let lastPayload="", lastKey="";
     form.addEventListener("submit",async function(event){
       event.preventDefault();
       if(!form.reportValidity()) return;
@@ -59,6 +60,8 @@
       if(!data.privacyAcknowledged){
         status.textContent=label("privacy");return;
       }
+      const fingerprint=JSON.stringify(data);
+      if(fingerprint!==lastPayload){lastPayload=fingerprint;lastKey=crypto.randomUUID().replace(/-/g,"");}
       button.disabled=true;
       status.textContent=label("sending");
       const controller=new AbortController();
@@ -66,7 +69,7 @@
       try{
         const response=await fetch("/api/contact",{
           method:"POST",
-          headers:{"Content-Type":"application/json"},
+          headers:{"Content-Type":"application/json","X-Idempotency-Key":lastKey},
           credentials:"same-origin",
           body:JSON.stringify(data),
           signal:controller.signal
@@ -76,6 +79,7 @@
         if(!response.ok||result.ok!==true)throw new Error("NOT_DELIVERED");
         status.textContent=label("received");
         form.reset();
+        lastPayload="";lastKey="";
       }catch(error){
         status.textContent=label("retry");
         fallback.href=mailboxLink(data);
