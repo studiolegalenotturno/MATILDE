@@ -84,7 +84,7 @@ test("site has metadata, consent resources and no broken local HTML links",()=>{
       assert.ok(set.has(match[1]),page+" -> "+match[1]);
   }
   const contatti=fs.readFileSync("contatti.html","utf8");
-  assert.doesNotMatch(contatti,/<iframe\b[^>]*\bsrc\s*=/i);
+  assert.doesNotMatch(contatti,/<iframe\b[^>]*\ssrc\s*=/i);
   assert.match(contatti,/data-kts-map-src/);
   assert.match(contatti,/kts-contact-form\.js/);
 });
