@@ -107,16 +107,20 @@
     document.querySelectorAll("[data-kts-label]").forEach(function(el) {
       el.textContent = tr(el.getAttribute("data-kts-label"));
     });
+    document.querySelectorAll("[data-kts-aria]").forEach(function(el) {
+      el.setAttribute("aria-label", tr(el.getAttribute("data-kts-aria")));
+    });
   }
   function init() {
     choices = read();
     banner = node("section", "kts-cookie-banner");
     banner.setAttribute("role", "region");
     banner.setAttribute("aria-label", "Privacy preferences");
-    banner.innerHTML = '<div class="kts-cookie-header"><strong data-kts-label="title"></strong></div>' +
+    banner.innerHTML = '<div class="kts-cookie-header"><strong data-kts-label="title"></strong><button type="button" class="kts-cookie-close" data-kts-aria="close" aria-label="Chiudi senza accettare">&#215;</button></div>' +
       '<p data-kts-label="description"></p>' +
       '<div class="kts-cookie-actions" id="kts-cookie-actions"></div>' +
       '<a href="cookie-policy.html" data-kts-label="policies"></a>';
+    banner.querySelector(".kts-cookie-close").addEventListener("click", function () { store(false); });
     var actions = banner.querySelector("#kts-cookie-actions");
     actions.appendChild(button("secondary", "reject", function () { store(false); }));
     actions.appendChild(button("secondary", "customize", openPreferences));
