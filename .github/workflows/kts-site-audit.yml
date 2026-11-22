@@ -21,8 +21,8 @@ jobs:
         run: |
           node --check assets/kts-cookie-consent.js
           node --check assets/kts-contact-form.js
-          node --experimental-default-type=module --check api/contact.js
+          node --input-type=module --check < api/contact.js
       - name: Run static and API unit tests
-        run: node --experimental-default-type=module --test tests/contact.test.mjs
+        run: node --test tests/contact.test.mjs
       - name: Validate sitemap XML
         run: python3 -c "import xml.etree.ElementTree as ET; ET.parse('sitemap.xml')"
