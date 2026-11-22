@@ -32,3 +32,6 @@
   font:500 12px "DM Sans",Arial,sans-serif;cursor:pointer}
 @media(max-width:540px){.kts-cookie-banner,.kts-cookie-panel{bottom:8px;padding:18px}
 .kts-cookie-actions{display:grid;grid-template-columns:1fr}.kts-cookie-btn{width:100%}}
+.kts-cookie-header{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.kts-cookie-close{width:28px;height:28px;border:1px solid #b0a89b;border-radius:4px;background:transparent;color:#161616;cursor:pointer;font-size:20px;line-height:24px}
+.kts-cookie-close:focus-visible{outline:3px solid #B08A4A;outline-offset:3px}
