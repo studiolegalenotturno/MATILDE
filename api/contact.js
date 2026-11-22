@@ -56,10 +56,12 @@ export default async function handler(req,res) {
     ["Nome",name],["Email",email],["Telefono",telephone],
     ["Organizzazione",company],["Servizio",service],["Messaggio",message]
   ].map(pair=>"<p><strong>"+htmlEscape(pair[0])+":</strong> "+htmlEscape(pair[1]).replace(/\n/g,"<br>")+"</p>").join("");
+  const rawKey=String(req.headers["x-idempotency-key"]||"");
+  const idempotencyKey=/^[A-Za-z0-9_-]{12,100}$/.test(rawKey)?rawKey:null;
   try {
     const remote=await fetch("https://api.resend.com/emails",{
       method:"POST",
-      headers:{"Authorization":"Bearer "+key,"Content-Type":"application/json"},
+      headers:{"Authorization":"Bearer "+key,"Content-Type":"application/json",...(idempotencyKey?{"Idempotency-Key":idempotencyKey}:{})},
       body:JSON.stringify({from,to:[to],reply_to:email,subject,html})
     });
     if (!remote.ok) return response(res,502,{ok:false,error:"DELIVERY_FAILED"});
