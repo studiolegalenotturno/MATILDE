@@ -35,3 +35,8 @@
 .kts-cookie-header{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
 .kts-cookie-close{width:28px;height:28px;border:1px solid #b0a89b;border-radius:4px;background:transparent;color:#161616;cursor:pointer;font-size:20px;line-height:24px}
 .kts-cookie-close:focus-visible{outline:3px solid #B08A4A;outline-offset:3px}
+
+/* Opzioni di consenso con pari evidenza, senza pre-selezione o dark pattern. */
+.kts-cookie-banner .kts-cookie-btn.primary,
+.kts-cookie-banner .kts-cookie-btn.secondary{background:#F3EFE8;color:#161616;border-color:#B08A4A;min-width:100px}
+.kts-cookie-banner .kts-cookie-btn:focus-visible{outline:3px solid #B08A4A;outline-offset:3px}
