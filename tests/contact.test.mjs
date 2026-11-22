@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import vm from "node:vm";
-import handler from "../api/contact.js";
+const handler = (await import("data:text/javascript;base64," + fs.readFileSync(new URL("../api/contact.js", import.meta.url)).toString("base64"))).default;
 
 function request(payload={}, overrides={}) {
   return {
