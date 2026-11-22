@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.ktsadvisory.it/sitemap.xml
