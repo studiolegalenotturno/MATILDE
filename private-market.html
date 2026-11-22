@@ -35,6 +35,7 @@ footer{background:#08111F;padding:56px 56px 34px;color:var(--ivory)}.footer-grid
 @media(max-width:900px){body.menu-open{overflow:hidden}nav{padding:0 24px;height:74px}.site-logo,.logo-image-wrap{height:48px}.nav-links,nav>.language-switch{display:none}.mobile-menu-toggle{display:flex}.hero{padding-top:74px}.hero-inner{padding:88px 28px 74px}.intro,.process,.final-cta{padding-left:28px;padding-right:28px}.footer-grid{grid-template-columns:1fr}footer{padding:46px 28px 30px}.footer-bottom{flex-direction:column;align-items:flex-start}}
 @media(max-width:600px){nav{padding:0 18px}.site-logo,.logo-image-wrap{height:44px}.mobile-menu{padding:22px}.hero-inner{padding:78px 22px 64px}.hero h1{font-size:43px}.intro,.process,.final-cta{padding-left:22px;padding-right:22px}.steps{grid-template-columns:1fr}.card{padding:30px 24px}.actions{flex-direction:column}.btn-primary,.btn-outline{width:100%}.footer-policy{flex-direction:column;gap:10px}}
 </style>
+<link rel="stylesheet" href="assets/kts-cookie-consent.css">
 </head>
 <body>
 <nav>
@@ -67,4 +68,5 @@ document.querySelectorAll('[data-lang-switch]').forEach(b=>b.addEventListener('c
 const toggle=document.getElementById('mobileMenuToggle'),menu=document.getElementById('mobileMenu');if(toggle&&menu){toggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',open?'true':'false');document.body.classList.toggle('menu-open',open)});menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');document.body.classList.remove('menu-open')}))}
 setLanguage(localStorage.getItem('siteLanguage')||'it');
 </script>
+<script src="assets/kts-cookie-consent.js" defer></script>
 </body></html>
