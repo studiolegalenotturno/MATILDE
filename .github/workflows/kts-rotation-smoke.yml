@@ -26,3 +26,5 @@ jobs:
           echo "RESPONSE=$content"
           test "$code" = "200"
           test "$content" = '{"ok":true}'
+
+# Post-revocation verification: force a fresh idempotency key and independent delivery attempt.
