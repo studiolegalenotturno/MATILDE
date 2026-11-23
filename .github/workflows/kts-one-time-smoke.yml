@@ -1,0 +1,31 @@
+name: One-Time KTS Preview Contact Delivery Smoke
+on:
+  push:
+    branches:
+      - audit/kts-site-20261122
+permissions:
+  contents: read
+jobs:
+  delivery-smoke:
+    if: github.event.head_commit.message == 'ci: one-time contact delivery smoke [kts-once-smoke]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify live preview contact delivery
+        env:
+          PREVIEW_URL: https://matilde-ftgyg007j-matilde1.vercel.app
+        run: |
+          set -euo pipefail
+          body='{"name":"Collaudo automatico KTS Advisory","company":"","email":"info@ktsadvisory.it","telephone":"","service":"other","message":"Richiesta di test inviata dalla pipeline KTS per verificare consegna del modulo contatti. Non richiede risposta.","website":"","privacyAcknowledged":true}'
+          response="$(curl --silent --show-error --retry 2 --retry-connrefused --retry-delay 2 --max-time 20 -w '\n%{http_code}' \
+            -H "Origin: $PREVIEW_URL" -H "Content-Type: application/json" \
+            -H "X-Idempotency-Key: kts-preview-delivery-20261123-once-001" \
+            -d "$body" "$PREVIEW_URL/api/contact")"
+          status="$(printf '%s\n' "$response" | tail -n 1)"
+          content="$(printf '%s\n' "$response" | sed '$d')"
+          echo "HTTP=$status"
+          echo "RESPONSE=$content"
+          if [ "$status" != "200" ] || [ "$content" != '{"ok":true}' ]; then
+            echo "The delivery endpoint did not confirm provider acceptance."
+            exit 1
+          fi
