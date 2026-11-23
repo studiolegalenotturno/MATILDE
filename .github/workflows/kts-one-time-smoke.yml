@@ -7,7 +7,7 @@ permissions:
   contents: read
 jobs:
   delivery-smoke:
-    if: github.event.head_commit.message == 'ci: one-time contact delivery smoke [kts-once-smoke]'
+    if: contains(github.event.head_commit.message, '[kts-once-smoke]')
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
