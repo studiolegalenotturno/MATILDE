@@ -1,0 +1,42 @@
+/* KTS Advisory: optional-services consent controls */
+.kts-cookie-banner,.kts-cookie-panel{
+  position:fixed;z-index:9999;left:50%;bottom:18px;transform:translateX(-50%);
+  width:min(640px,calc(100% - 28px));max-height:calc(100vh - 40px);overflow:auto;
+  box-sizing:border-box;padding:22px 24px;border:1px solid #B08A4A;border-radius:8px;
+  background:#F3EFE8;color:#161616;font-family:"DM Sans",Arial,sans-serif;
+  box-shadow:0 14px 55px rgba(0,0,0,.24);
+}
+.kts-cookie-banner[hidden],.kts-cookie-panel[hidden],#kts-map-placeholder[hidden]{display:none!important}
+.kts-cookie-header{font-size:17px;line-height:1.35;margin-bottom:10px}
+.kts-cookie-banner p,.kts-cookie-panel p{font-size:13px;line-height:1.65;margin:0 0 16px}
+.kts-cookie-banner a{display:inline-block;font-size:12px;color:#161616;text-decoration:underline;margin-top:12px}
+.kts-cookie-actions{display:flex;gap:9px;flex-wrap:wrap}
+.kts-cookie-btn{cursor:pointer;border:1px solid #B08A4A;background:transparent;
+  border-radius:4px;padding:10px 14px;color:#161616;font:500 12px "DM Sans",Arial,sans-serif}
+.kts-cookie-btn.primary{background:#161616;color:#F3EFE8;border-color:#161616}
+.kts-cookie-btn.secondary{background:#F3EFE8}
+.kts-cookie-btn:focus-visible,.kts-map-activate:focus-visible{outline:3px solid #B08A4A;outline-offset:3px}
+.kts-cookie-btn.kts-cookie-manage{border:none;color:inherit;text-decoration:underline;padding:4px 0;
+  font:inherit;font-size:12px;background:transparent}
+.kts-cookie-choice{display:flex;gap:12px;align-items:flex-start;margin:18px 0;padding:12px;
+  border:1px solid #b0a89b;border-radius:4px;cursor:pointer}
+.kts-cookie-choice input{margin-top:4px;min-width:18px;min-height:18px}
+.kts-cookie-choice strong,.kts-cookie-choice small{display:block}
+.kts-cookie-choice strong{font-size:13px}
+.kts-cookie-choice small{font-size:12px;line-height:1.55;margin-top:5px}
+#kts-map-placeholder{height:100%;min-height:280px;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:12px;text-align:center;padding:28px;box-sizing:border-box;
+  background:rgba(243,239,232,.95);color:#161616}
+#kts-map-placeholder strong{font-size:18px}#kts-map-placeholder p{font-size:13px;line-height:1.65}
+.kts-map-activate{border:1px solid #161616;background:#161616;color:#fff;padding:11px 16px;
+  font:500 12px "DM Sans",Arial,sans-serif;cursor:pointer}
+@media(max-width:540px){.kts-cookie-banner,.kts-cookie-panel{bottom:8px;padding:18px}
+.kts-cookie-actions{display:grid;grid-template-columns:1fr}.kts-cookie-btn{width:100%}}
+.kts-cookie-header{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.kts-cookie-close{width:28px;height:28px;border:1px solid #b0a89b;border-radius:4px;background:transparent;color:#161616;cursor:pointer;font-size:20px;line-height:24px}
+.kts-cookie-close:focus-visible{outline:3px solid #B08A4A;outline-offset:3px}
+
+/* Opzioni di consenso con pari evidenza, senza pre-selezione o dark pattern. */
+.kts-cookie-banner .kts-cookie-btn.primary,
+.kts-cookie-banner .kts-cookie-btn.secondary{background:#F3EFE8;color:#161616;border-color:#B08A4A;min-width:100px}
+.kts-cookie-banner .kts-cookie-btn:focus-visible{outline:3px solid #B08A4A;outline-offset:3px}

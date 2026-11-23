@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+<meta name="description" content="Contatta KTS Advisory a Napoli: informazioni, progetti, collaborazioni e richieste di consulenza.">
+<link rel="canonical" href="https://www.ktsadvisory.it/contatti.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KTS Advisory">
+<meta property="og:image" content="https://www.ktsadvisory.it/assets/kts-advisory-logo-web.png">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Contatti | KTS Advisory">
+<meta property="og:description" content="Contatta KTS Advisory a Napoli: informazioni, progetti, collaborazioni e richieste di consulenza.">
+<meta property="og:url" content="https://www.ktsadvisory.it/contatti.html">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KTS Advisory — Contatti</title>
+<title>Contatti | KTS Advisory</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -915,6 +925,18 @@ footer{
   }
 }
 </style>
+<link rel="stylesheet" href="assets/kts-cookie-consent.css">
+
+<style>
+.kts-form-trap{position:absolute!important;left:-99999px!important;width:1px;height:1px;overflow:hidden}
+.kts-privacy-ack{display:flex;align-items:flex-start;gap:10px;font-size:12px;line-height:1.6;cursor:pointer}
+.kts-privacy-ack input{margin-top:4px;min-width:17px;min-height:17px}
+.kts-privacy-ack a{color:inherit;text-decoration:underline}
+#kts-form-status{font-size:13px;line-height:1.6;min-height:1.6em}
+#kts-form-fallback{display:inline-block;text-decoration:underline;font-size:13px;color:inherit}
+#kts-form-fallback[hidden]{display:none}
+.contact-form select.form-field{color:inherit;background:transparent}
+</style>
 </head>
 
 <body>
@@ -1076,22 +1098,39 @@ footer{
     <p class="section-label" data-i18n="formLabel">Invia un messaggio</p>
     <div class="brass-line"></div>
 
-    <form class="contact-form" action="mailto:info@ktsadvisory.it" method="post" enctype="text/plain">
+    <form id="kts-contact-form" class="contact-form" action="mailto:info@ktsadvisory.it" method="post" enctype="text/plain">
       <div class="form-grid">
-        <input class="form-field" type="text" name="nome" placeholder="Nome e Cognome" data-i18n-placeholder="formName" required>
-        <input class="form-field" type="text" name="azienda" placeholder="Azienda" data-i18n-placeholder="formCompany">
+        <input class="form-field" type="text" name="nome" autocomplete="name" maxlength="120" placeholder="Nome e cognome" data-i18n-placeholder="formName" aria-label="Nome e cognome" required>
+        <input class="form-field" type="text" name="azienda" autocomplete="organization" maxlength="120" placeholder="Società o organizzazione (facoltativo)" data-i18n-placeholder="formCompany" aria-label="Società o organizzazione">
       </div>
-
-      <input class="form-field full" type="email" name="email" placeholder="Email" data-i18n-placeholder="formEmail" required>
-      <input class="form-field full" type="text" name="oggetto" placeholder="Oggetto" data-i18n-placeholder="formSubject">
-
-      <textarea class="form-field" name="messaggio" placeholder="Messaggio" data-i18n-placeholder="formMessage" required></textarea>
-
+      <div class="form-grid">
+        <input class="form-field" type="email" name="email" autocomplete="email" maxlength="254" placeholder="Email" data-i18n-placeholder="formEmail" aria-label="Email" required>
+        <input class="form-field" type="tel" name="telefono" autocomplete="tel" maxlength="40" placeholder="Telefono (facoltativo)" data-i18n-placeholder="formPhone" aria-label="Telefono">
+      </div>
+      <select class="form-field full" name="servizio" aria-label="Servizio richiesto" required>
+        <option value="" data-i18n="formService">Seleziona il servizio</option>
+        <option value="corporate" data-i18n="formCorporate">KTS Corporate</option>
+        <option value="executive" data-i18n="formExecutive">KTS Executive</option>
+        <option value="realestate" data-i18n="formRealEstate">Operazioni immobiliari</option>
+        <option value="aste" data-i18n="formAuctions">Aste giudiziarie</option>
+        <option value="partnership" data-i18n="formPartnership">Collaborazioni</option>
+        <option value="other" data-i18n="formOther">Altra richiesta</option>
+      </select>
+      <textarea class="form-field" name="messaggio" minlength="10" maxlength="4000" placeholder="Messaggio" data-i18n-placeholder="formMessage" aria-label="Messaggio" required></textarea>
+      <div class="kts-form-trap" aria-hidden="true">
+        <label for="kts-contact-website">Non compilare questo campo</label>
+        <input id="kts-contact-website" type="text" name="website" tabindex="-1" autocomplete="off">
+      </div>
+      <label class="kts-privacy-ack">
+        <input type="checkbox" name="privacyAcknowledged" value="yes" required>
+        <span data-i18n="formPrivacy">Dichiaro di aver preso visione dell’<a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">informativa privacy</a>.</span>
+      </label>
       <p class="form-note" data-i18n="formNote">
-        L’invio del messaggio aprirà il vostro client email. Per comunicazioni riservate, potete scriverci direttamente all’indirizzo indicato.
+        Non inserire dati riservati o documenti sensibili nel messaggio. Se il servizio di invio non è disponibile, potrai utilizzare il tuo programma email.
       </p>
-
-      <button type="submit" class="btn-primary" data-i18n="formButton">Invia messaggio <span>→</span></button>
+      <p id="kts-form-status" role="status" aria-live="polite"></p>
+      <a id="kts-form-fallback" hidden href="mailto:info@ktsadvisory.it"></a>
+      <button type="submit" class="btn-primary" data-i18n="formButton">Invia richiesta <span>→</span></button>
     </form>
   </div>
 
@@ -1100,13 +1139,15 @@ footer{
     <div class="brass-line"></div>
 
     <div class="google-map">
-      <iframe
-        src="https://www.google.com/maps?q=Via%20Santa%20Maria%20del%20Pianto%2C%20Torre%201%2C%20Napoli&output=embed"
-        width="100%"
-        height="100%"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
+      <div id="kts-map-placeholder">
+        <strong data-kts-label="mapTitle">Mappa disattivata</strong>
+        <p data-kts-label="mapDescription">Per proteggere la tua privacy, Google Maps non viene caricato automaticamente.</p>
+        <button type="button" id="kts-map-activate" class="kts-map-activate" data-kts-label="mapActivate">Attiva Google Maps</button>
+      </div>
+      <iframe title="Mappa della sede KTS Advisory"
+        data-kts-map-src="https://www.google.com/maps?q=Via%20Santa%20Maria%20del%20Pianto%2C%20Torre%201%2C%20Napoli&output=embed"
+        width="100%" height="100%" allowfullscreen
+        loading="lazy" referrerpolicy="no-referrer" hidden style="display:none">
       </iframe>
     </div>
   </div>
@@ -1162,12 +1203,21 @@ const translations = {
 
     formLabel: "Invia un messaggio",
     formName: "Nome e Cognome",
-    formCompany: "Azienda",
+    formCompany: "Società o organizzazione (facoltativo)",
+    formPhone: "Telefono (facoltativo)",
+    formService: "Seleziona il servizio",
+    formCorporate: "KTS Corporate",
+    formExecutive: "KTS Executive",
+    formRealEstate: "Operazioni immobiliari",
+    formAuctions: "Aste giudiziarie",
+    formPartnership: "Collaborazioni",
+    formOther: "Altra richiesta",
+    formPrivacy: 'Dichiaro di aver preso visione dell’<a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">informativa privacy</a>.',
     formEmail: "Email",
     formSubject: "Oggetto",
     formMessage: "Messaggio",
-    formNote: "L’invio del messaggio aprirà il vostro client email. Per comunicazioni riservate, potete scriverci direttamente all’indirizzo indicato.",
-    formButton: "Invia messaggio <span>→</span>",
+    formNote: "Non inserire dati riservati o documenti sensibili nel messaggio. Se il servizio di invio non è disponibile, potrai utilizzare il tuo programma email.",
+    formButton: "Invia richiesta <span>→</span>",
 
     whereLabel: "Dove siamo",
 
@@ -1196,11 +1246,20 @@ const translations = {
 
     formLabel: "Send a message",
     formName: "Full name",
-    formCompany: "Company",
+    formCompany: "Company or organisation (optional)",
+    formPhone: "Phone number (optional)",
+    formService: "Select a service",
+    formCorporate: "KTS Corporate",
+    formExecutive: "KTS Executive",
+    formRealEstate: "Real estate transactions",
+    formAuctions: "Judicial auctions",
+    formPartnership: "Partnership enquiries",
+    formOther: "Other enquiry",
+    formPrivacy: 'I acknowledge that I have read the <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">privacy notice</a>.',
     formEmail: "Email",
     formSubject: "Subject",
     formMessage: "Message",
-    formNote: "Submitting the form will open your email client. For confidential communications, you may write directly to the address indicated.",
+    formNote: "Please do not include confidential information or sensitive documents. If delivery is unavailable, you can use your email application.",
     formButton: "Send message <span>→</span>",
 
     whereLabel: "Where we are",
@@ -1268,5 +1327,7 @@ const savedLanguage = localStorage.getItem("siteLanguage") || "it";
 setLanguage(savedLanguage);
 </script>
 
+<script src="assets/kts-cookie-consent.js" defer></script>
+<script src="assets/kts-contact-form.js" defer></script>
 </body>
 </html>
