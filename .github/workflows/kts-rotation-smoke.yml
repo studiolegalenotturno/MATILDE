@@ -1,0 +1,28 @@
+name: KTS Credential Rotation Smoke (temporary)
+on:
+  push:
+    branches:
+      - audit/kts-site-20261122
+permissions:
+  contents: read
+jobs:
+  contact:
+    if: contains(github.event.head_commit.message, '[kts-rotation-smoke]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Validate live contact provider acceptance
+        run: |
+          set -euo pipefail
+          payload='{"name":"Verifica tecnica KTS - rotazione","company":"","email":"info@ktsadvisory.it","telephone":"","service":"other","message":"Messaggio tecnico per verificare il recapito dopo la sostituzione della chiave di invio. Non occorre rispondere.","website":"","privacyAcknowledged":true}'
+          result="$(curl -sS --retry 1 --max-time 25 -w '\n%{http_code}' \
+            -H 'Origin: https://www.ktsadvisory.it' \
+            -H 'Content-Type: application/json' \
+            -H "X-Idempotency-Key: kts-rotate-${GITHUB_SHA}" \
+            -d "$payload" 'https://www.ktsadvisory.it/api/contact')"
+          code="$(printf '%s\n' "$result" | tail -n 1)"
+          content="$(printf '%s\n' "$result" | sed '$d')"
+          echo "HTTP=$code"
+          echo "RESPONSE=$content"
+          test "$code" = "200"
+          test "$content" = '{"ok":true}'
