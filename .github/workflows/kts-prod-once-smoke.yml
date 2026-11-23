@@ -1,0 +1,27 @@
+name: KTS One-Time Production Contact Smoke
+on:
+  push:
+    branches:
+      - audit/kts-site-20261122
+permissions:
+  contents: read
+jobs:
+  contact-smoke:
+    if: contains(github.event.head_commit.message, 'run-production-contact-smoke')
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Test production contact POST and provider acceptance
+        run: |
+          set -euo pipefail
+          body='{"name":"Collaudo KTS Advisory","company":"","email":"info@ktsadvisory.it","telephone":"","service":"other","message":"TEST TECNICO del modulo Contatti pubblicato il 23 novembre 2026. Richiesta di collaudo; nessuna risposta necessaria.","website":"","privacyAcknowledged":true}'
+          response="$(curl --silent --show-error --retry 2 --retry-delay 2 --max-time 25 -w '\n%{http_code}' \
+            -H "Origin: https://www.ktsadvisory.it" -H "Content-Type: application/json" \
+            -H "X-Idempotency-Key: kts-production-smoke-20261123-once-001" \
+            -d "$body" "https://www.ktsadvisory.it/api/contact")"
+          status="$(printf '%s\n' "$response" | tail -n 1)"
+          content="$(printf '%s\n' "$response" | sed '$d')"
+          echo "HTTP=$status"
+          echo "RESPONSE=$content"
+          test "$status" = "200"
+          test "$content" = '{"ok":true}'
