@@ -6,7 +6,7 @@ import {join} from "node:path";
 const root = process.cwd();
 const base = "https://www.ktsadvisory.it/";
 const pages = [
-  ["consulenza-ma-operazioni-straordinarie.html","Consulenza M&A"],
+  ["consulenza-ma-operazioni-straordinarie.html","Consulenza M&amp;A"],
   ["finanza-impresa-rating-factoring.html","Finanza d'impresa"],
   ["assistenza-aste-giudiziarie.html","Assistenza aste giudiziarie"],
 ];
