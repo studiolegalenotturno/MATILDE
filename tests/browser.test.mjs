@@ -97,7 +97,9 @@ test("national SEO pages render on mobile and menu stays navigable",async()=>{
   }
   await page.goto(base+"/attivita.html");
   assert.equal(await page.locator(".seo-hub").count(),3);
-  await page.locator('[data-lang-switch="en"]').first().click();
+  await page.locator("#mobileMenuToggle").click();
+  assert.equal(await page.locator("#mobileMenu").isVisible(),true);
+  await page.locator('#mobileMenu [data-lang-switch="en"]').click();
   assert.match(await page.locator("#seo-national-services-heading").textContent(),/Focused expertise/);
   assert.equal(errors.length,0,"Browser page errors: "+errors.join(", "));
   await context.close();
