@@ -72,3 +72,33 @@ test("contact form exposes fallback if delivery is unavailable",async()=>{
   assert.equal(errors.length,0,"uncaught page errors "+errors.join(", "));
   await context.close();
 });
+test("national SEO pages render on mobile and menu stays navigable",async()=>{
+  const context=await browser.newContext({viewport:{width:390,height:844}});
+  await context.route(/fonts\\.googleapis\\.com|fonts\\.gstatic\\.com/,r=>r.abort());
+  const page=await context.newPage();
+  const errors=[];
+  page.on("pageerror",e=>errors.push(e.message));
+  const pages=[
+    "consulenza-ma-operazioni-straordinarie.html",
+    "finanza-impresa-rating-factoring.html",
+    "assistenza-aste-giudiziarie.html"
+  ];
+  for(const file of pages){
+    const r=await page.goto(base+"/"+file);
+    assert.equal(r.status(),200);
+    assert.equal(await page.locator("h1").count(),1);
+    assert.equal(await page.locator("h1").isVisible(),true);
+    assert.equal(await page.locator('link[rel="canonical"]').getAttribute("href"),
+      "https://www.ktsadvisory.it/"+file);
+    await page.locator("#seo-menu-toggle").click();
+    assert.equal(await page.locator("#seo-menu-toggle").getAttribute("aria-expanded"),"true");
+    assert.equal(await page.locator("#seo-mobile-menu").isVisible(),true);
+    await page.locator("#seo-menu-toggle").click();
+  }
+  await page.goto(base+"/attivita.html");
+  assert.equal(await page.locator(".seo-hub").count(),3);
+  await page.locator('[data-lang-switch="en"]').first().click();
+  assert.match(await page.locator("#seo-national-services-heading").textContent(),/Focused expertise/);
+  assert.equal(errors.length,0,"Browser page errors: "+errors.join(", "));
+  await context.close();
+});
