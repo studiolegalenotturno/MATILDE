@@ -72,7 +72,9 @@ test("client and cookie scripts are valid JavaScript",()=>{
 });
 test("site has metadata, consent resources and no broken local HTML links",()=>{
   const pages=["index.html","about.html","studio.html","approccio.html","attivita.html",
-    "contatti.html","lavora-con-noi.html","private-market.html","privacy-policy.html","cookie-policy.html"];
+    "contatti.html","lavora-con-noi.html","private-market.html","privacy-policy.html","cookie-policy.html",
+    "consulenza-ma-operazioni-straordinarie.html","finanza-impresa-rating-factoring.html",
+    "assistenza-aste-giudiziarie.html"];
   const set=new Set(pages);
   for(const page of pages){
     const html=fs.readFileSync(page,"utf8");

@@ -20,7 +20,7 @@ jobs:
           node --check assets/kts-contact-form.js
           node --input-type=module --check < api/contact.js
       - name: Run static and API unit tests
-        run: node --test tests/contact.test.mjs
+        run: node --test tests/contact.test.mjs tests/seo.test.mjs
       - name: Validate sitemap XML
         run: python3 -c "import xml.etree.ElementTree as ET; ET.parse('sitemap.xml')"
   browser-checks:
