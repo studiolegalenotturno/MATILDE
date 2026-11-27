@@ -1626,6 +1626,22 @@ footer{
   }
 }
 
+
+/* National service navigation: relevant internal links, no geographic doorway pages. */
+.home-seo-band{padding:80px 56px 86px;background:#F7F1E8;border-block:1px solid rgba(176,138,74,.24)}
+.home-seo-inner{max-width:1210px;margin:0 auto}
+.home-seo-eyebrow{font:500 11px/1.5 var(--sans);color:#91703b;text-transform:uppercase;letter-spacing:.2em;margin-bottom:15px}
+.home-seo-title{font:300 clamp(37px,3.8vw,56px)/1.13 var(--serif);color:var(--navy);margin:0 0 16px}
+.home-seo-intro{font:300 15px/1.85 var(--sans);max-width:820px;color:rgba(14,26,43,.76);margin:0 0 30px}
+.home-seo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.home-seo-card{background:#F3EFE8;border:1px solid rgba(176,138,74,.26);padding:29px;display:flex;flex-direction:column;min-height:230px}
+.home-seo-card h3{font:400 clamp(26px,2.4vw,36px)/1.13 var(--serif);margin:0 0 15px;color:var(--navy)}
+.home-seo-card p{font:300 13px/1.8 var(--sans);color:#47515f;margin:0 0 18px}
+.home-seo-card a{font:500 11px/1.5 var(--sans);color:#835e2b;text-transform:uppercase;letter-spacing:.1em;align-self:start;margin-top:auto;text-decoration:none;padding-bottom:5px;border-bottom:1px solid var(--brass)}
+.home-seo-card a:hover,.home-seo-card a:focus-visible{color:var(--navy)}
+@media(max-width:950px){.home-seo-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.home-seo-band{padding:56px 24px}.home-seo-grid{grid-template-columns:1fr}.home-seo-card{min-height:unset}.home-seo-title{font-size:clamp(35px,8.5vw,47px)}}
+
 </style>
 <link rel="stylesheet" href="assets/kts-cookie-consent.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://www.ktsadvisory.it/#website","name":"KTS Advisory","alternateName":["ktsadvisory.it"],"url":"https://www.ktsadvisory.it/"}</script>
@@ -1791,6 +1807,17 @@ footer{
 </section>
 
 
+
+<section class="home-seo-band" aria-labelledby="home-seo-heading">
+<div class="home-seo-inner">
+<p class="home-seo-eyebrow" data-i18n="seoHomeEyebrow">Competenze · Territorio nazionale</p>
+<h2 class="home-seo-title" id="home-seo-heading" data-i18n="seoHomeHeading">Tre ambiti di intervento. Una prospettiva integrata.</h2>
+<p class="home-seo-intro" data-i18n="seoHomeIntro">KTS coordina attività professionali e approfondimenti documentali per operazioni straordinarie, finanza aziendale e acquisti immobiliari all’asta, su tutto il territorio nazionale.</p>
+<div class="home-seo-grid">
+<article class="home-seo-card"><h3 data-i18n="seoHomeMaHeading">M&amp;A e acquisizioni aziendali</h3><p data-i18n="seoHomeMaText">Acquisti e cessioni d’azienda, negoziazione e due diligence.</p><a href="consulenza-ma-operazioni-straordinarie.html" data-i18n="seoHomeMaLink">Consulenza M&amp;A →</a></article>
+<article class="home-seo-card"><h3 data-i18n="seoHomeFinanceHeading">Finanza d’impresa</h3><p data-i18n="seoHomeFinanceText">Rating, Centrale dei Rischi, factoring e valutazione dei finanziamenti.</p><a href="finanza-impresa-rating-factoring.html" data-i18n="seoHomeFinanceLink">Analisi finanziaria →</a></article>
+<article class="home-seo-card"><h3 data-i18n="seoHomeAuctionHeading">Consulenza aste immobiliari</h3><p data-i18n="seoHomeAuctionText">Assistenza alla verifica documentale e alla partecipazione alle vendite giudiziarie.</p><a href="assistenza-aste-giudiziarie.html" data-i18n="seoHomeAuctionLink">Assistenza aste →</a></article>
+</div></div></section>
 
 <section class="alfa-ecosystem">
   <div class="alfa-heading fade-in">
@@ -1997,6 +2024,18 @@ document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
 const translations = {
   it: {
+    seoHomeEyebrow:"Competenze · Territorio nazionale",
+    seoHomeHeading:"Tre ambiti di intervento. Una prospettiva integrata.",
+    seoHomeIntro:"KTS coordina attività professionali e approfondimenti documentali per operazioni straordinarie, finanza aziendale e acquisti immobiliari all’asta, su tutto il territorio nazionale.",
+    seoHomeMaHeading:"M&amp;A e acquisizioni aziendali",
+    seoHomeMaText:"Acquisti e cessioni d’azienda, negoziazione e due diligence.",
+    seoHomeMaLink:"Consulenza M&amp;A →",
+    seoHomeFinanceHeading:"Finanza d’impresa",
+    seoHomeFinanceText:"Rating, Centrale dei Rischi, factoring e valutazione dei finanziamenti.",
+    seoHomeFinanceLink:"Analisi finanziaria →",
+    seoHomeAuctionHeading:"Consulenza aste immobiliari",
+    seoHomeAuctionText:"Assistenza alla verifica documentale e alla partecipazione alle vendite giudiziarie.",
+    seoHomeAuctionLink:"Assistenza aste →",
     navAbout: "Chi siamo",
     navActivities: "Attività",
     navApproach: "Approccio",
@@ -2093,6 +2132,18 @@ const translations = {
   },
 
   en: {
+    seoHomeEyebrow:"Expertise · Nationwide in Italy",
+    seoHomeHeading:"Three areas of expertise. An integrated perspective.",
+    seoHomeIntro:"KTS coordinates specialist expertise and document reviews for corporate transactions, business finance and judicial property auctions throughout Italy.",
+    seoHomeMaHeading:"M&amp;A and business acquisitions",
+    seoHomeMaText:"Acquisitions and disposals, negotiation and due diligence.",
+    seoHomeMaLink:"M&amp;A advisory →",
+    seoHomeFinanceHeading:"Business finance",
+    seoHomeFinanceText:"Credit profiles, central credit register, factoring and financing analysis.",
+    seoHomeFinanceLink:"Finance advisory →",
+    seoHomeAuctionHeading:"Judicial property auctions",
+    seoHomeAuctionText:"Support with documentary checks and participation in court-supervised sales.",
+    seoHomeAuctionLink:"Auction support →",
     navAbout: "About us",
     navActivities: "Services",
     navApproach: "Approach",
