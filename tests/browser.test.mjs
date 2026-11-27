@@ -104,3 +104,40 @@ test("national SEO pages render on mobile and menu stays navigable",async()=>{
   assert.equal(errors.length,0,"Browser page errors: "+errors.join(", "));
   await context.close();
 });
+
+test("homepage service navigation stays bilingual",async()=>{
+  const context=await browser.newContext({viewport:{width:1280,height:800}});
+  await context.route(/fonts\\.googleapis\\.com|fonts\\.gstatic\\.com/,r=>r.abort());
+  const page=await context.newPage();
+  const errors=[];page.on("pageerror",e=>errors.push(e.message));
+  const res=await page.goto(base+"/index.html");
+  assert.equal(res.status(),200);
+  assert.equal(await page.locator(".home-seo-card").count(),3);
+  assert.match(await page.locator("#home-seo-heading").textContent(),/Tre ambiti/);
+  await page.locator('[data-lang-switch="en"]').first().click();
+  assert.match(await page.locator("#home-seo-heading").textContent(),/Three areas/);
+  await page.locator('[data-lang-switch="it"]').first().click();
+  assert.match(await page.locator("#home-seo-heading").textContent(),/Tre ambiti/);
+  assert.equal(errors.length,0,errors.join(","));
+  await context.close();
+});
+
+test("specialist checklists are readable on mobile and preserve navigation",async()=>{
+  const context=await browser.newContext({viewport:{width:390,height:844}});
+  await context.route(/fonts\\.googleapis\\.com|fonts\\.gstatic\\.com/,r=>r.abort());
+  const page=await context.newPage();
+  const errors=[];page.on("pageerror",e=>errors.push(e.message));
+  const guides=["guida-asta-immobiliare-verifiche-prima-offerta.html","analisi-centrale-rischi-imprese.html","due-diligence-acquisto-azienda-checklist.html"];
+  for(const guide of guides){
+    const res=await page.goto(base+"/"+guide);
+    assert.equal(res.status(),200);
+    assert.equal(await page.locator("h1").count(),1);
+    assert.equal(await page.locator(".method-list li").count(),10);
+    assert.equal(await page.locator("h1").isVisible(),true);
+    await page.locator("#seo-menu-toggle").click();
+    assert.equal(await page.locator("#seo-mobile-menu").isVisible(),true);
+    await page.locator("#seo-menu-toggle").click();
+  }
+  assert.equal(errors.length,0,errors.join(","));
+  await context.close();
+});
