@@ -77,7 +77,10 @@ for(const [guide,parent,keyword] of guides){
     assert.ok(html.includes('href="contatti.html"'));
     assert.ok(html.includes("assets/kts-cookie-consent.js"));
     assert.doesNotMatch(html,/crisi d.impresa|crisi di impresa/i);
-    const schema = JSON.parse(html.match(/<script type="application\\/ld\\+json">([\\s\\S]*?)<\\/script>/)[1]);
+    const opening = '<script type="application/ld+json">';
+    const begin = html.indexOf(opening);
+    assert.ok(begin >= 0,"Missing JSON-LD script");
+    const schema = JSON.parse(html.slice(begin+opening.length,html.indexOf('</script>',begin)));
     assert.equal(schema["@graph"][0].url,base+guide);
     assert.ok(read(parent).includes('href="'+guide+'"'),"Parent service must link to the guide");
     assert.ok(read("sitemap.xml").includes(base+guide),"Sitemap must link to guide");
@@ -86,7 +89,9 @@ for(const [guide,parent,keyword] of guides){
 
 test("Brand structured data and priority homepage links",()=>{
   const html=read("index.html");
-  const block=html.match(/<script type="application\\/ld\\+json">([\\s\\S]*?)<\\/script>/);
+  const opening='<script type="application/ld+json">';
+  const begin=html.indexOf(opening);
+  const block=begin===-1?null:[null,html.slice(begin+opening.length,html.indexOf('</script>',begin))];
   assert.ok(block,"Homepage requires explicit WebSite identity");
   const schema=JSON.parse(block[1]);
   assert.equal(schema["@type"],"WebSite");
@@ -94,7 +99,7 @@ test("Brand structured data and priority homepage links",()=>{
   assert.equal(schema.url,base);
   for(const [file] of pages)assert.ok(html.includes('href="'+file+'"'),"Homepage service link: "+file);
   assert.ok(html.includes('seoHomeHeading'),"Ensure bilingual homepage section");
-  assert.equal([...read("privacy-policy.html").matchAll(/<h1\\b/gi)].length,1,"Privacy page must have a single H1");
+  assert.equal(read("privacy-policy.html").split("<h1").length-1,1,"Privacy page must have a single H1");
 });
 
 test("Audited SEO descriptions fit concise snippet guidance",()=>{
