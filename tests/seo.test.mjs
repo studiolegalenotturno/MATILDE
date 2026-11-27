@@ -53,3 +53,11 @@ test("SEO landing assets and existing navigation are preserved",()=>{
   assert.ok(read("index.html").includes('href="attivita.html"'));
   assert.ok(read("robots.txt").includes("Sitemap: https://www.ktsadvisory.it/sitemap.xml"));
 });
+
+// Keep the exact Search Console verification token public at its original path.
+// Removing or editing this file may invalidate Google ownership verification.
+test("Google Search Console verification file remains unchanged",()=>{
+  const file="google60132d2233694167.html";
+  assert.ok(existsSync(join(root,file)),"Google ownership file must remain at site root");
+  assert.equal(read(file),"google-site-verification: google60132d2233694167.html");
+});
