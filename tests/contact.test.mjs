@@ -74,7 +74,10 @@ test("site has metadata, consent resources and no broken local HTML links",()=>{
   const pages=["index.html","about.html","studio.html","approccio.html","attivita.html",
     "contatti.html","lavora-con-noi.html","private-market.html","privacy-policy.html","cookie-policy.html",
     "consulenza-ma-operazioni-straordinarie.html","finanza-impresa-rating-factoring.html",
-    "assistenza-aste-giudiziarie.html"];
+    "assistenza-aste-giudiziarie.html",
+    "guida-asta-immobiliare-verifiche-prima-offerta.html",
+    "analisi-centrale-rischi-imprese.html",
+    "due-diligence-acquisto-azienda-checklist.html"];
   const set=new Set(pages);
   for(const page of pages){
     const html=fs.readFileSync(page,"utf8");
